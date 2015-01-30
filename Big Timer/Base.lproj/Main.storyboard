@@ -1,25 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Big_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="130" translatesAutoresizingMaskIntoConstraints="NO" id="utZ-Mr-Yff">
+                                <rect key="frame" x="229" y="144" width="141.5" height="310.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="260"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBf-28-TWG">
+                                <rect key="frame" x="16" y="28" width="67.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="utZ-Mr-Yff" secondAttribute="centerX" id="6Zo-Oa-f5O"/>
+                            <constraint firstAttribute="centerY" secondItem="utZ-Mr-Yff" secondAttribute="centerY" id="Lww-Xs-WqE"/>
+                            <constraint firstItem="NBf-28-TWG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qEe-nW-WX9"/>
+                            <constraint firstItem="NBf-28-TWG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tto-th-LWu"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Mbs-9T-1sb" appends="YES" id="veC-4b-xnl"/>
+                            <outletCollection property="gestureRecognizers" destination="pbC-0L-pxM" appends="YES" id="Il8-3h-2Oq"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="doubleTapRecognizer" destination="pbC-0L-pxM" id="UIi-sy-7cp"/>
+                        <outlet property="singleTapRecognizer" destination="Mbs-9T-1sb" id="1a2-y9-VjF"/>
+                        <outlet property="statusLabel" destination="NBf-28-TWG" id="IuI-kB-wXI"/>
+                        <outlet property="timeLabel" destination="utZ-Mr-Yff" id="FTj-BZ-mCv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Mbs-9T-1sb" userLabel="Single Tap">
+                    <connections>
+                        <action selector="singleTap:" destination="BYZ-38-t0r" id="uJQ-4Q-nC9"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="pbC-0L-pxM" userLabel="Double Tap">
+                    <connections>
+                        <action selector="doubleTap:" destination="BYZ-38-t0r" id="L65-7I-wlE"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="595" y="286"/>
         </scene>
     </scenes>
 </document>

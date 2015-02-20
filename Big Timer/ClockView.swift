@@ -40,7 +40,7 @@ class ClockView: UIView {
     }
     
     func rotate () {
-        let angleToAdd = CGFloat(M_PI_4) / 2
+        let angleToAdd = CGFloat(M_PI) / 30
         let currentAngle = self.layer.valueForKeyPath(zRotationKeyPath) as CGFloat
         let newAngle = currentAngle + angleToAdd
         
@@ -48,7 +48,7 @@ class ClockView: UIView {
         
         var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
         
-        rotateAnimation.duration = 0.0625
+        rotateAnimation.duration = 0.016
         rotateAnimation.additive = true
         rotateAnimation.removedOnCompletion = false
         rotateAnimation.toValue = 0.0
@@ -69,6 +69,10 @@ class ClockView: UIView {
     
     func clear () {
         stopAnimation = true
+        self.layer.setValue(CGFloat(0), forKeyPath: zRotationKeyPath)
+    }
+    
+    func sync () {
         self.layer.setValue(CGFloat(0), forKeyPath: zRotationKeyPath)
     }
     

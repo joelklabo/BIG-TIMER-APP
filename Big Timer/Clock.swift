@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 typealias TimeState = (hours: Int, minutes: Int, seconds: Int)
 
@@ -14,18 +15,46 @@ class Clock: NSObject {
     
     var delegate: ClockUpdateDelegate?
     
+    private var milliseconds: Double
     private var seconds: Int
     private var minutes: Int
     private var hours: Int
     private var state: ClockState
     
-    private var timer: NSTimer?
+    private var timer: CADisplayLink?
+    
+    private var lastTick: Double
     
     override init () {
+        self.milliseconds = 0
         self.seconds = 0
         self.minutes = 0
         self.hours = 0
         self.state = .Cleared
+        
+        self.lastTick = 0
+    }
+    
+    func update () {
+        if (lastTick == 0) {
+            lastTick = CACurrentMediaTime() as Double
+            return
+        }
+        let currentTime = CACurrentMediaTime() as Double
+        let timeDelta = currentTime - lastTick
+        let timeDeltaMilliseconds = (timeDelta * 1000)
+        self.millitick(timeDeltaMilliseconds)
+        lastTick = currentTime
+    }
+    
+    func millitick (milliseconds: Double) {
+        println("\(milliseconds)")
+        self.milliseconds += milliseconds
+        if (self.milliseconds >= 1000) {
+            self.milliseconds = 0
+            self.tick()
+        }
+        delegate?.clockUpdate(timeState(), clockState: self.currentState())
     }
     
     func tick () {
@@ -37,14 +66,16 @@ class Clock: NSObject {
             self.minutes = 0
             self.hours++
         }
-       
-        delegate?.clockUpdate(timeState(), clockState: self.currentState())
+        delegate?.clockUpdate(timeState(), clockState: .Sync)
     }
     
     private func clearState () {
+        self.milliseconds = 0
         self.seconds = 0
         self.minutes = 0
         self.hours = 0
+        self.lastTick = 0
+        self.state = .Cleared
     }
     
     private func timeState () -> TimeState {
@@ -52,19 +83,21 @@ class Clock: NSObject {
     }
     
     func start () {
+        timer = CADisplayLink(target: self, selector: Selector("update"))
+        timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        
         state = .Running
         delegate?.clockUpdate(timeState(), clockState: self.currentState())
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
     }
     
     func pause () {
         state = .Paused
+        lastTick = 0
         delegate?.clockUpdate(timeState(), clockState: self.currentState())
         timer?.invalidate()
     }
     
     func clear () {
-        state = .Cleared
         self.clearState()
         delegate?.clockUpdate(timeState(), clockState: self.currentState())
         timer?.invalidate()
@@ -83,5 +116,6 @@ protocol ClockUpdateDelegate {
 enum ClockState {
     case Running
     case Paused
+    case Sync
     case Cleared
 }

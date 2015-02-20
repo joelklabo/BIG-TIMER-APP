@@ -14,6 +14,7 @@ class ViewController: UIViewController, ClockUpdateDelegate {
 
     @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
     @IBOutlet var doubleTapRecognizer: UITapGestureRecognizer!
+    
     @IBOutlet weak var clockView: ClockView!
     
     let clock = Clock()
@@ -36,6 +37,8 @@ class ViewController: UIViewController, ClockUpdateDelegate {
             self.clockView.start()
         case .Cleared:
             self.clockView.clear()
+        case .Sync:
+            self.clockView.sync()
         default:
             self.clockView.start()
         }
@@ -67,6 +70,8 @@ class ViewController: UIViewController, ClockUpdateDelegate {
             clock.start()
         case .Running:
             clock.pause()
+        default:
+            println("error")
         }
     }
     @IBAction func doubleTap(sender: AnyObject) {

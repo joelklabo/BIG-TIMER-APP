@@ -13,6 +13,7 @@
 		EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */; };
 		EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */; };
 		EDABD9E41A7A0CD6006CFBA5 /* Big_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9E31A7A0CD6006CFBA5 /* Big_TimerTests.swift */; };
+		EDABD9F01A7A27D2006CFBA5 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9EF1A7A27D2006CFBA5 /* Clock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EDABD9DD1A7A0CD6006CFBA5 /* Big TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9E21A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDABD9E31A7A0CD6006CFBA5 /* Big_TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Big_TimerTests.swift; sourceTree = "<group>"; };
+		EDABD9EF1A7A27D2006CFBA5 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
+				EDABD9EF1A7A27D2006CFBA5 /* Clock.swift */,
 				EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */,
 				EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */,
 				EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */,
@@ -161,6 +164,7 @@
 				TargetAttributes = {
 					EDABD9C71A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 8X78R6JQ6Y;
 					};
 					EDABD9DC1A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -213,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
+				EDABD9F01A7A27D2006CFBA5 /* Clock.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +412,7 @@
 				EDABD9E91A7A0CD6006CFBA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDABD9EA1A7A0CD6006CFBA5 /* Build configuration list for PBXNativeTarget "Big TimerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +421,7 @@
 				EDABD9EC1A7A0CD6006CFBA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

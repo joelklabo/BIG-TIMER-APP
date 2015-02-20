@@ -48,7 +48,6 @@ class Clock: NSObject {
     }
     
     func millitick (milliseconds: Double) {
-        println("\(milliseconds)")
         self.milliseconds += milliseconds
         if (self.milliseconds >= 1000) {
             self.milliseconds = 0

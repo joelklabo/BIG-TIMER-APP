@@ -13,7 +13,6 @@ class ViewController: UIViewController, ClockUpdateDelegate {
     @IBOutlet weak var timeLabel: UILabel!
 
     @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
-    @IBOutlet var doubleTapRecognizer: UITapGestureRecognizer!
     
     @IBOutlet weak var clockView: ClockView!
     
@@ -63,7 +62,6 @@ class ViewController: UIViewController, ClockUpdateDelegate {
         }
     }
 
-    
     @IBAction func singleTap(sender: AnyObject) {
         switch (clock.currentState()) {
         case .Cleared, .Paused:
@@ -74,7 +72,8 @@ class ViewController: UIViewController, ClockUpdateDelegate {
             println("error")
         }
     }
-    @IBAction func doubleTap(sender: AnyObject) {
+
+    @IBAction func swipe(sender: AnyObject) {
         clock.clear()
     }
 

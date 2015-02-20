@@ -52,12 +52,12 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Mbs-9T-1sb" appends="YES" id="veC-4b-xnl"/>
-                            <outletCollection property="gestureRecognizers" destination="pbC-0L-pxM" appends="YES" id="Il8-3h-2Oq"/>
+                            <outletCollection property="gestureRecognizers" destination="sHS-sG-TU9" appends="YES" id="snf-Md-Fe4"/>
+                            <outletCollection property="gestureRecognizers" destination="1Wa-y5-oDO" appends="YES" id="Xwd-T9-A8M"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="clockView" destination="qGU-AE-OrB" id="Gik-Lb-C17"/>
-                        <outlet property="doubleTapRecognizer" destination="pbC-0L-pxM" id="UIi-sy-7cp"/>
                         <outlet property="singleTapRecognizer" destination="Mbs-9T-1sb" id="1a2-y9-VjF"/>
                         <outlet property="timeLabel" destination="utZ-Mr-Yff" id="FTj-BZ-mCv"/>
                     </connections>
@@ -68,11 +68,16 @@
                         <action selector="singleTap:" destination="BYZ-38-t0r" id="uJQ-4Q-nC9"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="pbC-0L-pxM" userLabel="Double Tap">
+                <swipeGestureRecognizer direction="left" id="sHS-sG-TU9" userLabel="Swipe Left">
                     <connections>
-                        <action selector="doubleTap:" destination="BYZ-38-t0r" id="L65-7I-wlE"/>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="rYN-EJ-iSr"/>
                     </connections>
-                </tapGestureRecognizer>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="1Wa-y5-oDO" userLabel="Swipe Right">
+                    <connections>
+                        <action selector="swipe:" destination="BYZ-38-t0r" id="aYY-HQ-dhr"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="595" y="286"/>
         </scene>

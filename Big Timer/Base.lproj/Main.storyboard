@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="130" translatesAutoresizingMaskIntoConstraints="NO" id="utZ-Mr-Yff">
-                                <rect key="frame" x="229" y="144" width="142" height="311"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="260"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="16" y="35" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,6 +25,12 @@
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="130" translatesAutoresizingMaskIntoConstraints="NO" id="utZ-Mr-Yff">
+                                <rect key="frame" x="230" y="145" width="141.5" height="310.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="260"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>

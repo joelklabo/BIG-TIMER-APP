@@ -10,11 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, ClockUpdateDelegate {
     
-    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
 
     @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
     @IBOutlet var doubleTapRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var clockView: ClockView!
     
     let clock = Clock()
     
@@ -25,19 +25,19 @@ class ViewController: UIViewController, ClockUpdateDelegate {
     
     func clockUpdate(timeState: TimeState, clockState: ClockState) {
         self.timeLabel?.text = formatTimeState(timeState)
-        self.statusLabel?.text = formatClockState(clockState)
+        self.updateClockView(clockState)
     }
     
-    func formatClockState(state: ClockState) -> String {
+    func updateClockView(state: ClockState) {
         switch (state) {
         case .Paused:
-            return "Paused"
+            self.clockView.pause()
         case .Running:
-            return "Running"
+            self.clockView.start()
         case .Cleared:
-            return "Ready"
+            self.clockView.clear()
         default:
-            return ""
+            self.clockView.start()
         }
     }
     

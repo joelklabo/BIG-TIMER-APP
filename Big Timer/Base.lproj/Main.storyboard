@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14D72i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -23,30 +23,42 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBf-28-TWG">
-                                <rect key="frame" x="16" y="28" width="67.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="35" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="utZ-Mr-Yff" secondAttribute="centerX" id="6Zo-Oa-f5O"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="9UK-nT-6lx"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LHU-yY-o7G"/>
                             <constraint firstAttribute="centerY" secondItem="utZ-Mr-Yff" secondAttribute="centerY" id="Lww-Xs-WqE"/>
-                            <constraint firstItem="NBf-28-TWG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qEe-nW-WX9"/>
-                            <constraint firstItem="NBf-28-TWG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tto-th-LWu"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QSE-cK-qvI"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="vRF-fo-kMk"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xr7-NO-HQG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9UK-nT-6lx"/>
+                                <exclude reference="QSE-cK-qvI"/>
+                                <exclude reference="vRF-fo-kMk"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Mbs-9T-1sb" appends="YES" id="veC-4b-xnl"/>
                             <outletCollection property="gestureRecognizers" destination="pbC-0L-pxM" appends="YES" id="Il8-3h-2Oq"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="clockView" destination="qGU-AE-OrB" id="Gik-Lb-C17"/>
                         <outlet property="doubleTapRecognizer" destination="pbC-0L-pxM" id="UIi-sy-7cp"/>
                         <outlet property="singleTapRecognizer" destination="Mbs-9T-1sb" id="1a2-y9-VjF"/>
-                        <outlet property="statusLabel" destination="NBf-28-TWG" id="IuI-kB-wXI"/>
                         <outlet property="timeLabel" destination="utZ-Mr-Yff" id="FTj-BZ-mCv"/>
                     </connections>
                 </viewController>

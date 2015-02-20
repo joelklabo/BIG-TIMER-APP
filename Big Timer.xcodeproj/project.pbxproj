@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
 		EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
+				ED59131C1A97CD790006B20F /* ClockView.swift */,
 				EDABD9EF1A7A27D2006CFBA5 /* Clock.swift */,
 				EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */,
 				EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
+				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
 				EDABD9F01A7A27D2006CFBA5 /* Clock.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 			);

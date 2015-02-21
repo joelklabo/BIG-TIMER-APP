@@ -24,6 +24,11 @@
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="130" translatesAutoresizingMaskIntoConstraints="NO" id="utZ-Mr-Yff">
                                 <rect key="frame" x="230" y="145" width="141.5" height="310.5"/>

@@ -85,7 +85,6 @@ class Timer: NSObject {
     
     func start () {
         timer = CADisplayLink(target: self, selector: Selector("update"))
-        timer?.frameInterval = 4
         timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
         delegate?.timeUpdate(time, sync: false)
     }

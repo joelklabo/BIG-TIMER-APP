@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ClockUpdateDelegate, TimerUpdateDelegate {
+class ViewController: UIViewController, TimerUpdateDelegate {
     
     @IBOutlet weak var timeLabel: UILabel!
 
@@ -21,25 +21,6 @@ class ViewController: UIViewController, ClockUpdateDelegate, TimerUpdateDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         timer.delegate = self
-    }
-    
-    func clockUpdate(timeState: TimeState, clockState: ClockState) {
-        self.updateClockView(clockState)
-    }
-    
-    func updateClockView(state: ClockState) {
-        switch (state) {
-        case .Paused:
-            self.clockView.pause()
-        case .Running:
-            self.clockView.start()
-        case .Cleared:
-            self.clockView.clear()
-        case .Sync:
-            self.clockView.sync()
-        default:
-            self.clockView.start()
-        }
     }
     
     func formatTime(time: Time) -> String {
@@ -68,13 +49,17 @@ class ViewController: UIViewController, ClockUpdateDelegate, TimerUpdateDelegate
     
     @IBAction func swipe(sender: AnyObject) {
         timer.reset()
+        clockView.reset()
     }
 
     // Timer Update Delegate
     
-    func timerUpdate(time: Time) {
-        println("\(time)")
-        self.timeLabel?.text = formatTime(time)
+    func timeUpdate(time: Time) {
+        timeLabel?.text = formatTime(time)
+    }
+    
+    func tick(timeDelta: Double) {
+        clockView.rotate(timeDelta)
     }
 
 

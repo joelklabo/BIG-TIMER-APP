@@ -35,9 +35,11 @@ class Timer: NSObject {
         }
         
         let currentTime = CACurrentMediaTime()
-        let elapsedMilliseconds = Int(round(((currentTime - lastTick) * 1000)))
-        lastTick = currentTime
+        let elapsedSeconds = currentTime - lastTick
+        delegate?.tick(elapsedSeconds)
         
+        let elapsedMilliseconds = Int(round(((elapsedSeconds) * 1000)))
+        lastTick = currentTime
         milliTick(elapsedMilliseconds)
     }
     
@@ -60,7 +62,7 @@ class Timer: NSObject {
             time.hours += 1
         }
         
-        delegate?.timerUpdate(time)
+        delegate?.timeUpdate(time)
         
     }
     
@@ -78,19 +80,20 @@ class Timer: NSObject {
     
     func start () {
         timer = CADisplayLink(target: self, selector: Selector("update"))
+        timer?.frameInterval = 4
         timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        delegate?.timerUpdate(time)
+        delegate?.timeUpdate(time)
     }
     
     func resume () {
         lastTick = 0
         timer?.paused = false
-        delegate?.timerUpdate(time)
+        delegate?.timeUpdate(time)
     }
     
     func pause () {
         timer?.paused = true
-        delegate?.timerUpdate(time)
+        delegate?.timeUpdate(time)
     }
     
     func reset () {
@@ -98,11 +101,12 @@ class Timer: NSObject {
         timer = nil
         lastTick = 0
         time = (hours: 0, minutes: 0, seconds: 0, milliseconds: 0)
-        delegate?.timerUpdate(time)
+        delegate?.timeUpdate(time)
     }
 }
 
 protocol TimerUpdateDelegate {
-    func timerUpdate(time: Time) -> Void
+    func timeUpdate(time: Time)
+    func tick(timeDelta: Double)
 }
 

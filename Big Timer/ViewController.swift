@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, ClockUpdateDelegate {
+class ViewController: UIViewController, ClockUpdateDelegate, TimerUpdateDelegate {
     
     @IBOutlet weak var timeLabel: UILabel!
 
@@ -16,15 +16,14 @@ class ViewController: UIViewController, ClockUpdateDelegate {
     
     @IBOutlet weak var clockView: ClockView!
     
-    let clock = Clock()
+    let timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clock.delegate = self
+        timer.delegate = self
     }
     
     func clockUpdate(timeState: TimeState, clockState: ClockState) {
-        self.timeLabel?.text = formatTimeState(timeState)
         self.updateClockView(clockState)
     }
     
@@ -43,11 +42,11 @@ class ViewController: UIViewController, ClockUpdateDelegate {
         }
     }
     
-    func formatTimeState(time: TimeState) -> String {
+    func formatTime(time: Time) -> String {
         switch time {
-        case (0, 0, _):
+        case (0, 0, _, _):
             return "\(time.seconds)"
-        case (0, _, _):
+        case (0, _, _, _):
             return "\(time.minutes):\(padNumber(time.seconds))"
         default:
             return "\(time.hours):\(padNumber(time.minutes)):\(padNumber(time.seconds))"
@@ -61,21 +60,23 @@ class ViewController: UIViewController, ClockUpdateDelegate {
             return "\(number)"
         }
     }
-
-    @IBAction func singleTap(sender: AnyObject) {
-        switch (clock.currentState()) {
-        case .Cleared, .Paused:
-            clock.start()
-        case .Running:
-            clock.pause()
-        default:
-            println("error")
-        }
+    
+    @IBAction func tap(sender: AnyObject) {
+        timer.toggle()
     }
-
+    
+    
     @IBAction func swipe(sender: AnyObject) {
-        clock.clear()
+        timer.reset()
     }
+
+    // Timer Update Delegate
+    
+    func timerUpdate(time: Time) {
+        println("\(time)")
+        self.timeLabel?.text = formatTime(time)
+    }
+
 
 }
 

@@ -50,19 +50,24 @@ class Timer: NSObject {
         if (time.milliseconds >= 1000) {
             time.milliseconds = time.milliseconds % 1000
             time.seconds += 1
+            
+            if (time.seconds >= 60) {
+                time.seconds = time.seconds % 60
+                time.minutes += 1
+                
+                if (time.minutes >= 60) {
+                    time.minutes = time.minutes % 60
+                    time.hours += 1
+                }
+            }
+            
+            delegate?.timeUpdate(time, sync: true)
+            
+        } else {
+            return
         }
         
-        if (time.seconds >= 60) {
-            time.seconds = time.seconds % 60
-            time.minutes += 1
-        }
         
-        if (time.minutes >= 60) {
-            time.minutes = time.minutes % 60
-            time.hours += 1
-        }
-        
-        delegate?.timeUpdate(time)
         
     }
     
@@ -82,18 +87,18 @@ class Timer: NSObject {
         timer = CADisplayLink(target: self, selector: Selector("update"))
         timer?.frameInterval = 4
         timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        delegate?.timeUpdate(time)
+        delegate?.timeUpdate(time, sync: false)
     }
     
     func resume () {
         lastTick = 0
         timer?.paused = false
-        delegate?.timeUpdate(time)
+        delegate?.timeUpdate(time, sync: false)
     }
     
     func pause () {
         timer?.paused = true
-        delegate?.timeUpdate(time)
+        delegate?.timeUpdate(time, sync: false)
     }
     
     func reset () {
@@ -101,12 +106,12 @@ class Timer: NSObject {
         timer = nil
         lastTick = 0
         time = (hours: 0, minutes: 0, seconds: 0, milliseconds: 0)
-        delegate?.timeUpdate(time)
+        delegate?.timeUpdate(time, sync: true)
     }
 }
 
 protocol TimerUpdateDelegate {
-    func timeUpdate(time: Time)
+    func timeUpdate(time: Time, sync: Bool)
     func tick(timeDelta: Double)
 }
 

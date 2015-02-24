@@ -54,8 +54,11 @@ class ViewController: UIViewController, TimerUpdateDelegate {
 
     // Timer Update Delegate
     
-    func timeUpdate(time: Time) {
+    func timeUpdate(time: Time, sync: Bool) {
         timeLabel?.text = formatTime(time)
+        if (sync) {
+            clockView.reset()
+        }
     }
     
     func tick(timeDelta: Double) {

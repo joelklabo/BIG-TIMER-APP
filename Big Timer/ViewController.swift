@@ -10,27 +10,20 @@ import UIKit
 
 class ViewController: UIViewController, TimerUpdateDelegate {
     
-    @IBOutlet weak var timeLabel: TimerLabel!
-
-    @IBOutlet var singleTapRecognizer: UITapGestureRecognizer!
-    
     @IBOutlet weak var clockView: ClockView!
-    
-    var time: Double = 0
-    
+    @IBOutlet weak var timeLabel: UILabel!
+        
     let timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         timer.delegate = self
-        timeLabel.setTime(1000)
     }
     
     @IBAction func verticalPan(sender: AnyObject) {
         let gestureRecognizer = sender as UIPanGestureRecognizer
         let velocity = gestureRecognizer.velocityInView(self.view)
         let time = round(Double(-velocity.y / 400))
-        timeLabel.setTime(time)
     }
     
     @IBAction func tap(sender: AnyObject) {
@@ -46,6 +39,7 @@ class ViewController: UIViewController, TimerUpdateDelegate {
     
     func tick(time: Time) {
         clockView.rotate(time)
+        timeLabel.text = "\(time * 1000)"
     }
 
 }

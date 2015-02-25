@@ -10,7 +10,6 @@
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
-		ED5CD89B1A9DB8630086886B /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89A1A9DB8630086886B /* TimerLabel.swift */; };
 		ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -34,7 +33,6 @@
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
-		ED5CD89A1A9DB8630086886B /* TimerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerLabel.swift; path = ../TimerLabel.swift; sourceTree = "<group>"; };
 		ED5CD89C1A9E3AE60086886B /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
-				ED5CD89A1A9DB8630086886B /* TimerLabel.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
 				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
 				ED59131C1A97CD790006B20F /* ClockView.swift */,
@@ -232,7 +229,6 @@
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
-				ED5CD89B1A9DB8630086886B /* TimerLabel.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 				ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */,
 			);

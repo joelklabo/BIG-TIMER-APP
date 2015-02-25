@@ -30,15 +30,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="130" translatesAutoresizingMaskIntoConstraints="NO" id="utZ-Mr-Yff" customClass="TimerLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="230" y="145" width="141.5" height="310.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="310.5" id="lVs-co-Beb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="260"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="534" y="35" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,6 +47,16 @@
                                     <outletCollection property="gestureRecognizers" destination="871-U1-0Ze" appends="YES" id="nK7-eB-B8l"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz">
+                                <rect key="frame" x="125" y="125" width="350" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="Ppg-Em-zuJ"/>
+                                    <constraint firstAttribute="height" constant="350" id="rIe-Pc-jy6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="130"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -63,8 +64,8 @@
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BpN-gX-hJG"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LHU-yY-o7G"/>
-                            <constraint firstAttribute="centerX" secondItem="utZ-Mr-Yff" secondAttribute="centerX" constant="-0.75" id="LIK-JA-zEU"/>
-                            <constraint firstAttribute="centerY" secondItem="utZ-Mr-Yff" secondAttribute="centerY" constant="-0.25" id="sjm-GT-xg2"/>
+                            <constraint firstAttribute="centerX" secondItem="VfQ-cK-XTz" secondAttribute="centerX" id="SOT-Jh-zui"/>
+                            <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xr7-NO-HQG"/>
                         </constraints>
                         <connections>
@@ -74,7 +75,7 @@
                     </view>
                     <connections>
                         <outlet property="clockView" destination="qGU-AE-OrB" id="Gik-Lb-C17"/>
-                        <outlet property="timeLabel" destination="utZ-Mr-Yff" id="FTj-BZ-mCv"/>
+                        <outlet property="timeLabel" destination="VfQ-cK-XTz" id="CLv-Dh-gGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

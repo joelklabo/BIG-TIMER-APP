@@ -40,9 +40,7 @@ class ClockView: UIView {
     }
     
     func rotate (timeDelta: Double) {
-        
-        println("\(timeDelta)")
-        
+                
         let angleToAdd = CGFloat((2 * M_PI) * timeDelta)
         let currentAngle = self.layer.valueForKeyPath(zRotationKeyPath) as CGFloat
         let newAngle = currentAngle + angleToAdd

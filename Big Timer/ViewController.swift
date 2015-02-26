@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, TimerUpdateDelegate {
+class ViewController: UIViewController, TimerControllerDelegate {
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: UILabel!
         
-    let timer = Timer()
+    let timerController = TimerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer.delegate = self
+        timerController.delegate = self
     }
     
     @IBAction func verticalPan(sender: AnyObject) {
@@ -27,19 +27,19 @@ class ViewController: UIViewController, TimerUpdateDelegate {
     }
     
     @IBAction func tap(sender: AnyObject) {
-        timer.toggle()
+        timerController.toggleCountingUp()
     }
 
     @IBAction func clear(sender: AnyObject) {
-        timer.reset()
         clockView.reset()
+        timerController.clear()
     }
     
     // Timer Update Delegate
     
-    func tick(time: Time) {
-        clockView.rotate(time)
-        timeLabel.text = "\(time * 1000)"
+    func tick(timeDelta: Time, totalTime: Time) {
+        clockView.rotate(timeDelta)
+        timeLabel.text = TimeFormatter().formatTime(totalTime)
     }
 
 }

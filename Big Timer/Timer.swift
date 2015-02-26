@@ -16,7 +16,7 @@ class Timer: NSObject {
     private var lastTick: Double
     private var timer: CADisplayLink?
     
-    var delegate: TimerUpdateDelegate?
+    var delegate: TimerDelegate?
     
     override init () {
         lastTick = 0
@@ -68,7 +68,6 @@ class Timer: NSObject {
     }
 }
 
-protocol TimerUpdateDelegate {
+protocol TimerDelegate {
     func tick(timeDelta: Time)
 }
-

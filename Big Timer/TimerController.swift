@@ -17,10 +17,11 @@ class TimerController: NSObject, TimerDelegate {
     
     private var countingUp = true
     
-    private var totalTime:Time = 0.0 {
-        didSet(time) {
-            if (time < 0) {
+    private var totalTime:Time = 0 {
+        didSet {
+            if (totalTime < 0) {
                 totalTime = 0
+                delegate?.done()
             }
         }
     }
@@ -30,23 +31,30 @@ class TimerController: NSObject, TimerDelegate {
         timer.delegate = self
     }
     
-    func toggleCountingUp () {
-        countingUp = true
-        timer.toggle()
-    }
-    
-    func toggleCountingDown () {
+    func addTime(time: Time) {
+        timer.pause()
+        totalTime = totalTime + time
+        delegate?.tick(0, totalTime: totalTime)
         countingUp = false
-        timer.toggle()
     }
-    
+
     func clear () {
         totalTime = 0
+        countingUp = true
+        timer.pause()
         delegate?.tick(totalTime, totalTime: totalTime)
     }
     
+    func toggle () {
+        timer.toggle()
+    }
+    
     func tick(timeDelta: Time) {
-        countingUp ? countUp(timeDelta) : countDown(timeDelta)
+        if (countingUp == true) {
+            countUp(timeDelta)
+        } else {
+            countDown(timeDelta)
+        }
         delegate?.tick(timeDelta, totalTime: totalTime)
     }
 
@@ -62,4 +70,5 @@ class TimerController: NSObject, TimerDelegate {
 
 protocol TimerControllerDelegate {
     func tick(timeDelta: Time, totalTime: Time)
+    func done()
 }

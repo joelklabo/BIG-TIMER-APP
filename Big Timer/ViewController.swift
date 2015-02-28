@@ -24,13 +24,18 @@ class ViewController: UIViewController, TimerControllerDelegate {
         let gestureRecognizer = sender as UIPanGestureRecognizer
         let velocity = gestureRecognizer.velocityInView(self.view)
         let time = round(Double(-velocity.y / 400))
+        timerController.addTime(time)
     }
     
     @IBAction func tap(sender: AnyObject) {
-        timerController.toggleCountingUp()
+        timerController.toggle()
     }
 
     @IBAction func clear(sender: AnyObject) {
+        reset()
+    }
+    
+    private func reset () {
         clockView.reset()
         timerController.clear()
     }
@@ -40,6 +45,10 @@ class ViewController: UIViewController, TimerControllerDelegate {
     func tick(timeDelta: Time, totalTime: Time) {
         clockView.rotate(timeDelta)
         timeLabel.text = TimeFormatter().formatTime(totalTime)
+    }
+    
+    func done () {
+        reset()
     }
 
 }

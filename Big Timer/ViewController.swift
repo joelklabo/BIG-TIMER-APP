@@ -12,6 +12,7 @@ class ViewController: UIViewController, TimerControllerDelegate {
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var arrowView: Arrow!
         
     let timerController = TimerController()
     
@@ -35,6 +36,10 @@ class ViewController: UIViewController, TimerControllerDelegate {
         reset()
     }
     
+    @IBAction func arrowTap(sender: AnyObject) {
+        timerController.flipDirection()
+    }
+    
     private func reset () {
         clockView.reset()
         timerController.clear()
@@ -45,6 +50,12 @@ class ViewController: UIViewController, TimerControllerDelegate {
     func tick(timeDelta: Time, totalTime: Time) {
         clockView.rotate(timeDelta)
         timeLabel.text = TimeFormatter().formatTime(totalTime)
+    }
+    
+    func directionChange(direction: TimerDirection) {
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            self.arrowView.transform = CGAffineTransformRotate(self.arrowView.transform, CGFloat(M_PI));
+        })
     }
     
     func done () {

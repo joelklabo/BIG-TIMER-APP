@@ -15,7 +15,13 @@ class TimerController: NSObject, TimerDelegate {
     
     private var timer = Timer()
     
-    private var countingUp = true
+    private var direction: TimerDirection = .Up {
+        didSet {
+            if (oldValue != direction) {                
+                delegate?.directionChange(direction)
+            }
+        }
+    }
     
     private var totalTime:Time = 0 {
         didSet {
@@ -31,17 +37,25 @@ class TimerController: NSObject, TimerDelegate {
         timer.delegate = self
     }
     
+    func flipDirection () {
+        if (direction == .Up) {
+            direction = .Down
+        } else {
+            direction = .Up
+        }
+    }
+    
     func addTime(time: Time) {
         timer.pause()
         totalTime = totalTime + time
+        direction = .Down
         delegate?.tick(0, totalTime: totalTime)
-        countingUp = false
     }
 
     func clear () {
-        totalTime = 0
-        countingUp = true
         timer.pause()
+        totalTime = 0
+        direction = .Up
         delegate?.tick(totalTime, totalTime: totalTime)
     }
     
@@ -50,7 +64,7 @@ class TimerController: NSObject, TimerDelegate {
     }
     
     func tick(timeDelta: Time) {
-        if (countingUp == true) {
+        if (direction == .Up) {
             countUp(timeDelta)
         } else {
             countDown(timeDelta)
@@ -68,7 +82,13 @@ class TimerController: NSObject, TimerDelegate {
     
 }
 
+enum TimerDirection {
+    case Up
+    case Down
+}
+
 protocol TimerControllerDelegate {
     func tick(timeDelta: Time, totalTime: Time)
     func done()
+    func directionChange(direction: TimerDirection)
 }

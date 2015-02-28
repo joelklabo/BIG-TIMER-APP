@@ -57,6 +57,38 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="16" y="530" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
+                                    <constraint firstAttribute="height" constant="50" id="3Ye-Fe-tEg"/>
+                                    <constraint firstAttribute="height" constant="50" id="C1I-9N-9pq"/>
+                                    <constraint firstAttribute="height" constant="30" id="cKq-jh-GWe"/>
+                                    <constraint firstAttribute="width" constant="30" id="pvK-kd-kyj"/>
+                                    <constraint firstAttribute="width" constant="50" id="yfa-Cl-uIC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0k2-4n-LTk"/>
+                                        <exclude reference="3Ye-Fe-tEg"/>
+                                        <exclude reference="cKq-jh-GWe"/>
+                                        <exclude reference="pvK-kd-kyj"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nNt-RL-Xgs" appends="YES" id="Ph4-V9-IDS"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -65,15 +97,30 @@
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LHU-yY-o7G"/>
                             <constraint firstAttribute="centerX" secondItem="VfQ-cK-XTz" secondAttribute="centerX" id="SOT-Jh-zui"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="WR2-Lq-2uK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="23" id="ewI-Xt-ZXf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xr7-NO-HQG"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xwc-6D-pFB"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yfb-cG-BcG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xwc-6D-pFB"/>
+                                <exclude reference="yfb-cG-BcG"/>
+                                <exclude reference="WR2-Lq-2uK"/>
+                                <exclude reference="ewI-Xt-ZXf"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="1QZ-7l-2sJ" appends="YES" id="Gge-4B-Zl2"/>
                             <outletCollection property="gestureRecognizers" destination="8p7-pe-6Jf" appends="YES" id="dhG-Bv-PS2"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="arrowView" destination="kgb-Ki-gRU" id="gTq-2v-RNF"/>
                         <outlet property="clockView" destination="qGU-AE-OrB" id="Gik-Lb-C17"/>
                         <outlet property="timeLabel" destination="VfQ-cK-XTz" id="CLv-Dh-gGV"/>
                     </connections>
@@ -92,6 +139,11 @@
                 <tapGestureRecognizer id="871-U1-0Ze" userLabel="Clear">
                     <connections>
                         <action selector="clear:" destination="BYZ-38-t0r" id="nZC-DB-h4V"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="nNt-RL-Xgs" userLabel="Arrow Tap">
+                    <connections>
+                        <action selector="arrowTap:" destination="BYZ-38-t0r" id="8fQ-uf-cyx"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

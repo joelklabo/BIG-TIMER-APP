@@ -12,6 +12,7 @@
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
 		ED5CD89F1A9E40A00086886B /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89E1A9E40A00086886B /* TimerController.swift */; };
+		ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8A01AA26E600086886B /* Arrow.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
 		EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		ED5CD89C1A9E3AE60086886B /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		ED5CD89E1A9E40A00086886B /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
+		ED5CD8A01AA26E600086886B /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		EDABD9BF1A7A0CD6006CFBA5 = {
 			isa = PBXGroup;
 			children = (
+				ED5CD8A01AA26E600086886B /* Arrow.swift */,
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				EDABD9E01A7A0CD6006CFBA5 /* Big TimerTests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
+				ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,

@@ -18,16 +18,11 @@ class TimeFormatter {
     
     private func buildTimeState(time: Time) -> TimeState {
         
-        var timeState: TimeState
-        
-        let time = round(time)
-        
         let hours = Int(floor(time / 3600))
         let minutes = Int(floor((time / 60) % 60))
         let seconds = Int(time % 60)
         
         return (hours: hours, minutes: minutes, seconds: seconds)
-        
     }
 
     private func buildString(time: TimeState) -> String {

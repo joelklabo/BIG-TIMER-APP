@@ -17,6 +17,8 @@ class Arrow: UIView {
     @IBInspectable var lineColor: UIColor = UIColor.blueColor()
     @IBInspectable var lineWidth: CGFloat = 3.0
     
+    private var arrowDirection: TimerDirection = .Up
+    
     override func drawRect(rect: CGRect) {
         
         lineColor.setStroke()
@@ -39,6 +41,10 @@ class Arrow: UIView {
     }
     
     func changeDirection (direction: TimerDirection) {
+        
+        if (arrowDirection == direction) {
+            return
+        }
         
         if (direction == .Up) {
             self.layer.setValue(0, forKey: zRotationKeyPath)

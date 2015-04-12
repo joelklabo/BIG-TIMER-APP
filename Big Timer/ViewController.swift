@@ -45,14 +45,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     func timerUpdate(timerState: TimerState) {
         clockView.rotate(timerState.timerValue)
         timeLabel.text = TimeFormatter().formatTime(timerState.timerValue)
-        self.directionChange(timerState.direction)
-    }
-
-    func directionChange(direction: TimerDirection) {
-        UIView.animateWithDuration(0.25, animations: {
-            () -> Void in
-            self.arrowView.transform = CGAffineTransformRotate(self.arrowView.transform, CGFloat(M_PI));
-        })
+        arrowView.changeDirection(timerState.direction)
     }
 
 }

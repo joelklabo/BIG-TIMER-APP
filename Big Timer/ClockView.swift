@@ -39,24 +39,10 @@ class ClockView: UIView {
         secondHandPath.stroke()
     }
     
-    func rotate (timeDelta: Double) {
-                
-        let angleToAdd = CGFloat((2 * M_PI) * timeDelta)
-        let currentAngle = self.layer.valueForKeyPath(zRotationKeyPath) as! CGFloat
-        let newAngle = currentAngle + angleToAdd
-        
-        self.layer.setValue(newAngle, forKeyPath: zRotationKeyPath)
-        
-        var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
-        
-        rotateAnimation.duration = timeDelta
-        rotateAnimation.additive = true
-        rotateAnimation.removedOnCompletion = false
-        rotateAnimation.toValue = 0.0
-        rotateAnimation.byValue = angleToAdd
-        rotateAnimation.delegate = self
-        
-        self.layer.addAnimation(rotateAnimation, forKey: "rotation")
+    func rotateToTime (time: NSTimeInterval) {
+        let subSeconds = time % 1
+        let angle = CGFloat((2 * M_PI) * subSeconds)
+        self.transform = CGAffineTransformMakeRotation(angle)
     }
 
     func reset () {

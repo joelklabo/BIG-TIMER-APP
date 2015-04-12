@@ -43,7 +43,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     // Timer Update Delegate
 
     func timerUpdate(timerState: TimerState) {
-        clockView.rotate(timerState.timerValue)
+        clockView.rotateToTime(timerState.timerValue)
         timeLabel.text = TimeFormatter().formatTime(timerState.timerValue)
         arrowView.changeDirection(timerState.direction)
     }

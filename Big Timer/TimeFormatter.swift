@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias TimeState = (hours: Int, minutes: Int, seconds: Int)
+typealias TimeComponents = (hours: Int, minutes: Int, seconds: Int)
 
 class TimeFormatter {
     
@@ -16,7 +16,7 @@ class TimeFormatter {
         return buildString(buildTimeState(time))
     }
     
-    private func buildTimeState(time: Time) -> TimeState {
+    private func buildTimeState(time: Time) -> TimeComponents {
         
         let hours = Int(floor(time / 3600))
         let minutes = Int(floor((time / 60) % 60))
@@ -25,7 +25,7 @@ class TimeFormatter {
         return (hours: hours, minutes: minutes, seconds: seconds)
     }
 
-    private func buildString(time: TimeState) -> String {
+    private func buildString(time: TimeComponents) -> String {
         switch time {
         case (0, 0, _):
             return "\(time.seconds)"

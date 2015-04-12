@@ -11,14 +11,26 @@
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
-		ED5CD89F1A9E40A00086886B /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89E1A9E40A00086886B /* TimerController.swift */; };
 		ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8A01AA26E600086886B /* Arrow.swift */; };
+		ED7EA2C21AC27126008C5237 /* TimerStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateStore.swift */; };
+		ED7EA2C41AC2723C008C5237 /* TimerStateEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C31AC2723B008C5237 /* TimerStateEncoderTest.swift */; };
+		ED7EA2C51AC27655008C5237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
+		ED7EA2C61AC27658008C5237 /* TimerStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateStore.swift */; };
+		ED7EA2C81AC27660008C5237 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8A01AA26E600086886B /* Arrow.swift */; };
+		ED7EA2C91AC2766E008C5237 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
+		ED7EA2CB1AC27676008C5237 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
+		ED7EA2CC1AC27679008C5237 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
+		ED7EA2CD1AC2767B008C5237 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
+		ED7EA2CE1AC2767E008C5237 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
+		ED7EA2D01AC2954E008C5237 /* TimeArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2CF1AC2954E008C5237 /* TimeArchive.swift */; };
+		ED7EA2D11AC2954E008C5237 /* TimeArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2CF1AC2954E008C5237 /* TimeArchive.swift */; };
+		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
+		ED9B668E1ADA04F500888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
 		EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */; };
 		EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */; };
 		EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */; };
-		EDABD9E41A7A0CD6006CFBA5 /* Big_TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9E31A7A0CD6006CFBA5 /* Big_TimerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +48,11 @@
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		ED5CD89C1A9E3AE60086886B /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
-		ED5CD89E1A9E40A00086886B /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		ED5CD8A01AA26E600086886B /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arrow.swift; path = ../Arrow.swift; sourceTree = "<group>"; };
+		ED7EA2C11AC27126008C5237 /* TimerStateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStateStore.swift; sourceTree = "<group>"; };
+		ED7EA2C31AC2723B008C5237 /* TimerStateEncoderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerStateEncoderTest.swift; path = "../Big Timer/TimerStateEncoderTest.swift"; sourceTree = "<group>"; };
+		ED7EA2CF1AC2954E008C5237 /* TimeArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeArchive.swift; path = ../TimeArchive.swift; sourceTree = "<group>"; };
+		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +62,6 @@
 		EDABD9D71A7A0CD6006CFBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EDABD9DD1A7A0CD6006CFBA5 /* Big TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9E21A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDABD9E31A7A0CD6006CFBA5 /* Big_TimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Big_TimerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,14 +103,16 @@
 		EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */ = {
 			isa = PBXGroup;
 			children = (
+				ED7EA2CF1AC2954E008C5237 /* TimeArchive.swift */,
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
+				ED7EA2C11AC27126008C5237 /* TimerStateStore.swift */,
 				ED5CD8A01AA26E600086886B /* Arrow.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
-				ED5CD89E1A9E40A00086886B /* TimerController.swift */,
 				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
 				ED59131C1A97CD790006B20F /* ClockView.swift */,
 				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
 				ED5CD8961A9913D80086886B /* Timer.swift */,
+				ED9B668C1AD8326300888329 /* TimerController.swift */,
 				EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */,
 				EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */,
 				EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */,
@@ -116,7 +132,7 @@
 		EDABD9E01A7A0CD6006CFBA5 /* Big TimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDABD9E31A7A0CD6006CFBA5 /* Big_TimerTests.swift */,
+				ED7EA2C31AC2723B008C5237 /* TimerStateEncoderTest.swift */,
 				EDABD9E11A7A0CD6006CFBA5 /* Supporting Files */,
 			);
 			path = "Big TimerTests";
@@ -233,10 +249,12 @@
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
 				ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */,
+				ED9B668D1AD8326300888329 /* TimerController.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
+				ED7EA2D01AC2954E008C5237 /* TimeArchive.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
+				ED7EA2C21AC27126008C5237 /* TimerStateStore.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
-				ED5CD89F1A9E40A00086886B /* TimerController.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 				ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */,
 			);
@@ -246,7 +264,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDABD9E41A7A0CD6006CFBA5 /* Big_TimerTests.swift in Sources */,
+				ED7EA2C91AC2766E008C5237 /* ViewController.swift in Sources */,
+				ED7EA2D11AC2954E008C5237 /* TimeArchive.swift in Sources */,
+				ED9B668E1ADA04F500888329 /* TimerController.swift in Sources */,
+				ED7EA2CB1AC27676008C5237 /* TimeFormatter.swift in Sources */,
+				ED7EA2C51AC27655008C5237 /* AppDelegate.swift in Sources */,
+				ED7EA2C41AC2723C008C5237 /* TimerStateEncoderTest.swift in Sources */,
+				ED7EA2C81AC27660008C5237 /* Arrow.swift in Sources */,
+				ED7EA2CD1AC2767B008C5237 /* ClearButton.swift in Sources */,
+				ED7EA2CC1AC27679008C5237 /* ClockView.swift in Sources */,
+				ED7EA2CE1AC2767E008C5237 /* Timer.swift in Sources */,
+				ED7EA2C61AC27658008C5237 /* TimerStateStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

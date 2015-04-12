@@ -15,7 +15,7 @@ class Timer: NSObject {
 
     private var lastTick: Double
     private var timer: CADisplayLink?
-    
+
     var delegate: TimerDelegate?
     
     override init () {
@@ -23,16 +23,14 @@ class Timer: NSObject {
     }
     
     func update () {
-        
         if (lastTick == 0) {
             lastTick = CACurrentMediaTime()
             return
         }
-        
         let currentTime = CACurrentMediaTime()
         let elapsedSeconds = currentTime - lastTick
-        delegate?.tick(elapsedSeconds)
         lastTick = currentTime
+        self.delegate?.tick(elapsedSeconds)
     }
     
     func toggle () {
@@ -47,27 +45,28 @@ class Timer: NSObject {
         }
     }
     
-    func start () {
-        timer = CADisplayLink(target: self, selector: Selector("update"))
-        timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-    }
-    
-    func resume () {
+    func clear () {
+        timer?.invalidate()
+        timer = nil
         lastTick = 0
-        timer?.paused = false
     }
     
     func pause () {
         timer?.paused = true
     }
-    
-    func reset () {
-        timer?.invalidate()
-        timer = nil
-        lastTick = 0
+
+    private func start () {
+        timer = CADisplayLink(target: self, selector: Selector("update"))
+        timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
     }
+    
+    private func resume () {
+        lastTick = 0
+        timer?.paused = false
+    }
+    
 }
 
-protocol TimerDelegate {
+@objc protocol TimerDelegate {
     func tick(timeDelta: Time)
 }

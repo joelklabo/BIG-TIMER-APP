@@ -36,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let backgroundDate: NSDate? = userDefaults.valueForKeyPath("someDate") as? NSDate
+        if let backgroundDate = userDefaults.valueForKeyPath("someDate") as? NSDate {
+            let timeSinceBackground = NSDate().timeIntervalSinceDate(backgroundDate)
+            let alertView = UIAlertView(title: "Time since backgrounding the app", message: "\(timeSinceBackground)", delegate: nil, cancelButtonTitle: "")
+            alertView.show()
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

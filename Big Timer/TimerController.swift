@@ -2,7 +2,7 @@
 //  TimerController.swift
 //  Big Timer
 //
-//  Created by Joel Klabo on 2/25/15.
+//  Created by Joel Klabo on 4/10/15.
 //  Copyright (c) 2015 Joel Klabo. All rights reserved.
 //
 
@@ -11,84 +11,67 @@ import QuartzCore
 
 class TimerController: NSObject, TimerDelegate {
     
-    var delegate: TimerControllerDelegate?
-    
-    private var timer = Timer()
-    
-    private var direction: TimerDirection = .Up {
+    private var currentTimerState: TimerState = TimerState.newState(NSDate(), timerValue: 0, direction: .Up) {
         didSet {
-            if (oldValue != direction) {                
-                delegate?.directionChange(direction)
-            }
+            updateSubscribers(currentTimerState)
+            TimerStateArchive().archiveTimerState(currentTimerState)
         }
     }
     
-    private var totalTime:Time = 0 {
-        didSet {
-            if (totalTime < 0) {
-                totalTime = 0
-                delegate?.done()
-            }
-        }
-    }
+    private var subscribers: [TimerManagerDelegate] = Array()
     
-    override init() {
+    private let timer = Timer()
+    
+    override init () {
         super.init()
         timer.delegate = self
-    }
-    
-    func flipDirection () {
-        if (direction == .Up) {
-            direction = .Down
-        } else {
-            direction = .Up
-        }
-    }
-    
-    func addTime(time: Time) {
-        timer.pause()
-        totalTime = totalTime + time
-        direction = .Down
-        delegate?.tick(0, totalTime: totalTime)
-    }
-
-    func clear () {
-        timer.pause()
-        totalTime = 0
-        direction = .Up
-        delegate?.tick(totalTime, totalTime: totalTime)
     }
     
     func toggle () {
         timer.toggle()
     }
     
-    func tick(timeDelta: Time) {
-        if (direction == .Up) {
-            countUp(timeDelta)
-        } else {
-            countDown(timeDelta)
+    func clear () {
+        timer.clear()
+    }
+    
+    func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {
+        self.subscribers.append(subscriber)
+    }
+    
+    // MARK: - Timer Update Notifications
+    
+    private func updateSubscribers(timerState: TimerState) {
+        for subscriber in subscribers {
+            subscriber.timerUpdate(currentTimerState)
         }
-        delegate?.tick(timeDelta, totalTime: totalTime)
-    }
-
-    private func countUp (time: Time) {
-        totalTime = totalTime + time
     }
     
-    private func countDown (time: Time) {
-        totalTime = totalTime - time
+    // MARK: - TimerStateArchiver
+    
+    private func storeTimerState(timerState: TimerState) {
+        TimerStateArchive().archiveTimerState(timerState)
+    }
+    
+    // MARK: - TimerDelegate methods
+    
+    func tick(timeDelta: Time) {
+        
+        let timeStamp = NSDate()
+        let timerDirection = currentTimerState.direction
+        let timerValue: NSTimeInterval
+        
+        if (timerDirection == TimerDirection.Up) {
+            timerValue = currentTimerState.timerValue + timeDelta
+        } else {
+            timerValue = currentTimerState.timerValue - timeDelta
+        }
+        
+        currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: timerDirection)
     }
     
 }
 
-enum TimerDirection {
-    case Up
-    case Down
-}
-
-protocol TimerControllerDelegate {
-    func tick(timeDelta: Time, totalTime: Time)
-    func done()
-    func directionChange(direction: TimerDirection)
+@objc protocol TimerManagerDelegate {
+    func timerUpdate(timerState: TimerState)
 }

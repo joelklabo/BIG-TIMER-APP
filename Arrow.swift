@@ -44,19 +44,22 @@ class Arrow: UIView {
         
         if (arrowDirection == direction) {
             return
+        } else {
+            arrowDirection = direction
         }
         
-        if (direction == .Up) {
-            self.layer.setValue(0, forKey: zRotationKeyPath)
+        if (arrowDirection == .Up) {
+            self.transform = CGAffineTransformMakeRotation(0)
             var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
-            rotateAnimation.duration = 0.1
+            rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = M_PI
             rotateAnimation.toValue = 0
             self.layer.addAnimation(rotateAnimation, forKey: "rotation")
         } else {
             self.layer.setValue(M_PI, forKey: zRotationKeyPath)
+            self.transform = CGAffineTransformMakeRotation(3.14)
             var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
-            rotateAnimation.duration = 0.1
+            rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = 0
             rotateAnimation.toValue = M_PI
             self.layer.addAnimation(rotateAnimation, forKey: "rotation")

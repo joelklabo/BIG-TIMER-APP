@@ -39,6 +39,14 @@ class TimerController: NSObject, TimerDelegate {
         timer.clear()
     }
     
+    func changeTimerDirection () {
+        if (currentTimerState.direction == TimerDirection.Up) {
+            currentTimerState = TimerState.newState(NSDate(), timerValue: currentTimerState.timerValue, direction: TimerDirection.Down)
+        } else {
+            currentTimerState = TimerState.newState(NSDate(), timerValue: currentTimerState.timerValue, direction: TimerDirection.Up)
+        }
+    }
+    
     func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {
         self.subscribers.append(subscriber)
     }

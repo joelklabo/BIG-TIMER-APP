@@ -37,7 +37,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
 
     @IBAction func arrowTap(sender: AnyObject) {
-//        timerController.flipDirection()
+        timerController.changeTimerDirection()
     }
 
     // Timer Update Delegate

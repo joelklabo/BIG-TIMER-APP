@@ -9,6 +9,10 @@
 import Foundation
 import QuartzCore
 
+@objc protocol TimerManagerDelegate {
+    func timerUpdate(timerState: TimerState)
+}
+
 class TimerController: NSObject, TimerDelegate {
     
     private var currentTimerState: TimerState = TimerState.newState(NSDate(), timerValue: 0, direction: .Up) {
@@ -70,8 +74,4 @@ class TimerController: NSObject, TimerDelegate {
         currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: timerDirection)
     }
     
-}
-
-@objc protocol TimerManagerDelegate {
-    func timerUpdate(timerState: TimerState)
 }

@@ -76,7 +76,11 @@ class TimerController: NSObject, TimerDelegate {
         if (timerDirection == TimerDirection.Up) {
             timerValue = currentTimerState.timerValue + timeDelta
         } else {
-            timerValue = currentTimerState.timerValue - timeDelta
+            var newTimerValue = currentTimerState.timerValue - timeDelta
+            if (newTimerValue < 0) {
+                newTimerValue = 0
+            }
+            timerValue = newTimerValue
         }
         
         currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: timerDirection)

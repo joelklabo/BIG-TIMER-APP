@@ -36,10 +36,12 @@ class TimerController: NSObject, TimerDelegate {
     }
     
     func clear () {
+        currentTimerState = TimerState.newState(NSDate(), timerValue: 0, direction: TimerDirection.Up)
         timer.clear()
     }
     
     func modifyTime (time: Time) {
+        timer.pause()
         let newTime = currentTimerState.timerValue + time
         currentTimerState = TimerState.newState(NSDate(), timerValue: newTime, direction: currentTimerState.direction)
     }

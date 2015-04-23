@@ -26,6 +26,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         let velocity = gestureRecognizer.velocityInView(self.view)
         let time = round(Double(-velocity.y / 400))
         timerController.modifyTime(time)
+        timerController.setTimerToDirection(.Down)
     }
 
     @IBAction func tap(sender: AnyObject) {

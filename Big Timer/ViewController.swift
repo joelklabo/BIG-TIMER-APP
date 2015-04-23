@@ -47,5 +47,12 @@ class ViewController: UIViewController, TimerManagerDelegate {
         timeLabel.text = TimeFormatter().formatTime(timerState.timerValue)
         arrowView.changeDirection(timerState.direction)
     }
+    
+    func timerDone () {
+        var alert = UIAlertController(title: "Timer Done", message: "Your timer has finished", preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 
 }

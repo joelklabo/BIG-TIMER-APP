@@ -26,6 +26,7 @@
 		ED7EA2D11AC2954E008C5237 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2CF1AC2954E008C5237 /* TimerState.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		ED9B668E1ADA04F500888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
+		EDA0359F1AE88BCA007A3F6E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
 		EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */; };
@@ -274,6 +275,7 @@
 				ED7EA2CB1AC27676008C5237 /* TimeFormatter.swift in Sources */,
 				ED7EA2C51AC27655008C5237 /* AppDelegate.swift in Sources */,
 				ED7EA2C41AC2723C008C5237 /* TimerStateEncoderTest.swift in Sources */,
+				EDA0359F1AE88BCA007A3F6E /* NotificationController.swift in Sources */,
 				ED7EA2C81AC27660008C5237 /* Arrow.swift in Sources */,
 				ED7EA2CD1AC2767B008C5237 /* ClearButton.swift in Sources */,
 				ED7EA2CC1AC27679008C5237 /* ClockView.swift in Sources */,

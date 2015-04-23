@@ -19,13 +19,11 @@ class NotificationController {
         NotificationController.notifyDone(date)
     }
     
-    class func notifyDone(date: NSDate) {
-        
+    class func notifyDone(onDate: NSDate) {
         var notification = UILocalNotification()
-        notification.alertBody = "Big Timer Done"
-        notification.fireDate = date ?? NSDate()
-        notification.timeZone = NSTimeZone.defaultTimeZone()
-        UIApplication.sharedApplication().scheduledLocalNotifications = [notification]
+        notification.alertBody = "Timer Done"
+        notification.fireDate = onDate
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
 }

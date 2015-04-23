@@ -11,6 +11,7 @@ import QuartzCore
 
 @objc protocol TimerManagerDelegate {
     func timerUpdate(timerState: TimerState)
+    func timerDone()
 }
 
 class TimerController: NSObject, TimerDelegate {
@@ -66,6 +67,12 @@ class TimerController: NSObject, TimerDelegate {
         }
     }
     
+    private func notifySubscribersTimerDone() {
+        for subscriber in subscribers {
+            subscriber.timerDone()
+        }
+    }
+    
     // MARK: - TimerStateArchiver
     
     private func storeTimerState(timerState: TimerState) {
@@ -86,6 +93,8 @@ class TimerController: NSObject, TimerDelegate {
             var newTimerValue = currentTimerState.timerValue - timeDelta
             if (newTimerValue < 0) {
                 newTimerValue = 0
+                clear()
+                notifySubscribersTimerDone()
             }
             timerValue = newTimerValue
         }

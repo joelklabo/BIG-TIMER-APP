@@ -23,7 +23,7 @@ class NotificationController {
         var notification = UILocalNotification()
         notification.alertBody = "Timer Done"
         notification.fireDate = onDate
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        UIApplication.sharedApplication().scheduledLocalNotifications = [notification]
     }
     
 }

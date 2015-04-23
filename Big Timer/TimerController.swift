@@ -18,7 +18,7 @@ class TimerController: NSObject, TimerDelegate {
     private var currentTimerState: TimerState = TimerState.newState(NSDate(), timerValue: 0, direction: .Up) {
         didSet {
             updateSubscribers(currentTimerState)
-            TimerStateArchive().archiveTimerState(currentTimerState)
+            TimerStateArchive.archiveTimerState(currentTimerState)
         }
     }
     
@@ -69,7 +69,7 @@ class TimerController: NSObject, TimerDelegate {
     // MARK: - TimerStateArchiver
     
     private func storeTimerState(timerState: TimerState) {
-        TimerStateArchive().archiveTimerState(timerState)
+        TimerStateArchive.archiveTimerState(timerState)
     }
     
     // MARK: - TimerDelegate methods

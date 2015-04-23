@@ -23,6 +23,7 @@ class NotificationController {
         var notification = UILocalNotification()
         notification.alertBody = "Timer Done"
         notification.fireDate = onDate
+        notification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduledLocalNotifications = [notification]
     }
     

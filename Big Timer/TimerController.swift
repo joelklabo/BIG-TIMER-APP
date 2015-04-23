@@ -18,6 +18,10 @@ class TimerController: NSObject, TimerDelegate {
     
     private var currentTimerState: TimerState = TimerState.newState(NSDate(), timerValue: 0, direction: .Up) {
         didSet {
+            if (currentTimerState.timerValue < 0) {
+                currentTimerState.timerValue = 0
+                currentTimerState.direction = .Up
+            }
             updateSubscribers(currentTimerState)
             TimerStateArchive.archiveTimerState(currentTimerState)
         }
@@ -88,10 +92,9 @@ class TimerController: NSObject, TimerDelegate {
     func tick(timeDelta: Time) {
         
         let timeStamp = NSDate()
-        let timerDirection = currentTimerState.direction
         let timerValue: NSTimeInterval
         
-        if (timerDirection == TimerDirection.Up) {
+        if (currentTimerState.direction == TimerDirection.Up) {
             timerValue = currentTimerState.timerValue + timeDelta
         } else {
             var newTimerValue = currentTimerState.timerValue - timeDelta
@@ -103,7 +106,7 @@ class TimerController: NSObject, TimerDelegate {
             timerValue = newTimerValue
         }
         
-        currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: timerDirection)
+        currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: currentTimerState.direction)
     }
     
 }

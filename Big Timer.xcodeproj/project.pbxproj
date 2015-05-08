@@ -7,23 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2959808B0D38496DAF6B0DA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FBE619F3B4246AA88EA198B /* libPods.a */; };
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
-		ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8A01AA26E600086886B /* Arrow.swift */; };
+		ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
+		ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
+		ED7C93D81AFCB35D009C9AF7 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
+		ED7C93D91AFCB363009C9AF7 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
 		ED7EA2C41AC2723C008C5237 /* TimerStateEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C31AC2723B008C5237 /* TimerStateEncoderTest.swift */; };
 		ED7EA2C51AC27655008C5237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		ED7EA2C61AC27658008C5237 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
-		ED7EA2C81AC27660008C5237 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8A01AA26E600086886B /* Arrow.swift */; };
 		ED7EA2C91AC2766E008C5237 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
 		ED7EA2CB1AC27676008C5237 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED7EA2CC1AC27679008C5237 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED7EA2CD1AC2767B008C5237 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
 		ED7EA2CE1AC2767E008C5237 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
-		ED7EA2D01AC2954E008C5237 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2CF1AC2954E008C5237 /* TimerState.swift */; };
-		ED7EA2D11AC2954E008C5237 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2CF1AC2954E008C5237 /* TimerState.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		ED9B668E1ADA04F500888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDA0359F1AE88BCA007A3F6E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
@@ -46,14 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		8FBE619F3B4246AA88EA198B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		ED5CD89C1A9E3AE60086886B /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
-		ED5CD8A01AA26E600086886B /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arrow.swift; path = ../Arrow.swift; sourceTree = "<group>"; };
+		ED7C93D41AFCB339009C9AF7 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		ED7C93D61AFCB347009C9AF7 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStateArchive.swift; sourceTree = "<group>"; };
 		ED7EA2C31AC2723B008C5237 /* TimerStateEncoderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerStateEncoderTest.swift; path = "../Big Timer/TimerStateEncoderTest.swift"; sourceTree = "<group>"; };
-		ED7EA2CF1AC2954E008C5237 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerState.swift; path = ../TimerState.swift; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2959808B0D38496DAF6B0DA1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C98E2E87487F410CB3A2C6A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FBE619F3B4246AA88EA198B /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED23095E1AF291CB0028D062 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED7C93D41AFCB339009C9AF7 /* Arrow.swift */,
 				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
 				ED59131C1A97CD790006B20F /* ClockView.swift */,
-				ED5CD8A01AA26E600086886B /* Arrow.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -101,6 +113,8 @@
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				EDABD9E01A7A0CD6006CFBA5 /* Big TimerTests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
+				0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */,
+				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,11 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				ED23095E1AF291CB0028D062 /* Views */,
-				ED7EA2CF1AC2954E008C5237 /* TimerState.swift */,
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
 				ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
 				ED5CD8961A9913D80086886B /* Timer.swift */,
+				ED7C93D61AFCB347009C9AF7 /* TimerState.swift */,
 				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
 				EDC830681ADED1B40001D36F /* NotificationController.swift */,
 				ED9B668C1AD8326300888329 /* TimerController.swift */,
@@ -165,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDABD9E71A7A0CD6006CFBA5 /* Build configuration list for PBXNativeTarget "Big Timer" */;
 			buildPhases = (
+				1455E2384F7A46C8BD10E712 /* Check Pods Manifest.lock */,
 				EDABD9C41A7A0CD6006CFBA5 /* Sources */,
 				EDABD9C51A7A0CD6006CFBA5 /* Frameworks */,
 				EDABD9C61A7A0CD6006CFBA5 /* Resources */,
+				AA0739F68F62444AB8C55C08 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,17 +270,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1455E2384F7A46C8BD10E712 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AA0739F68F62444AB8C55C08 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDABD9C41A7A0CD6006CFBA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
-				ED5CD8A11AA26E600086886B /* Arrow.swift in Sources */,
 				ED9B668D1AD8326300888329 /* TimerController.swift in Sources */,
 				EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */,
+				ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
-				ED7EA2D01AC2954E008C5237 /* TimerState.swift in Sources */,
+				ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
@@ -278,13 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7EA2C91AC2766E008C5237 /* ViewController.swift in Sources */,
-				ED7EA2D11AC2954E008C5237 /* TimerState.swift in Sources */,
 				ED9B668E1ADA04F500888329 /* TimerController.swift in Sources */,
 				ED7EA2CB1AC27676008C5237 /* TimeFormatter.swift in Sources */,
 				ED7EA2C51AC27655008C5237 /* AppDelegate.swift in Sources */,
 				ED7EA2C41AC2723C008C5237 /* TimerStateEncoderTest.swift in Sources */,
+				ED7C93D91AFCB363009C9AF7 /* Arrow.swift in Sources */,
+				ED7C93D81AFCB35D009C9AF7 /* TimerState.swift in Sources */,
 				EDA0359F1AE88BCA007A3F6E /* NotificationController.swift in Sources */,
-				ED7EA2C81AC27660008C5237 /* Arrow.swift in Sources */,
 				ED7EA2CD1AC2767B008C5237 /* ClearButton.swift in Sources */,
 				ED7EA2CC1AC27679008C5237 /* ClockView.swift in Sources */,
 				ED7EA2CE1AC2767E008C5237 /* Timer.swift in Sources */,
@@ -403,6 +452,7 @@
 		};
 		EDABD9E81A7A0CD6006CFBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Big Timer/Info.plist";
@@ -413,6 +463,7 @@
 		};
 		EDABD9E91A7A0CD6006CFBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Big Timer/Info.plist";

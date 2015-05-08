@@ -1,0 +1,10 @@
+PODS:
+  - CrittercismSDK (5.2.0)
+
+DEPENDENCIES:
+  - CrittercismSDK
+
+SPEC CHECKSUMS:
+  CrittercismSDK: a8f09d8f1d9fea3bc0714a954a079062c5c9d914
+
+COCOAPODS: 0.33.1

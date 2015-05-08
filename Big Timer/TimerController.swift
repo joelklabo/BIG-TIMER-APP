@@ -16,11 +16,12 @@ import QuartzCore
 
 class TimerController: NSObject, TimerDelegate {
     
-    private var currentTimerState: TimerState = TimerState.newState(NSDate(), timerValue: 0, direction: .Up) {
+    private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState.timerValue = 0
                 currentTimerState.direction = .Up
+                timer.pause()
             }
             updateSubscribers(currentTimerState)
             TimerStateArchive.archiveTimerState(currentTimerState)
@@ -41,7 +42,7 @@ class TimerController: NSObject, TimerDelegate {
     }
     
     func clear () {
-        currentTimerState = TimerState.newState(NSDate(), timerValue: 0, direction: TimerDirection.Up)
+        currentTimerState = TimerState.zeroState()
         timer.clear()
     }
     
@@ -97,13 +98,7 @@ class TimerController: NSObject, TimerDelegate {
         if (currentTimerState.direction == TimerDirection.Up) {
             timerValue = currentTimerState.timerValue + timeDelta
         } else {
-            var newTimerValue = currentTimerState.timerValue - timeDelta
-            if (newTimerValue < 0) {
-                newTimerValue = 0
-                clear()
-                notifySubscribersTimerDone()
-            }
-            timerValue = newTimerValue
+            timerValue = currentTimerState.timerValue - timeDelta
         }
         
         currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue, direction: currentTimerState.direction)

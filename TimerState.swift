@@ -29,6 +29,10 @@ public class TimerState: NSObject, NSCoding {
         return newTimerState
     }
     
+    class func zeroState() -> TimerState {
+        return TimerState.newState(NSDate(), timerValue: 0, direction: .Up)
+    }
+    
     public func encodeWithCoder(coder: NSCoder) {
         coder.encodeObject(self.timeStamp, forKey: "timeStamp")
         coder.encodeObject(self.timerValue, forKey: "timerValue")

@@ -85,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED23095E1AF291CB0028D062 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
+				ED59131C1A97CD790006B20F /* ClockView.swift */,
+				ED5CD8A01AA26E600086886B /* Arrow.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		EDABD9BF1A7A0CD6006CFBA5 = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +116,14 @@
 		EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */ = {
 			isa = PBXGroup;
 			children = (
+				ED23095E1AF291CB0028D062 /* Views */,
 				ED7EA2CF1AC2954E008C5237 /* TimerState.swift */,
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
 				ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */,
-				ED5CD8A01AA26E600086886B /* Arrow.swift */,
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
-				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
-				ED59131C1A97CD790006B20F /* ClockView.swift */,
-				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
-				EDC830681ADED1B40001D36F /* NotificationController.swift */,
 				ED5CD8961A9913D80086886B /* Timer.swift */,
+				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
+				EDC830681ADED1B40001D36F /* NotificationController.swift */,
 				ED9B668C1AD8326300888329 /* TimerController.swift */,
 				EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */,
 				EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */,

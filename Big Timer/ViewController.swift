@@ -15,6 +15,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var arrowView: Arrow!
     
     let timerController = TimerController()
+    let audioController = AudioController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +51,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
     
     func timerDone () {
-        var alert = UIAlertController(title: "Timer Done", message: "Your timer has finished", preferredStyle: UIAlertControllerStyle.Alert)
-        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-        alert.addAction(action)
-        self.presentViewController(alert, animated: true, completion: nil)
+        audioController.playSound()
     }
 
 }

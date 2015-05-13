@@ -50,7 +50,11 @@ class TimerController: NSObject, TimerDelegate {
     func modifyTime (time: Time) {
         timer.pause()
         let newTime = currentTimerState.timerValue + time
-        currentTimerState = TimerState.newState(NSDate(), timerValue: newTime, direction: currentTimerState.direction)
+        if (newTime <= 1) {
+            currentTimerState = TimerState.zeroState()
+        } else {
+            currentTimerState = TimerState.newState(NSDate(), timerValue: newTime, direction: currentTimerState.direction)
+        }
     }
     
     func changeTimerDirection () {

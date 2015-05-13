@@ -22,6 +22,7 @@ class TimerController: NSObject, TimerDelegate {
                 currentTimerState.timerValue = 0
                 currentTimerState.direction = .Up
                 timer.pause()
+                notifySubscribersTimerDone()
             }
             updateSubscribers(currentTimerState)
             TimerStateArchive.archiveTimerState(currentTimerState)

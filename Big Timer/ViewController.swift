@@ -20,6 +20,17 @@ class ViewController: UIViewController, TimerManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         timerController.subscribeToTimerUpdates(self)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "enteringBackground", name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "returningFromBackground", name: UIApplicationWillEnterForegroundNotification, object: nil)
+    }
+    
+    func returningFromBackground () {
+        timerController.returningFromBackground()
+    }
+    
+    func enteringBackground () {
+        timerController.enteringBackground()
     }
 
     @IBAction func verticalPan(sender: AnyObject) {

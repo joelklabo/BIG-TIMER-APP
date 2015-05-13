@@ -54,6 +54,14 @@ class Timer: NSObject {
     func pause () {
         timer?.paused = true
     }
+    
+    func paused () -> Bool {
+        if let timerRef = timer {
+            return timerRef.paused
+        } else {
+            return true
+        }
+    }
 
     private func start () {
         timer = CADisplayLink(target: self, selector: Selector("update"))

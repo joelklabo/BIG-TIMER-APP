@@ -20,7 +20,7 @@ class ClockView: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        let secondHandGap: CGFloat = lineWidth * 4
+        let secondHandGap: CGFloat = lineWidth * 3
         
         // Draw outer circle
         let insetRect = CGRectInset(rect, (lineWidth/2), (lineWidth/2))

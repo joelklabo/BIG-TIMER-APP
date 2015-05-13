@@ -47,8 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6CEA9AF67B746F3AEE00E9F2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8FBE619F3B4246AA88EA198B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0631F28D04CBEFD28E13CF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
@@ -89,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A669AF5B3F8745E3962E6C39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C0631F28D04CBEFD28E13CF /* Pods.debug.xcconfig */,
+				6CEA9AF67B746F3AEE00E9F2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C98E2E87487F410CB3A2C6A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +123,8 @@
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				EDABD9E01A7A0CD6006CFBA5 /* Big TimerTests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
-				0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */,
 				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
+				A669AF5B3F8745E3962E6C39 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,7 +308,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -452,7 +462,7 @@
 		};
 		EDABD9E81A7A0CD6006CFBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */;
+			baseConfigurationReference = 9C0631F28D04CBEFD28E13CF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Big Timer/Info.plist";
@@ -463,7 +473,7 @@
 		};
 		EDABD9E91A7A0CD6006CFBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ADD8EF0CE514A60B3931F2A /* Pods.xcconfig */;
+			baseConfigurationReference = 6CEA9AF67B746F3AEE00E9F2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Big Timer/Info.plist";

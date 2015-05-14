@@ -13,10 +13,13 @@ class AudioController {
     
     var player: AVAudioPlayer = AVAudioPlayer()
     
-    func playSound () {
+    init () {        
         var path = NSBundle.mainBundle().pathForResource("zarvox", ofType: "aiff")
         player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!), error: nil)
         player.prepareToPlay()
+    }
+    
+    func playSound () {
         player.play()
     }
 }

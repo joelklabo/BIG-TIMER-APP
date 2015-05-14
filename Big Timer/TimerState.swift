@@ -20,12 +20,12 @@ public class TimerState: NSObject, NSCoding {
         self.timeStamp = decoder.decodeObjectForKey("timeStamp") as! NSDate?
         self.timerValue = decoder.decodeObjectForKey("timerValue") as! CFTimeInterval?
         self.direction = TimerDirection(rawValue:decoder.decodeObjectForKey("direction") as! TimerDirection.RawValue)
-        self.isRunning = false
+        self.isRunning = decoder.decodeObjectForKey("isRunning") as! Bool
     }
     
-    class func newState(timeStamp: NSDate, timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
+    class func newState(timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
         var newTimerState = TimerState()
-        newTimerState.timeStamp = timeStamp
+        newTimerState.timeStamp = NSDate()
         newTimerState.timerValue = timerValue
         newTimerState.direction = direction
         newTimerState.isRunning = isRunning
@@ -33,7 +33,7 @@ public class TimerState: NSObject, NSCoding {
     }
     
     class func zeroState() -> TimerState {
-        return TimerState.newState(NSDate(), timerValue: 0, direction: .Up, isRunning: false)
+        return TimerState.newState(0, direction: .Up, isRunning: false)
     }
     
     public func encodeWithCoder(coder: NSCoder) {

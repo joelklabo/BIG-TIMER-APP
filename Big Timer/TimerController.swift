@@ -31,7 +31,7 @@ class TimerController: NSObject, TimerDelegate {
     private var subscribers: [TimerManagerDelegate] = Array()
     
     private let timer = Timer()
-        
+    
     override init () {
         super.init()
         timer.delegate = self
@@ -52,77 +52,70 @@ class TimerController: NSObject, TimerDelegate {
         if (newTime <= 1) {
             currentTimerState = TimerState.zeroState()
         } else {
-            currentTimerState = TimerState.newState(NSDate(), timerValue: newTime,
-                                                               direction: currentTimerState.direction,
-                                                               isRunning: !timer.isPaused())
+            currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: !timer.isPaused())
         }
     }
     
     func changeTimerDirection () {
         if (currentTimerState.direction == TimerDirection.Up) {
-            currentTimerState = TimerState.newState(NSDate(), timerValue: currentTimerState.timerValue,
-                                                               direction: TimerDirection.Down,
-                                                               isRunning: !timer.isPaused())
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Down, isRunning: !timer.isPaused())
         } else {
-            currentTimerState = TimerState.newState(NSDate(), timerValue: currentTimerState.timerValue,
-                                                               direction: TimerDirection.Up,
-                                                               isRunning: !timer.isPaused())
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Up, isRunning: !timer.isPaused())
         }
     }
     
     func setTimerToDirection(direction: TimerDirection) {
-        currentTimerState = TimerState.newState(NSDate(), timerValue: currentTimerState.timerValue,
-                                                           direction: direction,
-                                                           isRunning: !timer.isPaused())
+        currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: direction, isRunning: !timer.isPaused())
     }
     
     // MARK: Timer Lifecycle
     func returningFromBackground () {
         
-        if let timerStateArchive = TimerStateArchive.retrieveTimerState() {
+        if let archive = TimerStateArchive.retrieveTimerState() {
             
-            if (timerStateArchive.timerValue == 0) {
-                currentTimerState = TimerState.zeroState()
+            if (archive.isRunning != true) {
+                currentTimerState = TimerState.newState(archive.timerValue, direction: archive.direction, isRunning: archive.isRunning)
                 return
             }
             
-            // How long has it been since the app was backgrounded
-            let backgroundDate = timerStateArchive.timeStamp!
-            let timeSinceBackground = NSDate().timeIntervalSinceDate(backgroundDate)
+            let timerValue = archive.timerValue!
+            let timeSinceBackground = NSDate().timeIntervalSinceDate(archive.timeStamp!)
+            let timeLeftOnTimer = updatedTimerValue(timerValue, timeDelta: timeSinceBackground, direction: archive.direction)
             
-            // What should the new value of the timer be
-            let timerValue = timerStateArchive.timerValue!
-            
-            var timeLeftOnTimer: NSTimeInterval
-            
-            if (timerStateArchive.direction == .Up) {
-                timeLeftOnTimer = timerValue + timeSinceBackground
-            } else {
-                timeLeftOnTimer = timerValue - timeSinceBackground
-            }
-            
-            // Is there any time left?
-            if (timeLeftOnTimer > 0) {
-                currentTimerState = TimerState.newState(NSDate(), timerValue: timeLeftOnTimer,
-                                                                   direction: timerStateArchive.direction,
-                                                                   isRunning: !timer.isPaused())
-            } else {
-                currentTimerState = TimerState.zeroState()
-            }
+            currentTimerState = TimerState.newState(timeLeftOnTimer, direction: archive.direction, isRunning: archive.isRunning)
             
         } else {
             currentTimerState = TimerState.zeroState()
         }
         
+        if (currentTimerState.isRunning == true) {
+            timer.startTimer()
+        }
+        
     }
     
     func enteringBackground () {
-        TimerStateArchive.archiveTimerState(currentTimerState)
         timer.pauseTimer()
+        TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: !timer.isPaused()))
     }
     
     func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {
         self.subscribers.append(subscriber)
+    }
+    
+    // MARK: - Private Helper Functions
+    
+    private func updatedTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
+        
+        var newTimerValue: CFTimeInterval
+        
+        if (direction == .Up) {
+            newTimerValue = timerValue + timeDelta
+        } else {
+            newTimerValue = timerValue - timeDelta
+        }
+        
+        return newTimerValue
     }
     
     // MARK: - Timer Update Notifications
@@ -149,18 +142,9 @@ class TimerController: NSObject, TimerDelegate {
     
     func tick(timeDelta: CFTimeInterval) {
         
-        let timeStamp = NSDate()
-        let timerValue: CFTimeInterval
-        
-        if (currentTimerState.direction == TimerDirection.Up) {
-            timerValue = currentTimerState.timerValue + timeDelta
-        } else {
-            timerValue = currentTimerState.timerValue - timeDelta
-        }
-        
-        currentTimerState = TimerState.newState(timeStamp, timerValue: timerValue,
-                                                            direction: currentTimerState.direction,
-                                                            isRunning: !timer.isPaused())
+        let timerValue = updatedTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
+
+        currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: !timer.isPaused())
     }
     
 }

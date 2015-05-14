@@ -58,6 +58,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
         timerController.changeTimerDirection()
     }
 
+    @IBAction func settingsTap(sender: AnyObject) {
+        println("tapped settings")
+    }
     // Timer Update Delegate
 
     func timerUpdate(timerState: TimerState) {

@@ -11,32 +11,36 @@ import Foundation
 public class TimerState: NSObject, NSCoding {
     
     var timeStamp: NSDate!
-    var timerValue: NSTimeInterval!
+    var timerValue: CFTimeInterval!
     var direction: TimerDirection!
+    var isRunning: Bool!
     
     required convenience public init(coder decoder: NSCoder) {
         self.init()
         self.timeStamp = decoder.decodeObjectForKey("timeStamp") as! NSDate?
-        self.timerValue = decoder.decodeObjectForKey("timerValue") as! NSTimeInterval?
+        self.timerValue = decoder.decodeObjectForKey("timerValue") as! CFTimeInterval?
         self.direction = TimerDirection(rawValue:decoder.decodeObjectForKey("direction") as! TimerDirection.RawValue)
+        self.isRunning = false
     }
     
-    class func newState(timeStamp: NSDate, timerValue: NSTimeInterval, direction: TimerDirection) -> TimerState {
+    class func newState(timeStamp: NSDate, timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
         var newTimerState = TimerState()
         newTimerState.timeStamp = timeStamp
         newTimerState.timerValue = timerValue
         newTimerState.direction = direction
+        newTimerState.isRunning = isRunning
         return newTimerState
     }
     
     class func zeroState() -> TimerState {
-        return TimerState.newState(NSDate(), timerValue: 0, direction: .Up)
+        return TimerState.newState(NSDate(), timerValue: 0, direction: .Up, isRunning: false)
     }
     
     public func encodeWithCoder(coder: NSCoder) {
         coder.encodeObject(self.timeStamp, forKey: "timeStamp")
         coder.encodeObject(self.timerValue, forKey: "timerValue")
         coder.encodeObject(self.direction.rawValue, forKey: "direction")
+        coder.encodeObject(self.isRunning, forKey: "isRunning")
     }
     
     override public func isEqual(object: AnyObject?) -> Bool {
@@ -44,7 +48,8 @@ public class TimerState: NSObject, NSCoding {
             let timeState = object as! TimerState
             if (timeState.timeStamp == self.timeStamp
             &&  timeState.timerValue == self.timerValue
-            &&  timeState.direction == self.direction) {
+            &&  timeState.direction == self.direction
+            &&  timeState.isRunning == self.isRunning) {
                 return true
             } else {
                 return false
@@ -60,4 +65,3 @@ enum TimerDirection : String {
     case Up = "up"
     case Down = "down"
 }
-

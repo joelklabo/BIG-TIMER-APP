@@ -25,7 +25,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "returningFromBackground", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
-    deinit () {
+    deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     

@@ -9,72 +9,58 @@
 import Foundation
 import QuartzCore
 
-typealias Time = Double
-
 class Timer: NSObject {
 
-    private var lastTick: Double
-    private var timer: CADisplayLink?
+    private var timer: CADisplayLink = CADisplayLink()
 
     var delegate: TimerDelegate?
+    var frameTimestamp: CFTimeInterval = 0
     
     override init () {
-        lastTick = 0
+        super.init()
+        timer = CADisplayLink(target: self, selector: Selector("update"))
+        timer.paused = true
+        timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
     }
     
     func update () {
-        if (lastTick == 0) {
-            lastTick = CACurrentMediaTime()
+        
+        let currentTime = timer.timestamp
+        
+        if (frameTimestamp == 0) {
+            frameTimestamp = currentTime
             return
         }
-        let currentTime = CACurrentMediaTime()
-        let elapsedSeconds = currentTime - lastTick
-        lastTick = currentTime
-        self.delegate?.tick(elapsedSeconds)
+        
+        let renderTime = currentTime - frameTimestamp
+        frameTimestamp = currentTime
+        
+        self.delegate?.tick(renderTime)
+    }
+    
+    func pauseTimer () {
+        timer.paused = true
+        frameTimestamp = 0
+    }
+    
+    func startTimer () {
+        timer.paused = false
+    }
+    
+    func isPaused () -> Bool {
+        return timer.paused
     }
     
     func toggle () {
-        if let paused = timer?.paused {
-            if (paused) {
-                resume()
-            } else {
-                pause()
-            }
-        } else {
-            start()
-        }
+        timer.paused = timer.paused ? false : true
     }
     
-    func clear () {
-        timer?.invalidate()
-        timer = nil
-        lastTick = 0
-    }
-    
-    func pause () {
-        timer?.paused = true
-    }
-    
-    func paused () -> Bool {
-        if let timerRef = timer {
-            return timerRef.paused
-        } else {
-            return true
-        }
-    }
-
-    private func start () {
-        timer = CADisplayLink(target: self, selector: Selector("update"))
-        timer?.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-    }
-    
-    private func resume () {
-        lastTick = 0
-        timer?.paused = false
+    func resumeWithState (timerState: TimerState) {
+        timer.paused = !timerState.isRunning
     }
     
 }
 
 @objc protocol TimerDelegate {
-    func tick(timeDelta: Time)
+    func tick(timeDelta: CFTimeInterval)
 }

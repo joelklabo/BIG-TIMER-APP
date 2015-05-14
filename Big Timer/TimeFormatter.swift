@@ -12,11 +12,11 @@ typealias TimeComponents = (hours: Int, minutes: Int, seconds: Int)
 
 class TimeFormatter {
     
-    func formatTime (time: Time) -> String {
+    func formatTime (time: CFTimeInterval) -> String {
         return buildString(buildTimeState(time))
     }
     
-    private func buildTimeState(time: Time) -> TimeComponents {
+    private func buildTimeState(time: CFTimeInterval) -> TimeComponents {
         
         let hours = Int(floor(time / 3600))
         let minutes = Int(floor((time / 60) % 60))

@@ -95,8 +95,8 @@ class TimerController: NSObject, TimerDelegate {
     }
     
     func enteringBackground () {
-        timer.pauseTimer()
         TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: !timer.isPaused()))
+        timer.pauseTimer()
     }
     
     func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {

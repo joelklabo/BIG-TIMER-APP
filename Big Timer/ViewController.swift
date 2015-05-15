@@ -59,7 +59,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
 
     @IBAction func settingsTap(sender: AnyObject) {
-        println("tapped settings")
+        var settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
+        settingsNavigationController.modalTransitionStyle = .CrossDissolve
+        self.presentViewController(settingsNavigationController, animated: true, completion: nil)
     }
     // Timer Update Delegate
 

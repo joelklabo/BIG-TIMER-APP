@@ -10,16 +10,25 @@ import Foundation
 import AVFoundation
 
 class AudioController {
-    
-    var player: AVAudioPlayer = AVAudioPlayer()
+        
+    private var player: AVAudioPlayer = AVAudioPlayer()
     
     init () {        
-        var path = NSBundle.mainBundle().pathForResource("zarvox", ofType: "aiff")
-        player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!), error: nil)
-        player.prepareToPlay()
+        preparePlayerWith(AlertSound.getPreference())
+    }
+    
+    init (alertSound: AlertSound) {
+        preparePlayerWith(alertSound)
     }
     
     func playSound () {
         player.play()
     }
+    
+    private func preparePlayerWith(alertSound: AlertSound) {
+        var path = NSBundle.mainBundle().pathForResource(alertSound.rawValue, ofType: "aiff")
+        player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!), error: nil)
+        player.prepareToPlay()
+    }
+    
 }

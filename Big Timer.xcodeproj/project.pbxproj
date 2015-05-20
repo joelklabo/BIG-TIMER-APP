@@ -16,6 +16,10 @@
 		ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
 		ED7C11DB1B055E7D00318343 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */; };
 		ED7C11DC1B055E7D00318343 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */; };
+		ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
+		ED7C11E11B05EAA000318343 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
+		ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED7C11E21B05EFEE00318343 /* hysterical.aiff */; };
+		ED7C11E41B05EFEE00318343 /* hysterical.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED7C11E21B05EFEE00318343 /* hysterical.aiff */; };
 		ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
 		ED7C93D81AFCB35D009C9AF7 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
@@ -38,6 +42,12 @@
 		EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */; };
 		EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */; };
 		EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
+		EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
+		EDE970941B0D41B300F3755F /* bells.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708F1B0D41B300F3755F /* bells.aiff */; };
+		EDE970951B0D41B300F3755F /* boing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970901B0D41B300F3755F /* boing.aiff */; };
+		EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970911B0D41B300F3755F /* bubbles.aiff */; };
+		EDE970971B0D41B300F3755F /* cellos.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970921B0D41B300F3755F /* cellos.aiff */; };
+		EDE970981B0D41B300F3755F /* deranged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970931B0D41B300F3755F /* deranged.aiff */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,8 @@
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		ED5CD89C1A9E3AE60086886B /* ClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ED7C11DF1B05EAA000318343 /* AlertSound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertSound.swift; sourceTree = "<group>"; };
+		ED7C11E21B05EFEE00318343 /* hysterical.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = hysterical.aiff; sourceTree = "<group>"; };
 		ED7C93D41AFCB339009C9AF7 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
 		ED7C93D61AFCB347009C9AF7 /* TimerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 		ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStateArchive.swift; sourceTree = "<group>"; };
@@ -73,6 +85,12 @@
 		EDABD9DD1A7A0CD6006CFBA5 /* Big TimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big TimerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9E21A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDC830681ADED1B40001D36F /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		EDE9708D1B0D403700F3755F /* trinoids.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = trinoids.aiff; sourceTree = "<group>"; };
+		EDE9708F1B0D41B300F3755F /* bells.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = bells.aiff; sourceTree = "<group>"; };
+		EDE970901B0D41B300F3755F /* boing.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = boing.aiff; sourceTree = "<group>"; };
+		EDE970911B0D41B300F3755F /* bubbles.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = bubbles.aiff; sourceTree = "<group>"; };
+		EDE970921B0D41B300F3755F /* cellos.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = cellos.aiff; sourceTree = "<group>"; };
+		EDE970931B0D41B300F3755F /* deranged.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = deranged.aiff; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +131,13 @@
 		ED52FC411B02EB8900A9910D /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				EDE9708D1B0D403700F3755F /* trinoids.aiff */,
+				EDE9708F1B0D41B300F3755F /* bells.aiff */,
+				EDE970901B0D41B300F3755F /* boing.aiff */,
+				EDE970911B0D41B300F3755F /* bubbles.aiff */,
+				EDE970921B0D41B300F3755F /* cellos.aiff */,
+				EDE970931B0D41B300F3755F /* deranged.aiff */,
+				ED7C11E21B05EFEE00318343 /* hysterical.aiff */,
 				ED52FC421B02EC6100A9910D /* zarvox.aiff */,
 			);
 			name = Sounds;
@@ -131,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				ED7C93D61AFCB347009C9AF7 /* TimerState.swift */,
+				ED7C11DF1B05EAA000318343 /* AlertSound.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,9 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */,
+				EDE970971B0D41B300F3755F /* cellos.aiff in Resources */,
 				ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */,
+				ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */,
+				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
 				EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */,
+				EDE970981B0D41B300F3755F /* deranged.aiff in Resources */,
 				EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */,
+				EDE970951B0D41B300F3755F /* boing.aiff in Resources */,
+				EDE970941B0D41B300F3755F /* bells.aiff in Resources */,
+				EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7C11E41B05EFEE00318343 /* hysterical.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +346,7 @@
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
+				ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 				ED7C11DB1B055E7D00318343 /* SettingsViewController.swift in Sources */,
 				ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */,
@@ -337,6 +372,7 @@
 				ED7EA2CE1AC2767E008C5237 /* Timer.swift in Sources */,
 				ED52FC441B02ED0600A9910D /* AudioController.swift in Sources */,
 				ED7EA2C61AC27658008C5237 /* TimerStateArchive.swift in Sources */,
+				ED7C11E11B05EAA000318343 /* AlertSound.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

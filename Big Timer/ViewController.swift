@@ -15,7 +15,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var arrowView: Arrow!
     
     let timerController = TimerController()
-    let audioController = AudioController()
+    var audioController = AudioController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +72,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
     
     func timerDone () {
+        audioController = AudioController(alertSound: AlertSound.getPreference())
         audioController.playSound()
     }
 

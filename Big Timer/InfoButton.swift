@@ -22,8 +22,10 @@ class InfoButton: UIView {
         let dotGap: CGFloat = lineWidth * 4
         
         // Draw outer circle
-        let insetRect = CGRectInset(rect, (lineWidth/2), (lineWidth/2))
-        var path = UIBezierPath(ovalInRect: insetRect)
+        let insetRect = CGRectInset(rect, 30, 30)
+        let offsetRect = CGRectOffset(insetRect, 30 - (lineWidth/2), 30 - (lineWidth/2))
+        var rect = offsetRect
+        var path = UIBezierPath(ovalInRect: rect)
         path.lineWidth = lineWidth
         lineColor.setStroke()
         path.stroke()

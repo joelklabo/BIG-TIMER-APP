@@ -14,6 +14,7 @@ class SettingsViewController: UITableViewController, UITableViewDataSource, UITa
     
     init() {
         super.init(style: UITableViewStyle.Grouped)
+        self.title = "Settings"
     }
     
     required init(coder aDecoder: NSCoder!) {

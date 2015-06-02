@@ -39,11 +39,36 @@ class ViewController: UIViewController, TimerManagerDelegate {
 
     @IBAction func verticalPan(sender: AnyObject) {
         let gestureRecognizer = sender as! UIPanGestureRecognizer
-        let velocity = gestureRecognizer.velocityInView(self.view)
-        let time = round(Double(-velocity.y / 250))
+        let velocity = -gestureRecognizer.velocityInView(self.view).y
+        let translation = -gestureRecognizer.translationInView(self.view).y
         
         timerController.setTimerToDirection(.Down)
-        timerController.modifyTime(time)
+        timerController.modifyTime(timeDeltaFrom(velocity, translation: translation))
+    }
+    
+    private func timeDeltaFrom(velocity: CGFloat, translation: CGFloat) -> CFTimeInterval {
+        var velocityMultiplier = abs(velocity / 600)
+        var modifiedTranslation = translation
+        if (translation > 0) {
+            // Positive translation
+            if (translation < 1) {
+                // It's between zero and one, bump it up to one
+                modifiedTranslation = 1
+                velocityMultiplier = velocityMultiplier * 100
+            }
+        } else {
+            // Negative translation
+            if (translation > -1) {
+                // It's between negative one and zero, move it to negative one
+                modifiedTranslation = -1
+            }
+        }
+        // If both values are less than zero fake a 1 so we can get off the ground
+        let product = modifiedTranslation * velocityMultiplier
+        println("velocity multiplier: \(velocityMultiplier)")
+        println("translation: \(modifiedTranslation)")
+        println("product: \(product)")
+        return CFTimeInterval(product)
     }
 
     @IBAction func tap(sender: AnyObject) {
@@ -63,6 +88,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         settingsNavigationController.modalTransitionStyle = .CrossDissolve
         self.presentViewController(settingsNavigationController, animated: true, completion: nil)
     }
+    
     // Timer Update Delegate
 
     func timerUpdate(timerState: TimerState) {

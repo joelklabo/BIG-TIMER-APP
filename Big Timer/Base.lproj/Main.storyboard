@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,39 +22,53 @@
                                 <rect key="frame" x="16" y="35" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
+                                    <constraint firstAttribute="width" constant="50" id="IYl-rs-Boz"/>
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
+                                    <constraint firstAttribute="height" constant="50" id="flw-80-IZc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5mM-aE-LCg"/>
+                                        <exclude reference="HWa-42-h61"/>
+                                        <exclude reference="Qjn-ye-c8q"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="544" y="35" width="40" height="40"/>
+                                <rect key="frame" x="484" y="35" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
                                     <constraint firstAttribute="width" constant="40" id="Dtx-k7-KUK"/>
+                                    <constraint firstAttribute="height" constant="100" id="EjT-hE-8Z0"/>
                                     <constraint firstAttribute="height" constant="40" id="dZb-BW-Lqh"/>
                                     <constraint firstAttribute="width" constant="50" id="fje-1F-3tW"/>
+                                    <constraint firstAttribute="width" constant="100" id="oD3-4J-LUt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.29019607843137257" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="16X-iS-a4y"/>
+                                        <exclude reference="Dtx-k7-KUK"/>
+                                        <exclude reference="dZb-BW-Lqh"/>
                                         <exclude reference="fje-1F-3tW"/>
                                     </mask>
                                 </variation>
@@ -72,33 +87,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="540" width="40" height="40"/>
+                                <rect key="frame" x="534" y="530" width="50" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
+                                    <constraint firstAttribute="width" constant="50" id="1Zb-1q-hri"/>
                                     <constraint firstAttribute="height" constant="50" id="3Ye-Fe-tEg"/>
                                     <constraint firstAttribute="height" constant="50" id="C1I-9N-9pq"/>
+                                    <constraint firstAttribute="height" constant="50" id="OHs-Hm-UKn"/>
+                                    <constraint firstAttribute="width" constant="100" id="Urq-xu-UFm"/>
                                     <constraint firstAttribute="width" constant="40" id="XqE-6d-POh"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZJt-eZ-U5D"/>
                                     <constraint firstAttribute="height" constant="30" id="cKq-jh-GWe"/>
                                     <constraint firstAttribute="height" constant="40" id="eRH-nf-9Fv"/>
+                                    <constraint firstAttribute="height" constant="100" id="flC-IO-kEa"/>
+                                    <constraint firstAttribute="height" constant="50" id="hMv-t7-QAM"/>
                                     <constraint firstAttribute="width" constant="30" id="pvK-kd-kyj"/>
                                     <constraint firstAttribute="width" constant="50" id="yfa-Cl-uIC"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="0k2-4n-LTk"/>
+                                        <exclude reference="1Zb-1q-hri"/>
                                         <exclude reference="3Ye-Fe-tEg"/>
                                         <exclude reference="C1I-9N-9pq"/>
+                                        <exclude reference="Urq-xu-UFm"/>
+                                        <exclude reference="XqE-6d-POh"/>
                                         <exclude reference="cKq-jh-GWe"/>
+                                        <exclude reference="eRH-nf-9Fv"/>
+                                        <exclude reference="flC-IO-kEa"/>
+                                        <exclude reference="hMv-t7-QAM"/>
                                         <exclude reference="pvK-kd-kyj"/>
                                         <exclude reference="yfa-Cl-uIC"/>
                                     </mask>
@@ -108,8 +135,8 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="484" y="480" width="100" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="16" y="480" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -117,14 +144,15 @@
                                     <constraint firstAttribute="width" constant="40" id="ZcA-ai-ZbI"/>
                                     <constraint firstAttribute="height" constant="40" id="fON-hQ-FGQ"/>
                                     <constraint firstAttribute="width" constant="50" id="hdV-k8-5Yt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="iaE-bR-l04"/>
                                     <constraint firstAttribute="width" constant="100" id="iua-q8-cPf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="4"/>
+                                        <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -144,21 +172,32 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="1Wr-RG-gtg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="51L-jq-QVO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="5aP-ss-ENV"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="81q-kP-kua"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="8ej-V6-KML"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="AHz-OE-MgT"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BOe-oP-r0b"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BpN-gX-hJG"/>
+                            <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="DZ9-YD-eK0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="Fcg-bA-bcp"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Ipg-PB-DO0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="KW7-Av-V1d"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LHU-yY-o7G"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qj0-YD-kTB"/>
                             <constraint firstAttribute="centerX" secondItem="VfQ-cK-XTz" secondAttribute="centerX" id="SOT-Jh-zui"/>
+                            <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Skn-4y-bOo"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="U0a-0b-mve"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="V4N-bf-e6R"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="WR2-Lq-2uK"/>
+                            <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Xr5-fv-vlt"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aVZ-ke-Gao"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cZ2-pA-su8"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cxj-gy-NOG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="d0V-26-bIS"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dwb-Xw-l1T"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="23" id="ewI-Xt-ZXf"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fOB-Ny-p2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
@@ -167,29 +206,42 @@
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q4E-dQ-HwR"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
+                            <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xgK-Nx-9dD"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xr7-NO-HQG"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xwc-6D-pFB"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yfb-cG-BcG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="owu-ac-Xzs"/>
-                                <exclude reference="xwc-6D-pFB"/>
-                                <exclude reference="yfb-cG-BcG"/>
+                                <exclude reference="LHU-yY-o7G"/>
+                                <exclude reference="xr7-NO-HQG"/>
+                                <exclude reference="81q-kP-kua"/>
+                                <exclude reference="V4N-bf-e6R"/>
+                                <exclude reference="aVZ-ke-Gao"/>
+                                <exclude reference="fOB-Ny-p2g"/>
+                                <exclude reference="q4E-dQ-HwR"/>
                                 <exclude reference="0Ae-HC-NOM"/>
                                 <exclude reference="BpN-gX-hJG"/>
                                 <exclude reference="KwV-25-iEQ"/>
                                 <exclude reference="U0a-0b-mve"/>
+                                <exclude reference="cxj-gy-NOG"/>
+                                <exclude reference="hXH-D0-Yhj"/>
+                                <exclude reference="1Wr-RG-gtg"/>
+                                <exclude reference="51L-jq-QVO"/>
                                 <exclude reference="5aP-ss-ENV"/>
+                                <exclude reference="8ej-V6-KML"/>
                                 <exclude reference="AHz-OE-MgT"/>
+                                <exclude reference="KW7-Av-V1d"/>
                                 <exclude reference="WR2-Lq-2uK"/>
                                 <exclude reference="ewI-Xt-ZXf"/>
                                 <exclude reference="fcB-PG-TjH"/>
                                 <exclude reference="lxi-Ui-MlU"/>
-                                <exclude reference="81q-kP-kua"/>
-                                <exclude reference="aVZ-ke-Gao"/>
-                                <exclude reference="fOB-Ny-p2g"/>
-                                <exclude reference="q4E-dQ-HwR"/>
+                                <exclude reference="Qj0-YD-kTB"/>
+                                <exclude reference="Skn-4y-bOo"/>
+                                <exclude reference="cZ2-pA-su8"/>
+                                <exclude reference="owu-ac-Xzs"/>
+                                <exclude reference="xwc-6D-pFB"/>
+                                <exclude reference="yfb-cG-BcG"/>
                             </mask>
                         </variation>
                         <connections>

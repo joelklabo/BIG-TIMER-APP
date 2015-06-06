@@ -17,14 +17,24 @@ class ClearButton: UIView {
     
     override func drawRect(rect: CGRect) {
         
-        let insetRect = CGRectInset(rect, (lineWidth * 2), (lineWidth * 2))
+        let insetRect = CGRectInset(rect, 25, 25)
+        let offsetRect = CGRectOffset(insetRect, 25 - lineWidth, -25 + lineWidth)
+        var rect = offsetRect
+  
+//        var circlePath = UIBezierPath(ovalInRect: rect)
+//        circlePath.lineWidth = lineWidth
+//        lineColor.setStroke()
+//        circlePath.stroke()
+        
         var path = UIBezierPath()
         
-        path.moveToPoint(CGPoint(x: CGRectGetMinX(insetRect), y: CGRectGetMinY(insetRect)))
-        path.addLineToPoint(CGPoint(x: CGRectGetMaxX(insetRect), y: CGRectGetMaxX(insetRect)))
+        rect = CGRectInset(rect, 6, 6)
         
-        path.moveToPoint(CGPoint(x: CGRectGetMaxX(insetRect), y: CGRectGetMinY(insetRect)))
-        path.addLineToPoint(CGPoint(x: CGRectGetMinX(insetRect), y: CGRectGetMaxY(insetRect)))
+        path.moveToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMinY(rect)))
+        path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect)))
+        
+        path.moveToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMinY(rect)))
+        path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMaxY(rect)))
         
         path.lineWidth = lineWidth
         path.lineCapStyle = kCGLineCapRound

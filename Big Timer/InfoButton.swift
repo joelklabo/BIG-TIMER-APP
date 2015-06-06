@@ -38,7 +38,7 @@ class InfoButton: UIView {
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 4)))
         
-        secondHandPath.lineWidth = lineWidth
+        secondHandPath.lineWidth = 3.5
         secondHandPath.lineCapStyle = kCGLineCapRound
         secondHandPath.stroke()
         
@@ -48,7 +48,7 @@ class InfoButton: UIView {
         dotPoint.moveToPoint(dotPosition)
         dotPoint.addLineToPoint(dotPosition)
         
-        dotPoint.lineWidth = lineWidth
+        dotPoint.lineWidth = 3.5
         dotPoint.lineCapStyle = kCGLineCapRound
         dotPoint.stroke()
         

@@ -26,7 +26,7 @@ class ClearButton: UIView {
 //        lineColor.setStroke()
 //        circlePath.stroke()
         
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         
         rect = CGRectInset(rect, 6, 6)
         

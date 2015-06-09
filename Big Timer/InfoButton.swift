@@ -17,24 +17,21 @@ class InfoButton: UIView {
     @IBInspectable var lineWidth: CGFloat = 3.0
     
     override func drawRect(rect: CGRect) {
-        
-        let secondHandGap: CGFloat = lineWidth * 3
-        let dotGap: CGFloat = lineWidth * 5
-        
+                
         let inset: CGFloat = 35
         
         // Draw outer circle
         let insetRect = CGRectInset(rect, inset, inset)
         let offsetRect = CGRectOffset(insetRect, -inset + (lineWidth/2), inset - (lineWidth/2))
-        var rect = offsetRect
-        var path = UIBezierPath(ovalInRect: rect)
+        let rect = offsetRect
+        let path = UIBezierPath(ovalInRect: rect)
         path.lineWidth = lineWidth
         lineColor.setStroke()
         path.stroke()
         
         // Draw second hand
         let center = CGPointMake(CGRectGetMidX(rect), (CGRectGetMidY(rect) - lineWidth))
-        var secondHandPath = UIBezierPath()
+        let secondHandPath = UIBezierPath()
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 4)))
         
@@ -44,7 +41,7 @@ class InfoButton: UIView {
         
         // Draw dot of the 'i'
         let dotPosition = CGPointMake(CGRectGetMidX(rect), (CGRectGetMinY(rect) + (lineWidth * 4)))
-        var dotPoint = UIBezierPath()
+        let dotPoint = UIBezierPath()
         dotPoint.moveToPoint(dotPosition)
         dotPoint.addLineToPoint(dotPosition)
         

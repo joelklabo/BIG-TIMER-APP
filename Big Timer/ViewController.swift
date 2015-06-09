@@ -65,9 +65,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
         }
         // If both values are less than zero fake a 1 so we can get off the ground
         let product = modifiedTranslation * velocityMultiplier
-        println("velocity multiplier: \(velocityMultiplier)")
-        println("translation: \(modifiedTranslation)")
-        println("product: \(product)")
+        print("velocity multiplier: \(velocityMultiplier)")
+        print("translation: \(modifiedTranslation)")
+        print("product: \(product)")
         return CFTimeInterval(product)
     }
 
@@ -84,7 +84,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
 
     @IBAction func settingsTap(sender: AnyObject) {
-        var settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
+        let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
         settingsNavigationController.modalTransitionStyle = .CrossDissolve
         self.presentViewController(settingsNavigationController, animated: true, completion: nil)
     }

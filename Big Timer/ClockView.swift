@@ -24,14 +24,14 @@ class ClockView: UIView {
         
         // Draw outer circle
         let insetRect = CGRectInset(rect, (lineWidth/2), (lineWidth/2))
-        var path = UIBezierPath(ovalInRect: insetRect)
+        let path = UIBezierPath(ovalInRect: insetRect)
         path.lineWidth = lineWidth
         lineColor.setStroke()
         path.stroke()
         
         // Draw second hand
         let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
-        var secondHandPath = UIBezierPath()
+        let secondHandPath = UIBezierPath()
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMinY(rect) + secondHandGap))
         secondHandPath.lineWidth = lineWidth

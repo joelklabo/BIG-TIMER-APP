@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UITableViewController {
     
     private var audioPlayer: AudioController?
     
@@ -17,11 +17,11 @@ class SettingsViewController: UITableViewController, UITableViewDataSource, UITa
         self.title = "Settings"
     }
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
     
-    private override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -52,7 +52,7 @@ class SettingsViewController: UITableViewController, UITableViewDataSource, UITa
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let alertSound = AlertSound.options[indexPath.row]
-        var cell = UITableViewCell()
+        let cell = UITableViewCell()
         cell.textLabel?.text = alertSound.rawValue.capitalizedString
         
         if (alertSound == AlertSound.getPreference()) {

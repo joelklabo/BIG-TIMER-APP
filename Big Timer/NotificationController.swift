@@ -20,7 +20,7 @@ class NotificationController {
     }
     
     class func notifyDone(onDate: NSDate) {
-        var notification = UILocalNotification()
+        let notification = UILocalNotification()
         notification.alertBody = "Timer Done"
         notification.fireDate = onDate
         notification.soundName = UILocalNotificationDefaultSoundName

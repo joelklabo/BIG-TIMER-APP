@@ -26,8 +26,11 @@ class AudioController {
     }
     
     private func preparePlayerWith(alertSound: AlertSound) {
-        var path = NSBundle.mainBundle().pathForResource(alertSound.rawValue, ofType: "aiff")
-        player = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!), error: nil)
+        let path = NSBundle.mainBundle().pathForResource(alertSound.rawValue, ofType: "aiff")
+        do {
+            player = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!))
+        } catch _ {
+        }
         player.prepareToPlay()
     }
     

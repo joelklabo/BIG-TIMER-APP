@@ -25,7 +25,7 @@ class Arrow: UIView {
 
         let rect = CGRectInset(rect, 3, 3)
         
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
         path.addLineToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
         
@@ -50,7 +50,7 @@ class Arrow: UIView {
         
         if (arrowDirection == .Up) {
             self.transform = CGAffineTransformMakeRotation(0)
-            var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
+            let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = M_PI
             rotateAnimation.toValue = 0
@@ -58,7 +58,7 @@ class Arrow: UIView {
         } else {
             self.layer.setValue(M_PI, forKey: zRotationKeyPath)
             self.transform = CGAffineTransformMakeRotation(3.14)
-            var rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
+            let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = 0
             rotateAnimation.toValue = M_PI

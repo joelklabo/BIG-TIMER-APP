@@ -135,17 +135,20 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="16" y="480" width="100" height="100"/>
+                                <rect key="frame" x="16" y="485" width="95" height="95"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
+                                    <constraint firstAttribute="width" constant="95" id="DCY-xk-sDI"/>
                                     <constraint firstAttribute="height" constant="100" id="DTe-th-JwA"/>
+                                    <constraint firstAttribute="width" secondItem="Mm8-wh-nSK" secondAttribute="height" multiplier="1:1" id="DkC-RV-LNj"/>
                                     <constraint firstAttribute="width" constant="40" id="ZcA-ai-ZbI"/>
                                     <constraint firstAttribute="height" constant="40" id="fON-hQ-FGQ"/>
                                     <constraint firstAttribute="width" constant="50" id="hdV-k8-5Yt"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="iaE-bR-l04"/>
                                     <constraint firstAttribute="width" constant="100" id="iua-q8-cPf"/>
+                                    <constraint firstAttribute="height" constant="95" id="zz8-v2-yGf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
@@ -158,9 +161,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="42s-rg-R4u"/>
+                                        <exclude reference="DTe-th-JwA"/>
+                                        <exclude reference="DkC-RV-LNj"/>
                                         <exclude reference="ZcA-ai-ZbI"/>
                                         <exclude reference="fON-hQ-FGQ"/>
                                         <exclude reference="hdV-k8-5Yt"/>
+                                        <exclude reference="iaE-bR-l04"/>
+                                        <exclude reference="iua-q8-cPf"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -192,6 +199,7 @@
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="U0a-0b-mve"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="V4N-bf-e6R"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="WR2-Lq-2uK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="WyJ-Mg-UjV"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Xr5-fv-vlt"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aVZ-ke-Gao"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cZ2-pA-su8"/>
@@ -201,6 +209,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="23" id="ewI-Xt-ZXf"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fOB-Ny-p2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
+                            <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gKW-oD-TwG"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="hXH-D0-Yhj"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="lxi-Ui-MlU"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
@@ -220,6 +229,7 @@
                                 <exclude reference="aVZ-ke-Gao"/>
                                 <exclude reference="fOB-Ny-p2g"/>
                                 <exclude reference="q4E-dQ-HwR"/>
+                                <exclude reference="xgK-Nx-9dD"/>
                                 <exclude reference="0Ae-HC-NOM"/>
                                 <exclude reference="BpN-gX-hJG"/>
                                 <exclude reference="KwV-25-iEQ"/>
@@ -231,6 +241,7 @@
                                 <exclude reference="5aP-ss-ENV"/>
                                 <exclude reference="8ej-V6-KML"/>
                                 <exclude reference="AHz-OE-MgT"/>
+                                <exclude reference="Fcg-bA-bcp"/>
                                 <exclude reference="KW7-Av-V1d"/>
                                 <exclude reference="WR2-Lq-2uK"/>
                                 <exclude reference="ewI-Xt-ZXf"/>

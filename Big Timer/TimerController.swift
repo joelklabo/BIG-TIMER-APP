@@ -16,19 +16,22 @@ import QuartzCore
 
 class TimerController: NSObject, TimerDelegate {
     
+    private var foregrounding = false
+    
     private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
             if (currentTimerState.timerValue < 0) {
-                currentTimerState.timerValue = 0
-                currentTimerState.direction = .Up
+                currentTimerState = TimerState.zeroState()
                 timer.pauseTimer()
-                notifySubscribersTimerDone()
+                if (!foregrounding) {
+                    notifySubscribersTimerDone()
+                }
             }
             updateSubscribers(currentTimerState)
         }
     }
     
-    private var subscribers: [TimerManagerDelegate] = Array()
+    private var subscribers = [TimerManagerDelegate]()
     
     private let timer = Timer()
     
@@ -71,9 +74,11 @@ class TimerController: NSObject, TimerDelegate {
     // MARK: Timer Lifecycle
     func returningFromBackground () {
         
+        foregrounding = true
+        
         if let archive = TimerStateArchive.retrieveTimerState() {
             
-            if (archive.isRunning != true) {
+            if (archive.isRunning == false) {
                 currentTimerState = TimerState.newState(archive.timerValue, direction: archive.direction, isRunning: archive.isRunning)
                 return
             }
@@ -141,6 +146,8 @@ class TimerController: NSObject, TimerDelegate {
     // MARK: - TimerDelegate methods
     
     func tick(timeDelta: CFTimeInterval) {
+        
+        foregrounding = false
         
         let timerValue = updatedTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
 

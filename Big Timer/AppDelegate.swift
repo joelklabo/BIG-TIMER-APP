@@ -34,7 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let timerState = TimerStateArchive.retrieveTimerState()
         let timeLeft = timerState!.timerValue
         let timerDirection = timerState!.direction
-        if ((timerDirection == TimerDirection.Down) && (timeLeft > 0)) {
+        let timerIsRunning = timerState!.isRunning as Bool
+        if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
             NotificationController.notifyDone(NSDate(timeIntervalSinceNow: timeLeft))
         }
     }

@@ -35,7 +35,7 @@ class ClockView: UIView {
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMinY(rect) + secondHandGap))
         secondHandPath.lineWidth = lineWidth
-        secondHandPath.lineCapStyle = kCGLineCapRound
+        secondHandPath.lineCapStyle = .Round
         secondHandPath.stroke()
     }
     

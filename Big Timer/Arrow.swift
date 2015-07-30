@@ -34,8 +34,8 @@ class Arrow: UIView {
         path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
 
         path.lineWidth = lineWidth
-        path.lineCapStyle = kCGLineCapRound
-        path.lineJoinStyle = kCGLineJoinRound
+        path.lineCapStyle = .Round
+        path.lineJoinStyle = .Round
         path.stroke()
         
     }

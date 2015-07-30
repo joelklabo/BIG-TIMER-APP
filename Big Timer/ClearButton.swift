@@ -20,11 +20,6 @@ class ClearButton: UIView {
         let insetRect = CGRectInset(rect, 25, 25)
         let offsetRect = CGRectOffset(insetRect, 25 - lineWidth, -25 + lineWidth)
         var rect = offsetRect
-  
-//        var circlePath = UIBezierPath(ovalInRect: rect)
-//        circlePath.lineWidth = lineWidth
-//        lineColor.setStroke()
-//        circlePath.stroke()
         
         let path = UIBezierPath()
         
@@ -37,7 +32,7 @@ class ClearButton: UIView {
         path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMaxY(rect)))
         
         path.lineWidth = lineWidth
-        path.lineCapStyle = kCGLineCapRound
+        path.lineCapStyle = .Round
         lineColor.setStroke()
         path.stroke()
         

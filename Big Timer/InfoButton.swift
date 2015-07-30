@@ -36,7 +36,7 @@ class InfoButton: UIView {
         secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 4)))
         
         secondHandPath.lineWidth = lineWidth
-        secondHandPath.lineCapStyle = kCGLineCapRound
+        secondHandPath.lineCapStyle = .Round
         secondHandPath.stroke()
         
         // Draw dot of the 'i'
@@ -46,7 +46,7 @@ class InfoButton: UIView {
         dotPoint.addLineToPoint(dotPosition)
         
         dotPoint.lineWidth = lineWidth
-        dotPoint.lineCapStyle = kCGLineCapRound
+        dotPoint.lineCapStyle = .Round
         dotPoint.stroke()
         
     }

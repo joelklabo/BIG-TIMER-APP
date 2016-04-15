@@ -18,7 +18,7 @@ class Timer: NSObject {
     
     override init () {
         super.init()
-        timer = CADisplayLink(target: self, selector: Selector("update"))
+        timer = CADisplayLink(target: self, selector: #selector(Timer.update))
         timer.paused = true
         timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
     }

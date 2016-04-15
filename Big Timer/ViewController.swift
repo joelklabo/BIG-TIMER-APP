@@ -21,8 +21,8 @@ class ViewController: UIViewController, TimerManagerDelegate {
         super.viewDidLoad()
         timerController.subscribeToTimerUpdates(self)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "enteringBackground", name: UIApplicationWillResignActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "returningFromBackground", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     deinit {

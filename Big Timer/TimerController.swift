@@ -85,11 +85,6 @@ class TimerController: NSObject, TimerDelegate {
         
         if let archive = TimerStateArchive.retrieveTimerState() {
             
-            if (archive.isRunning == false) {
-                currentTimerState = TimerState.newState(archive.timerValue, direction: archive.direction, isRunning: archive.isRunning)
-                return
-            }
-            
             let timerValue = archive.timerValue!
             let timeSinceBackground = NSDate().timeIntervalSinceDate(archive.timeStamp!)
             let timeLeftOnTimer = currentTimerValue(timerValue, timeDelta: timeSinceBackground, direction: archive.direction)

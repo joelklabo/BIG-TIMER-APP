@@ -1,66 +1,79 @@
 //
-//  Timer.swift
+//  TimerX.swift
 //  Big Timer
 //
-//  Created by Joel Klabo on 2/21/15.
-//  Copyright (c) 2015 Joel Klabo. All rights reserved.
+//  Created by Joel Klabo on 4/23/16.
+//  Copyright © 2016 Joel Klabo. All rights reserved.
 //
 
 import Foundation
 import QuartzCore
 
-class Timer: NSObject {
-
-    private var timer: CADisplayLink = CADisplayLink()
-
+class Timer {
+    
+    enum Actions {
+        case Stop
+        case Go
+    }
+    
+    enum Directions {
+        case Up
+        case Down
+    }
+    
     var delegate: TimerDelegate?
-    var frameTimestamp: CFTimeInterval = 0
     
-    override init () {
-        super.init()
-        timer = CADisplayLink(target: self, selector: #selector(Timer.update))
-        timer.paused = true
-        timer.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-    }
+    static let instance = Timer()
     
-    func update () {
-        
-        let currentTime = timer.timestamp
-        
-        if (frameTimestamp == 0) {
-            frameTimestamp = currentTime
-            return
+    private var timeMachine = CADisplayLink()
+    private var lastTick: CFTimeInterval = 0
+    private var currentTick: CFTimeInterval = 0
+
+    private var action: Actions = .Stop {
+        didSet (action) {
+            if action == .Stop {
+                timeMachine.paused = true
+            } else {
+                timeMachine.paused = false
+            }
         }
-        
-        let renderTime = currentTime - frameTimestamp
-        frameTimestamp = currentTime
-        
-        self.delegate?.tick(renderTime)
     }
     
-    func pauseTimer () {
-        timer.paused = true
-        frameTimestamp = 0
+    init() {
+        timeMachine = CADisplayLink(target: self, selector: #selector(Timer.tick))
+        timeMachine.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
+        timeMachine.paused = true
     }
     
-    func startTimer () {
-        timer.paused = false
+    @objc func tick() {
+        lastTick = currentTick
+        currentTick = timeMachine.timestamp
+        delegate?.tick(currentTick - lastTick)
     }
     
-    func isPaused () -> Bool {
-        return timer.paused
+    func isTimerRunning() -> Bool {
+        return !timeMachine.paused
     }
     
-    func toggle () {
-        timer.paused = timer.paused ? false : true
+    func stop() {
+        action = .Stop
     }
     
-    func resumeWithState (timerState: TimerState) {
-        timer.paused = !timerState.isRunning
+    func go() {
+        action = .Go
+    }
+    
+    private func act(action: Actions) {
+        switch action {
+        case .Go:
+            timeMachine.paused = false
+        case .Stop:
+            timeMachine.paused = true
+        }
     }
     
 }
 
-@objc protocol TimerDelegate {
-    func tick(timeDelta: CFTimeInterval)
+protocol TimerDelegate {
+    func tick(timePassed: CFTimeInterval)
 }

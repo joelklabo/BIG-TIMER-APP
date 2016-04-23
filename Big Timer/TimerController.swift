@@ -63,13 +63,8 @@ class TimerController: NSObject, TimerDelegate {
     }
     
     func modifyTime (time: CFTimeInterval) {
-        Timer.instance.stop()
         let newTime = currentTimerState.timerValue + time
-        if (newTime <= 1) {
-            currentTimerState = TimerState.zeroState()
-        } else {
-            currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
-        }
+        currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     
     func changeTimerDirection () {
@@ -84,7 +79,6 @@ class TimerController: NSObject, TimerDelegate {
         currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: direction, isRunning: Timer.instance.isTimerRunning())
     }
     
-    // MARK: Timer Lifecycle
     func returningFromBackground () {
         
         foregrounding = true
@@ -98,7 +92,7 @@ class TimerController: NSObject, TimerDelegate {
             
             let timerValue = archive.timerValue!
             let timeSinceBackground = NSDate().timeIntervalSinceDate(archive.timeStamp!)
-            let timeLeftOnTimer = updatedTimerValue(timerValue, timeDelta: timeSinceBackground, direction: archive.direction)
+            let timeLeftOnTimer = currentTimerValue(timerValue, timeDelta: timeSinceBackground, direction: archive.direction)
             
             currentTimerState = TimerState.newState(timeLeftOnTimer, direction: archive.direction, isRunning: archive.isRunning)
             
@@ -121,22 +115,15 @@ class TimerController: NSObject, TimerDelegate {
         self.subscribers.append(subscriber)
     }
     
-    // MARK: - Private Helper Functions
-    
-    private func updatedTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
-        
+    private func currentTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
         var newTimerValue: CFTimeInterval
-        
         if (direction == .Up) {
             newTimerValue = timerValue + timeDelta
         } else {
             newTimerValue = timerValue - timeDelta
         }
-        
         return newTimerValue
     }
-    
-    // MARK: - Timer Update Notifications
     
     private func updateSubscribers(timerState: TimerState) {
         for subscriber in subscribers {
@@ -159,11 +146,8 @@ class TimerController: NSObject, TimerDelegate {
     // MARK: - TimerDelegate methods
     
     func tick(timeDelta: CFTimeInterval) {
-        
         foregrounding = false
-        
-        let timerValue = updatedTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
-
+        let timerValue = currentTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     

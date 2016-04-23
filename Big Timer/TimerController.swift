@@ -25,8 +25,6 @@ class TimerController: NSObject, TimerDelegate {
     
     private var subscribers = [TimerManagerDelegate]()
     
-    private let timer = Timer()
-    
     private var direction: Direction = .Up {
         didSet (direction) {
             print("new direction \(direction)")
@@ -37,7 +35,7 @@ class TimerController: NSObject, TimerDelegate {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState = TimerState.zeroState()
-                timer.stop()
+                Timer.instance.stop()
                 if (!foregrounding) {
                     notifySubscribersTimerDone()
                 }
@@ -48,42 +46,42 @@ class TimerController: NSObject, TimerDelegate {
     
     override init () {
         super.init()
-        timer.delegate = self
+        Timer.instance.delegate = self
     }
     
     func toggle () {
-        if timer.isTimerRunning() {
-            timer.stop()
+        if Timer.instance.isTimerRunning() {
+            Timer.instance.stop()
         } else {
-            timer.go()
+            Timer.instance.go()
         }
     }
     
     func clear () {
-        timer.stop()
+        Timer.instance.stop()
         currentTimerState = TimerState.zeroState()
     }
     
     func modifyTime (time: CFTimeInterval) {
-        timer.stop()
+        Timer.instance.stop()
         let newTime = currentTimerState.timerValue + time
         if (newTime <= 1) {
             currentTimerState = TimerState.zeroState()
         } else {
-            currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: timer.isTimerRunning())
+            currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
         }
     }
     
     func changeTimerDirection () {
         if (currentTimerState.direction == TimerDirection.Up) {
-            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Down, isRunning: timer.isTimerRunning())
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Down, isRunning: Timer.instance.isTimerRunning())
         } else {
-            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Up, isRunning: timer.isTimerRunning())
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Up, isRunning: Timer.instance.isTimerRunning())
         }
     }
     
     func setTimerToDirection(direction: TimerDirection) {
-        currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: direction, isRunning: timer.isTimerRunning())
+        currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: direction, isRunning: Timer.instance.isTimerRunning())
     }
     
     // MARK: Timer Lifecycle
@@ -109,14 +107,14 @@ class TimerController: NSObject, TimerDelegate {
         }
         
         if (currentTimerState.isRunning == true) {
-            timer.go()
+            Timer.instance.go()
         }
         
     }
     
     func enteringBackground () {
-        TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: timer.isTimerRunning()))
-        timer.stop()
+        TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning()))
+        Timer.instance.stop()
     }
     
     func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {
@@ -166,7 +164,7 @@ class TimerController: NSObject, TimerDelegate {
         
         let timerValue = updatedTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
 
-        currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: timer.isTimerRunning())
+        currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     
 }

@@ -25,13 +25,14 @@ class Timer {
     
     static let instance = Timer()
     
-    private var timeMachine = CADisplayLink()
+    lazy private var timeMachine = CADisplayLink()
+    
     private var lastTick: CFTimeInterval = 0
     private var currentTick: CFTimeInterval = 0
 
     private var action: Actions = .Stop {
-        didSet (action) {
-            if action == .Stop {
+        willSet (newAction) {
+            if newAction == .Stop {
                 timeMachine.paused = true
             } else {
                 timeMachine.paused = false

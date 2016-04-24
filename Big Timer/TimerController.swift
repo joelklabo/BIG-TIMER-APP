@@ -1,3 +1,4 @@
+    //
 //  TimerController.swift
 //  Big Timer
 //
@@ -29,8 +30,6 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
             print("new direction \(direction)")
         }
     }
-    
-    private var timeDelta: CFTimeInterval = 0
     
     private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
@@ -92,7 +91,6 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func returningFromBackground () {
         
         foregrounding = true
-        timeDelta = 0   
         
         // If there is no active timer session. Don't retrieve the timer state.
         if let archive = TimerStateArchive.retrieveTimerState() {
@@ -143,9 +141,8 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     }
         
     func tick(timeDelta: CFTimeInterval) {
-        self.timeDelta = timeDelta
         foregrounding = false
-        let timerValue = currentTimerValue(currentTimerState.timerValue, timeDelta: self.timeDelta, direction: currentTimerState.direction)
+        let timerValue = currentTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     

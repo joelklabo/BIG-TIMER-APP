@@ -1,4 +1,3 @@
-//
 //  TimerController.swift
 //  Big Timer
 //

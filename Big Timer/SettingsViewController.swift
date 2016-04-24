@@ -12,6 +12,10 @@ class SettingsViewController: UITableViewController {
     
     private var audioPlayer: AudioController?
     
+    private var forceTouchIsEnabled: Bool {
+        return view.traitCollection.forceTouchCapability == .Available;
+    }
+    
     init() {
         super.init(style: UITableViewStyle.Grouped)
         self.title = "Settings"
@@ -41,24 +45,53 @@ class SettingsViewController: UITableViewController {
     
     // MARK: Table View Data Source
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if forceTouchIsEnabled {
+            return 2
+        } else {
+            return 1
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AlertSound.options.count
+        if forceTouchIsEnabled {
+            if section == 0 {
+                return 1
+            } else {
+                return AlertSound.options.count
+            }
+        } else {
+            return AlertSound.options.count
+        }
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Alert Sounds"
+        if forceTouchIsEnabled {
+            if section == 0 {
+                return "Quick Big Timers"
+            } else {
+                return "Big Timer Sounds"
+            }
+        } else {
+            return "Big Timer Sounds"
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let alertSound = AlertSound.options[indexPath.row]
         let cell = UITableViewCell()
-        cell.textLabel?.text = alertSound.rawValue.capitalizedString
         
-        if (alertSound == AlertSound.getPreference()) {
-            cell.accessoryType = .Checkmark
+        if indexPath.section == 1 || !forceTouchIsEnabled {
+            let alertSound = AlertSound.options[indexPath.row]
+            cell.textLabel?.text = alertSound.rawValue.capitalizedString
+            
+            if (alertSound == AlertSound.getPreference()) {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }
         } else {
-            cell.accessoryType = .None
+            cell.textLabel?.text = "Pick your own Quick Big Timers"
         }
         
         return cell
@@ -68,13 +101,17 @@ class SettingsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
      
-        let alertSound = AlertSound.options[indexPath.row]
-        audioPlayer = AudioController(alertSound: alertSound)
-        audioPlayer!.playSound()
-        
-        if (alertSound != AlertSound.getPreference()) {
-            AlertSound.setPreference(alertSound)
-            tableView.reloadData()
+        if indexPath.section == 1 || !forceTouchIsEnabled{
+            let alertSound = AlertSound.options[indexPath.row]
+            audioPlayer = AudioController(alertSound: alertSound)
+            audioPlayer!.playSound()
+            
+            if (alertSound != AlertSound.getPreference()) {
+                AlertSound.setPreference(alertSound)
+                tableView.reloadData()
+            }
+        } else {
+            navigationController?.pushViewController(CustomTimersViewController(), animated: true)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

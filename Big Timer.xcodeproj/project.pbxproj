@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED4EB96D1CCCCF9E00F859E2 /* CustomTimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4EB96C1CCCCF9E00F859E2 /* CustomTimersViewController.swift */; };
 		ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED52FC421B02EC6100A9910D /* zarvox.aiff */; };
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED4EB96C1CCCCF9E00F859E2 /* CustomTimersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimersViewController.swift; sourceTree = "<group>"; };
 		ED52FC3F1B02EA4700A9910D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		ED52FC421B02EC6100A9910D /* zarvox.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = zarvox.aiff; sourceTree = "<group>"; };
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
 				ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */,
+				ED4EB96C1CCCCF9E00F859E2 /* CustomTimersViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
 				ED9B668D1AD8326300888329 /* TimerController.swift in Sources */,
+				ED4EB96D1CCCCF9E00F859E2 /* CustomTimersViewController.swift in Sources */,
 				EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */,
 				ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,

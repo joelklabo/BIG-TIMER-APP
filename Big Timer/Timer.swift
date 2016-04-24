@@ -38,11 +38,6 @@ class Timer {
         timeMachine.paused = true
     }
     
-    /*
-     The purpose of this method is to return a time interval that represents the amount
-     of time that has passed since it was last called. If the timer is paused everything should 
-     be set back to zero. Because we only want to count the time when the timer is actually running.
-     */
     @objc func tick() {
         delegate?.tick(timeMachine.duration)
     }

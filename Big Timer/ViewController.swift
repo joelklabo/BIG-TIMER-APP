@@ -64,9 +64,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         }
         // If both values are less than zero fake a 1 so we can get off the ground
         let product = modifiedTranslation * velocityMultiplier
-        print("velocity multiplier: \(velocityMultiplier)")
-        print("translation: \(modifiedTranslation)")
-        print("product: \(product)")
+        
         return CFTimeInterval(product)
     }
 

@@ -14,14 +14,12 @@ class ViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var arrowView: Arrow!
     
-    let timerController = TimerController()
-    var audioController = AudioController()
+    lazy var timerController = TimerController()
+    lazy var audioController = AudioController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         timerController.delegate = self
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
     }

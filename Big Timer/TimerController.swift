@@ -14,7 +14,7 @@ import QuartzCore
     func timerDone()
 }
 
-class TimerController: NSObject, TimerDelegate {
+class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     enum Direction {
         case Up
@@ -23,7 +23,7 @@ class TimerController: NSObject, TimerDelegate {
     
     private var foregrounding = false
     
-    private var subscribers = [TimerManagerDelegate]()
+    var delegate: TimerManagerDelegate?
     
     private var direction: Direction = .Up {
         didSet (direction) {
@@ -91,13 +91,17 @@ class TimerController: NSObject, TimerDelegate {
     func returningFromBackground () {
         
         foregrounding = true
+        timeDelta = 0   
         
+        // If there is no active timer session. Don't retrieve the timer state.
         if let archive = TimerStateArchive.retrieveTimerState() {
             
-            let timerValue = archive.timerValue!
-            let timeSinceBackground = NSDate().timeIntervalSinceDate(archive.timeStamp!)
-            let timeLeftOnTimer = currentTimerValue(timerValue, timeDelta: timeSinceBackground, direction: archive.direction)
+            guard archive.isRunning.boolValue else { return }
             
+            let timerValue = archive.timerValue!
+            let timeSinceBackgrounded = NSDate().timeIntervalSinceDate(archive.timeStamp!)
+            let timeLeftOnTimer = currentTimerValue(timerValue, timeDelta: timeSinceBackgrounded, direction: archive.direction)
+            print("Timer Value: \(timerValue) Time Since Backgrounded: \(timeSinceBackgrounded) Time Left:\(timeLeftOnTimer)")
             currentTimerState = TimerState.newState(timeLeftOnTimer, direction: archive.direction, isRunning: archive.isRunning)
             
         } else {
@@ -121,12 +125,8 @@ class TimerController: NSObject, TimerDelegate {
         Timer.instance.stop()
     }
     
-    func subscribeToTimerUpdates (subscriber: TimerManagerDelegate) {
-        self.subscribers.append(subscriber)
-    }
-    
     private func currentTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
-        var newTimerValue: CFTimeInterval
+        var newTimerValue: CFTimeInterval = 0
         if (direction == .Up) {
             newTimerValue = timerValue + timeDelta
         } else {
@@ -135,16 +135,12 @@ class TimerController: NSObject, TimerDelegate {
         return newTimerValue
     }
     
-    private func updateSubscribers(timerState: TimerState) {
-        for subscriber in subscribers {
-            subscriber.timerUpdate(currentTimerState)
-        }
+    func timerUpdate(timerState: TimerState) {
+        delegate?.timerUpdate(timerState)
     }
     
-    private func notifySubscribersTimerDone() {
-        for subscriber in subscribers {
-            subscriber.timerDone()
-        }
+    func timerDone() {
+        delegate?.timerDone()
     }
     
     // MARK: - TimerStateArchiver
@@ -156,8 +152,9 @@ class TimerController: NSObject, TimerDelegate {
     // MARK: - TimerDelegate methods
     
     func tick(timeDelta: CFTimeInterval) {
+        self.timeDelta = timeDelta
         foregrounding = false
-        let timerValue = currentTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
+        let timerValue = currentTimerValue(currentTimerState.timerValue, timeDelta: self.timeDelta, direction: currentTimerState.direction)
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     

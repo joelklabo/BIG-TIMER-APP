@@ -16,19 +16,11 @@ class Timer {
         case Go
     }
     
-    enum Directions {
-        case Up
-        case Down
-    }
-    
     var delegate: TimerDelegate?
     
     static let instance = Timer()
     
     lazy private var timeMachine = CADisplayLink()
-    
-    private var lastTick: CFTimeInterval = 0
-    private var currentTick: CFTimeInterval = 0
 
     private var action: Actions = .Stop {
         willSet (newAction) {
@@ -46,10 +38,13 @@ class Timer {
         timeMachine.paused = true
     }
     
+    /*
+     The purpose of this method is to return a time interval that represents the amount
+     of time that has passed since it was last called. If the timer is paused everything should 
+     be set back to zero. Because we only want to count the time when the timer is actually running.
+     */
     @objc func tick() {
-        lastTick = currentTick
-        currentTick = timeMachine.timestamp
-        delegate?.tick(currentTick - lastTick)
+        delegate?.tick(timeMachine.duration)
     }
     
     func isTimerRunning() -> Bool {

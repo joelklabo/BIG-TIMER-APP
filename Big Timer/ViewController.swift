@@ -19,7 +19,8 @@ class ViewController: UIViewController, TimerManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerController.subscribeToTimerUpdates(self)
+        
+        timerController.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)

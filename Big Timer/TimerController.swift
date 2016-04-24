@@ -56,6 +56,8 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func setupQuickActions() {
         let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: #selector(TimerController.fiveMinuteQuickActionTimer), name: "5", object: nil)
+        notificationCenter.addObserver(self, selector: #selector(TimerController.twentyMinuteQuickActionTimer), name: "20", object: nil)
+        notificationCenter.addObserver(self, selector: #selector(TimerController.countUpQuickAction), name: "0", object: nil)
     }
     
     func toggle () {
@@ -114,12 +116,6 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         
     }
     
-    func fiveMinuteQuickActionTimer() {
-        let timerState = TimerState.newState(Double(60 * 5), direction: .Down, isRunning: Timer.instance.isTimerRunning())
-        currentTimerState = timerState
-        Timer.instance.go()
-    }
-    
     func enteringBackground () {
         TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning()))
         Timer.instance.stop()
@@ -143,14 +139,10 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         delegate?.timerDone()
     }
     
-    // MARK: - TimerStateArchiver
-    
     private func storeTimerState(timerState: TimerState) {
         TimerStateArchive.archiveTimerState(timerState)
     }
-    
-    // MARK: - TimerDelegate methods
-    
+        
     func tick(timeDelta: CFTimeInterval) {
         self.timeDelta = timeDelta
         foregrounding = false
@@ -158,4 +150,24 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     
+}
+
+// Quick Actions
+
+extension TimerController {
+    func countUpQuickAction() {
+        currentTimerState = TimerState.newState(0, direction: .Up, isRunning: Timer.instance.isTimerRunning())
+        Timer.instance.go()
+    }
+    func fiveMinuteQuickActionTimer() {
+        currentTimerState = timerStateWithDuration(5)
+        Timer.instance.go()
+    }
+    func twentyMinuteQuickActionTimer() {
+        currentTimerState = timerStateWithDuration(20)
+        Timer.instance.go()
+    }
+    private func timerStateWithDuration(minutes: Int) -> TimerState {
+        return TimerState.newState(Double(minutes * 60), direction: .Down, isRunning: Timer.instance.isTimerRunning())
+    }
 }

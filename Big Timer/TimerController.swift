@@ -31,22 +31,31 @@ class TimerController: NSObject, TimerDelegate {
         }
     }
     
+    private var timeDelta: CFTimeInterval = 0
+    
     private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState = TimerState.zeroState()
                 Timer.instance.stop()
                 if (!foregrounding) {
-                    notifySubscribersTimerDone()
+                    delegate?.timerDone()
                 }
             }
-            updateSubscribers(currentTimerState)
+            delegate?.timerUpdate(self.currentTimerState)
         }
     }
+    
     
     override init () {
         super.init()
         Timer.instance.delegate = self
+        setupQuickActions()
+    }
+    
+    func setupQuickActions() {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(TimerController.fiveMinuteQuickActionTimer), name: "5", object: nil)
     }
     
     func toggle () {
@@ -99,6 +108,12 @@ class TimerController: NSObject, TimerDelegate {
             Timer.instance.go()
         }
         
+    }
+    
+    func fiveMinuteQuickActionTimer() {
+        let timerState = TimerState.newState(Double(60 * 5), direction: .Down, isRunning: Timer.instance.isTimerRunning())
+        currentTimerState = timerState
+        Timer.instance.go()
     }
     
     func enteringBackground () {

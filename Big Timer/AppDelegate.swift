@@ -29,9 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
-        if let time = Int(shortcutItem.type) {
-            print("start a timer for \(time)  minutes")
-        }
+            NSNotificationCenter.defaultCenter().postNotificationName(shortcutItem.type, object: nil)
+
     }
 
     func applicationWillResignActive(application: UIApplication) {

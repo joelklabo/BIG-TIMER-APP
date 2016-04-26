@@ -30,9 +30,9 @@
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypePlay</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>Counting up</string>
+			<string>Counting Up</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Start a timer</string>
+			<string>Start Timing</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>0</string>
 		</dict>

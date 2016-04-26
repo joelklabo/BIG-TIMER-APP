@@ -69,12 +69,12 @@ class SettingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if forceTouchIsEnabled {
             if section == 0 {
-                return "Custom Timers"
+                return "Custom Timers (Force Touch The App Icon To Start)"
             } else {
-                return "Big Timer Sounds"
+                return "Timer Sounds (These Play When Your Timer is Done)"
             }
         } else {
-            return "Big Timer Sounds"
+            return "Timer Sounds"
         }
     }
     

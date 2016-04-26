@@ -111,7 +111,7 @@ class SettingsViewController: UITableViewController {
                 tableView.reloadData()
             }
         } else {
-            navigationController?.pushViewController(CustomTimersViewController(), animated: true)
+            navigationController?.pushViewController(CustomTimersViewController(nibName: nil, bundle: nil), animated: true)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

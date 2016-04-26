@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UITableViewController {
     
     private var audioPlayer: AudioController?
+    private let customTimers = CustomTimerManager().getTimes()
     
     private var forceTouchIsEnabled: Bool {
         return view.traitCollection.forceTouchCapability == .Available;
@@ -56,7 +57,7 @@ class SettingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if forceTouchIsEnabled {
             if section == 0 {
-                return 1
+                return customTimers.count
             } else {
                 return AlertSound.options.count
             }
@@ -68,7 +69,7 @@ class SettingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if forceTouchIsEnabled {
             if section == 0 {
-                return "Quick Big Timers"
+                return "Custom Timers"
             } else {
                 return "Big Timer Sounds"
             }
@@ -91,7 +92,7 @@ class SettingsViewController: UITableViewController {
                 cell.accessoryType = .None
             }
         } else {
-            cell.textLabel?.text = "Pick your own Quick Big Timers"
+            cell.textLabel?.text = "\(customTimers[indexPath.row]) minutes"
         }
         
         return cell
@@ -101,7 +102,7 @@ class SettingsViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
      
-        if indexPath.section == 1 || !forceTouchIsEnabled{
+        if indexPath.section == 1 || !forceTouchIsEnabled {
             let alertSound = AlertSound.options[indexPath.row]
             audioPlayer = AudioController(alertSound: alertSound)
             audioPlayer!.playSound()
@@ -111,7 +112,6 @@ class SettingsViewController: UITableViewController {
                 tableView.reloadData()
             }
         } else {
-            navigationController?.pushViewController(CustomTimersViewController(nibName: nil, bundle: nil), animated: true)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

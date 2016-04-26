@@ -29,32 +29,12 @@
 		<dict>
 			<key>UIApplicationShortcutItemIconType</key>
 			<string>UIApplicationShortcutIconTypePlay</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Counting up</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Start a timer</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>0</string>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>counting up</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>counting down</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>20</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>20 minutes</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeTime</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemSubtitle</key>
-			<string>counting down</string>
-			<key>UIApplicationShortcutItemIconType</key>
-			<string>UIApplicationShortcutIconTypeTime</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>5 minutes</string>
-			<key>UIApplicationShortcutItemType</key>
-			<string>5</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

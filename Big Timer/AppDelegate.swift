@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch _ {
         }
         
+        setupCustomQuickActions()
+        
         return true
     }
     
@@ -68,9 +70,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    func setupCustomQuickAction() {
-        let customShortcut = UIApplicationShortcutItem(type: "Custom \(4) minute Big Timer", localizedTitle: "Custom \(4) minute Big Timer")
-        UIApplication.sharedApplication().shortcutItems = [customShortcut]
+    
+    func setupCustomQuickActions() {
+        let shortcutItems = CustomTimerManager().getTimes().map {
+            shortcutItemForTime($0)
+        }
+        UIApplication.sharedApplication().shortcutItems = shortcutItems
     }
+    
+    func shortcutItemForTime(time: String) -> UIApplicationShortcutItem {
+        let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
+        return UIApplicationShortcutItem(type: "\(time)", localizedTitle: "\(time) minutes", localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
+    }
+    
 }
 

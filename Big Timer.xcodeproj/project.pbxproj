@@ -26,9 +26,10 @@
 		EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */; };
 		EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDABD9D61A7A0CD6006CFBA5 /* LaunchScreen.xib */; };
 		EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
-		EDE3BF8C1CCCE65E00B4A4C0 /* CustomTimersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF8B1CCCE65E00B4A4C0 /* CustomTimersViewController.swift */; };
 		EDE3BF8E1CCCE73100B4A4C0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */; };
-		EDE3BF901CCF116B00B4A4C0 /* CustomTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE3BF8F1CCF116B00B4A4C0 /* CustomTimerView.xib */; };
+		EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
+		EDE3BF971CCF1C9300B4A4C0 /* CustomTimers.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */; };
+		EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */; };
 		EDE8109C1B1D7AAE00F68BFB /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
 		EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
 		EDE970941B0D41B300F3755F /* bells.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708F1B0D41B300F3755F /* bells.aiff */; };
@@ -60,9 +61,10 @@
 		EDABD9D41A7A0CD6006CFBA5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EDABD9D71A7A0CD6006CFBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EDC830681ADED1B40001D36F /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		EDE3BF8B1CCCE65E00B4A4C0 /* CustomTimersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimersViewController.swift; sourceTree = "<group>"; };
 		EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
-		EDE3BF8F1CCF116B00B4A4C0 /* CustomTimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimerView.xib; sourceTree = "<group>"; };
+		EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
+		EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTimers.plist; sourceTree = "<group>"; };
+		EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerManager.swift; sourceTree = "<group>"; };
 		EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 		EDE9708D1B0D403700F3755F /* trinoids.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = trinoids.aiff; sourceTree = "<group>"; };
 		EDE9708F1B0D41B300F3755F /* bells.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = bells.aiff; sourceTree = "<group>"; };
@@ -121,9 +123,6 @@
 			children = (
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
 				ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */,
-				EDE3BF8B1CCCE65E00B4A4C0 /* CustomTimersViewController.swift */,
-				EDE3BF8F1CCF116B00B4A4C0 /* CustomTimerView.xib */,
-				EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -157,12 +156,14 @@
 		EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */ = {
 			isa = PBXGroup;
 			children = (
+				EDE3BF951CCF1C7200B4A4C0 /* Resources */,
+				EDE3BF921CCF173300B4A4C0 /* Utilities */,
+				EDE3BF911CCF171000B4A4C0 /* Protocols */,
 				ED7C11DE1B05DFE900318343 /* Models */,
 				ED7C11DD1B05DFC400318343 /* View Controllers */,
 				ED52FC411B02EB8900A9910D /* Sounds */,
 				ED23095E1AF291CB0028D062 /* Views */,
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
-				ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */,
 				ED5CD8961A9913D80086886B /* Timer.swift */,
 				ED52FC3F1B02EA4700A9910D /* AudioController.swift */,
 				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
@@ -182,6 +183,32 @@
 				EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDE3BF911CCF171000B4A4C0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		EDE3BF921CCF173300B4A4C0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */,
+				EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */,
+				EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		EDE3BF951CCF1C7200B4A4C0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +277,11 @@
 				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
 				EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */,
 				EDE970981B0D41B300F3755F /* deranged.aiff in Resources */,
-				EDE3BF901CCF116B00B4A4C0 /* CustomTimerView.xib in Resources */,
 				EDABD9D51A7A0CD6006CFBA5 /* Images.xcassets in Resources */,
 				EDE970951B0D41B300F3755F /* boing.aiff in Resources */,
 				EDE970941B0D41B300F3755F /* bells.aiff in Resources */,
 				EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */,
+				EDE3BF971CCF1C9300B4A4C0 /* CustomTimers.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +294,6 @@
 			files = (
 				EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */,
 				ED9B668D1AD8326300888329 /* TimerController.swift in Sources */,
-				EDE3BF8C1CCCE65E00B4A4C0 /* CustomTimersViewController.swift in Sources */,
 				EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */,
 				ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
@@ -278,7 +304,9 @@
 				EDE3BF8E1CCCE73100B4A4C0 /* StorageProtocol.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
 				ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */,
+				EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
+				EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */,
 				ED7C11DB1B055E7D00318343 /* SettingsViewController.swift in Sources */,
 				ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */,
 				ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */,

@@ -77,7 +77,7 @@
                                     <outletCollection property="gestureRecognizers" destination="871-U1-0Ze" appends="YES" id="nK7-eB-B8l"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="125" y="125" width="350" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="Ppg-Em-zuJ"/>
@@ -175,10 +175,6 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXA-Eb-fxd" customClass="AdjustableTimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="125" y="236" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -262,7 +258,6 @@
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="1QZ-7l-2sJ" appends="YES" id="Gge-4B-Zl2"/>
-                            <outletCollection property="gestureRecognizers" destination="8p7-pe-6Jf" appends="YES" id="dhG-Bv-PS2"/>
                         </connections>
                     </view>
                     <connections>
@@ -277,11 +272,6 @@
                         <action selector="tap:" destination="BYZ-38-t0r" id="ZFp-wt-iFU"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="8p7-pe-6Jf" userLabel="Pan Up/Down">
-                    <connections>
-                        <action selector="verticalPan:" destination="BYZ-38-t0r" id="rbZ-aF-Wlh"/>
-                    </connections>
-                </panGestureRecognizer>
                 <tapGestureRecognizer id="871-U1-0Ze" userLabel="Clear">
                     <connections>
                         <action selector="clear:" destination="BYZ-38-t0r" id="nZC-DB-h4V"/>

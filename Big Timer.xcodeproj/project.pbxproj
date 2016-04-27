@@ -21,6 +21,7 @@
 		ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
 		ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
 		ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
+		ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStateArchive.swift; sourceTree = "<group>"; };
 		ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDeltaCalculator.swift; sourceTree = "<group>"; };
+		ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureInfoProviding.swift; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */,
+				ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				EDE8109C1B1D7AAE00F68BFB /* InfoButton.swift in Sources */,
 				ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
+				ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */,
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				EDE3BF8E1CCCE73100B4A4C0 /* StorageProtocol.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,

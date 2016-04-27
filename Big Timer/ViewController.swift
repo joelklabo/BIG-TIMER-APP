@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, TimerManagerDelegate {
 
     @IBOutlet weak var clockView: ClockView!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
     
     lazy var timerController = TimerController()
@@ -19,9 +19,12 @@ class ViewController: UIViewController, TimerManagerDelegate {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerController.delegate = self
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+        timerController.delegate = self
+        timeLabel.panInfoDelegate = self
     }
     
     deinit {
@@ -34,15 +37,6 @@ class ViewController: UIViewController, TimerManagerDelegate {
     
     func enteringBackground () {
         timerController.enteringBackground()
-    }
-
-    @IBAction func verticalPan(sender: AnyObject) {
-        let gestureRecognizer = sender as! UIPanGestureRecognizer
-        let velocity = -gestureRecognizer.velocityInView(self.view).y
-        let translation = -gestureRecognizer.translationInView(self.view).y
-        
-        timerController.setTimerToDirection(.Down)
-        timerController.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 
     @IBAction func tap(sender: AnyObject) {
@@ -76,4 +70,11 @@ class ViewController: UIViewController, TimerManagerDelegate {
         audioController.playSound()
     }
 
+}
+
+extension ViewController: PanGestureInfoReceiving {
+    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+        timerController.setTimerToDirection(.Down)
+        timerController.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+    }
 }

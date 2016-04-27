@@ -16,7 +16,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     
     lazy var timerController = TimerController()
     lazy var audioController = AudioController()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         timerController.delegate = self
@@ -42,30 +42,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         let translation = -gestureRecognizer.translationInView(self.view).y
         
         timerController.setTimerToDirection(.Down)
-        timerController.modifyTime(timeDeltaFrom(velocity, translation: translation))
-    }
-    
-    private func timeDeltaFrom(velocity: CGFloat, translation: CGFloat) -> CFTimeInterval {
-        var velocityMultiplier = abs(velocity / 600)
-        var modifiedTranslation = translation
-        if (translation > 0) {
-            // Positive translation
-            if (translation < 1) {
-                // It's between zero and one, bump it up to one
-                modifiedTranslation = 1
-                velocityMultiplier = velocityMultiplier * 100
-            }
-        } else {
-            // Negative translation
-            if (translation > -1) {
-                // It's between negative one and zero, move it to negative one
-                modifiedTranslation = -1
-            }
-        }
-        // If both values are less than zero fake a 1 so we can get off the ground
-        let product = modifiedTranslation * velocityMultiplier
-            
-        return CFTimeInterval(product)
+        timerController.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 
     @IBAction func tap(sender: AnyObject) {

@@ -175,6 +175,10 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXA-Eb-fxd" customClass="AdjustableTimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="125" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -225,18 +229,18 @@
                             <mask key="constraints">
                                 <exclude reference="LHU-yY-o7G"/>
                                 <exclude reference="xr7-NO-HQG"/>
-                                <exclude reference="81q-kP-kua"/>
-                                <exclude reference="V4N-bf-e6R"/>
-                                <exclude reference="aVZ-ke-Gao"/>
-                                <exclude reference="fOB-Ny-p2g"/>
-                                <exclude reference="q4E-dQ-HwR"/>
-                                <exclude reference="xgK-Nx-9dD"/>
                                 <exclude reference="0Ae-HC-NOM"/>
                                 <exclude reference="BpN-gX-hJG"/>
                                 <exclude reference="KwV-25-iEQ"/>
                                 <exclude reference="U0a-0b-mve"/>
                                 <exclude reference="cxj-gy-NOG"/>
                                 <exclude reference="hXH-D0-Yhj"/>
+                                <exclude reference="81q-kP-kua"/>
+                                <exclude reference="V4N-bf-e6R"/>
+                                <exclude reference="aVZ-ke-Gao"/>
+                                <exclude reference="fOB-Ny-p2g"/>
+                                <exclude reference="q4E-dQ-HwR"/>
+                                <exclude reference="xgK-Nx-9dD"/>
                                 <exclude reference="1Wr-RG-gtg"/>
                                 <exclude reference="51L-jq-QVO"/>
                                 <exclude reference="5aP-ss-ENV"/>

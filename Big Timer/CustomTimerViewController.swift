@@ -10,39 +10,31 @@ import UIKit
 
 class CustomTimerViewController: UIViewController {
 
-    @IBOutlet weak var timeLabel: TimeLabel!
+    @IBOutlet weak var timeLabel: TimeLabel?
     
-    var timerInfo: Int?
-
     let timeFormatter = TimeFormatter()
+    
+    var timerValue = TimerValue() {
+        didSet {
+            if let timeLabel = timeLabel {
+                timeLabel.text = timeFormatter.formatTime(timerValue.time)
+            }
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        timeLabel.panInfoDelegate = self
-        timeLabel.text = String(timeFormatter.formatTime(timerInfo!))
+        timeLabel!.panInfoDelegate = self
+        timeLabel!.text = timeFormatter.formatTime(timerValue.time)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
-        print("panning")
+        let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
+        print(timeDelta)
+        timerValue.update(timeDelta)
     }
 }

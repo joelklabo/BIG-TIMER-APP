@@ -20,7 +20,11 @@ class TimeLabel: UILabel {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        numberOfLines = 1
         userInteractionEnabled = true
+        adjustsFontSizeToFitWidth = true
+        
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(TimeLabel.verticalPan(_:))))
     }
     

@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTimerViewController" customModule="Big_Timer" customModuleProvider="target">
             <connections>
-                <outlet property="timeLabel" destination="Am8-mU-dbt" id="aoI-m5-Bb7"/>
+                <outlet property="timeLabel" destination="G5e-MV-Pqn" id="FqD-ml-aGb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,12 +16,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Am8-mU-dbt" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                    <rect key="frame" x="180" y="236" width="240" height="128"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5e-MV-Pqn" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                    <rect key="frame" x="8" y="221" width="584" height="158"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="158" id="uhu-lf-8HK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="130"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="G5e-MV-Pqn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OOL-aJ-8jE"/>
+                <constraint firstItem="G5e-MV-Pqn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="VvD-wF-z13"/>
+                <constraint firstAttribute="trailing" secondItem="G5e-MV-Pqn" secondAttribute="trailing" constant="8" id="w1L-Dk-DAN"/>
+            </constraints>
         </view>
     </objects>
 </document>

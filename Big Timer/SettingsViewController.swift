@@ -11,7 +11,11 @@ import UIKit
 class SettingsViewController: UITableViewController {
     
     private var audioPlayer: AudioController?
-    private let customTimers = CustomTimerManager().getTimers()
+    private var customTimers: [CustomTimer] {
+        get {
+           return CustomTimerManager().getTimers()
+        }
+    }
     
     private var forceTouchIsEnabled: Bool {
         return view.traitCollection.forceTouchCapability == .Available;
@@ -36,6 +40,11 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: #selector(SettingsViewController.doneTapped))
         self.navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // MARK: Target / Action
@@ -114,6 +123,7 @@ class SettingsViewController: UITableViewController {
         } else {
             let customTimerViewController = CustomTimerViewController()
             customTimerViewController.timerValue.update(getCustomTimerTime(customTimers, index: indexPath.row))
+            customTimerViewController.timer = customTimers[indexPath.row]
             navigationController?.pushViewController(customTimerViewController, animated: true)
         }
         

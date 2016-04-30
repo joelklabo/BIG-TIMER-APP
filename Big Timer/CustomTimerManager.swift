@@ -7,15 +7,30 @@
 //
 
 import Foundation
+import UIKit
 
 struct CustomTimerManager {
     
     private let timersKey = "CustomTimers"
-    private let plistDictionary = PlistReader(fileName: "CustomTimers").readPlist()
+    private let plistReader = PlistReader()
     
-    func getTimers() -> Array<CustomTimer> {
+    func updateTimer(timer: CustomTimer, newValue: Int) {
+        var timers = getTimers()
+        switch timer {
+        case .First:
+            timers[timer.index()] = .First(time: newValue)
+        case .Second:
+            timers[timer.index()] = .Second(time: newValue)
+        case .Third:
+            timers[timer.index()] = .Third(time: newValue)
+        }
+        save(timers)
+    }
+    
+
+    func getTimers() -> [CustomTimer] {
         
-        guard let arrayOfTimes = plistDictionary[timersKey] as? Array<AnyObject> else {
+        guard let arrayOfTimes = plistReader.readPlist()[timersKey] as? [AnyObject] else {
             fatalError()
         }
         
@@ -29,6 +44,36 @@ struct CustomTimerManager {
         
         return timers
     }
+    
+    static func shortcutItemForTime(timer: CustomTimer) -> UIApplicationShortcutItem {
+        let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
+        return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
+    }
+    
+    private func archiveFormat(timers: [CustomTimer]) -> NSDictionary {
+        let timerValues: [String] = timers.map {
+            switch $0 {
+            case .First(let time):
+                return String(time)
+            case .Second(let time):
+                return String(time)
+            case .Third(let time):
+                return String(time)
+            }
+        }
+        let dict = NSMutableDictionary()
+        dict.setValue(timerValues, forKey: timersKey)
+        return dict
+    }
+    
+    private func save(timers: [CustomTimer]) {
+        plistReader.save(archiveFormat(timers))
+        let shortcutItems = timers.map {
+            CustomTimerManager.shortcutItemForTime($0)
+        }
+        UIApplication.sharedApplication().shortcutItems = shortcutItems
+    }
+    
 }
 
 enum CustomTimer {
@@ -72,4 +117,14 @@ enum CustomTimer {
         }
     }
     
+    func index() -> Int {
+        switch self {
+        case .First:
+            return 0
+        case .Second:
+            return 1
+        case .Third:
+            return 2
+        }
+    }
 }

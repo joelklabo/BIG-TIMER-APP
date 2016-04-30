@@ -73,15 +73,9 @@ extension AppDelegate {
     
     func setupCustomQuickActions() {
         let shortcutItems = CustomTimerManager().getTimers().map {
-            shortcutItemForTime($0)
+            CustomTimerManager.shortcutItemForTime($0)
         }
         UIApplication.sharedApplication().shortcutItems = shortcutItems
     }
-    
-    func shortcutItemForTime(timer: CustomTimer) -> UIApplicationShortcutItem {
-        let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
-        return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
-    }
-    
 }
 

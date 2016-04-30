@@ -10,32 +10,36 @@ import Foundation
 
 struct PlistReader {
     
-    let fileName: String
+    private let fileName = "CustomTimers"
+    private let filePath = "CustomTimers.plist"
+    private let fileManager = NSFileManager.defaultManager()
     
-    func readPlist() -> NSMutableDictionary {
+    func readPlist() -> NSDictionary {
         
-        var format = NSPropertyListFormat.XMLFormat_v1_0
-        let plist: AnyObject?
+        if fileManager.fileExistsAtPath(fileURL().path!) {
+            return NSDictionary(contentsOfURL: fileURL())!
+        }
         
         guard let plistPath = NSBundle.mainBundle().pathForResource(fileName, ofType: "plist") else {
             fatalError()
         }
         
-        guard let plistData = NSFileManager.defaultManager().contentsAtPath(plistPath) else {
+        guard let dictionary = NSDictionary(contentsOfFile: plistPath) else {
             fatalError()
         }
         
-        do {
-            plist = try NSPropertyListSerialization.propertyListWithData(plistData, options: .MutableContainersAndLeaves, format: &format)
-        } catch {
-            fatalError()
-        }
-        
-        guard let plistDictionary = plist as? NSMutableDictionary else {
-            fatalError()
-        }
-        
-        return plistDictionary
+        return dictionary
     }
     
+    func save(dictionary: NSDictionary) {
+        if dictionary.writeToURL(fileURL(), atomically: true) {
+            print("Saved: \(dictionary)")
+        }
+    }
+    
+    private func fileURL() -> NSURL {
+        let documentsDirectory = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
+        return documentsDirectory.URLByAppendingPathComponent(filePath)
+    }
+
 }

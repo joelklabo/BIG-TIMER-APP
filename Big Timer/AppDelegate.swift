@@ -72,15 +72,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     func setupCustomQuickActions() {
-        let shortcutItems = CustomTimerManager().getTimes().map {
+        let shortcutItems = CustomTimerManager().getTimers().map {
             shortcutItemForTime($0)
         }
         UIApplication.sharedApplication().shortcutItems = shortcutItems
     }
     
-    func shortcutItemForTime(time: String) -> UIApplicationShortcutItem {
+    func shortcutItemForTime(timer: CustomTimer) -> UIApplicationShortcutItem {
         let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
-        return UIApplicationShortcutItem(type: "\(time)", localizedTitle: "\(time) minutes", localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
+        return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
     }
     
 }

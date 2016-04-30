@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UITableViewController {
     
     private var audioPlayer: AudioController?
-    private let customTimers = CustomTimerManager().getTimes()
+    private let customTimers = CustomTimerManager().getTimers()
     
     private var forceTouchIsEnabled: Bool {
         return view.traitCollection.forceTouchCapability == .Available;
@@ -92,7 +92,7 @@ class SettingsViewController: UITableViewController {
                 cell.accessoryType = .None
             }
         } else {
-            cell.textLabel?.text = "\(customTimers[indexPath.row]) minutes"
+            cell.textLabel?.text = getCustomTimerTitle(customTimers, index: indexPath.row)
         }
         
         return cell
@@ -112,9 +112,29 @@ class SettingsViewController: UITableViewController {
                 tableView.reloadData()
             }
         } else {
+            let customTimerViewController = CustomTimerViewController()
+            customTimerViewController.timerInfo = getCustomTimerTime(customTimers, index: indexPath.row)
+            navigationController?.pushViewController(customTimerViewController, animated: true)
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    private func getCustomTimerTime(timers:Array<CustomTimer>, index: Int) -> Int {
+        let timer: CustomTimer = timers[index]
+        switch timer {
+        case .First(let time):
+            return time
+        case .Second(let time):
+            return time
+        case .Third(let time):
+            return time
+        }
+    }
+    
+    private func getCustomTimerTitle(timers:Array<CustomTimer>, index: Int) -> String {
+        let timer: CustomTimer = timers[index]
+        return timer.title()
     }
     
 }

@@ -12,8 +12,12 @@ typealias TimeComponents = (hours: Int, minutes: Int, seconds: Int)
 
 class TimeFormatter {
     
-    func formatTime (time: CFTimeInterval) -> String {
+    func formatTime(time: CFTimeInterval) -> String {
         return buildString(buildTimeState(time))
+    }
+    
+    func formatTime(time: Int) -> String {
+        return formatTime(CFTimeInterval(time))
     }
     
     private func buildTimeState(time: CFTimeInterval) -> TimeComponents {

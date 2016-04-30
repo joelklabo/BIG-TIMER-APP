@@ -22,6 +22,8 @@
 		ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
 		ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
 		ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
+		ED82F8691CD077A100D08D56 /* CustomTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */; };
+		ED82F86A1CD077A100D08D56 /* CustomTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDeltaCalculator.swift; sourceTree = "<group>"; };
 		ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureInfoProviding.swift; sourceTree = "<group>"; };
+		ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerViewController.swift; sourceTree = "<group>"; };
+		ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimerViewController.xib; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 			children = (
 				EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */,
 				ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */,
+				ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */,
+				ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */,
 				EDE970971B0D41B300F3755F /* cellos.aiff in Resources */,
 				ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */,
+				ED82F86A1CD077A100D08D56 /* CustomTimerViewController.xib in Resources */,
 				ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */,
 				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
 				EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */,
@@ -314,6 +321,7 @@
 				EDE3BF8E1CCCE73100B4A4C0 /* StorageProtocol.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
 				ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */,
+				ED82F8691CD077A100D08D56 /* CustomTimerViewController.swift in Sources */,
 				EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */,
 				ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,

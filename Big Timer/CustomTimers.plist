@@ -4,8 +4,8 @@
 <dict>
 	<key>CustomTimers</key>
 	<array>
-		<string>5</string>
-		<string>20</string>
+		<string>300</string>
+		<string>1200</string>
 	</array>
 </dict>
 </plist>

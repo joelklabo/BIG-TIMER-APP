@@ -53,9 +53,10 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     func setupQuickActions() {
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(TimerController.fiveMinuteQuickActionTimer), name: "5", object: nil)
-        notificationCenter.addObserver(self, selector: #selector(TimerController.twentyMinuteQuickActionTimer), name: "20", object: nil)
         notificationCenter.addObserver(self, selector: #selector(TimerController.countUpQuickAction), name: "0", object: nil)
+        notificationCenter.addObserver(self, selector: #selector(TimerController.firstCustomTimer), name: CustomTimer.First(time: 0).uniqueKey(), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(TimerController.secondCustomTimer), name: CustomTimer.Second(time: 0).uniqueKey(), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(TimerController.thirdCustomTimer), name: CustomTimer.Third(time: 0).uniqueKey(), object: nil)
     }
     
     func toggle () {
@@ -155,13 +156,14 @@ extension TimerController {
         currentTimerState = TimerState.newState(0, direction: .Up, isRunning: Timer.instance.isTimerRunning())
         Timer.instance.go()
     }
-    func fiveMinuteQuickActionTimer() {
-        currentTimerState = timerStateWithDuration(5)
-        Timer.instance.go()
+    func firstCustomTimer() {
+        
     }
-    func twentyMinuteQuickActionTimer() {
-        currentTimerState = timerStateWithDuration(20)
-        Timer.instance.go()
+    func secondCustomTimer() {
+        
+    }
+    func thirdCustomTimer() {
+        
     }
     private func timerStateWithDuration(minutes: Int) -> TimerState {
         return TimerState.newState(Double(minutes * 60), direction: .Down, isRunning: Timer.instance.isTimerRunning())

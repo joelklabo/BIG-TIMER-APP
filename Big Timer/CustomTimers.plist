@@ -5,6 +5,7 @@
 	<key>CustomTimers</key>
 	<array>
 		<string>300</string>
+		<string>600</string>
 		<string>1200</string>
 	</array>
 </dict>

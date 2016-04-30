@@ -22,6 +22,9 @@ public class TimerState: NSObject, NSCoding {
         self.direction = TimerDirection(rawValue:decoder.decodeObjectForKey("direction") as! TimerDirection.RawValue)
         self.isRunning = decoder.decodeObjectForKey("isRunning") as! Bool
     }
+    class func newState(timerValue: Int, direction: TimerDirection, isRunning: Bool) -> TimerState {
+        return TimerState.newState(CFTimeInterval(timerValue), direction: direction, isRunning: isRunning)
+    }
     
     class func newState(timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
         let newTimerState = TimerState()

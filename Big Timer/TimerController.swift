@@ -157,15 +157,34 @@ extension TimerController {
         Timer.instance.go()
     }
     func firstCustomTimer() {
-        
+        let timers: [CustomTimer] = CustomTimerManager().getTimers()
+        for (_, timer) in timers.enumerate() {
+            if case .First(let time) = timer {
+                currentTimerState = timerStateWithDuration(time)
+                Timer.instance.go()
+            }
+        }
     }
     func secondCustomTimer() {
-        
+        let timers: [CustomTimer] = CustomTimerManager().getTimers()
+        for (_, timer) in timers.enumerate() {
+            if case .Second(let time) = timer {
+                currentTimerState = timerStateWithDuration(time)
+                Timer.instance.go()
+            }
+        }
     }
     func thirdCustomTimer() {
-        
+        let timers: [CustomTimer] = CustomTimerManager().getTimers()
+        for (_, timer) in timers.enumerate() {
+            if case .Third(let time) = timer {
+                currentTimerState = timerStateWithDuration(time)
+                Timer.instance.go()
+            }
+        }
     }
-    private func timerStateWithDuration(minutes: Int) -> TimerState {
-        return TimerState.newState(Double(minutes * 60), direction: .Down, isRunning: Timer.instance.isTimerRunning())
+    
+    private func timerStateWithDuration(seconds: Int) -> TimerState {
+        return TimerState.newState(seconds, direction: .Down, isRunning: Timer.instance.isTimerRunning())
     }
 }

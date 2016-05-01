@@ -33,6 +33,8 @@
 		EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		EDDA88D91CD5476D003ABC96 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
 		EDDA88DB1CD58DAA003ABC96 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
+		EDDA88E31CD694D9003ABC96 /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88E21CD694D9003ABC96 /* BigTimerUITests.swift */; };
+		EDDA88EB1CD6966D003ABC96 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88EA1CD6966D003ABC96 /* SnapshotHelper.swift */; };
 		EDE3BF8E1CCCE73100B4A4C0 /* StorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */; };
 		EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
 		EDE3BF971CCF1C9300B4A4C0 /* CustomTimers.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */; };
@@ -45,6 +47,16 @@
 		EDE970971B0D41B300F3755F /* cellos.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970921B0D41B300F3755F /* cellos.aiff */; };
 		EDE970981B0D41B300F3755F /* deranged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970931B0D41B300F3755F /* deranged.aiff */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDDA88E51CD694D9003ABC96 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDABD9C71A7A0CD6006CFBA5;
+			remoteInfo = "Big Timer";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		ED52FC3F1B02EA4700A9910D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
@@ -75,6 +87,10 @@
 		EDC830681ADED1B40001D36F /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		EDDA88D81CD5476D003ABC96 /* TimerValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerValue.swift; sourceTree = "<group>"; };
 		EDDA88DA1CD58DAA003ABC96 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		EDDA88E01CD694D8003ABC96 /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDA88E21CD694D9003ABC96 /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
+		EDDA88E41CD694D9003ABC96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDDA88EA1CD6966D003ABC96 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		EDE3BF8D1CCCE73100B4A4C0 /* StorageProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageProtocol.swift; sourceTree = "<group>"; };
 		EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
 		EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTimers.plist; sourceTree = "<group>"; };
@@ -90,6 +106,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		EDABD9C51A7A0CD6006CFBA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDA88DD1CD694D8003ABC96 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
+				EDDA88E11CD694D9003ABC96 /* BigTimerUITests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
 				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
 			);
@@ -167,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */,
+				EDDA88E01CD694D8003ABC96 /* BigTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +226,16 @@
 				EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDDA88E11CD694D9003ABC96 /* BigTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EDDA88EA1CD6966D003ABC96 /* SnapshotHelper.swift */,
+				EDDA88E21CD694D9003ABC96 /* BigTimerUITests.swift */,
+				EDDA88E41CD694D9003ABC96 /* Info.plist */,
+			);
+			path = BigTimerUITests;
 			sourceTree = "<group>";
 		};
 		EDE3BF911CCF171000B4A4C0 /* Protocols */ = {
@@ -252,19 +287,41 @@
 			productReference = EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EDDA88DF1CD694D8003ABC96 /* BigTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDDA88E71CD694D9003ABC96 /* Build configuration list for PBXNativeTarget "BigTimerUITests" */;
+			buildPhases = (
+				EDDA88DC1CD694D8003ABC96 /* Sources */,
+				EDDA88DD1CD694D8003ABC96 /* Frameworks */,
+				EDDA88DE1CD694D8003ABC96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDDA88E61CD694D9003ABC96 /* PBXTargetDependency */,
+			);
+			name = BigTimerUITests;
+			productName = BigTimerUITests;
+			productReference = EDDA88E01CD694D8003ABC96 /* BigTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EDABD9C01A7A0CD6006CFBA5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joel Klabo";
 				TargetAttributes = {
 					EDABD9C71A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
+					};
+					EDDA88DF1CD694D8003ABC96 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = EDABD9C71A7A0CD6006CFBA5;
 					};
 				};
 			};
@@ -282,6 +339,7 @@
 			projectRoot = "";
 			targets = (
 				EDABD9C71A7A0CD6006CFBA5 /* Big Timer */,
+				EDDA88DF1CD694D8003ABC96 /* BigTimerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +362,13 @@
 				EDE970941B0D41B300F3755F /* bells.aiff in Resources */,
 				EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */,
 				EDE3BF971CCF1C9300B4A4C0 /* CustomTimers.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDA88DE1CD694D8003ABC96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +406,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDA88DC1CD694D8003ABC96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDA88E31CD694D9003ABC96 /* BigTimerUITests.swift in Sources */,
+				EDDA88EB1CD6966D003ABC96 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDDA88E61CD694D9003ABC96 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDABD9C71A7A0CD6006CFBA5 /* Big Timer */;
+			targetProxy = EDDA88E51CD694D9003ABC96 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */ = {
@@ -473,6 +555,37 @@
 			};
 			name = Release;
 		};
+		EDDA88E81CD694D9003ABC96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joelklabo.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Big Timer";
+			};
+			name = Debug;
+		};
+		EDDA88E91CD694D9003ABC96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.joelklabo.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Big Timer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,6 +606,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EDDA88E71CD694D9003ABC96 /* Build configuration list for PBXNativeTarget "BigTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDA88E81CD694D9003ABC96 /* Debug */,
+				EDDA88E91CD694D9003ABC96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

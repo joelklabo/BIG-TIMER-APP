@@ -14,7 +14,7 @@ class Arrow: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"
     
-    @IBInspectable var lineColor: UIColor = UIColor.blueColor()
+    @IBInspectable var lineColor: UIColor = Theme.lineColor()
     @IBInspectable var lineWidth: CGFloat = 3.0
     
     private var arrowDirection: TimerDirection = .Up

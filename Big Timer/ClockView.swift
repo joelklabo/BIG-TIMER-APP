@@ -12,7 +12,7 @@ import UIKit
 
 class ClockView: UIView {
     
-    @IBInspectable var lineColor: UIColor = UIColor.blueColor()
+    @IBInspectable var lineColor: UIColor = Theme.lineColor()
     @IBInspectable var lineWidth: CGFloat = 3.0
     
     let zRotationKeyPath = "transform.rotation.z"

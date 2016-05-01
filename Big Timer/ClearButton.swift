@@ -12,7 +12,7 @@ import UIKit
 
 class ClearButton: UIView {
 
-    @IBInspectable var lineColor: UIColor = UIColor.blueColor()
+    @IBInspectable var lineColor: UIColor = Theme.lineColor()
     @IBInspectable var lineWidth: CGFloat = 3.0
     
     override func drawRect(rect: CGRect) {

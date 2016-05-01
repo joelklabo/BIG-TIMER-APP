@@ -1,0 +1,1 @@
+We've added Quick Actions for devices with 3D touch support. Keep Big Timing!

@@ -25,11 +25,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     var delegate: TimerManagerDelegate?
     
-    private var direction: Direction = .Up {
-        didSet (direction) {
-            print("new direction \(direction)")
-        }
-    }
+    private var direction: Direction = .Up
     
     private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
@@ -101,7 +97,6 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
             let timerValue = archive.timerValue!
             let timeSinceBackgrounded = NSDate().timeIntervalSinceDate(archive.timeStamp!)
             let timeLeftOnTimer = currentTimerValue(timerValue, timeDelta: timeSinceBackgrounded, direction: archive.direction)
-            print("Timer Value: \(timerValue) Time Since Backgrounded: \(timeSinceBackgrounded) Time Left:\(timeLeftOnTimer)")
             currentTimerState = TimerState.newState(timeLeftOnTimer, direction: archive.direction, isRunning: archive.isRunning)
             
         } else {

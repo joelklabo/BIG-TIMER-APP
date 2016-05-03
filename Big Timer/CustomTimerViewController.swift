@@ -53,7 +53,6 @@ class CustomTimerViewController: UIViewController {
 extension CustomTimerViewController: PanGestureInfoReceiving {
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
-        print(timeDelta)
         timerValue.update(timeDelta)
     }
 }

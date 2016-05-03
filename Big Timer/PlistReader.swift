@@ -33,7 +33,6 @@ struct PlistReader {
     
     func save(dictionary: NSDictionary) {
         if dictionary.writeToURL(fileURL(), atomically: true) {
-            print("Saved: \(dictionary)")
         }
     }
     

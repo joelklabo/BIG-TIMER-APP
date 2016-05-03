@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDABD9C71A7A0CD6006CFBA5"
-               BuildableName = "Big Timer.app"
-               BlueprintName = "Big Timer"
-               ReferencedContainer = "container:Big Timer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDABD9DC1A7A0CD6006CFBA5"
-               BuildableName = "Big TimerTests.xctest"
-               BlueprintName = "Big TimerTests"
-               ReferencedContainer = "container:Big Timer.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -46,29 +16,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDABD9DC1A7A0CD6006CFBA5"
-               BuildableName = "Big TimerTests.xctest"
-               BlueprintName = "Big TimerTests"
-               ReferencedContainer = "container:Big Timer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "ED8C54DF1CD864AC00119596"
                BuildableName = "BigTimerUITests.xctest"
                BlueprintName = "BigTimerUITests"
-               ReferencedContainer = "container:Big Timer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED8C54D11CD8539C00119596"
-               BuildableName = "BigTimerTests.xctest"
-               BlueprintName = "BigTimerTests"
                ReferencedContainer = "container:Big Timer.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -114,8 +64,7 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EDABD9C71A7A0CD6006CFBA5"
@@ -123,7 +72,7 @@
             BlueprintName = "Big Timer"
             ReferencedContainer = "container:Big Timer.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

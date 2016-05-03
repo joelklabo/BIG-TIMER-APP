@@ -25,6 +25,12 @@ class ViewController: UIViewController, TimerManagerDelegate {
         
         timerController.delegate = self
         timeLabel.panInfoDelegate = self
+        
+        if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
+            // runtime check that we are in snapshot mode
+            let time = NSUserDefaults.standardUserDefaults().integerForKey("testingUITimerValue")
+            timeLabel.text = TimeFormatter().formatTime(time)
+        }
     }
     
     deinit {

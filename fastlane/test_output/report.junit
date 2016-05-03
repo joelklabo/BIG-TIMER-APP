@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuites tests='2' failures='0'>
+<testsuites tests='3' failures='0'>
+  <testsuite name='BigTimerUITests.BigTimerUITests' tests='1' failures='0'>
+    <testcase classname='BigTimerUITests.BigTimerUITests' name='testScreenshot' time='12.842'/>
+  </testsuite>
   <testsuite name='BigTimerTests.BigTimerTests' tests='2' failures='0'>
-    <testcase classname='BigTimerTests.BigTimerTests' name='testExample' time='0.000'/>
-    <testcase classname='BigTimerTests.BigTimerTests' name='testPerformanceExample' time='0.408'/>
+    <testcase classname='BigTimerTests.BigTimerTests' name='testExample' time='0.001'/>
+    <testcase classname='BigTimerTests.BigTimerTests' name='testPerformanceExample' time='0.323'/>
   </testsuite>
 </testsuites>

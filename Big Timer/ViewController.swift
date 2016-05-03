@@ -27,7 +27,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
         timeLabel.panInfoDelegate = self
         
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
-            timeLabel.text = TimeFormatter().formatTime(581)
+            let time: NSTimeInterval = 581
+            timeLabel.text = TimeFormatter().formatTime(time)
+            clockView.rotateToTime(time)
         }
     }
     

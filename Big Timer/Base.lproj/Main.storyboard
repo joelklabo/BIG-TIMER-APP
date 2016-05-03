@@ -72,12 +72,8 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="125" y="125" width="350" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="Ppg-Em-zuJ"/>
-                                    <constraint firstAttribute="height" constant="350" id="rIe-Pc-jy6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="130"/>
+                                <rect key="frame" x="78" y="20" width="444" height="560"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="165"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -181,7 +177,9 @@
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BpN-gX-hJG"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="DZ9-YD-eK0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="Fcg-bA-bcp"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ftr-VT-u2f"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Ipg-PB-DO0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="20" id="JUD-FT-OJ1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="KW7-Av-V1d"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LHU-yY-o7G"/>
@@ -207,6 +205,8 @@
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q4E-dQ-HwR"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="umI-6R-9AQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VfQ-cK-XTz" secondAttribute="trailing" constant="58" id="w9B-uM-rk0"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xgK-Nx-9dD"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="xr7-NO-HQG"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xwc-6D-pFB"/>
@@ -216,6 +216,8 @@
                             <mask key="constraints">
                                 <exclude reference="LHU-yY-o7G"/>
                                 <exclude reference="xr7-NO-HQG"/>
+                                <exclude reference="SOT-Jh-zui"/>
+                                <exclude reference="rcr-nC-qI2"/>
                                 <exclude reference="0Ae-HC-NOM"/>
                                 <exclude reference="BpN-gX-hJG"/>
                                 <exclude reference="KwV-25-iEQ"/>

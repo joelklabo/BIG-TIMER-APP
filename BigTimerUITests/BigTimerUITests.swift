@@ -20,9 +20,7 @@ class BigTimerUITests: XCTestCase {
     }
 
     func testScreenshot() {
-        app.staticTexts["0"].tap()
-        sleep(7)
-        snapshot("OneSecondTimer")
+        snapshot("timerView")
     }
     
 }

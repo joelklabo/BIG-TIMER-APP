@@ -62,6 +62,16 @@
                ReferencedContainer = "container:Big Timer.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "ED8C54D11CD8539C00119596"
+               BuildableName = "BigTimerTests.xctest"
+               BlueprintName = "BigTimerTests"
+               ReferencedContainer = "container:Big Timer.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

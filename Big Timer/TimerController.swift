@@ -131,10 +131,6 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func timerDone() {
         delegate?.timerDone()
     }
-    
-    private func storeTimerState(timerState: TimerState) {
-        TimerStateArchive.archiveTimerState(timerState)
-    }
         
     func tick(timeDelta: CFTimeInterval) {
         foregrounding = false

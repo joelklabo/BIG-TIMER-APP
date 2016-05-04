@@ -16,18 +16,11 @@ import QuartzCore
 
 class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
-    enum Direction {
-        case Up
-        case Down
-    }
-    
     private var foregrounding = false
     
     static let instance = TimerController()
     
     var delegate: TimerManagerDelegate?
-    
-    private var direction: Direction = .Up
     
     private var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
@@ -62,10 +55,10 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     }
     
     func changeTimerDirection () {
-        if (currentTimerState.direction == TimerDirection.Up) {
-            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Down, isRunning: Timer.instance.isTimerRunning())
+        if (currentTimerState.direction == .Up) {
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: .Down, isRunning: Timer.instance.isTimerRunning())
         } else {
-            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Up, isRunning: Timer.instance.isTimerRunning())
+            currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: .Up, isRunning: Timer.instance.isTimerRunning())
         }
     }
     

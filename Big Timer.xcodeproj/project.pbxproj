@@ -54,6 +54,7 @@
 		ED8C550C1CDA9FF200119596 /* TimerValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */; };
 		ED8C55111CDAA6C100119596 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
 		ED8C55121CDAA6C100119596 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
+		ED8C55141CDAB6BF00119596 /* TimerStateArchiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55131CDAB6BF00119596 /* TimerStateArchiverTests.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -120,6 +121,7 @@
 		ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerValueTests.swift; sourceTree = "<group>"; };
 		ED8C55101CDAA6C100119596 /* QuickActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionController.swift; sourceTree = "<group>"; };
+		ED8C55131CDAB6BF00119596 /* TimerStateArchiverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerStateArchiverTests.swift; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				ED8C54D61CD8539C00119596 /* Info.plist */,
 				ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */,
 				ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */,
+				ED8C55131CDAB6BF00119596 /* TimerStateArchiverTests.swift */,
 			);
 			path = BigTimerTests;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8C55051CD9A87E00119596 /* AudioController.swift in Sources */,
+				ED8C55141CDAB6BF00119596 /* TimerStateArchiverTests.swift in Sources */,
 				ED8C54F21CD9A82800119596 /* TimerStateArchive.swift in Sources */,
 				ED8C55061CD9A88100119596 /* TimeFormatter.swift in Sources */,
 				ED8C54FD1CD9A85700119596 /* CustomTimerViewController.swift in Sources */,

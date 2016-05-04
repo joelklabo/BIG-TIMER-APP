@@ -23,6 +23,8 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     private var foregrounding = false
     
+    static let instance = TimerController()
+    
     var delegate: TimerManagerDelegate?
     
     private var direction: Direction = .Up
@@ -40,19 +42,9 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         }
     }
     
-    
     override init () {
         super.init()
         Timer.instance.delegate = self
-        setupQuickActions()
-    }
-    
-    func setupQuickActions() {
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: #selector(TimerController.countUpQuickAction), name: "0", object: nil)
-        notificationCenter.addObserver(self, selector: #selector(TimerController.firstCustomTimer), name: CustomTimer.First(time: 0).uniqueKey(), object: nil)
-        notificationCenter.addObserver(self, selector: #selector(TimerController.secondCustomTimer), name: CustomTimer.Second(time: 0).uniqueKey(), object: nil)
-        notificationCenter.addObserver(self, selector: #selector(TimerController.thirdCustomTimer), name: CustomTimer.Third(time: 0).uniqueKey(), object: nil)
     }
     
     func toggle () {
@@ -79,6 +71,11 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         } else {
             currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: TimerDirection.Up, isRunning: Timer.instance.isTimerRunning())
         }
+    }
+    
+    func setTimer(timeInSeconds: Int, direction: TimerDirection) {
+        currentTimerState = TimerState.newState(timeInSeconds, direction: direction, isRunning: true)
+        Timer.instance.go()
     }
     
     func setTimerToDirection(direction: TimerDirection) {
@@ -138,44 +135,4 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
     
-}
-
-// Quick Actions
-
-extension TimerController {
-    func countUpQuickAction() {
-        currentTimerState = TimerState.newState(0, direction: .Up, isRunning: Timer.instance.isTimerRunning())
-        Timer.instance.go()
-    }
-    func firstCustomTimer() {
-        let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .First(let time) = timer {
-                currentTimerState = timerStateWithDuration(time)
-                Timer.instance.go()
-            }
-        }
-    }
-    func secondCustomTimer() {
-        let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .Second(let time) = timer {
-                currentTimerState = timerStateWithDuration(time)
-                Timer.instance.go()
-            }
-        }
-    }
-    func thirdCustomTimer() {
-        let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .Third(let time) = timer {
-                currentTimerState = timerStateWithDuration(time)
-                Timer.instance.go()
-            }
-        }
-    }
-    
-    private func timerStateWithDuration(seconds: Int) -> TimerState {
-        return TimerState.newState(seconds, direction: .Down, isRunning: Timer.instance.isTimerRunning())
-    }
 }

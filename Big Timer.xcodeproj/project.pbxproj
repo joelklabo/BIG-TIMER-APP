@@ -52,6 +52,8 @@
 		ED8C55071CD9A88600119596 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		ED8C55091CDA9C9F00119596 /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */; };
 		ED8C550C1CDA9FF200119596 /* TimerValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */; };
+		ED8C55111CDAA6C100119596 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
+		ED8C55121CDAA6C100119596 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -117,6 +119,7 @@
 		ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerValueTests.swift; sourceTree = "<group>"; };
+		ED8C55101CDAA6C100119596 /* QuickActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickActionController.swift; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 				EDC830681ADED1B40001D36F /* NotificationController.swift */,
 				ED9B668C1AD8326300888329 /* TimerController.swift */,
 				ED52FC3F1B02EA4700A9910D /* AudioController.swift */,
+				ED8C55101CDAA6C100119596 /* QuickActionController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -478,6 +482,7 @@
 				ED8C54FD1CD9A85700119596 /* CustomTimerViewController.swift in Sources */,
 				ED8C55021CD9A87700119596 /* TimeLabel.swift in Sources */,
 				ED8C550C1CDA9FF200119596 /* TimerValueTests.swift in Sources */,
+				ED8C55121CDAA6C100119596 /* QuickActionController.swift in Sources */,
 				ED8C55071CD9A88600119596 /* TimerController.swift in Sources */,
 				ED8C54F51CD9A83000119596 /* TimeDeltaCalculator.swift in Sources */,
 				ED8C55001CD9A86E00119596 /* ClearButton.swift in Sources */,
@@ -535,6 +540,7 @@
 				ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */,
 				EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */,
 				ED7C11DB1B055E7D00318343 /* SettingsViewController.swift in Sources */,
+				ED8C55111CDAA6C100119596 /* QuickActionController.swift in Sources */,
 				ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */,
 				ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */,
 			);

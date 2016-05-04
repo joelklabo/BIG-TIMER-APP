@@ -77,7 +77,7 @@ struct CustomTimerManager {
 }
 
 enum CustomTimer {
-
+    
     case First(time: Int)
     case Second(time: Int)
     case Third(time: Int)

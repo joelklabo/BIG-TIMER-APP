@@ -14,7 +14,6 @@ class ViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
     
-    lazy var timerController = TimerController()
     lazy var audioController = AudioController()
         
     override func viewDidLoad() {
@@ -23,7 +22,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
-        timerController.delegate = self
+        TimerController.instance.delegate = self
         timeLabel.panInfoDelegate = self
         
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
@@ -38,23 +37,23 @@ class ViewController: UIViewController, TimerManagerDelegate {
     }
     
     func returningFromBackground () {
-        timerController.returningFromBackground()
+        TimerController.instance.returningFromBackground()
     }
     
     func enteringBackground () {
-        timerController.enteringBackground()
+        TimerController.instance.enteringBackground()
     }
 
     @IBAction func tap(sender: AnyObject) {
-        timerController.toggle()
+        TimerController.instance.toggle()
     }
 
     @IBAction func clear(sender: AnyObject) {
-        timerController.clear()
+        TimerController.instance.clear()
     }
 
     @IBAction func arrowTap(sender: AnyObject) {
-        timerController.changeTimerDirection()
+        TimerController.instance.changeTimerDirection()
     }
 
     @IBAction func settingsTap(sender: AnyObject) {
@@ -80,7 +79,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
 
 extension ViewController: PanGestureInfoReceiving {
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
-        timerController.setTimerToDirection(.Down)
-        timerController.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+        TimerController.instance.setTimerToDirection(.Down)
+        TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 }

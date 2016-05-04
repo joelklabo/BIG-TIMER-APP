@@ -50,6 +50,7 @@
 		ED8C55051CD9A87E00119596 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED8C55061CD9A88100119596 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED8C55071CD9A88600119596 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
+		ED8C55091CDA9C9F00119596 /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -113,6 +114,7 @@
 		ED8C54E21CD864AD00119596 /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
 		ED8C54E41CD864AD00119596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		ED9B668C1AD8326300888329 /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerController.swift; sourceTree = "<group>"; };
 		EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDABD9CC1A7A0CD6006CFBA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				ED8C54D41CD8539C00119596 /* BigTimerTests.swift */,
 				ED8C54D61CD8539C00119596 /* Info.plist */,
+				ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */,
 			);
 			path = BigTimerTests;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				ED8C55071CD9A88600119596 /* TimerController.swift in Sources */,
 				ED8C54F51CD9A83000119596 /* TimeDeltaCalculator.swift in Sources */,
 				ED8C55001CD9A86E00119596 /* ClearButton.swift in Sources */,
+				ED8C55091CDA9C9F00119596 /* TimeFormatterTests.swift in Sources */,
 				ED8C54FF1CD9A86C00119596 /* InfoButton.swift in Sources */,
 				ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */,
 				ED8C54F41CD9A82E00119596 /* CustomTimerManager.swift in Sources */,

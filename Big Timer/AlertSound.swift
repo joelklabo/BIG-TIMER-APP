@@ -13,11 +13,11 @@ enum AlertSound: String {
     case Zarvox     = "zarvox"
     case Hysterical = "hysterical"
     case Bells      = "bells"
-    case Trinoids = "trinoids"
-    case Boing = "boing"
-    case Cellos = "cellos"
-    case Deranged = "deranged"
-    case Bubbles = "bubbles"
+    case Trinoids   = "trinoids"
+    case Boing      = "boing"
+    case Cellos     = "cellos"
+    case Deranged   = "deranged"
+    case Bubbles    = "bubbles"
     
     static let options = [
         AlertSound.Zarvox,

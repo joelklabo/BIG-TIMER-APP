@@ -90,7 +90,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         foregrounding = true
         
         // If there is no active timer session. Don't retrieve the timer state.
-        if let archive = TimerStateArchive.retrieveTimerState() {
+        if let archive = TimerStateArchiver.retrieveTimerState() {
             
             guard archive.isRunning.boolValue else { return }
             
@@ -110,7 +110,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     }
     
     func enteringBackground () {
-        TimerStateArchive.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning()))
+        TimerStateArchiver.archiveTimerState(TimerState.newState(currentTimerState.timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning()))
         Timer.instance.stop()
     }
     

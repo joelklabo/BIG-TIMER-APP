@@ -8,9 +8,7 @@
 
 import Foundation
 
-typealias EncodedTimerState = NSData?
-
-class TimerStateArchive {
+class TimerStateArchiver {
  
     class func archiveTimerState (timeArchive: TimerState) {
         let data = NSKeyedArchiver.archivedDataWithRootObject(timeArchive)

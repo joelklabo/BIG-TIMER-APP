@@ -36,7 +36,7 @@ class NotificationController {
     }
     
     @objc func enteringBackground() {
-        let timerState = TimerStateArchive.retrieveTimerState()
+        let timerState = TimerStateArchiver.retrieveTimerState()
         let timeLeft = timerState!.timerValue
         let timerDirection = timerState!.direction
         let timerIsRunning = timerState!.isRunning as Bool

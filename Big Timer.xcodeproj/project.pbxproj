@@ -27,6 +27,7 @@
 		ED8C54D51CD8539C00119596 /* BigTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54D41CD8539C00119596 /* BigTimerTests.swift */; };
 		ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54E21CD864AD00119596 /* BigTimerUITests.swift */; };
 		ED8C54EB1CD8698000119596 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */; };
+		ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		ED9B668D1AD8326300888329 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
 		EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		EDABD9D01A7A0CD6006CFBA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CF1A7A0CD6006CFBA5 /* ViewController.swift */; };
@@ -438,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */,
 				ED8C54D51CD8539C00119596 /* BigTimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

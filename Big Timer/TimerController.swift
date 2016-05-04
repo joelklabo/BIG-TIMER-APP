@@ -48,11 +48,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     }
     
     func toggle () {
-        if Timer.instance.isTimerRunning() {
-            Timer.instance.stop()
-        } else {
-            Timer.instance.go()
-        }
+        Timer.instance.toggle()
     }
     
     func clear () {

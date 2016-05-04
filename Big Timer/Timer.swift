@@ -54,6 +54,10 @@ class Timer {
         action = .Go
     }
     
+    func toggle() {
+        isTimerRunning() ? stop() : go()
+    }
+    
     private func act(action: Actions) {
         switch action {
         case .Go:

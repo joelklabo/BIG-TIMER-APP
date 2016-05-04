@@ -22,6 +22,7 @@ public class TimerState: NSObject, NSCoding {
         self.direction = TimerDirection(rawValue:decoder.decodeObjectForKey("direction") as! TimerDirection.RawValue)
         self.isRunning = decoder.decodeObjectForKey("isRunning") as! Bool
     }
+    
     class func newState(timerValue: Int, direction: TimerDirection, isRunning: Bool) -> TimerState {
         return TimerState.newState(CFTimeInterval(timerValue), direction: direction, isRunning: isRunning)
     }
@@ -61,10 +62,9 @@ public class TimerState: NSObject, NSCoding {
             return false
         }
     }
-    
 }
 
-enum TimerDirection : String {
+enum TimerDirection: String {
     case Up = "up"
     case Down = "down"
 }

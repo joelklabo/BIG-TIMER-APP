@@ -15,7 +15,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var arrowView: Arrow!
     
     lazy var audioController = AudioController()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +23,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         TimerController.instance.delegate = self
-        timeLabel.panInfoDelegate = self
         
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
             let time: NSTimeInterval = 581
             timeLabel.text = TimeFormatter().formatTime(time)
@@ -78,6 +79,9 @@ class ViewController: UIViewController, TimerManagerDelegate {
 }
 
 extension ViewController: PanGestureInfoReceiving {
+    func verticalPanPassthrough(sender: AnyObject) {
+        verticalPan(sender)
+    }
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
         TimerController.instance.setTimerToDirection(.Down)
         TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))

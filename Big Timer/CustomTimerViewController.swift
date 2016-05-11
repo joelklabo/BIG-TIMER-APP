@@ -36,8 +36,8 @@ class CustomTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel!.panInfoDelegate = self
         timeLabel!.text = timeFormatter.formatTime(timerValue.time)
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
     }
     
     func save() {
@@ -51,6 +51,9 @@ class CustomTimerViewController: UIViewController {
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {
+    func verticalPanPassthrough(sender: AnyObject) {
+        verticalPan(sender)
+    }
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
         timerValue.update(timeDelta)

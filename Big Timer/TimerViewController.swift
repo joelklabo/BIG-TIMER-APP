@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, TimerManagerDelegate {
+class TimerViewController: UIViewController, TimerManagerDelegate {
 
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
@@ -19,8 +19,8 @@ class ViewController: UIViewController, TimerManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         TimerController.instance.delegate = self
         
@@ -78,7 +78,7 @@ class ViewController: UIViewController, TimerManagerDelegate {
 
 }
 
-extension ViewController: PanGestureInfoReceiving {
+extension TimerViewController: PanGestureInfoReceiving {
     func verticalPanPassthrough(sender: AnyObject) {
         verticalPan(sender)
     }

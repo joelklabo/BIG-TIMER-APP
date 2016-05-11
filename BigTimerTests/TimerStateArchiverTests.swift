@@ -43,7 +43,11 @@ class TimerStateArchiverTests: XCTestCase {
         let timerState = TimerState.zeroState()
         TimerStateArchiver.archiveTimerState(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let _ = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+        if let newTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+            XCTAssert(timerState.timerValue == newTimerState.timerValue)
+            XCTAssert(timerState.isRunning == newTimerState.isRunning)
+            XCTAssert(newTimerState.timeStamp == NSDate(timeIntervalSince1970: 1))
+        } else {
             XCTFail("Should not have updated time")
         }
     }

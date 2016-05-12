@@ -12,6 +12,29 @@
 		ED540F4C1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
 		ED540F4D1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
 		ED540F4E1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
+		ED540F4F1CE45E0E000A4860 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
+		ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
+		ED540F511CE45E86000A4860 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
+		ED540F521CE45E89000A4860 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
+		ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
+		ED540F541CE45E8F000A4860 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
+		ED540F551CE45E92000A4860 /* CustomTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */; };
+		ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
+		ED540F571CE45E98000A4860 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
+		ED540F581CE45E9B000A4860 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
+		ED540F591CE45E9E000A4860 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
+		ED540F5A1CE45EA0000A4860 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
+		ED540F5B1CE45EA5000A4860 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
+		ED540F5C1CE45EA9000A4860 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */; };
+		ED540F5D1CE45EAD000A4860 /* CustomTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */; };
+		ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
+		ED540F5F1CE45EB5000A4860 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
+		ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
+		ED540F611CE45EBA000A4860 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
+		ED540F621CE45EBA000A4860 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
+		ED540F631CE45EBA000A4860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
+		ED540F641CE45EBF000A4860 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
+		ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
@@ -515,8 +538,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED540F631CE45EBA000A4860 /* AppDelegate.swift in Sources */,
+				ED540F621CE45EBA000A4860 /* TimeLabel.swift in Sources */,
+				ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */,
+				ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */,
+				ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */,
+				ED540F611CE45EBA000A4860 /* ClockView.swift in Sources */,
 				ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */,
+				ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */,
+				ED540F551CE45E92000A4860 /* CustomTimerManager.swift in Sources */,
+				ED540F4F1CE45E0E000A4860 /* TimerController.swift in Sources */,
+				ED540F591CE45E9E000A4860 /* TimerState.swift in Sources */,
+				ED540F541CE45E8F000A4860 /* PlistReader.swift in Sources */,
 				ED540F4E1CE45BAE000A4860 /* TimerViewController.swift in Sources */,
+				ED540F521CE45E89000A4860 /* QuickActionController.swift in Sources */,
+				ED540F5B1CE45EA5000A4860 /* TimerValue.swift in Sources */,
+				ED540F511CE45E86000A4860 /* AudioController.swift in Sources */,
+				ED540F5D1CE45EAD000A4860 /* CustomTimerViewController.swift in Sources */,
+				ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */,
+				ED540F571CE45E98000A4860 /* Theme.swift in Sources */,
+				ED540F5C1CE45EA9000A4860 /* SettingsViewController.swift in Sources */,
+				ED540F5F1CE45EB5000A4860 /* InfoButton.swift in Sources */,
+				ED540F5A1CE45EA0000A4860 /* AlertSound.swift in Sources */,
+				ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */,
+				ED540F581CE45E9B000A4860 /* PanGestureInfoProviding.swift in Sources */,
+				ED540F641CE45EBF000A4860 /* Timer.swift in Sources */,
 				ED8C54EB1CD8698000119596 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

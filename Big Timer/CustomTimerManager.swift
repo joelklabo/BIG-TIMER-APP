@@ -110,11 +110,11 @@ enum CustomTimer {
         let formatter = TimeFormatter(separator: ":")
         switch self {
         case .First(let time):
-            return formatter.formatTime(time).timeString
+            return formatter.formatTime(time).formattedString
         case .Second(let time):
-            return formatter.formatTime(time).timeString
+            return formatter.formatTime(time).formattedString
         case .Third(let time):
-            return formatter.formatTime(time).timeString
+            return formatter.formatTime(time).formattedString
         }
     }
     

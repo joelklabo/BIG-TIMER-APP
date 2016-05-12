@@ -19,7 +19,7 @@ class CustomTimerViewController: UIViewController {
         didSet {
             if let timeLabel = timeLabel {
                 let formattedTime = timeFormatter.formatTime(timerValue.time)
-                timeLabel.text = formattedTime.timeString
+                timeLabel.text = formattedTime.formattedString
             }
         }
     }
@@ -37,7 +37,7 @@ class CustomTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel!.text = timeFormatter.formatTime(timerValue.time).timeString
+        timeLabel!.text = timeFormatter.formatTime(timerValue.time).formattedString
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
     }
     

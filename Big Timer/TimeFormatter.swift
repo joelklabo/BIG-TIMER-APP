@@ -10,7 +10,7 @@ import Foundation
 
 typealias TimeComponents = (hours: Int, minutes: Int, seconds: Int)
 typealias TimeDisplaySections = Int
-typealias FormattedTime = (timeString: String, numberSections: TimeDisplaySections)
+typealias FormattedTime = (formattedString: String, timeSections: TimeDisplaySections)
 
 struct TimeFormatter {
     
@@ -49,7 +49,7 @@ struct TimeFormatter {
         default:
             displaySections = 3
             timeComponents.append("\(time.hours)")
-            timeComponents.append("\(padNumber(time.minutes))dfs")
+            timeComponents.append("\(padNumber(time.minutes))")
             timeComponents.append("\(padNumber(time.seconds))")
             break
         }

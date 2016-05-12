@@ -10,6 +10,8 @@ import UIKit
 
 class TimerViewController: UIViewController, TimerManagerDelegate {
 
+    let timeFormatter = TimeFormatter(separator: ":")
+    
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
@@ -28,7 +30,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
 
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
             let time: NSTimeInterval = 581
-            timeLabel.text = TimeFormatter().formatTime(time)
+            let formattedTime = timeFormatter.formatTime(time)
+            timeLabel.text = formattedTime.timeString
             clockView.rotateToTime(time)
         }
     }
@@ -67,7 +70,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
 
     func timerUpdate(timerState: TimerState) {
         clockView.rotateToTime(timerState.timerValue)
-        timeLabel.text = TimeFormatter().formatTime(timerState.timerValue)
+        let formattedTime = timeFormatter.formatTime(timerState.timerValue)
+        timeLabel.text = formattedTime.timeString
         arrowView.changeDirection(timerState.direction)
     }
     

@@ -107,13 +107,14 @@ enum CustomTimer {
     }
     
     func title() -> String {
+        let formatter = TimeFormatter(separator: ":")
         switch self {
         case .First(let time):
-            return TimeFormatter().formatTime(time)
+            return formatter.formatTime(time).timeString
         case .Second(let time):
-            return TimeFormatter().formatTime(time)
+            return formatter.formatTime(time).timeString
         case .Third(let time):
-            return TimeFormatter().formatTime(time)
+            return formatter.formatTime(time).timeString
         }
     }
     

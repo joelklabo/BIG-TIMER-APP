@@ -10,23 +10,35 @@ import XCTest
 
 class TimeFormatterTests: XCTestCase {
     
-    let formatter = TimeFormatter()
-    
     func testThatTimeIsFormattedCorrectly() {
+        let formatter = TimeFormatter(separator: ":")
         let tenSeconds = 10
-        let tenSecondsFormattedString = formatter.formatTime(tenSeconds)
+        let tenSecondsFormattedString = formatter.formatTime(tenSeconds).timeString
         XCTAssertTrue(tenSecondsFormattedString == "10")
         
         let oneMinuteInSeconds = 60
-        let oneMinuteFormattedString = formatter.formatTime(oneMinuteInSeconds)
+        let oneMinuteFormattedString = formatter.formatTime(oneMinuteInSeconds).timeString
         XCTAssertTrue(oneMinuteFormattedString == "1:00")
         
         let oneHourInSeconds = 60 * oneMinuteInSeconds
-        let oneHourFormattedString = formatter.formatTime(oneHourInSeconds)
+        let oneHourFormattedString = formatter.formatTime(oneHourInSeconds).timeString
         XCTAssertTrue(oneHourFormattedString == "1:00:00")
         
         let oneHourOneMintuteAndTenSeconds = oneHourInSeconds + oneMinuteInSeconds + tenSeconds
-        let oneHourOneMinuteAndTenSecondsFormattedString = formatter.formatTime(oneHourOneMintuteAndTenSeconds)
+        let oneHourOneMinuteAndTenSecondsFormattedString = formatter.formatTime(oneHourOneMintuteAndTenSeconds).timeString
         XCTAssertTrue(oneHourOneMinuteAndTenSecondsFormattedString == "1:01:10")
+    }
+    
+    func testThatOneMinuteHasTwoTimeDisplaySections() {
+        let formatter = TimeFormatter(separator: ":")
+        let oneMinuteInSeconds = 60
+        XCTAssert(formatter.formatTime(oneMinuteInSeconds).numberSections == 2)
+    }
+    
+    func testThatTimeFormatterUsesTheRightSeparator() {
+        let formatter = TimeFormatter(separator: "#")
+        let oneMinute = 60
+        let oneMinuteFormattedString = formatter.formatTime(oneMinute).timeString
+        XCTAssert(oneMinuteFormattedString == "1#00")
     }
 }

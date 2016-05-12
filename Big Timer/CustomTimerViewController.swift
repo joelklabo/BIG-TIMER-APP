@@ -13,12 +13,13 @@ class CustomTimerViewController: UIViewController {
     @IBOutlet weak var timeLabel: TimeLabel?
     
     var timer: CustomTimer?
-    let timeFormatter = TimeFormatter()
+    let timeFormatter = TimeFormatter(separator: ":")
     
     var timerValue = TimerValue() {
         didSet {
             if let timeLabel = timeLabel {
-                timeLabel.text = timeFormatter.formatTime(timerValue.time)
+                let formattedTime = timeFormatter.formatTime(timerValue.time)
+                timeLabel.text = formattedTime.timeString
             }
         }
     }
@@ -36,7 +37,7 @@ class CustomTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel!.text = timeFormatter.formatTime(timerValue.time)
+        timeLabel!.text = timeFormatter.formatTime(timerValue.time).timeString
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
     }
     

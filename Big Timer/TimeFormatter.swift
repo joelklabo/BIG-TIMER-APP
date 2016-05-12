@@ -9,36 +9,53 @@
 import Foundation
 
 typealias TimeComponents = (hours: Int, minutes: Int, seconds: Int)
+typealias TimeDisplaySections = Int
+typealias FormattedTime = (timeString: String, numberSections: TimeDisplaySections)
 
-class TimeFormatter {
+struct TimeFormatter {
     
-    func formatTime(time: CFTimeInterval) -> String {
-        return buildString(buildTimeState(time))
+    let separator: String
+    
+    func formatTime(time: CFTimeInterval) -> FormattedTime {
+        return buildFormattedTime(buildTimeState(time))
     }
     
-    func formatTime(time: Int) -> String {
+    func formatTime(time: Int) -> FormattedTime {
         return formatTime(CFTimeInterval(time))
     }
     
     private func buildTimeState(time: CFTimeInterval) -> TimeComponents {
         
-        let hours = Int(floor(time / 3600))
+        let hours   = Int(floor(time / 3600))
         let minutes = Int(floor((time / 60) % 60))
         let seconds = Int(time % 60)
         
         return (hours: hours, minutes: minutes, seconds: seconds)
     }
 
-    private func buildString(time: TimeComponents) -> String {
+    private func buildFormattedTime(time: TimeComponents) -> FormattedTime {
+        var timeComponents: [String] = []
+        var displaySections = 0
         switch time {
         case (0, 0, _):
-            return "\(time.seconds)"
+            displaySections = 1
+            timeComponents.append("\(time.seconds)")
+            break
         case (0, _, _):
-            return "\(time.minutes):\(padNumber(time.seconds))"
+            displaySections = 2
+            timeComponents.append("\(time.minutes)")
+            timeComponents.append("\(padNumber(time.seconds))")
+            break
         default:
-            return "\(time.hours):\(padNumber(time.minutes)):\(padNumber(time.seconds))"
+            displaySections = 3
+            timeComponents.append("\(time.hours)")
+            timeComponents.append("\(padNumber(time.minutes))dfs")
+            timeComponents.append("\(padNumber(time.seconds))")
+            break
         }
+        return (timeComponents.joinWithSeparator(separator), displaySections)
     }
+    
     
     private func padNumber(number: Int) -> String {
         if (number < 10) {

@@ -27,6 +27,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         TimerController.instance.delegate = self
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+        
+        timeLabel.font = UIFont.systemFontOfSize(TimerLabelFontSizeManager.sizeFor(traitCollection))
 
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
             let time: NSTimeInterval = 581

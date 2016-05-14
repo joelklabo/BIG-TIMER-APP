@@ -35,6 +35,10 @@
 		ED540F631CE45EBA000A4860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		ED540F641CE45EBF000A4860 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
+		ED540F701CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */; };
+		ED540F711CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */; };
+		ED540F721CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */; };
+		ED540F741CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F731CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift */; };
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
@@ -121,6 +125,8 @@
 		ED52FC3F1B02EA4700A9910D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		ED52FC421B02EC6100A9910D /* zarvox.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = zarvox.aiff; sourceTree = "<group>"; };
 		ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabelFontSizeManager.swift; sourceTree = "<group>"; };
+		ED540F731CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabelFontSizeManagerTests.swift; sourceTree = "<group>"; };
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 		ED23095E1AF291CB0028D062 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED540F6A1CE46C4C000A4860 /* Utilities */,
 				ED7C93D41AFCB339009C9AF7 /* Arrow.swift */,
 				EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */,
 				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
@@ -226,6 +233,14 @@
 				ED52FC421B02EC6100A9910D /* zarvox.aiff */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		ED540F6A1CE46C4C000A4860 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		ED7C11DD1B05DFC400318343 /* View Controllers */ = {
@@ -257,6 +272,7 @@
 				ED8C55081CDA9C9F00119596 /* TimeFormatterTests.swift */,
 				ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */,
 				ED8C55131CDAB6BF00119596 /* TimerStateArchiverTests.swift */,
+				ED540F731CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift */,
 			);
 			path = BigTimerTests;
 			sourceTree = "<group>";
@@ -515,6 +531,7 @@
 				ED8C54F51CD9A83000119596 /* TimeDeltaCalculator.swift in Sources */,
 				ED8C55001CD9A86E00119596 /* ClearButton.swift in Sources */,
 				ED8C55091CDA9C9F00119596 /* TimeFormatterTests.swift in Sources */,
+				ED540F741CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift in Sources */,
 				ED8C54FF1CD9A86C00119596 /* InfoButton.swift in Sources */,
 				ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */,
 				ED8C54F41CD9A82E00119596 /* CustomTimerManager.swift in Sources */,
@@ -531,6 +548,7 @@
 				ED8C54FC1CD9A85400119596 /* SettingsViewController.swift in Sources */,
 				ED8C54F31CD9A82B00119596 /* PlistReader.swift in Sources */,
 				ED8C54F61CD9A83300119596 /* Theme.swift in Sources */,
+				ED540F711CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,6 +578,7 @@
 				ED540F5C1CE45EA9000A4860 /* SettingsViewController.swift in Sources */,
 				ED540F5F1CE45EB5000A4860 /* InfoButton.swift in Sources */,
 				ED540F5A1CE45EA0000A4860 /* AlertSound.swift in Sources */,
+				ED540F721CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */,
 				ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */,
 				ED540F581CE45E9B000A4860 /* PanGestureInfoProviding.swift in Sources */,
 				ED540F641CE45EBF000A4860 /* Timer.swift in Sources */,
@@ -576,6 +595,7 @@
 				EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */,
 				ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */,
 				ED540F4C1CE45BAE000A4860 /* TimerViewController.swift in Sources */,
+				ED540F701CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */,
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
 				EDE8109C1B1D7AAE00F68BFB /* InfoButton.swift in Sources */,
 				ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */,

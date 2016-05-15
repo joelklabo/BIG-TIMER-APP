@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController, TimerManagerDelegate {
+class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFontSizeManagerDelegate {
 
     let timeFormatter = TimeFormatter(separator: ":")
     
@@ -28,8 +28,6 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
         
-        timeLabel.font = UIFont.systemFontOfSize(TimerLabelFontSizeManager.sizeFor(traitCollection))
-
         if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
             let time: NSTimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
@@ -73,7 +71,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     func timerUpdate(timerState: TimerState) {
         clockView.rotateToTime(timerState.timerValue)
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
-        timeLabel.text = formattedTime.formattedString
+        updateTimer(timeLabel, traitCollection: traitCollection, time: formattedTime.formattedString)
         arrowView.changeDirection(timerState.direction)
     }
     
@@ -82,6 +80,12 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         audioController.playSound()
     }
 
+}
+
+extension TimerViewController {
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        updateTimer(timeLabel, traitCollection: traitCollection, time: timeLabel.text!)
+    }
 }
 
 extension TimerViewController: PanGestureInfoReceiving {

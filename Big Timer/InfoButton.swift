@@ -14,7 +14,7 @@ import UIKit
 class InfoButton: UIView {
     
     @IBInspectable var lineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var lineWidth: CGFloat = 3.0
+    @IBInspectable var lineWidth: CGFloat = 4.0
     
     override func drawRect(rect: CGRect) {
                 
@@ -29,11 +29,11 @@ class InfoButton: UIView {
         lineColor.setStroke()
         path.stroke()
         
-        // Draw second hand
+        // Draw the line of the 'i'
         let center = CGPointMake(CGRectGetMidX(rect), (CGRectGetMidY(rect) - lineWidth))
         let secondHandPath = UIBezierPath()
-        secondHandPath.moveToPoint(center)
-        secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 4)))
+        secondHandPath.moveToPoint(CGPointMake(center.x, center.y + lineWidth))
+        secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 3)))
         
         secondHandPath.lineWidth = lineWidth
         secondHandPath.lineCapStyle = .Round
@@ -45,7 +45,7 @@ class InfoButton: UIView {
         dotPoint.moveToPoint(dotPosition)
         dotPoint.addLineToPoint(dotPosition)
         
-        dotPoint.lineWidth = lineWidth
+        dotPoint.lineWidth = lineWidth + 1
         dotPoint.lineCapStyle = .Round
         dotPoint.stroke()
         

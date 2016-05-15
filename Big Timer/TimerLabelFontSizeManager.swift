@@ -11,6 +11,9 @@ import UIKit
 
 struct TimerLabelFontSizeManager {
     
+    static let maxCharacters = 7
+    static let sizeMultiplier = 5
+    
     static func sizeFor(traits: UITraitCollection, numberOfCharacters: Int) -> CGFloat {
         let width = traits.horizontalSizeClass
         let height = traits.verticalSizeClass
@@ -33,20 +36,42 @@ struct TimerLabelFontSizeManager {
         }
     }
     
+    // Optimizing for between 1 and 7 characters
+    
     private static func sizeForSmall(numberOfCharacters: Int) -> CGFloat {
-        return 65
+        let minimunSize: CGFloat = 75
+        let maximumSize: CGFloat = 120
+        if numberOfCharacters >= maxCharacters {
+            return minimunSize
+        }
+        return maximumSize - CGFloat(sizeMultiplier * (numberOfCharacters - 1))
     }
     
     private static func sizeForMedium(numberOfCharacters: Int) -> CGFloat {
-        return 75
+        let minimunSize: CGFloat = 85
+        let maximumSize: CGFloat = 145
+        if numberOfCharacters >= maxCharacters {
+            return minimunSize
+        }
+        return maximumSize - CGFloat(sizeMultiplier * (numberOfCharacters - 1))
     }
     
     private static func sizeForLarge(numberOfCharacters: Int) -> CGFloat {
-        return 90
+        let minimunSize: CGFloat = 100
+        let maximumSize: CGFloat = 165
+        if numberOfCharacters >= maxCharacters {
+            return minimunSize
+        }
+        return maximumSize - CGFloat(sizeMultiplier * (numberOfCharacters - 1))
     }
     
     private static func sizeForExtraLarge(numberOfCharacters: Int) -> CGFloat {
-        return 145
+        let minimunSize: CGFloat = 155
+        let maximumSize: CGFloat = 200
+        if numberOfCharacters >= maxCharacters {
+            return minimunSize
+        }
+        return maximumSize - CGFloat(sizeMultiplier * (numberOfCharacters - 1))
     }
 }
 

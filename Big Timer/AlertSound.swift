@@ -47,6 +47,10 @@ enum AlertSound: String {
         
     }
     
+    func fileName() -> String {
+        return "\(AlertSound.getPreference().rawValue).aiff"
+    }
+    
     private static func userDefaultsKey () -> String {
         return "alertSound"
     }

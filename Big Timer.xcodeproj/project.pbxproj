@@ -39,6 +39,9 @@
 		ED540F711CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */; };
 		ED540F721CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */; };
 		ED540F741CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F731CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift */; };
+		ED540F761CE92742000A4860 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F751CE92742000A4860 /* SettingsButton.swift */; };
+		ED540F771CE92742000A4860 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F751CE92742000A4860 /* SettingsButton.swift */; };
+		ED540F781CE92742000A4860 /* SettingsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F751CE92742000A4860 /* SettingsButton.swift */; };
 		ED59131D1A97CD790006B20F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED5CD8971A9913D80086886B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
@@ -127,6 +130,7 @@
 		ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		ED540F6F1CE46DEE000A4860 /* TimerLabelFontSizeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabelFontSizeManager.swift; sourceTree = "<group>"; };
 		ED540F731CE46E22000A4860 /* TimerLabelFontSizeManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabelFontSizeManagerTests.swift; sourceTree = "<group>"; };
+		ED540F751CE92742000A4860 /* SettingsButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsButton.swift; sourceTree = "<group>"; };
 		ED59131C1A97CD790006B20F /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		ED5CD8961A9913D80086886B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				ED5CD89C1A9E3AE60086886B /* ClearButton.swift */,
 				ED59131C1A97CD790006B20F /* ClockView.swift */,
 				ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */,
+				ED540F751CE92742000A4860 /* SettingsButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				ED8C55021CD9A87700119596 /* TimeLabel.swift in Sources */,
 				ED8C550C1CDA9FF200119596 /* TimerValueTests.swift in Sources */,
 				ED8C55121CDAA6C100119596 /* QuickActionController.swift in Sources */,
+				ED540F771CE92742000A4860 /* SettingsButton.swift in Sources */,
 				ED8C55071CD9A88600119596 /* TimerController.swift in Sources */,
 				ED8C54F51CD9A83000119596 /* TimeDeltaCalculator.swift in Sources */,
 				ED8C55001CD9A86E00119596 /* ClearButton.swift in Sources */,
@@ -564,6 +570,7 @@
 				ED540F611CE45EBA000A4860 /* ClockView.swift in Sources */,
 				ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */,
 				ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */,
+				ED540F781CE92742000A4860 /* SettingsButton.swift in Sources */,
 				ED540F551CE45E92000A4860 /* CustomTimerManager.swift in Sources */,
 				ED540F4F1CE45E0E000A4860 /* TimerController.swift in Sources */,
 				ED540F591CE45E9E000A4860 /* TimerState.swift in Sources */,
@@ -608,6 +615,7 @@
 				ED82F8691CD077A100D08D56 /* CustomTimerViewController.swift in Sources */,
 				EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */,
 				ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */,
+				ED540F761CE92742000A4860 /* SettingsButton.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 				ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */,
 				EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */,

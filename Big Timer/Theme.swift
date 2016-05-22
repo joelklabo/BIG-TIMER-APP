@@ -14,7 +14,7 @@ struct Theme {
         return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     }
     static func clockLineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 210/255, green: 16/255, blue: 16/255, alpha: 1)
+        return UIColor(colorLiteralRed: 221/255, green: 73/255, blue: 46/255, alpha: 1)
     }
     static func infoButtonLineColor() -> UIColor {
         return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)

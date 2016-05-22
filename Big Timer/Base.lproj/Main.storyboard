@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,7 +22,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="30" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
@@ -45,7 +45,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="515" y="40" width="65" height="65"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
@@ -74,7 +74,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="510" y="510" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
@@ -119,7 +119,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="485" width="95" height="95"/>
-                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -177,7 +177,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
@@ -241,18 +241,18 @@
                                 <exclude reference="rcr-nC-qI2"/>
                                 <exclude reference="umI-6R-9AQ"/>
                                 <exclude reference="w9B-uM-rk0"/>
-                                <exclude reference="0Ae-HC-NOM"/>
-                                <exclude reference="BpN-gX-hJG"/>
-                                <exclude reference="KwV-25-iEQ"/>
-                                <exclude reference="U0a-0b-mve"/>
-                                <exclude reference="cxj-gy-NOG"/>
-                                <exclude reference="hXH-D0-Yhj"/>
                                 <exclude reference="81q-kP-kua"/>
                                 <exclude reference="V4N-bf-e6R"/>
                                 <exclude reference="aVZ-ke-Gao"/>
                                 <exclude reference="fOB-Ny-p2g"/>
                                 <exclude reference="q4E-dQ-HwR"/>
                                 <exclude reference="xgK-Nx-9dD"/>
+                                <exclude reference="0Ae-HC-NOM"/>
+                                <exclude reference="BpN-gX-hJG"/>
+                                <exclude reference="KwV-25-iEQ"/>
+                                <exclude reference="U0a-0b-mve"/>
+                                <exclude reference="cxj-gy-NOG"/>
+                                <exclude reference="hXH-D0-Yhj"/>
                                 <exclude reference="1Wr-RG-gtg"/>
                                 <exclude reference="51L-jq-QVO"/>
                                 <exclude reference="5aP-ss-ENV"/>

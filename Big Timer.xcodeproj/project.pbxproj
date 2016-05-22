@@ -457,7 +457,7 @@
 					};
 					EDABD9C71A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 2ADV3QR29P;
+						DevelopmentTeam = 8X78R6JQ6Y;
 					};
 				};
 			};

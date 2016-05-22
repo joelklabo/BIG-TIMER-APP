@@ -36,6 +36,10 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
         }
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }

@@ -30,7 +30,6 @@
 		ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		ED540F5F1CE45EB5000A4860 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
 		ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
-		ED540F611CE45EBA000A4860 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED540F621CE45EBA000A4860 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
 		ED540F631CE45EBA000A4860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */; };
 		ED540F641CE45EBF000A4860 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
@@ -458,7 +457,7 @@
 					};
 					EDABD9C71A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 8X78R6JQ6Y;
+						DevelopmentTeam = 2ADV3QR29P;
 					};
 				};
 			};
@@ -567,7 +566,6 @@
 				ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */,
 				ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */,
 				ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */,
-				ED540F611CE45EBA000A4860 /* ClockView.swift in Sources */,
 				ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */,
 				ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */,
 				ED540F781CE92742000A4860 /* SettingsButton.swift in Sources */,

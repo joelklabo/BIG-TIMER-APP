@@ -29,7 +29,7 @@ class ClockView: UIView {
         let secondHandPath = UIBezierPath()
         Theme.clockLineColor().setStroke()
         secondHandPath.moveToPoint(center)
-        secondHandPath.addLineToPoint(CGPointMake((CGRectGetMaxY(rect) / 3), (CGRectGetMaxY(rect) / 3)))
+        secondHandPath.addLineToPoint(CGPointMake(CGRectGetMidX(rect), (CGRectGetMaxY(rect) / 4)))
         secondHandPath.lineWidth = Theme.lineWidth()
         secondHandPath.lineCapStyle = .Round
         secondHandPath.stroke()

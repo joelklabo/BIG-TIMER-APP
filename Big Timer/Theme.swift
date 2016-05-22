@@ -23,7 +23,7 @@ struct Theme {
         return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     }
     static func lineWidth() -> CGFloat {
-        return CGFloat(6)
+        return CGFloat(8)
     }
     static func infoButtonLineWidth() -> CGFloat {
         return CGFloat(2)

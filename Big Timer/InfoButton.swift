@@ -13,39 +13,36 @@ import UIKit
 
 class InfoButton: UIView {
     
-    @IBInspectable var lineColor: UIColor = UIColor.blueColor()
-    @IBInspectable var lineWidth: CGFloat = 4.0
-    
     override func drawRect(rect: CGRect) {
                 
         let inset: CGFloat = 35
         
         // Draw outer circle
         let insetRect = CGRectInset(rect, inset, inset)
-        let offsetRect = CGRectOffset(insetRect, -inset + (lineWidth/2), inset - (lineWidth/2))
+        let offsetRect = CGRectOffset(insetRect, -inset + (Theme.infoButtonLineWidth()/2), inset - (Theme.infoButtonLineWidth()/2))
         let rect = offsetRect
         let path = UIBezierPath(ovalInRect: rect)
-        path.lineWidth = lineWidth
-        lineColor.setStroke()
+        path.lineWidth = Theme.infoButtonLineWidth()
+        Theme.infoButtonLineColor().setStroke()
         path.stroke()
         
         // Draw the line of the 'i'
-        let center = CGPointMake(CGRectGetMidX(rect), (CGRectGetMidY(rect) - lineWidth))
+        let center = CGPointMake(CGRectGetMidX(rect), (CGRectGetMidY(rect) - Theme.infoButtonLineWidth()))
         let secondHandPath = UIBezierPath()
-        secondHandPath.moveToPoint(CGPointMake(center.x, center.y + lineWidth))
-        secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (lineWidth * 3)))
+        secondHandPath.moveToPoint(CGPointMake(center.x, center.y + Theme.infoButtonLineWidth()))
+        secondHandPath.addLineToPoint(CGPointMake(center.x, CGRectGetMaxY(rect) - (Theme.infoButtonLineWidth() * 3)))
         
-        secondHandPath.lineWidth = lineWidth
+        secondHandPath.lineWidth = Theme.infoButtonLineWidth()
         secondHandPath.lineCapStyle = .Round
         secondHandPath.stroke()
         
         // Draw dot of the 'i'
-        let dotPosition = CGPointMake(CGRectGetMidX(rect), (CGRectGetMinY(rect) + (lineWidth * 4)))
+        let dotPosition = CGPointMake(CGRectGetMidX(rect), (CGRectGetMinY(rect) + (Theme.infoButtonLineWidth() * 4)))
         let dotPoint = UIBezierPath()
         dotPoint.moveToPoint(dotPosition)
         dotPoint.addLineToPoint(dotPosition)
         
-        dotPoint.lineWidth = lineWidth + 1
+        dotPoint.lineWidth = Theme.infoButtonLineWidth() + 1
         dotPoint.lineCapStyle = .Round
         dotPoint.stroke()
         

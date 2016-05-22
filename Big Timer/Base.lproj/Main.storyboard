@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,38 +20,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="90" y="60" width="420" height="480"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
-                                    <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
-                                    <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GhQ-Jx-Jvp"/>
-                                        <exclude reference="Vnb-dL-VEB"/>
-                                        <exclude reference="qPa-sb-Xp8"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="35" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="20" y="30" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
-                                    <constraint firstAttribute="width" constant="50" id="IYl-rs-Boz"/>
+                                    <constraint firstAttribute="width" constant="80" id="IYl-rs-Boz"/>
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
-                                    <constraint firstAttribute="height" constant="50" id="flw-80-IZc"/>
+                                    <constraint firstAttribute="height" constant="80" id="flw-80-IZc"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -63,16 +44,16 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="480" y="35" width="100" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="515" y="40" width="65" height="65"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
                                     <constraint firstAttribute="width" constant="40" id="Dtx-k7-KUK"/>
-                                    <constraint firstAttribute="height" constant="100" id="EjT-hE-8Z0"/>
+                                    <constraint firstAttribute="height" constant="65" id="EjT-hE-8Z0"/>
                                     <constraint firstAttribute="height" constant="40" id="dZb-BW-Lqh"/>
                                     <constraint firstAttribute="width" constant="50" id="fje-1F-3tW"/>
-                                    <constraint firstAttribute="width" constant="100" id="oD3-4J-LUt"/>
+                                    <constraint firstAttribute="width" constant="65" id="oD3-4J-LUt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
@@ -92,18 +73,18 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="530" y="530" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="510" y="510" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
                                     <constraint firstAttribute="width" constant="50" id="1Zb-1q-hri"/>
                                     <constraint firstAttribute="height" constant="50" id="3Ye-Fe-tEg"/>
                                     <constraint firstAttribute="height" constant="50" id="C1I-9N-9pq"/>
-                                    <constraint firstAttribute="height" constant="50" id="OHs-Hm-UKn"/>
+                                    <constraint firstAttribute="height" constant="70" id="OHs-Hm-UKn"/>
                                     <constraint firstAttribute="width" constant="100" id="Urq-xu-UFm"/>
                                     <constraint firstAttribute="width" constant="40" id="XqE-6d-POh"/>
-                                    <constraint firstAttribute="width" constant="50" id="ZJt-eZ-U5D"/>
+                                    <constraint firstAttribute="width" constant="70" id="ZJt-eZ-U5D"/>
                                     <constraint firstAttribute="height" constant="30" id="cKq-jh-GWe"/>
                                     <constraint firstAttribute="height" constant="40" id="eRH-nf-9Fv"/>
                                     <constraint firstAttribute="height" constant="100" id="flC-IO-kEa"/>
@@ -138,7 +119,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="485" width="95" height="95"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -176,8 +157,27 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="105" y="90" width="390" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
+                                    <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
+                                    <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GhQ-Jx-Jvp"/>
+                                        <exclude reference="Vnb-dL-VEB"/>
+                                        <exclude reference="qPa-sb-Xp8"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.82352941176470584" green="0.062745098039215685" blue="0.062745098039215685" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
@@ -189,10 +189,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="AHz-OE-MgT"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BOe-oP-r0b"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BpN-gX-hJG"/>
-                            <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="DZ9-YD-eK0"/>
+                            <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DZ9-YD-eK0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="Fcg-bA-bcp"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ftr-VT-u2f"/>
-                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Ipg-PB-DO0"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Ipg-PB-DO0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="20" id="JUD-FT-OJ1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="KW7-Av-V1d"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>
@@ -215,9 +215,9 @@
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fOB-Ny-p2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gKW-oD-TwG"/>
-                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="gg6-Ry-lxI"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="gg6-Ry-lxI"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="hXH-D0-Yhj"/>
-                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.7" id="hYN-B4-VGF"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="hYN-B4-VGF"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lrZ-BS-ZkI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="lxi-Ui-MlU"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>

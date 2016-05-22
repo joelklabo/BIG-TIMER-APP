@@ -8,26 +8,25 @@
 
 import UIKit
 
-@IBDesignable
-
 class ClockView: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"
-    var stopAnimation = false
     
     override func drawRect(rect: CGRect) {
         
         // Draw outer circle
+        Theme.fillColor().setFill()
+
         let insetRect = CGRectInset(rect, (Theme.lineWidth()/2), (Theme.lineWidth()/2))
         let path = UIBezierPath(ovalInRect: insetRect)
         path.lineWidth = Theme.lineWidth()
-        Theme.fillColor().setFill()
         path.fill()
         
         // Draw second hand
+        Theme.clockLineColor().setStroke()
+        
         let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
         let secondHandPath = UIBezierPath()
-        Theme.clockLineColor().setStroke()
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(CGRectGetMidX(rect), (CGRectGetMaxY(rect) / 4)))
         secondHandPath.lineWidth = Theme.lineWidth()

@@ -8,14 +8,10 @@
 
 import UIKit
 
-@IBDesignable
-
 class ClearButton: UIView {
     
     override func drawRect(rect: CGRect) {
         
-//        let insetRect = CGRectInset(rect, 25, 25)
-//        let offsetRect = CGRectOffset(insetRect, 25 - Theme.lineWidth(), -25 + Theme.lineWidth())
         var rect = rect
         
         let path = UIBezierPath()

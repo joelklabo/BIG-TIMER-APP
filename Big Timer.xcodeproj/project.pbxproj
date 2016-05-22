@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED52FC421B02EC6100A9910D /* zarvox.aiff */; };
 		ED540F4C1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
@@ -586,6 +587,7 @@
 				ED540F721CE46DEE000A4860 /* TimerLabelFontSizeManager.swift in Sources */,
 				ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */,
 				ED540F581CE45E9B000A4860 /* PanGestureInfoProviding.swift in Sources */,
+				680D8C491CF2652A0025557F /* ClockView.swift in Sources */,
 				ED540F641CE45EBF000A4860 /* Timer.swift in Sources */,
 				ED8C54EB1CD8698000119596 /* SnapshotHelper.swift in Sources */,
 			);

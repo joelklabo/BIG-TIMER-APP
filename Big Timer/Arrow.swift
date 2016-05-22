@@ -8,8 +8,6 @@
 
 import UIKit
 
-@IBDesignable
-
 class Arrow: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"

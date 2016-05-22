@@ -30,11 +30,6 @@
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
                                     <constraint firstAttribute="height" constant="80" id="flw-80-IZc"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="5mM-aE-LCg"/>
@@ -55,11 +50,6 @@
                                     <constraint firstAttribute="width" constant="50" id="fje-1F-3tW"/>
                                     <constraint firstAttribute="width" constant="65" id="oD3-4J-LUt"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="16X-iS-a4y"/>
@@ -92,11 +82,6 @@
                                     <constraint firstAttribute="width" constant="30" id="pvK-kd-kyj"/>
                                     <constraint firstAttribute="width" constant="50" id="yfa-Cl-uIC"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="0k2-4n-LTk"/>
@@ -133,14 +118,6 @@
                                     <constraint firstAttribute="width" constant="100" id="iua-q8-cPf"/>
                                     <constraint firstAttribute="height" constant="95" id="zz8-v2-yGf"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
-                                        <real key="value" value="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="42s-rg-R4u"/>
@@ -279,7 +256,7 @@
                     </view>
                     <connections>
                         <outlet property="arrowView" destination="kgb-Ki-gRU" id="gTq-2v-RNF"/>
-                        <outlet property="clockView" destination="qGU-AE-OrB" id="Gik-Lb-C17"/>
+                        <outlet property="clockView" destination="qGU-AE-OrB" id="kTo-dY-zfm"/>
                         <outlet property="timeLabel" destination="VfQ-cK-XTz" id="CLv-Dh-gGV"/>
                     </connections>
                 </viewController>

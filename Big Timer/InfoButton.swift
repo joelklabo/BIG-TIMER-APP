@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-@IBDesignable
-
 class InfoButton: UIView {
     
     override func drawRect(rect: CGRect) {

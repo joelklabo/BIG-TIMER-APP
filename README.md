@@ -1,3 +1,3 @@
 ![alt tag](https://travis-ci.org/joelklabo/BigTimer.svg?branch=master)
 # BigTimer
-![alt tag](https://github.com/joelklabo/BigTimer/blob/master/BigTimerDemo.gif)
+![alt tag](https://giphy.com/gifs/XEjg59iZxDkis)

@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
-    private var audioPlayer: AudioController?
     private var customTimers: [CustomTimer] {
         get {
            return CustomTimerManager().getTimers()
@@ -113,9 +112,8 @@ class SettingsViewController: UITableViewController {
      
         if indexPath.section == 1 || !forceTouchIsEnabled {
             let alertSound = AlertSound.options[indexPath.row]
-            audioPlayer = AudioController(alertSound: alertSound)
-            audioPlayer!.playSound()
-            
+            AudioController.instance.updateSound(alertSound)
+            AudioController.instance.playSound()
             if (alertSound != AlertSound.getPreference()) {
                 AlertSound.setPreference(alertSound)
                 tableView.reloadData()

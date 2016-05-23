@@ -10,19 +10,21 @@ import Foundation
 import AVFoundation
 
 class AudioController {
-        
+    
+    static let instance = AudioController()
+    
     private var player: AVAudioPlayer = AVAudioPlayer()
     
     init () {        
         preparePlayerWith(AlertSound.getPreference())
     }
     
-    init (alertSound: AlertSound) {
-        preparePlayerWith(alertSound)
-    }
-    
     func playSound () {
         player.play()
+    }
+    
+    func updateSound(sound: AlertSound) {
+        preparePlayerWith(sound)
     }
     
     private func preparePlayerWith(alertSound: AlertSound) {

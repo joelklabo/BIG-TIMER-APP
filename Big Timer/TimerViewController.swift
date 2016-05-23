@@ -15,9 +15,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
-    
-    lazy var audioController = AudioController()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,8 +78,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
     }
     
     func timerDone () {
-        audioController = AudioController(alertSound: AlertSound.getPreference())
-        audioController.playSound()
+        AudioController.instance.playSound()
     }
 
 }

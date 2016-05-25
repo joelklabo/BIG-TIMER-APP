@@ -22,6 +22,8 @@ class TimeLabel: UILabel {
         numberOfLines = 1
         userInteractionEnabled = true
         adjustsFontSizeToFitWidth = true
+        
+        font = UIFont.monospacedDigitSystemFontOfSize(font.pointSize, weight: UIFontWeightMedium)
     }
     
 

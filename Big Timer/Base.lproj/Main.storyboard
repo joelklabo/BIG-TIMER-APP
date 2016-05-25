@@ -134,14 +134,14 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="65" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="105" y="90" width="390" height="420"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="30" y="120" width="540" height="360"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
                                     <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
                                     <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -192,9 +192,9 @@
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fOB-Ny-p2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gKW-oD-TwG"/>
-                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="gg6-Ry-lxI"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="gg6-Ry-lxI"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="hXH-D0-Yhj"/>
-                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.65" id="hYN-B4-VGF"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="hYN-B4-VGF"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lrZ-BS-ZkI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="lxi-Ui-MlU"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>

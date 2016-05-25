@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTimerViewController: UIViewController, TimerLabelFontSizeManagerDelegate {
+class CustomTimerViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: TimeLabel?
     
@@ -19,7 +19,7 @@ class CustomTimerViewController: UIViewController, TimerLabelFontSizeManagerDele
         didSet {
             if let timeLabel = timeLabel {
                 let formattedTime = timeFormatter.formatTime(timerValue.time)
-                updateTimer(timeLabel, traitCollection: traitCollection, time: formattedTime.formattedString)
+                timeLabel.text = formattedTime.formattedString
             }
         }
     }
@@ -49,12 +49,6 @@ class CustomTimerViewController: UIViewController, TimerLabelFontSizeManagerDele
         navigationController?.popViewControllerAnimated(true)
     }
 
-}
-
-extension CustomTimerViewController {
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        updateTimer(timeLabel!, traitCollection: traitCollection, time: timeLabel!.text!)
-    }
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {

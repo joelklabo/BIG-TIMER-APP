@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFontSizeManagerDelegate {
+class TimerViewController: UIViewController, TimerManagerDelegate {
 
     let timeFormatter = TimeFormatter(separator: ":")
     
@@ -17,6 +17,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
     @IBOutlet weak var arrowView: Arrow!
         
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
@@ -73,7 +74,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
     func timerUpdate(timerState: TimerState) {
         clockView.rotateToTime(timerState.timerValue)
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
-        updateTimer(timeLabel, traitCollection: traitCollection, time: formattedTime.formattedString)
+        timeLabel.text = formattedTime.formattedString
         arrowView.changeDirection(timerState.direction)
     }
     
@@ -81,12 +82,6 @@ class TimerViewController: UIViewController, TimerManagerDelegate, TimerLabelFon
         AudioController.instance.playSound()
     }
 
-}
-
-extension TimerViewController {
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
-        updateTimer(timeLabel, traitCollection: traitCollection, time: timeLabel.text!)
-    }
 }
 
 extension TimerViewController: PanGestureInfoReceiving {

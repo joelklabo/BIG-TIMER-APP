@@ -83,6 +83,6 @@ extension TimerLabelFontSizeManagerDelegate {
     func updateTimer(label: UILabel, traitCollection: UITraitCollection, time: String) {
         let fontSize = TimerLabelFontSizeManager.sizeFor(traitCollection, numberOfCharacters: time.characters.count)
         label.text = time
-        label.font = UIFont.systemFontOfSize(fontSize)
+        label.font = UIFont.monospacedDigitSystemFontOfSize(fontSize, weight: UIFontWeightMedium)
     }
 }

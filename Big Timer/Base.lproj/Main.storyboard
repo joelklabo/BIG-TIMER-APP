@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="35" width="80" height="80"/>
+                                <rect key="frame" x="20" y="40" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
@@ -39,16 +39,16 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="515" y="40" width="65" height="65"/>
+                                <rect key="frame" x="500" y="40" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
                                     <constraint firstAttribute="width" constant="40" id="Dtx-k7-KUK"/>
-                                    <constraint firstAttribute="height" constant="65" id="EjT-hE-8Z0"/>
+                                    <constraint firstAttribute="height" constant="80" id="EjT-hE-8Z0"/>
                                     <constraint firstAttribute="height" constant="40" id="dZb-BW-Lqh"/>
                                     <constraint firstAttribute="width" constant="50" id="fje-1F-3tW"/>
-                                    <constraint firstAttribute="width" constant="65" id="oD3-4J-LUt"/>
+                                    <constraint firstAttribute="width" constant="80" id="oD3-4J-LUt"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -63,7 +63,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="510" y="510" width="70" height="70"/>
+                                <rect key="frame" x="500" y="500" width="80" height="80"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -71,10 +71,10 @@
                                     <constraint firstAttribute="width" constant="50" id="1Zb-1q-hri"/>
                                     <constraint firstAttribute="height" constant="50" id="3Ye-Fe-tEg"/>
                                     <constraint firstAttribute="height" constant="50" id="C1I-9N-9pq"/>
-                                    <constraint firstAttribute="height" constant="70" id="OHs-Hm-UKn"/>
+                                    <constraint firstAttribute="height" constant="80" id="OHs-Hm-UKn"/>
                                     <constraint firstAttribute="width" constant="100" id="Urq-xu-UFm"/>
                                     <constraint firstAttribute="width" constant="40" id="XqE-6d-POh"/>
-                                    <constraint firstAttribute="width" constant="70" id="ZJt-eZ-U5D"/>
+                                    <constraint firstAttribute="width" constant="80" id="ZJt-eZ-U5D"/>
                                     <constraint firstAttribute="height" constant="30" id="cKq-jh-GWe"/>
                                     <constraint firstAttribute="height" constant="40" id="eRH-nf-9Fv"/>
                                     <constraint firstAttribute="height" constant="100" id="flC-IO-kEa"/>
@@ -169,7 +169,7 @@
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DZ9-YD-eK0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="Fcg-bA-bcp"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ftr-VT-u2f"/>
-                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Ipg-PB-DO0"/>
+                            <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ipg-PB-DO0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="20" id="JUD-FT-OJ1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="KW7-Av-V1d"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="KwV-25-iEQ"/>

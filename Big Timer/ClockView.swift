@@ -17,8 +17,7 @@ class ClockView: UIView {
         // Draw outer circle
         Theme.fillColor().setFill()
 
-        let insetRect = CGRectInset(rect, (Theme.lineWidth()/2), (Theme.lineWidth()/2))
-        let path = UIBezierPath(ovalInRect: insetRect)
+        let path = UIBezierPath(ovalInRect: rect)
         path.lineWidth = Theme.lineWidth()
         path.fill()
         

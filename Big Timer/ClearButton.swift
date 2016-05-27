@@ -10,13 +10,16 @@ import UIKit
 
 class ClearButton: UIView {
     
+    var lineColor = Theme.lineColor()
+    var lineWidth = Theme.lineWidth()
+    
     override func drawRect(rect: CGRect) {
         
         var rect = rect
         
         let path = UIBezierPath()
         
-        rect = CGRectInset(rect, 6, 6)
+        rect = CGRectInset(rect, lineWidth, lineWidth)
         
         path.moveToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMinY(rect)))
         path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMaxY(rect)))
@@ -24,9 +27,9 @@ class ClearButton: UIView {
         path.moveToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMinY(rect)))
         path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMaxY(rect)))
         
-        path.lineWidth = Theme.clearButtonLineWidth()
+        path.lineWidth = lineWidth
         path.lineCapStyle = .Round
-        Theme.lineColor().setStroke()
+        lineColor.setStroke()
         path.stroke()
         
     }

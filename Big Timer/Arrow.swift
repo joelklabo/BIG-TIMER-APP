@@ -12,13 +12,16 @@ class Arrow: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"
     
+    var lineColor = Theme.lineColor()
+    var lineWidth = Theme.lineWidth()
+    
     private var arrowDirection: TimerDirection = .Up
     
     override func drawRect(rect: CGRect) {
         
-        Theme.lineColor().setStroke()
+        lineColor.setStroke()
 
-        let rect = CGRectInset(rect, 6, 6)
+        let rect = CGRectInset(rect, lineWidth, lineWidth)
         
         let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
@@ -28,7 +31,7 @@ class Arrow: UIView {
         path.moveToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
         path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
 
-        path.lineWidth = Theme.arrowrButtonLineWidth()
+        path.lineWidth = lineWidth
         path.lineCapStyle = .Round
         path.lineJoinStyle = .Round
         path.stroke()

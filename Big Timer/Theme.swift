@@ -11,19 +11,23 @@ import UIKit
 
 struct Theme {
     static func lineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        return UIColor.whiteColor()
     }
     static func clockLineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 221/255, green: 73/255, blue: 46/255, alpha: 1)
+        return Theme.mainAppColor()
     }
     static func infoButtonLineColor() -> UIColor {
         return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
     }
     static func fillColor() -> UIColor {
-        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        let color = UIColor.whiteColor()
+        return color
     }
     static func lineWidth() -> CGFloat {
         return CGFloat(8)
+    }
+    static func tvLineWidth() -> CGFloat {
+        return CGFloat(28)
     }
     static func infoButtonLineWidth() -> CGFloat {
         return CGFloat(2)
@@ -33,5 +37,8 @@ struct Theme {
     }
     static func arrowrButtonLineWidth() -> CGFloat {
         return CGFloat(8)
+    }
+    static func mainAppColor() -> UIColor {
+        return UIColor(colorLiteralRed: 221/255, green: 73/255, blue: 46/255, alpha: 1)
     }
 }

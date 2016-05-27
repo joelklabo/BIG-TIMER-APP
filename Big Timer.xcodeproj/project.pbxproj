@@ -8,6 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
+		68F7924B1CF8C00E00AE7166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */; };
+		68F7924D1CF8C00E00AE7166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7924C1CF8C00E00AE7166 /* ViewController.swift */; };
+		68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F7924E1CF8C00E00AE7166 /* Main.storyboard */; };
+		68F792521CF8C00E00AE7166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F792511CF8C00E00AE7166 /* Assets.xcassets */; };
+		68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */; };
+		68F792651CF8C07F00AE7166 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
+		68F792661CF8C11300AE7166 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
+		68F792671CF8C11800AE7166 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
+		68F792681CF8C11B00AE7166 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
+		68F7926A1CF8C12500AE7166 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
+		68F7926B1CF8C1A300AE7166 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
+		68F7926C1CF8C1A300AE7166 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
+		68F7926E1CF8C1A300AE7166 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
+		68F7926F1CF8C1AF00AE7166 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
+		68F792701CF8C1AF00AE7166 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
+		68F792711CF8C1AF00AE7166 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
+		68F792721CF8C33300AE7166 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
+		68F792731CF8C9C000AE7166 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
+		68F792741CF8CA4600AE7166 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */; };
+		68F792751CF8CADA00AE7166 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
+		68F792761CF8CB4B00AE7166 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD8961A9913D80086886B /* Timer.swift */; };
 		ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED52FC421B02EC6100A9910D /* zarvox.aiff */; };
 		ED540F4C1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
@@ -103,6 +124,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		68F792591CF8C00E00AE7166 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68F792471CF8C00E00AE7166;
+			remoteInfo = "Big Timer TV";
+		};
 		ED8C54D71CD8539C00119596 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
@@ -120,6 +148,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68F792481CF8C00E00AE7166 /* Big Timer TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		68F7924C1CF8C00E00AE7166 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68F7924F1CF8C00E00AE7166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68F792511CF8C00E00AE7166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68F792531CF8C00E00AE7166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Timer TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Big_Timer_TVTests.swift; sourceTree = "<group>"; };
+		68F7925E1CF8C00E00AE7166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED52FC3F1B02EA4700A9910D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		ED52FC421B02EC6100A9910D /* zarvox.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = zarvox.aiff; sourceTree = "<group>"; };
 		ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +209,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		68F792451CF8C00E00AE7166 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F792551CF8C00E00AE7166 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED8C54CF1CD8539C00119596 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +247,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68F792491CF8C00E00AE7166 /* Big Timer TV */ = {
+			isa = PBXGroup;
+			children = (
+				68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */,
+				68F7924C1CF8C00E00AE7166 /* ViewController.swift */,
+				68F7924E1CF8C00E00AE7166 /* Main.storyboard */,
+				68F792511CF8C00E00AE7166 /* Assets.xcassets */,
+				68F792531CF8C00E00AE7166 /* Info.plist */,
+			);
+			path = "Big Timer TV";
+			sourceTree = "<group>";
+		};
+		68F7925B1CF8C00E00AE7166 /* Big Timer TVTests */ = {
+			isa = PBXGroup;
+			children = (
+				68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */,
+				68F7925E1CF8C00E00AE7166 /* Info.plist */,
+			);
+			path = "Big Timer TVTests";
+			sourceTree = "<group>";
+		};
 		C98E2E87487F410CB3A2C6A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +362,8 @@
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				ED8C54D31CD8539C00119596 /* BigTimerTests */,
 				ED8C54E11CD864AD00119596 /* BigTimerUITests */,
+				68F792491CF8C00E00AE7166 /* Big Timer TV */,
+				68F7925B1CF8C00E00AE7166 /* Big Timer TVTests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
 				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
 			);
@@ -301,6 +375,8 @@
 				EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */,
 				ED8C54D21CD8539C00119596 /* BigTimerTests.xctest */,
 				ED8C54E01CD864AC00119596 /* BigTimerUITests.xctest */,
+				68F792481CF8C00E00AE7166 /* Big Timer TV.app */,
+				68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,6 +442,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		68F792471CF8C00E00AE7166 /* Big Timer TV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F792631CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TV" */;
+			buildPhases = (
+				68F792441CF8C00E00AE7166 /* Sources */,
+				68F792451CF8C00E00AE7166 /* Frameworks */,
+				68F792461CF8C00E00AE7166 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Big Timer TV";
+			productName = "Big Timer TV";
+			productReference = 68F792481CF8C00E00AE7166 /* Big Timer TV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68F792571CF8C00E00AE7166 /* Big Timer TVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68F792641CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TVTests" */;
+			buildPhases = (
+				68F792541CF8C00E00AE7166 /* Sources */,
+				68F792551CF8C00E00AE7166 /* Frameworks */,
+				68F792561CF8C00E00AE7166 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68F7925A1CF8C00E00AE7166 /* PBXTargetDependency */,
+			);
+			name = "Big Timer TVTests";
+			productName = "Big Timer TVTests";
+			productReference = 68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ED8C54D11CD8539C00119596 /* BigTimerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED8C54D91CD8539C00119596 /* Build configuration list for PBXNativeTarget "BigTimerTests" */;
@@ -429,6 +540,13 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joel Klabo";
 				TargetAttributes = {
+					68F792471CF8C00E00AE7166 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					68F792571CF8C00E00AE7166 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 68F792471CF8C00E00AE7166;
+					};
 					ED8C54D11CD8539C00119596 = {
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = EDABD9C71A7A0CD6006CFBA5;
@@ -459,11 +577,29 @@
 				EDABD9C71A7A0CD6006CFBA5 /* Big Timer */,
 				ED8C54D11CD8539C00119596 /* BigTimerTests */,
 				ED8C54DF1CD864AC00119596 /* BigTimerUITests */,
+				68F792471CF8C00E00AE7166 /* Big Timer TV */,
+				68F792571CF8C00E00AE7166 /* Big Timer TVTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		68F792461CF8C00E00AE7166 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F792521CF8C00E00AE7166 /* Assets.xcassets in Resources */,
+				68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F792561CF8C00E00AE7166 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED8C54D01CD8539C00119596 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +637,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		68F792441CF8C00E00AE7166 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F7926A1CF8C12500AE7166 /* TimeLabel.swift in Sources */,
+				68F792741CF8CA4600AE7166 /* TimeFormatter.swift in Sources */,
+				68F7926F1CF8C1AF00AE7166 /* TimerState.swift in Sources */,
+				68F792731CF8C9C000AE7166 /* TimerController.swift in Sources */,
+				68F7926E1CF8C1A300AE7166 /* TimeDeltaCalculator.swift in Sources */,
+				68F792671CF8C11800AE7166 /* InfoButton.swift in Sources */,
+				68F792711CF8C1AF00AE7166 /* TimerValue.swift in Sources */,
+				68F792681CF8C11B00AE7166 /* ClearButton.swift in Sources */,
+				68F792701CF8C1AF00AE7166 /* AlertSound.swift in Sources */,
+				68F7926C1CF8C1A300AE7166 /* PlistReader.swift in Sources */,
+				68F792651CF8C07F00AE7166 /* Theme.swift in Sources */,
+				68F792751CF8CADA00AE7166 /* AudioController.swift in Sources */,
+				68F792661CF8C11300AE7166 /* Arrow.swift in Sources */,
+				68F7924D1CF8C00E00AE7166 /* ViewController.swift in Sources */,
+				68F792721CF8C33300AE7166 /* ClockView.swift in Sources */,
+				68F792761CF8CB4B00AE7166 /* Timer.swift in Sources */,
+				68F7926B1CF8C1A300AE7166 /* TimerStateArchive.swift in Sources */,
+				68F7924B1CF8C00E00AE7166 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68F792541CF8C00E00AE7166 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED8C54CE1CD8539C00119596 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -605,6 +774,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		68F7925A1CF8C00E00AE7166 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68F792471CF8C00E00AE7166 /* Big Timer TV */;
+			targetProxy = 68F792591CF8C00E00AE7166 /* PBXContainerItemProxy */;
+		};
 		ED8C54D81CD8539C00119596 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EDABD9C71A7A0CD6006CFBA5 /* Big Timer */;
@@ -618,6 +792,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		68F7924E1CF8C00E00AE7166 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68F7924F1CF8C00E00AE7166 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -637,6 +819,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		68F7925F1CF8C00E00AE7166 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Big Timer TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		68F792601CF8C00E00AE7166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Big Timer TV/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		68F792611CF8C00E00AE7166 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Big Timer TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Timer TV.app/Big Timer TV";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		68F792621CF8C00E00AE7166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Big Timer TVTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Timer TV.app/Big Timer TV";
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
 		ED8C54DA1CD8539C00119596 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -814,6 +1068,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		68F792631CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F7925F1CF8C00E00AE7166 /* Debug */,
+				68F792601CF8C00E00AE7166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		68F792641CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68F792611CF8C00E00AE7166 /* Debug */,
+				68F792621CF8C00E00AE7166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		ED8C54D91CD8539C00119596 /* Build configuration list for PBXNativeTarget "BigTimerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

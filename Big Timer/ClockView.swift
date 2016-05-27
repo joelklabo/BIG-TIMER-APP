@@ -11,6 +11,7 @@ import UIKit
 class ClockView: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"
+    var lineWidth = Theme.lineWidth()
     
     override func drawRect(rect: CGRect) {
         
@@ -18,7 +19,7 @@ class ClockView: UIView {
         Theme.fillColor().setFill()
 
         let path = UIBezierPath(ovalInRect: rect)
-        path.lineWidth = Theme.lineWidth()
+        path.lineWidth = lineWidth
         path.fill()
         
         // Draw second hand
@@ -28,7 +29,7 @@ class ClockView: UIView {
         let secondHandPath = UIBezierPath()
         secondHandPath.moveToPoint(center)
         secondHandPath.addLineToPoint(CGPointMake(CGRectGetMidX(rect), (CGRectGetMaxY(rect) / 3.5)))
-        secondHandPath.lineWidth = Theme.lineWidth()
+        secondHandPath.lineWidth = lineWidth
         secondHandPath.lineCapStyle = .Round
         secondHandPath.stroke()
     }

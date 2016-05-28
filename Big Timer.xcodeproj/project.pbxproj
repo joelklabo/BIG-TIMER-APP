@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
+		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
+		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
+		682EB69A1CF9DD9100E3E87B /* bells.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708F1B0D41B300F3755F /* bells.aiff */; };
+		682EB69B1CF9DD9100E3E87B /* boing.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970901B0D41B300F3755F /* boing.aiff */; };
+		682EB69C1CF9DD9100E3E87B /* bubbles.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970911B0D41B300F3755F /* bubbles.aiff */; };
+		682EB69D1CF9DD9100E3E87B /* cellos.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970921B0D41B300F3755F /* cellos.aiff */; };
+		682EB69E1CF9DD9100E3E87B /* deranged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970931B0D41B300F3755F /* deranged.aiff */; };
+		682EB69F1CF9DD9100E3E87B /* hysterical.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED7C11E21B05EFEE00318343 /* hysterical.aiff */; };
+		682EB6A01CF9DD9100E3E87B /* zarvox.aiff in Resources */ = {isa = PBXBuildFile; fileRef = ED52FC421B02EC6100A9910D /* zarvox.aiff */; };
 		68F7924B1CF8C00E00AE7166 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */; };
 		68F7924D1CF8C00E00AE7166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7924C1CF8C00E00AE7166 /* ViewController.swift */; };
 		68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F7924E1CF8C00E00AE7166 /* Main.storyboard */; };
@@ -588,8 +597,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682EB69D1CF9DD9100E3E87B /* cellos.aiff in Resources */,
+				682EB6A01CF9DD9100E3E87B /* zarvox.aiff in Resources */,
+				682EB69B1CF9DD9100E3E87B /* boing.aiff in Resources */,
+				682EB69F1CF9DD9100E3E87B /* hysterical.aiff in Resources */,
+				682EB69A1CF9DD9100E3E87B /* bells.aiff in Resources */,
+				682EB69E1CF9DD9100E3E87B /* deranged.aiff in Resources */,
 				68F792521CF8C00E00AE7166 /* Assets.xcassets in Resources */,
+				682EB69C1CF9DD9100E3E87B /* bubbles.aiff in Resources */,
 				68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */,
+				682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +667,7 @@
 				68F792711CF8C1AF00AE7166 /* TimerValue.swift in Sources */,
 				68F792681CF8C11B00AE7166 /* ClearButton.swift in Sources */,
 				68F792701CF8C1AF00AE7166 /* AlertSound.swift in Sources */,
+				682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */,
 				68F7926C1CF8C1A300AE7166 /* PlistReader.swift in Sources */,
 				68F792651CF8C07F00AE7166 /* Theme.swift in Sources */,
 				68F792751CF8CADA00AE7166 /* AudioController.swift in Sources */,
@@ -1075,6 +1093,7 @@
 				68F792601CF8C00E00AE7166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68F792641CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TVTests" */ = {
 			isa = XCConfigurationList;
@@ -1083,6 +1102,7 @@
 				68F792621CF8C00E00AE7166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED8C54D91CD8539C00119596 /* Build configuration list for PBXNativeTarget "BigTimerTests" */ = {
 			isa = XCConfigurationList;

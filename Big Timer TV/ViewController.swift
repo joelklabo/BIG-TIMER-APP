@@ -30,7 +30,8 @@ class ViewController: UIViewController {
         
         TimerController.instance.delegate = self
         
-        TimerController.instance.toggle()
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +40,6 @@ class ViewController: UIViewController {
     }
 
 }
-
 
 extension ViewController: TimerManagerDelegate {
 
@@ -52,5 +52,15 @@ extension ViewController: TimerManagerDelegate {
     
     func timerDone() {
         AudioController.instance.playSound()
+    }
+}
+
+extension ViewController: PanGestureInfoReceiving {
+    func verticalPanPassthrough(sender: AnyObject) {
+        verticalPan(sender)
+    }
+    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+        TimerController.instance.setTimerToDirection(.Down)
+        TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 }

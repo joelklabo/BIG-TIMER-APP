@@ -30,6 +30,14 @@ class ViewController: UIViewController {
         
         TimerController.instance.delegate = self
         
+        let playPauseRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPausePressed))
+        playPauseRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.PlayPause.rawValue)]
+        view.addGestureRecognizer(playPauseRecognizer)
+        
+        let menuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
+        menuButtonRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.Menu.rawValue)]
+        view.addGestureRecognizer(menuButtonRecognizer)
+        
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
         
     }
@@ -37,6 +45,14 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func menuButtonPressed() {
+        TimerController.instance.clear()
+    }
+    
+    func playPausePressed() {
+        TimerController.instance.toggle()
     }
 
 }

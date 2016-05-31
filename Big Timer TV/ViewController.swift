@@ -34,17 +34,15 @@ class ViewController: UIViewController {
         playPauseRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.PlayPause.rawValue)]
         view.addGestureRecognizer(playPauseRecognizer)
         
+        let clickRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPausePressed))
+        view.addGestureRecognizer(clickRecognizer)
+        
         let menuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
         menuButtonRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.Menu.rawValue)]
         view.addGestureRecognizer(menuButtonRecognizer)
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func menuButtonPressed() {

@@ -39,6 +39,6 @@ struct Theme {
         return CGFloat(8)
     }
     static func mainAppColor() -> UIColor {
-        return UIColor(colorLiteralRed: 221/255, green: 13/255, blue: 0, alpha: 1)
+        return UIColor(colorLiteralRed: 221/255, green: 35/255, blue: 0, alpha: 1)
     }
 }

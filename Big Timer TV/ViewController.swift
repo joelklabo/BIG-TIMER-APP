@@ -13,15 +13,11 @@ class ViewController: UIViewController {
     let timeFormatter = TimeFormatter(separator: ":")
     
     @IBOutlet weak var timeLabel: TimeLabel!
-    @IBOutlet weak var clearButton: ClearButton!
     @IBOutlet weak var arrow: Arrow!
     @IBOutlet weak var clockView: ClockView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        clearButton.lineColor = UIColor.whiteColor()
-        clearButton.lineWidth = Theme.tvLineWidth()
         
         arrow.lineColor = UIColor.whiteColor()
         arrow.lineWidth = Theme.tvLineWidth()

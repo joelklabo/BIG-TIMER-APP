@@ -23,7 +23,7 @@ class ClockView: UIView {
         path.fill()
         
         // Draw second hand
-        Theme.clockLineColor().setStroke()
+        Theme.mainAppColor().setStroke()
         
         let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
         let secondHandPath = UIBezierPath()

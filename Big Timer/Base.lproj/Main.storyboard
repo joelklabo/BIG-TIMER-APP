@@ -21,14 +21,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="40" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.30980392156862746" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
-                                    <constraint firstAttribute="width" constant="80" id="IYl-rs-Boz"/>
+                                    <constraint firstAttribute="width" constant="70" id="IYl-rs-Boz"/>
                                     <constraint firstAttribute="height" constant="50" id="Qjn-ye-c8q"/>
-                                    <constraint firstAttribute="height" constant="80" id="flw-80-IZc"/>
+                                    <constraint firstAttribute="height" constant="70" id="flw-80-IZc"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -40,7 +40,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="500" y="40" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.30980392156862746" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
@@ -64,7 +64,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="500" y="500" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.30980392156862746" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
@@ -102,9 +102,28 @@
                                     <outletCollection property="gestureRecognizers" destination="nNt-RL-Xgs" appends="YES" id="Ph4-V9-IDS"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                                <rect key="frame" x="30" y="120" width="540" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
+                                    <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
+                                    <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="GhQ-Jx-Jvp"/>
+                                        <exclude reference="Vnb-dL-VEB"/>
+                                        <exclude reference="qPa-sb-Xp8"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
                                 <rect key="frame" x="20" y="485" width="95" height="95"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.30980392156862746" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -134,27 +153,8 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="30" y="120" width="540" height="360"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
-                                    <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
-                                    <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="GhQ-Jx-Jvp"/>
-                                        <exclude reference="Vnb-dL-VEB"/>
-                                        <exclude reference="qPa-sb-Xp8"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.30980392156862746" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>

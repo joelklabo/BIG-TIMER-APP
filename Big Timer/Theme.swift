@@ -24,7 +24,7 @@ struct Theme {
         return color
     }
     static func lineWidth() -> CGFloat {
-        return CGFloat(8)
+        return CGFloat(10)
     }
     static func tvLineWidth() -> CGFloat {
         return CGFloat(28)
@@ -32,13 +32,7 @@ struct Theme {
     static func infoButtonLineWidth() -> CGFloat {
         return CGFloat(2)
     }
-    static func clearButtonLineWidth() -> CGFloat {
-        return CGFloat(8)
-    }
-    static func arrowrButtonLineWidth() -> CGFloat {
-        return CGFloat(8)
-    }
     static func mainAppColor() -> UIColor {
-        return UIColor(colorLiteralRed: 221/255, green: 35/255, blue: 0, alpha: 1)
+        return UIColor(red:0.95, green:0.31, blue:0.37, alpha:1.0)
     }
 }

@@ -18,12 +18,12 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5e-MV-Pqn" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
                     <rect key="frame" x="8" y="8" width="584" height="584"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="150"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="0.8666666666666667" green="0.28627450980392155" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="G5e-MV-Pqn" secondAttribute="bottom" constant="8" id="A8T-ZN-Ayt"/>
                 <constraint firstItem="G5e-MV-Pqn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="OOL-aJ-8jE"/>

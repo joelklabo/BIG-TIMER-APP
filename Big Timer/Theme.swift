@@ -33,6 +33,6 @@ struct Theme {
         return CGFloat(2)
     }
     static func mainAppColor() -> UIColor {
-        return UIColor(red:0.95, green:0.31, blue:0.37, alpha:1.0)
+        return UIColor(red:0.95, green:0.31, blue:0.15, alpha:1.0)
     }
 }

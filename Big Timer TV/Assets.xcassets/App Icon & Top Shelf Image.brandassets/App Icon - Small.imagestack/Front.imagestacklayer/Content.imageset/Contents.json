@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "Small Front.pdf"
+      "filename" : "Small Front.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

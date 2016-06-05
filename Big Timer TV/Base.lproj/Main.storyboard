@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,12 +21,8 @@
                                 <rect key="frame" x="85" y="85" width="250" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaD-7T-c6i" customClass="TimeLabel" customModule="Big_Timer_TV" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaD-7T-c6i" customClass="TimeLabel" customModule="Big_Timer_TV" customModuleProvider="target">
                                 <rect key="frame" x="585" y="165" width="750" height="750"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="750" id="CJp-rr-4P2"/>
-                                    <constraint firstAttribute="width" constant="750" id="XJN-4N-7Ya"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="300"/>
                                 <color key="textColor" red="0.9957256217277487" green="0.9957256217277487" blue="0.9957256217277487" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +34,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="MaD-7T-c6i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="6ZU-ce-KK9"/>
+                            <constraint firstItem="MaD-7T-c6i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="7T8-1j-I04"/>
                             <constraint firstItem="MaD-7T-c6i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ELk-c1-1eR"/>
                             <constraint firstItem="MaD-7T-c6i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MFn-FZ-Y7W"/>
                         </constraints>

@@ -1,3 +1,4 @@
 ![alt tag](https://travis-ci.org/joelklabo/BigTimer.svg?branch=master)
-# BigTimer
-![alt tag](http://i.giphy.com/XEjg59iZxDkis.gif)
+# Big Timer on Apple TV & iOS
+![alt tag](https://media.giphy.com/media/fEzBQdwECFqsU/giphy.gif)
+![alt tag](https://media.giphy.com/media/102TkGdtPpuirK/giphy.gif)

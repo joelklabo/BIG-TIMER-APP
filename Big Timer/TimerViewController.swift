@@ -90,7 +90,6 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     }
     
     func updateTimerLabelOpacity(timerIsRunning: Bool) {
-        print("\(timerIsRunning)")
         if timerIsRunning {
             timerLabelButton.alpha = CGFloat(0.4)
         } else {

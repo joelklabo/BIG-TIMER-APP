@@ -103,7 +103,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="30" y="120" width="540" height="360"/>
+                                <rect key="frame" x="30" y="180" width="540" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
                                     <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
@@ -153,6 +153,16 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-wC-Sd8">
+                                <rect key="frame" x="240.5" y="428" width="119" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Timer Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="timerLabelPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9d-LS-BEC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.30980392156862746" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -161,6 +171,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="1Wr-RG-gtg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="51L-jq-QVO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="5aP-ss-ENV"/>
+                            <constraint firstItem="dMn-wC-Sd8" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="8" id="6YE-PJ-JXV"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="81q-kP-kua"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="8ej-V6-KML"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="AHz-OE-MgT"/>
@@ -192,11 +203,12 @@
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="fOB-Ny-p2g"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="fcB-PG-TjH"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gKW-oD-TwG"/>
-                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="gg6-Ry-lxI"/>
+                            <constraint firstItem="VfQ-cK-XTz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="gg6-Ry-lxI"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="hXH-D0-Yhj"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="hYN-B4-VGF"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lrZ-BS-ZkI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="lxi-Ui-MlU"/>
+                            <constraint firstItem="dMn-wC-Sd8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nTt-Iw-zLb"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q4E-dQ-HwR"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
@@ -258,6 +270,7 @@
                         <outlet property="arrowView" destination="kgb-Ki-gRU" id="gTq-2v-RNF"/>
                         <outlet property="clockView" destination="qGU-AE-OrB" id="kTo-dY-zfm"/>
                         <outlet property="timeLabel" destination="VfQ-cK-XTz" id="CLv-Dh-gGV"/>
+                        <outlet property="timerLabelButton" destination="dMn-wC-Sd8" id="4ES-X7-hh2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

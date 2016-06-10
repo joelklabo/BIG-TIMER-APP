@@ -15,6 +15,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
+    
+    @IBOutlet weak var timerLabelButton: UIButton!
         
     override func viewDidLoad() {
         
@@ -51,6 +53,10 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         TimerController.instance.enteringBackground()
     }
 
+    @IBAction func timerLabelPressed(sender: AnyObject) {
+        
+    }
+    
     @IBAction func tap(sender: AnyObject) {
         TimerController.instance.toggle()
     }
@@ -76,10 +82,21 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
         timeLabel.text = formattedTime.formattedString
         arrowView.changeDirection(timerState.direction)
+        updateTimerLabelOpacity(timerState.isRunning)
     }
     
     func timerDone () {
         AudioController.instance.playSound()
+    }
+    
+    func updateTimerLabelOpacity(timerIsRunning: Bool) {
+        print("\(timerIsRunning)")
+        if timerIsRunning {
+            timerLabelButton.alpha = CGFloat(0.4)
+        } else {
+            timerLabelButton.alpha = CGFloat(1.0)
+        }
+        timerLabelButton.enabled = !timerIsRunning
     }
 
 }

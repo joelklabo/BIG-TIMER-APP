@@ -75,11 +75,12 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     
     // Timer Update Delegate
 
-    func timerUpdate(_ timerState: TimerState) {
-        clockView.rotateToTime(timerState.timerValue)
-        let formattedTime = timeFormatter.formatTime(timerState.timerValue)
+    func timerUpdate(_ encodedTimerState: EncodableTimerState) {
+        guard let state = encodedTimerState.state else { return }
+        clockView.rotateToTime(state.timerValue)
+        let formattedTime = timeFormatter.formatTime(state.timerValue)
         timeLabel.text = formattedTime.formattedString
-        arrowView.changeDirection(timerState.direction)
+        arrowView.changeDirection(state.direction)
     }
     
     func timerDone () {
@@ -93,7 +94,7 @@ extension TimerViewController: PanGestureInfoReceiving {
         verticalPan(sender)
     }
     func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
-        TimerController.instance.setTimerToDirection(.Down)
+        TimerController.instance.setTimerToDirection(.down)
         TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 }

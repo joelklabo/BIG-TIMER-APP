@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrow.lineColor = UIColor.whiteColor()
+        arrow.lineColor = UIColor.white
         arrow.lineWidth = Theme.tvLineWidth()
         
         clockView.lineWidth = Theme.tvLineWidth()
@@ -27,14 +27,14 @@ class ViewController: UIViewController {
         TimerController.instance.delegate = self
         
         let playPauseRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPausePressed))
-        playPauseRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.PlayPause.rawValue)]
+        playPauseRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.playPause.rawValue as Int)]
         view.addGestureRecognizer(playPauseRecognizer)
         
         let clickRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPausePressed))
         view.addGestureRecognizer(clickRecognizer)
         
         let menuButtonRecognizer = UITapGestureRecognizer(target: self, action: #selector(menuButtonPressed))
-        menuButtonRecognizer.allowedPressTypes = [NSNumber(integer: UIPressType.Menu.rawValue)]
+        menuButtonRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.menu.rawValue as Int)]
         view.addGestureRecognizer(menuButtonRecognizer)
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
@@ -52,25 +52,27 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: TimerManagerDelegate {
-
-    func timerUpdate(timerState: TimerState) {
-        clockView.rotateToTime(timerState.timerValue)
-        let formattedTime = timeFormatter.formatTime(timerState.timerValue)
+    internal func timerUpdate(_ encodedTimerState: EncodableTimerState) {
+        guard let state = encodedTimerState.state else {
+            return
+        }
+        clockView.rotateToTime(state.timerValue)
+        let formattedTime = timeFormatter.formatTime(state.timerValue)
         timeLabel.text = formattedTime.formattedString
-        arrow.changeDirection(timerState.direction)
+        arrow.changeDirection(state.direction)
     }
-    
+
     func timerDone() {
         AudioController.instance.playSound()
     }
 }
 
 extension ViewController: PanGestureInfoReceiving {
-    func verticalPanPassthrough(sender: AnyObject) {
+    func verticalPanPassthrough(_ sender: AnyObject) {
         verticalPan(sender)
     }
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
-        TimerController.instance.setTimerToDirection(.Down)
+    func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
+        TimerController.instance.setTimerToDirection(.down)
         TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 }

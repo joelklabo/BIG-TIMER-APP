@@ -15,7 +15,7 @@ class Arrow: UIView {
     var lineColor = Theme.lineColor()
     var lineWidth = Theme.lineWidth()
     
-    fileprivate var arrowDirection: TimerDirection = .Up
+    fileprivate var arrowDirection: TimerDirection = .up
     
     override func draw(_ rect: CGRect) {
         
@@ -46,7 +46,7 @@ class Arrow: UIView {
             arrowDirection = direction
         }
         
-        if (arrowDirection == .Up) {
+        if (arrowDirection == .up) {
             self.transform = CGAffineTransform(rotationAngle: 0)
             let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2

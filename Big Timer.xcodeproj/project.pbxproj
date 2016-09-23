@@ -21,7 +21,6 @@
 		68F7924D1CF8C00E00AE7166 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7924C1CF8C00E00AE7166 /* ViewController.swift */; };
 		68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68F7924E1CF8C00E00AE7166 /* Main.storyboard */; };
 		68F792521CF8C00E00AE7166 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F792511CF8C00E00AE7166 /* Assets.xcassets */; };
-		68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */; };
 		68F792651CF8C07F00AE7166 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
 		68F792661CF8C11300AE7166 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		68F792671CF8C11800AE7166 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
@@ -133,13 +132,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		68F792591CF8C00E00AE7166 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 68F792471CF8C00E00AE7166;
-			remoteInfo = "Big Timer TV";
-		};
 		ED8C54D71CD8539C00119596 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
@@ -163,9 +155,6 @@
 		68F7924F1CF8C00E00AE7166 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68F792511CF8C00E00AE7166 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68F792531CF8C00E00AE7166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Big Timer TVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Big_Timer_TVTests.swift; sourceTree = "<group>"; };
-		68F7925E1CF8C00E00AE7166 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED52FC3F1B02EA4700A9910D /* AudioController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioController.swift; sourceTree = "<group>"; };
 		ED52FC421B02EC6100A9910D /* zarvox.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = zarvox.aiff; sourceTree = "<group>"; };
 		ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -225,13 +214,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		68F792551CF8C00E00AE7166 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ED8C54CF1CD8539C00119596 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,15 +248,6 @@
 				68F792531CF8C00E00AE7166 /* Info.plist */,
 			);
 			path = "Big Timer TV";
-			sourceTree = "<group>";
-		};
-		68F7925B1CF8C00E00AE7166 /* Big Timer TVTests */ = {
-			isa = PBXGroup;
-			children = (
-				68F7925C1CF8C00E00AE7166 /* Big_Timer_TVTests.swift */,
-				68F7925E1CF8C00E00AE7166 /* Info.plist */,
-			);
-			path = "Big Timer TVTests";
 			sourceTree = "<group>";
 		};
 		C98E2E87487F410CB3A2C6A6 /* Frameworks */ = {
@@ -372,7 +345,6 @@
 				ED8C54D31CD8539C00119596 /* BigTimerTests */,
 				ED8C54E11CD864AD00119596 /* BigTimerUITests */,
 				68F792491CF8C00E00AE7166 /* Big Timer TV */,
-				68F7925B1CF8C00E00AE7166 /* Big Timer TVTests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
 				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
 			);
@@ -385,7 +357,6 @@
 				ED8C54D21CD8539C00119596 /* BigTimerTests.xctest */,
 				ED8C54E01CD864AC00119596 /* BigTimerUITests.xctest */,
 				68F792481CF8C00E00AE7166 /* Big Timer TV.app */,
-				68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -468,24 +439,6 @@
 			productReference = 68F792481CF8C00E00AE7166 /* Big Timer TV.app */;
 			productType = "com.apple.product-type.application";
 		};
-		68F792571CF8C00E00AE7166 /* Big Timer TVTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 68F792641CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TVTests" */;
-			buildPhases = (
-				68F792541CF8C00E00AE7166 /* Sources */,
-				68F792551CF8C00E00AE7166 /* Frameworks */,
-				68F792561CF8C00E00AE7166 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				68F7925A1CF8C00E00AE7166 /* PBXTargetDependency */,
-			);
-			name = "Big Timer TVTests";
-			productName = "Big Timer TVTests";
-			productReference = 68F792581CF8C00E00AE7166 /* Big Timer TVTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		ED8C54D11CD8539C00119596 /* BigTimerTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED8C54D91CD8539C00119596 /* Build configuration list for PBXNativeTarget "BigTimerTests" */;
@@ -552,10 +505,7 @@
 					68F792471CF8C00E00AE7166 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
-					};
-					68F792571CF8C00E00AE7166 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 68F792471CF8C00E00AE7166;
+						LastSwiftMigration = 0800;
 					};
 					ED8C54D11CD8539C00119596 = {
 						CreatedOnToolsVersion = 7.3;
@@ -591,7 +541,6 @@
 				ED8C54D11CD8539C00119596 /* BigTimerTests */,
 				ED8C54DF1CD864AC00119596 /* BigTimerUITests */,
 				68F792471CF8C00E00AE7166 /* Big Timer TV */,
-				68F792571CF8C00E00AE7166 /* Big Timer TVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -611,13 +560,6 @@
 				682EB69C1CF9DD9100E3E87B /* bubbles.aiff in Resources */,
 				68F792501CF8C00E00AE7166 /* Main.storyboard in Resources */,
 				682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F792561CF8C00E00AE7166 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,14 +623,6 @@
 				68F792761CF8CB4B00AE7166 /* Timer.swift in Sources */,
 				68F7926B1CF8C1A300AE7166 /* TimerStateArchive.swift in Sources */,
 				68F7924B1CF8C00E00AE7166 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		68F792541CF8C00E00AE7166 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,11 +730,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		68F7925A1CF8C00E00AE7166 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 68F792471CF8C00E00AE7166 /* Big Timer TV */;
-			targetProxy = 68F792591CF8C00E00AE7166 /* PBXContainerItemProxy */;
-		};
 		ED8C54D81CD8539C00119596 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EDABD9C71A7A0CD6006CFBA5 /* Big Timer */;
@@ -857,6 +786,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
@@ -879,42 +809,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Release;
-		};
-		68F792611CF8C00E00AE7166 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Big Timer TVTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TVTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Timer TV.app/Big Timer TV";
-				TVOS_DEPLOYMENT_TARGET = 9.2;
-			};
-			name = Debug;
-		};
-		68F792621CF8C00E00AE7166 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NONNULL = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Big Timer TVTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer-TVTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Big Timer TV.app/Big Timer TV";
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Release;
@@ -1114,15 +1010,6 @@
 			buildConfigurations = (
 				68F7925F1CF8C00E00AE7166 /* Debug */,
 				68F792601CF8C00E00AE7166 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		68F792641CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TVTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				68F792611CF8C00E00AE7166 /* Debug */,
-				68F792621CF8C00E00AE7166 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

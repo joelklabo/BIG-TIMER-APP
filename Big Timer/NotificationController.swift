@@ -40,7 +40,7 @@ class NotificationController {
         let timeLeft: CFTimeInterval! = timerState!.timerValue
         let timerDirection = timerState!.direction
         let timerIsRunning = timerState!.isRunning as Bool
-        if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
+        if ((timerDirection == TimerDirection.down) && (timeLeft > 0) && timerIsRunning) {
             NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft!))
         }
     }

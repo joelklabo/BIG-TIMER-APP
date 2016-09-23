@@ -14,7 +14,7 @@ class TimerStateArchiverTests: XCTestCase {
         let timerState = TimerState.zeroState()
         TimerStateArchiver.archiveTimerState(timerState)
         let retrievedState = TimerStateArchiver.retrieveTimerState()
-        XCTAssert(timerState == retrievedState)
+        XCTAssert(TimerState.isEqual(retrievedState!))
     }
     
     func testThatRetrievedTimerCanBeUpdated() {

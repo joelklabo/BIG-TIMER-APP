@@ -46,7 +46,7 @@ class CustomTimerViewController: UIViewController {
             fatalError()
         }
         CustomTimerManager().updateTimer(timer, newValue: Int(timerValue.time))
-        navigationController?.popViewController(animated: true)
+        let _ = navigationController?.popViewController(animated: true)
     }
 
 }

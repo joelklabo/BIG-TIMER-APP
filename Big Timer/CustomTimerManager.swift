@@ -11,18 +11,18 @@ import UIKit
 
 struct CustomTimerManager {
     
-    private let timersKey = "CustomTimers"
-    private let plistReader = PlistReader()
+    fileprivate let timersKey = "CustomTimers"
+    fileprivate let plistReader = PlistReader()
     
-    func updateTimer(timer: CustomTimer, newValue: Int) {
+    func updateTimer(_ timer: CustomTimer, newValue: Int) {
         var timers = getTimers()
         switch timer {
-        case .First:
-            timers[timer.index()] = .First(time: newValue)
-        case .Second:
-            timers[timer.index()] = .Second(time: newValue)
-        case .Third:
-            timers[timer.index()] = .Third(time: newValue)
+        case .first:
+            timers[timer.index()] = .first(time: newValue)
+        case .second:
+            timers[timer.index()] = .second(time: newValue)
+        case .third:
+            timers[timer.index()] = .third(time: newValue)
         }
         save(timers)
     }
@@ -35,7 +35,7 @@ struct CustomTimerManager {
         }
         
         var timers: [CustomTimer] = []
-        for (index, time) in arrayOfTimes.enumerate() {
+        for (index, time) in arrayOfTimes.enumerated() {
             guard let time = Int(time as! String) else {
                 fatalError()
             }
@@ -45,19 +45,19 @@ struct CustomTimerManager {
         return timers
     }
     
-    static func shortcutItemForTime(timer: CustomTimer) -> UIApplicationShortcutItem {
-        let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
+    static func shortcutItemForTime(_ timer: CustomTimer) -> UIApplicationShortcutItem {
+        let shorcutIcon = UIApplicationShortcutIcon(type: .time)
         return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
     }
     
-    private func archiveFormat(timers: [CustomTimer]) -> NSDictionary {
+    fileprivate func archiveFormat(_ timers: [CustomTimer]) -> NSDictionary {
         let timerValues: [String] = timers.map {
             switch $0 {
-            case .First(let time):
+            case .first(let time):
                 return String(time)
-            case .Second(let time):
+            case .second(let time):
                 return String(time)
-            case .Third(let time):
+            case .third(let time):
                 return String(time)
             }
         }
@@ -66,30 +66,30 @@ struct CustomTimerManager {
         return dict
     }
     
-    private func save(timers: [CustomTimer]) {
+    fileprivate func save(_ timers: [CustomTimer]) {
         plistReader.save(archiveFormat(timers))
         let shortcutItems = timers.map {
             CustomTimerManager.shortcutItemForTime($0)
         }
-        UIApplication.sharedApplication().shortcutItems = shortcutItems
+        UIApplication.shared.shortcutItems = shortcutItems
     }
     
 }
 
 enum CustomTimer {
     
-    case First(time: Int)
-    case Second(time: Int)
-    case Third(time: Int)
+    case first(time: Int)
+    case second(time: Int)
+    case third(time: Int)
     
     init(index: Int, time: Int) {
         switch index {
         case 0:
-            self = .First(time: time)
+            self = .first(time: time)
         case 1:
-            self = .Second(time: time)
+            self = .second(time: time)
         case 2:
-            self = .Third(time: time)
+            self = .third(time: time)
         default:
             fatalError()
         }
@@ -97,11 +97,11 @@ enum CustomTimer {
     
     func uniqueKey() -> String {
         switch self {
-        case .First:
+        case .first:
             return "firstCustomTimer"
-        case .Second:
+        case .second:
             return "secondCustomTimer"
-        case .Third:
+        case .third:
             return "thirdCustomTimer"
         }
     }
@@ -109,22 +109,22 @@ enum CustomTimer {
     func title() -> String {
         let formatter = TimeFormatter(separator: ":")
         switch self {
-        case .First(let time):
+        case .first(let time):
             return formatter.formatTime(time).formattedString
-        case .Second(let time):
+        case .second(let time):
             return formatter.formatTime(time).formattedString
-        case .Third(let time):
+        case .third(let time):
             return formatter.formatTime(time).formattedString
         }
     }
     
     func index() -> Int {
         switch self {
-        case .First:
+        case .first:
             return 0
-        case .Second:
+        case .second:
             return 1
-        case .Third:
+        case .third:
             return 2
         }
     }

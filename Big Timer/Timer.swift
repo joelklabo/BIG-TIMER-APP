@@ -12,30 +12,30 @@ import QuartzCore
 class Timer {
     
     enum Actions {
-        case Stop
-        case Go
+        case stop
+        case go
     }
     
     var delegate: TimerDelegate?
     
     static let instance = Timer()
     
-    lazy private var timeMachine = CADisplayLink()
+    lazy fileprivate var timeMachine = CADisplayLink()
 
-    private var action: Actions = .Stop {
+    fileprivate var action: Actions = .stop {
         willSet (newAction) {
-            if newAction == .Stop {
-                timeMachine.paused = true
+            if newAction == .stop {
+                timeMachine.isPaused = true
             } else {
-                timeMachine.paused = false
+                timeMachine.isPaused = false
             }
         }
     }
     
     init() {
         timeMachine = CADisplayLink(target: self, selector: #selector(Timer.tick))
-        timeMachine.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        timeMachine.paused = true
+        timeMachine.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        timeMachine.isPaused = true
     }
     
     @objc func tick() {
@@ -43,32 +43,32 @@ class Timer {
     }
     
     func isTimerRunning() -> Bool {
-        return !timeMachine.paused
+        return !timeMachine.isPaused
     }
     
     func stop() {
-        action = .Stop
+        action = .stop
     }
     
     func go() {
-        action = .Go
+        action = .go
     }
     
     func toggle() {
         isTimerRunning() ? stop() : go()
     }
     
-    private func act(action: Actions) {
+    fileprivate func act(_ action: Actions) {
         switch action {
-        case .Go:
-            timeMachine.paused = false
-        case .Stop:
-            timeMachine.paused = true
+        case .go:
+            timeMachine.isPaused = false
+        case .stop:
+            timeMachine.isPaused = true
         }
     }
     
 }
 
 protocol TimerDelegate {
-    func tick(timePassed: CFTimeInterval)
+    func tick(_ timePassed: CFTimeInterval)
 }

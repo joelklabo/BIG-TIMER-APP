@@ -10,18 +10,18 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
-    private var customTimers: [CustomTimer] {
+    fileprivate var customTimers: [CustomTimer] {
         get {
            return CustomTimerManager().getTimers()
         }
     }
     
-    private var forceTouchIsEnabled: Bool {
-        return view.traitCollection.forceTouchCapability == .Available;
+    fileprivate var forceTouchIsEnabled: Bool {
+        return view.traitCollection.forceTouchCapability == .available;
     }
     
     init() {
-        super.init(style: UITableViewStyle.Grouped)
+        super.init(style: UITableViewStyle.grouped)
         self.title = "Settings"
     }
     
@@ -29,7 +29,7 @@ class SettingsViewController: UITableViewController {
         fatalError("NSCoding not supported")
     }
     
-    private override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    fileprivate override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -37,11 +37,11 @@ class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Done, target: self, action: #selector(SettingsViewController.doneTapped))
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(SettingsViewController.doneTapped))
         self.navigationItem.rightBarButtonItem = doneButton
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
@@ -49,12 +49,12 @@ class SettingsViewController: UITableViewController {
     // MARK: Target / Action
     
     func doneTapped () {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Table View Data Source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         if forceTouchIsEnabled {
             return 2
         } else {
@@ -62,7 +62,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if forceTouchIsEnabled {
             if section == 0 {
                 return customTimers.count
@@ -74,7 +74,7 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if forceTouchIsEnabled {
             if section == 0 {
                 return "Custom Timers (Force Touch The App Icon To Start)"
@@ -86,21 +86,21 @@ class SettingsViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         
-        if indexPath.section == 1 || !forceTouchIsEnabled {
-            let alertSound = AlertSound.options[indexPath.row]
-            cell.textLabel?.text = alertSound.rawValue.capitalizedString
+        if (indexPath as NSIndexPath).section == 1 || !forceTouchIsEnabled {
+            let alertSound = AlertSound.options[(indexPath as NSIndexPath).row]
+            cell.textLabel?.text = alertSound.rawValue.capitalized
             
             if (alertSound == AlertSound.getPreference()) {
-                cell.accessoryType = .Checkmark
+                cell.accessoryType = .checkmark
             } else {
-                cell.accessoryType = .None
+                cell.accessoryType = .none
             }
         } else {
-            cell.textLabel?.text = getCustomTimerTitle(customTimers, index: indexPath.row)
+            cell.textLabel?.text = getCustomTimerTitle(customTimers, index: (indexPath as NSIndexPath).row)
         }
         
         return cell
@@ -108,10 +108,10 @@ class SettingsViewController: UITableViewController {
     
     // MARK: Table View Delegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
      
-        if indexPath.section == 1 || !forceTouchIsEnabled {
-            let alertSound = AlertSound.options[indexPath.row]
+        if (indexPath as NSIndexPath).section == 1 || !forceTouchIsEnabled {
+            let alertSound = AlertSound.options[(indexPath as NSIndexPath).row]
             AudioController.instance.updateSound(alertSound)
             AudioController.instance.playSound()
             if (alertSound != AlertSound.getPreference()) {
@@ -120,27 +120,27 @@ class SettingsViewController: UITableViewController {
             }
         } else {
             let customTimerViewController = CustomTimerViewController()
-            customTimerViewController.timerValue.update(getCustomTimerTime(customTimers, index: indexPath.row))
-            customTimerViewController.timer = customTimers[indexPath.row]
+            customTimerViewController.timerValue.update(getCustomTimerTime(customTimers, index: (indexPath as NSIndexPath).row))
+            customTimerViewController.timer = customTimers[(indexPath as NSIndexPath).row]
             navigationController?.pushViewController(customTimerViewController, animated: true)
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    private func getCustomTimerTime(timers:Array<CustomTimer>, index: Int) -> CFTimeInterval {
+    fileprivate func getCustomTimerTime(_ timers:Array<CustomTimer>, index: Int) -> CFTimeInterval {
         let timer: CustomTimer = timers[index]
         switch timer {
-        case .First(let time):
+        case .first(let time):
             return CFTimeInterval(time)
-        case .Second(let time):
+        case .second(let time):
             return CFTimeInterval(time)
-        case .Third(let time):
+        case .third(let time):
             return CFTimeInterval(time)
         }
     }
     
-    private func getCustomTimerTitle(timers:Array<CustomTimer>, index: Int) -> String {
+    fileprivate func getCustomTimerTitle(_ timers:Array<CustomTimer>, index: Int) -> String {
         let timer: CustomTimer = timers[index]
         return timer.title()
     }

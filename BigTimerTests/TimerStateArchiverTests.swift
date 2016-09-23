@@ -21,7 +21,7 @@ class TimerStateArchiverTests: XCTestCase {
         let timerState = runningZeroTimerState()
         TimerStateArchiver.archiveTimerState(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let updatedTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+        if let updatedTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(updatedTimerState.timerValue == 1)
         } else {
             XCTFail()
@@ -34,7 +34,7 @@ class TimerStateArchiverTests: XCTestCase {
         timerState.direction = .Down
         TimerStateArchiver.archiveTimerState(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let _ = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 10)) {
+        if let _ = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 10)) {
             XCTFail()
         }
     }
@@ -43,20 +43,20 @@ class TimerStateArchiverTests: XCTestCase {
         let timerState = TimerState.zeroState()
         TimerStateArchiver.archiveTimerState(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let newTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+        if let newTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(timerState.timerValue == newTimerState.timerValue)
             XCTAssert(timerState.isRunning == newTimerState.isRunning)
-            XCTAssert(newTimerState.timeStamp == NSDate(timeIntervalSince1970: 1))
+            XCTAssert(newTimerState.timeStamp == Date(timeIntervalSince1970: 1))
         } else {
             XCTFail("Should not have updated time")
         }
     }
     
-    private func runningZeroTimerState() -> TimerState {
+    fileprivate func runningZeroTimerState() -> TimerState {
         let timerState = TimerState()
         timerState.direction = .Up
         timerState.timerValue = 0
-        timerState.timeStamp = NSDate(timeIntervalSince1970: 0)
+        timerState.timeStamp = Date(timeIntervalSince1970: 0)
         timerState.isRunning = true
         return timerState
     }

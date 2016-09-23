@@ -13,7 +13,7 @@ class AudioController {
     
     static let instance = AudioController()
     
-    private var player: AVAudioPlayer = AVAudioPlayer()
+    fileprivate var player: AVAudioPlayer = AVAudioPlayer()
     
     init () {        
         preparePlayerWith(AlertSound.getPreference())
@@ -23,14 +23,14 @@ class AudioController {
         player.play()
     }
     
-    func updateSound(sound: AlertSound) {
+    func updateSound(_ sound: AlertSound) {
         preparePlayerWith(sound)
     }
     
-    private func preparePlayerWith(alertSound: AlertSound) {
-        let path = NSBundle.mainBundle().pathForResource(alertSound.rawValue, ofType: "aiff")
+    fileprivate func preparePlayerWith(_ alertSound: AlertSound) {
+        let path = Bundle.main.path(forResource: alertSound.rawValue, ofType: "aiff")
         do {
-            player = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!))
+            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path!))
         } catch _ {
         }
         player.prepareToPlay()

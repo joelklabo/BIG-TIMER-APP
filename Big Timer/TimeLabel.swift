@@ -20,10 +20,10 @@ class TimeLabel: UILabel {
         super.init(coder: aDecoder)
         
         numberOfLines = 1
-        userInteractionEnabled = true
+        isUserInteractionEnabled = true
         adjustsFontSizeToFitWidth = true
         
-        font = UIFont.monospacedDigitSystemFontOfSize(font.pointSize, weight: UIFontWeightMedium)
+        font = UIFont.monospacedDigitSystemFont(ofSize: font.pointSize, weight: UIFontWeightMedium)
     }
     
 

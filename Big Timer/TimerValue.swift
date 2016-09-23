@@ -12,7 +12,7 @@ struct TimerValue {
     
     var time: CFTimeInterval = 0
     
-    mutating func update(timeDelta: CFTimeInterval) {
+    mutating func update(_ timeDelta: CFTimeInterval) {
         if timeDelta > 0 {
             time = time + timeDelta
         } else {

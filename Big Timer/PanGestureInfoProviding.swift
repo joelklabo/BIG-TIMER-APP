@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 protocol PanGestureInfoReceiving {
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat)
-    func verticalPan(sender: AnyObject)
+    func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat)
+    func verticalPan(_ sender: AnyObject)
 }
 
 extension PanGestureInfoReceiving where Self: UIViewController {
-    func verticalPan(sender: AnyObject) {
+    func verticalPan(_ sender: AnyObject) {
         let gestureRecognizer = sender as! UIPanGestureRecognizer
-        let velocity = -gestureRecognizer.velocityInView(view).y
-        let translation = -gestureRecognizer.translationInView(view).y
+        let velocity = -gestureRecognizer.velocity(in: view).y
+        let translation = -gestureRecognizer.translation(in: view).y
         verticalPanInfo(velocity, translation: translation)
     }
 }

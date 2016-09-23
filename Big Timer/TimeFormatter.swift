@@ -16,24 +16,24 @@ struct TimeFormatter {
     
     let separator: String
     
-    func formatTime(time: CFTimeInterval) -> FormattedTime {
+    func formatTime(_ time: CFTimeInterval) -> FormattedTime {
         return buildFormattedTime(buildTimeState(time))
     }
     
-    func formatTime(time: Int) -> FormattedTime {
+    func formatTime(_ time: Int) -> FormattedTime {
         return formatTime(CFTimeInterval(time))
     }
     
-    private func buildTimeState(time: CFTimeInterval) -> TimeComponents {
+    fileprivate func buildTimeState(_ time: CFTimeInterval) -> TimeComponents {
         
         let hours   = Int(floor(time / 3600))
-        let minutes = Int(floor((time / 60) % 60))
-        let seconds = Int(time % 60)
+        let minutes = Int(floor((time / 60).truncatingRemainder(dividingBy: 60)))
+        let seconds = Int(time.truncatingRemainder(dividingBy: 60))
         
         return (hours: hours, minutes: minutes, seconds: seconds)
     }
 
-    private func buildFormattedTime(time: TimeComponents) -> FormattedTime {
+    fileprivate func buildFormattedTime(_ time: TimeComponents) -> FormattedTime {
         var timeComponents: [String] = []
         var displaySections = 0
         switch time {
@@ -53,11 +53,11 @@ struct TimeFormatter {
             timeComponents.append("\(padNumber(time.seconds))")
             break
         }
-        return (timeComponents.joinWithSeparator(separator), displaySections)
+        return (timeComponents.joined(separator: separator), displaySections)
     }
     
     
-    private func padNumber(number: Int) -> String {
+    fileprivate func padNumber(_ number: Int) -> String {
         if (number < 10) {
             return "0\(number)"
         } else {

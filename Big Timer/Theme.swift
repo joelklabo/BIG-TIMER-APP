@@ -11,7 +11,7 @@ import UIKit
 
 struct Theme {
     static func lineColor() -> UIColor {
-        return UIColor.whiteColor()
+        return UIColor.white
     }
     static func clockLineColor() -> UIColor {
         return Theme.mainAppColor()
@@ -20,7 +20,7 @@ struct Theme {
         return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
     }
     static func fillColor() -> UIColor {
-        let color = UIColor.whiteColor()
+        let color = UIColor.white
         return color
     }
     static func lineWidth() -> CGFloat {

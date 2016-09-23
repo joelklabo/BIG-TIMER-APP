@@ -8,28 +8,28 @@
 
 import Foundation
 
-public class TimerState: NSObject, NSCoding {
+open class TimerState: NSObject, NSCoding {
     
-    var timeStamp: NSDate!
+    var timeStamp: Date!
     var timerValue: CFTimeInterval!
     var direction: TimerDirection!
     var isRunning: Bool!
     
     required convenience public init?(coder decoder: NSCoder) {
         self.init()
-        self.timeStamp = decoder.decodeObjectForKey("timeStamp") as! NSDate?
-        self.timerValue = decoder.decodeObjectForKey("timerValue") as! CFTimeInterval?
-        self.direction = TimerDirection(rawValue:decoder.decodeObjectForKey("direction") as! TimerDirection.RawValue)
-        self.isRunning = decoder.decodeObjectForKey("isRunning") as! Bool
+        self.timeStamp = decoder.decodeObject(forKey: "timeStamp") as! Date?
+        self.timerValue = decoder.decodeObject(forKey: "timerValue") as! CFTimeInterval?
+        self.direction = TimerDirection(rawValue:decoder.decodeObject(forKey: "direction") as! TimerDirection.RawValue)
+        self.isRunning = decoder.decodeObject(forKey: "isRunning") as! Bool
     }
     
-    class func newState(timerValue: Int, direction: TimerDirection, isRunning: Bool) -> TimerState {
+    class func newState(_ timerValue: Int, direction: TimerDirection, isRunning: Bool) -> TimerState {
         return TimerState.newState(CFTimeInterval(timerValue), direction: direction, isRunning: isRunning)
     }
     
-    class func newState(timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
+    class func newState(_ timerValue: CFTimeInterval, direction: TimerDirection, isRunning: Bool) -> TimerState {
         let newTimerState = TimerState()
-        newTimerState.timeStamp = NSDate()
+        newTimerState.timeStamp = Date()
         newTimerState.timerValue = timerValue
         newTimerState.direction = direction
         newTimerState.isRunning = isRunning
@@ -40,15 +40,15 @@ public class TimerState: NSObject, NSCoding {
         return TimerState.newState(0, direction: .Up, isRunning: false)
     }
     
-    public func encodeWithCoder(coder: NSCoder) {
-        coder.encodeObject(self.timeStamp, forKey: "timeStamp")
-        coder.encodeObject(self.timerValue, forKey: "timerValue")
-        coder.encodeObject(self.direction.rawValue, forKey: "direction")
-        coder.encodeObject(self.isRunning, forKey: "isRunning")
+    open func encode(with coder: NSCoder) {
+        coder.encode(self.timeStamp, forKey: "timeStamp")
+        coder.encode(self.timerValue, forKey: "timerValue")
+        coder.encode(self.direction.rawValue, forKey: "direction")
+        coder.encode(self.isRunning, forKey: "isRunning")
     }
     
-    override public func isEqual(object: AnyObject?) -> Bool {
-        if ((object?.isKindOfClass(TimerState)) == true) {
+    override open func isEqual(_ object: Any?) -> Bool {
+        if (object as AnyObject).isKind(of: TimerState.self) {
             let timeState = object as! TimerState
             if (timeState.timeStamp == self.timeStamp
             &&  timeState.timerValue == self.timerValue

@@ -12,9 +12,9 @@ import UIKit
 class NotificationController {
     
     static let instance = NotificationController()
-    private let notificationCenter = NSNotificationCenter.defaultCenter()
-    private let enterFore = UIApplicationWillEnterForegroundNotification
-    private let enterBack = UIApplicationDidEnterBackgroundNotification
+    fileprivate let notificationCenter = NotificationCenter.default
+    fileprivate let enterFore = NSNotification.Name.UIApplicationWillEnterForeground
+    fileprivate let enterBack = NSNotification.Name.UIApplicationDidEnterBackground
     
     init() {
         registerForTypes()
@@ -22,32 +22,32 @@ class NotificationController {
         notificationCenter.addObserver(self, selector: #selector(enteringForeground), name: enterFore, object: nil)
     }
     
-    func notifyDone(onDate: NSDate) {
+    func notifyDone(_ onDate: Date) {
         let notification = UILocalNotification()
         notification.alertBody = "Timer Done"
         notification.fireDate = onDate
         notification.soundName = AlertSound.getPreference().fileName()
-        UIApplication.sharedApplication().scheduledLocalNotifications = [notification]
+        UIApplication.shared.scheduledLocalNotifications = [notification]
     }
 
     @objc func enteringForeground() {
         // Clear local notifications when entering foreground
-        UIApplication.sharedApplication().scheduledLocalNotifications = []
+        UIApplication.shared.scheduledLocalNotifications = []
     }
     
     @objc func enteringBackground() {
         let timerState = TimerStateArchiver.retrieveTimerState()
-        let timeLeft = timerState!.timerValue
+        let timeLeft: CFTimeInterval! = timerState!.timerValue
         let timerDirection = timerState!.direction
         let timerIsRunning = timerState!.isRunning as Bool
         if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(NSDate(timeIntervalSinceNow: timeLeft))
+            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft!))
         }
     }
     
-    private func registerForTypes() {
-        let application = UIApplication.sharedApplication()
-        let notificationTypes = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+    fileprivate func registerForTypes() {
+        let application = UIApplication.shared
+        let notificationTypes = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         application.registerUserNotificationSettings(notificationTypes)
     }
     

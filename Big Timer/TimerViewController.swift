@@ -22,27 +22,27 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         
         TimerController.instance.delegate = self
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
-            let time: NSTimeInterval = 581
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            let time: TimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
             timeLabel.text = formattedTime.formattedString
             clockView.rotateToTime(time)
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     func returningFromBackground () {
@@ -53,31 +53,31 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         TimerController.instance.enteringBackground()
     }
 
-    @IBAction func timerLabelPressed(sender: AnyObject) {
+    @IBAction func timerLabelPressed(_ sender: AnyObject) {
         
     }
     
-    @IBAction func tap(sender: AnyObject) {
+    @IBAction func tap(_ sender: AnyObject) {
         TimerController.instance.toggle()
     }
 
-    @IBAction func clear(sender: AnyObject) {
+    @IBAction func clear(_ sender: AnyObject) {
         TimerController.instance.clear()
     }
 
-    @IBAction func arrowTap(sender: AnyObject) {
+    @IBAction func arrowTap(_ sender: AnyObject) {
         TimerController.instance.changeTimerDirection()
     }
 
-    @IBAction func settingsTap(sender: AnyObject) {
+    @IBAction func settingsTap(_ sender: AnyObject) {
         let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
-        settingsNavigationController.modalTransitionStyle = .CrossDissolve
-        self.presentViewController(settingsNavigationController, animated: true, completion: nil)
+        settingsNavigationController.modalTransitionStyle = .crossDissolve
+        self.present(settingsNavigationController, animated: true, completion: nil)
     }
     
     // Timer Update Delegate
 
-    func timerUpdate(timerState: TimerState) {
+    func timerUpdate(_ timerState: TimerState) {
         clockView.rotateToTime(timerState.timerValue)
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
         timeLabel.text = formattedTime.formattedString
@@ -89,22 +89,22 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         AudioController.instance.playSound()
     }
     
-    func updateTimerLabelOpacity(timerIsRunning: Bool) {
+    func updateTimerLabelOpacity(_ timerIsRunning: Bool) {
         if timerIsRunning {
             timerLabelButton.alpha = CGFloat(0.4)
         } else {
             timerLabelButton.alpha = CGFloat(1.0)
         }
-        timerLabelButton.enabled = !timerIsRunning
+        timerLabelButton.isEnabled = !timerIsRunning
     }
 
 }
 
 extension TimerViewController: PanGestureInfoReceiving {
-    func verticalPanPassthrough(sender: AnyObject) {
+    func verticalPanPassthrough(_ sender: AnyObject) {
         verticalPan(sender)
     }
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+    func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
         TimerController.instance.setTimerToDirection(.Down)
         TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }

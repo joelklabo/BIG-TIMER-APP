@@ -24,10 +24,10 @@ class CustomTimerViewController: UIViewController {
         }
     }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         title = "Update Timer"
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(CustomTimerViewController.save))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(CustomTimerViewController.save))
         navigationItem.rightBarButtonItem = saveButton
     }
     
@@ -46,16 +46,16 @@ class CustomTimerViewController: UIViewController {
             fatalError()
         }
         CustomTimerManager().updateTimer(timer, newValue: Int(timerValue.time))
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewController(animated: true)
     }
 
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {
-    func verticalPanPassthrough(sender: AnyObject) {
+    func verticalPanPassthrough(_ sender: AnyObject) {
         verticalPan(sender)
     }
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+    func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
         timerValue.update(timeDelta)
     }

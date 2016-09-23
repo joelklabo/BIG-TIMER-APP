@@ -10,19 +10,19 @@ import Foundation
 import QuartzCore
 
 @objc protocol TimerManagerDelegate {
-    func timerUpdate(timerState: TimerState)
+    func timerUpdate(_ timerState: TimerState)
     func timerDone()
 }
 
 class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
-    private var foregrounding = false
+    fileprivate var foregrounding = false
     
     static let instance = TimerController()
     
     var delegate: TimerManagerDelegate?
     
-    private var currentTimerState: TimerState = TimerState.zeroState() {
+    fileprivate var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState = TimerState.zeroState()
@@ -50,7 +50,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         currentTimerState = TimerState.zeroState()
     }
     
-    func modifyTime (time: CFTimeInterval) {
+    func modifyTime (_ time: CFTimeInterval) {
         let newTime = currentTimerState.timerValue + time
         currentTimerState = TimerState.newState(newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
@@ -63,12 +63,12 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         }
     }
     
-    func setTimer(timeInSeconds: Int, direction: TimerDirection) {
+    func setTimer(_ timeInSeconds: Int, direction: TimerDirection) {
         currentTimerState = TimerState.newState(timeInSeconds, direction: direction, isRunning: true)
         Timer.instance.go()
     }
     
-    func setTimerToDirection(direction: TimerDirection) {
+    func setTimerToDirection(_ direction: TimerDirection) {
         currentTimerState = TimerState.newState(currentTimerState.timerValue, direction: direction, isRunning: Timer.instance.isTimerRunning())
     }
     
@@ -77,7 +77,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         foregrounding = true
         
         if let archivedTimerState = TimerStateArchiver.retrieveTimerState(),
-                updatedTimerState = TimerStateArchiver.updateTimerState(archivedTimerState, forDate: NSDate()) {
+                let updatedTimerState = TimerStateArchiver.updateTimerState(archivedTimerState, forDate: Date()) {
             currentTimerState = updatedTimerState
         } else {
             currentTimerState = TimerState.zeroState()
@@ -102,7 +102,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         Timer.instance.stop()
     }
     
-    private func updateTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
+    fileprivate func updateTimerValue(_ timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
         var newTimerValue: CFTimeInterval = 0
         if (direction == .Up) {
             newTimerValue = timerValue + timeDelta
@@ -112,7 +112,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         return newTimerValue
     }
     
-    func timerUpdate(timerState: TimerState) {
+    func timerUpdate(_ timerState: TimerState) {
         delegate?.timerUpdate(timerState)
     }
     
@@ -120,11 +120,11 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         delegate?.timerDone()
     }
         
-    func tick(timeDelta: CFTimeInterval) {
+    func tick(_ timeDelta: CFTimeInterval) {
         updateTimer(timeDelta)
     }
     
-    func updateTimer(timeDelta: CFTimeInterval) {
+    func updateTimer(_ timeDelta: CFTimeInterval) {
         foregrounding = false
         let timerValue = updateTimerValue(currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
         currentTimerState = TimerState.newState(timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())

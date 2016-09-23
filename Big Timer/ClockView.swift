@@ -13,31 +13,31 @@ class ClockView: UIView {
     let zRotationKeyPath = "transform.rotation.z"
     var lineWidth = Theme.lineWidth()
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         // Draw outer circle
         Theme.fillColor().setFill()
 
-        let path = UIBezierPath(ovalInRect: rect)
+        let path = UIBezierPath(ovalIn: rect)
         path.lineWidth = lineWidth
         path.fill()
         
         // Draw second hand
         Theme.mainAppColor().setStroke()
         
-        let center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect))
+        let center = CGPoint(x: rect.midX, y: rect.midY)
         let secondHandPath = UIBezierPath()
-        secondHandPath.moveToPoint(center)
-        secondHandPath.addLineToPoint(CGPointMake(CGRectGetMidX(rect), (CGRectGetMaxY(rect) / 4)))
+        secondHandPath.move(to: center)
+        secondHandPath.addLine(to: CGPoint(x: rect.midX, y: (rect.maxY / 4)))
         secondHandPath.lineWidth = lineWidth
-        secondHandPath.lineCapStyle = .Round
+        secondHandPath.lineCapStyle = .round
         secondHandPath.stroke()
     }
     
-    func rotateToTime (time: NSTimeInterval) {
-        let subSeconds = time % 1
+    func rotateToTime (_ time: TimeInterval) {
+        let subSeconds = time.truncatingRemainder(dividingBy: 1)
         let angle = CGFloat((2 * M_PI) * subSeconds)
-        self.transform = CGAffineTransformMakeRotation(angle)
+        self.transform = CGAffineTransform(rotationAngle: angle)
     }
 
     func reset () {

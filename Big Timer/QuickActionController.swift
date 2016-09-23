@@ -15,10 +15,10 @@ struct QuickActionController {
         let shortcutItems = CustomTimerManager().getTimers().map {
             CustomTimerManager.shortcutItemForTime($0)
         }
-        UIApplication.sharedApplication().shortcutItems = shortcutItems
+        UIApplication.shared.shortcutItems = shortcutItems
     }
     
-    static func handleAction(shortcutItem: UIApplicationShortcutItem) {
+    static func handleAction(_ shortcutItem: UIApplicationShortcutItem) {
         let customShorcutkey = shortcutItem.type
         switch customShorcutkey {
         case "0":
@@ -40,8 +40,8 @@ struct QuickActionController {
     
     static func firstCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .First(let time) = timer {
+        for (_, timer) in timers.enumerated() {
+            if case .first(let time) = timer {
                 TimerController.instance.setTimer(time, direction: .Down)
             }
         }
@@ -49,8 +49,8 @@ struct QuickActionController {
     
     static func secondCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .Second(let time) = timer {
+        for (_, timer) in timers.enumerated() {
+            if case .second(let time) = timer {
                 TimerController.instance.setTimer(time, direction: .Down)
 
             }
@@ -59,8 +59,8 @@ struct QuickActionController {
     
     static func thirdCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
-            if case .Third(let time) = timer {
+        for (_, timer) in timers.enumerated() {
+            if case .third(let time) = timer {
                 TimerController.instance.setTimer(time, direction: .Down)
             }
         }

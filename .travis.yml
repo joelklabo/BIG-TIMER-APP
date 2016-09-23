@@ -1,7 +1,7 @@
 language: objective-c
-osx_image: xcode7.3
+osx_image: xcode8
 before_install:
-  - gem install fastlane -v '1.83.0'
+  - bundle install fastlane -v '1.83.0'
 script:
 - open -b com.apple.iphonesimulator
 - ./fastlane/travis.sh

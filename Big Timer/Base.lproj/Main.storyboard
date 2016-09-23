@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Timer View Controller-->
@@ -17,12 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
@@ -39,8 +39,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="500" y="40" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
@@ -63,8 +62,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="500" y="500" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
@@ -103,14 +101,13 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="30" y="180" width="540" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
                                     <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
                                     <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                 <variation key="default">
@@ -122,8 +119,7 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="485" width="95" height="95"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.30980392159999998" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -153,25 +149,14 @@
                                     <outletCollection property="gestureRecognizers" destination="yHy-ww-z8b" appends="YES" id="ccc-Fg-xT3"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-wC-Sd8">
-                                <rect key="frame" x="240.5" y="428" width="119" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="Timer Done">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="timerLabelPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9d-LS-BEC"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.30980392156862746" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.30980392156862746" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="1Wr-RG-gtg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="51L-jq-QVO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="5aP-ss-ENV"/>
-                            <constraint firstItem="dMn-wC-Sd8" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="8" id="6YE-PJ-JXV"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="81q-kP-kua"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="8ej-V6-KML"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="AHz-OE-MgT"/>
@@ -208,7 +193,6 @@
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="hYN-B4-VGF"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lrZ-BS-ZkI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mm8-wh-nSK" secondAttribute="bottom" constant="20" id="lxi-Ui-MlU"/>
-                            <constraint firstItem="dMn-wC-Sd8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nTt-Iw-zLb"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
                             <constraint firstItem="Mm8-wh-nSK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q4E-dQ-HwR"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
@@ -270,7 +254,6 @@
                         <outlet property="arrowView" destination="kgb-Ki-gRU" id="gTq-2v-RNF"/>
                         <outlet property="clockView" destination="qGU-AE-OrB" id="kTo-dY-zfm"/>
                         <outlet property="timeLabel" destination="VfQ-cK-XTz" id="CLv-Dh-gGV"/>
-                        <outlet property="timerLabelButton" destination="dMn-wC-Sd8" id="4ES-X7-hh2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

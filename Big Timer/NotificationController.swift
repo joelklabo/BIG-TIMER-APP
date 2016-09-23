@@ -13,8 +13,8 @@ class NotificationController {
     
     static let instance = NotificationController()
     fileprivate let notificationCenter = NotificationCenter.default
-    fileprivate let enterFore = NSNotification.Name.UIApplicationWillEnterForeground
-    fileprivate let enterBack = NSNotification.Name.UIApplicationDidEnterBackground
+    fileprivate let enterFore = NSNotification.Name.UIApplicationDidBecomeActive
+    fileprivate let enterBack = NSNotification.Name.UIApplicationWillResignActive
     
     init() {
         registerForTypes()

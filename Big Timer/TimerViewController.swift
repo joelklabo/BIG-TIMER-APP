@@ -16,14 +16,12 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
     
-    @IBOutlet weak var timerLabelButton: UIButton!
-        
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
         
         TimerController.instance.delegate = self
         
@@ -82,20 +80,10 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
         timeLabel.text = formattedTime.formattedString
         arrowView.changeDirection(timerState.direction)
-        updateTimerLabelOpacity(timerState.isRunning)
     }
     
     func timerDone () {
         AudioController.instance.playSound()
-    }
-    
-    func updateTimerLabelOpacity(_ timerIsRunning: Bool) {
-        if timerIsRunning {
-            timerLabelButton.alpha = CGFloat(0.4)
-        } else {
-            timerLabelButton.alpha = CGFloat(1.0)
-        }
-        timerLabelButton.isEnabled = !timerIsRunning
     }
 
 }

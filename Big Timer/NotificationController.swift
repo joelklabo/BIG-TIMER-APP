@@ -31,17 +31,18 @@ class NotificationController {
     }
 
     @objc func enteringForeground() {
-        // Clear local notifications when entering foreground
         UIApplication.shared.scheduledLocalNotifications = []
     }
     
     @objc func enteringBackground() {
-        let timerState = TimerStateArchiver.retrieveTimerState()
-        let timeLeft: CFTimeInterval! = timerState!.timerValue
-        let timerDirection = timerState!.direction
-        let timerIsRunning = timerState!.isRunning as Bool
-        if ((timerDirection == TimerDirection.down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft!))
+        guard let timerState = TimerStateArchiver.retrieveTimerState() else {
+            return
+        }
+        let timeLeft = timerState.timerValue
+        let timerDirection = timerState.direction
+        let timerIsRunning = timerState.isRunning
+        if ((timerDirection == .down) && (timeLeft > 0) && timerIsRunning) {
+            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft))
         }
     }
     

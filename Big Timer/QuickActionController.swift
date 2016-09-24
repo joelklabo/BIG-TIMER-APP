@@ -35,14 +35,14 @@ struct QuickActionController {
     }
     
     static func countUpQuickAction() {
-        TimerController.instance.setTimer(0, direction: .up)
+        TimerController.instance.setTimer(timerValue: 0, direction: .up)
     }
     
     static func firstCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for (_, timer) in timers.enumerated() {
             if case .first(let time) = timer {
-                TimerController.instance.setTimer(Double(time), direction: .down)
+                TimerController.instance.setTimer(timerValue: time, direction: .down)
             }
         }
     }
@@ -51,7 +51,7 @@ struct QuickActionController {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for (_, timer) in timers.enumerated() {
             if case .second(let time) = timer {
-                TimerController.instance.setTimer(Double(time), direction: .down)
+                TimerController.instance.setTimer(timerValue: time, direction: .down)
 
             }
         }
@@ -61,7 +61,7 @@ struct QuickActionController {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for (_, timer) in timers.enumerated() {
             if case .third(let time) = timer {
-                TimerController.instance.setTimer(Double(time), direction: .down)
+                TimerController.instance.setTimer(timerValue: time, direction: .down)
             }
         }
     }

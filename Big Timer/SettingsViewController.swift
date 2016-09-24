@@ -120,7 +120,7 @@ class SettingsViewController: UITableViewController {
             }
         } else {
             let customTimerViewController = CustomTimerViewController()
-            customTimerViewController.timerValue.update(getCustomTimerTime(customTimers, index: (indexPath as NSIndexPath).row))
+            customTimerViewController.timerValue = getCustomTimerTime(timers: customTimers, index: (indexPath as NSIndexPath).row)
             customTimerViewController.timer = customTimers[(indexPath as NSIndexPath).row]
             navigationController?.pushViewController(customTimerViewController, animated: true)
         }
@@ -128,15 +128,15 @@ class SettingsViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    fileprivate func getCustomTimerTime(_ timers:Array<CustomTimer>, index: Int) -> CFTimeInterval {
+    fileprivate func getCustomTimerTime(timers:Array<CustomTimer>, index: Int) -> Double {
         let timer: CustomTimer = timers[index]
         switch timer {
         case .first(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         case .second(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         case .third(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         }
     }
     

@@ -28,8 +28,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
         
         if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
-            let time: TimeInterval = 581
-            let formattedTime = timeFormatter.formatTime(time)
+            let time: Double = 581
+            let formattedTime = timeFormatter.formatTime(time: time)
             timeLabel.text = formattedTime.formattedString
             clockView.rotateToTime(time)
         }
@@ -50,13 +50,9 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     func enteringBackground () {
         TimerController.instance.enteringBackground()
     }
-
-    @IBAction func timerLabelPressed(_ sender: AnyObject) {
-        
-    }
     
     @IBAction func tap(_ sender: AnyObject) {
-        TimerController.instance.toggle()
+        TimerController.instance.toggleTimer()
     }
 
     @IBAction func clear(_ sender: AnyObject) {
@@ -64,7 +60,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     }
 
     @IBAction func arrowTap(_ sender: AnyObject) {
-        TimerController.instance.changeTimerDirection()
+        TimerController.instance.toggleDirection()
     }
 
     @IBAction func settingsTap(_ sender: AnyObject) {
@@ -75,10 +71,10 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     
     // Timer Update Delegate
 
-    func timerUpdate(_ encodedTimerState: EncodableTimerState) {
+    func timerUpdate(encodedTimerState: EncodableTimerState) {
         guard let state = encodedTimerState.state else { return }
         clockView.rotateToTime(state.timerValue)
-        let formattedTime = timeFormatter.formatTime(state.timerValue)
+        let formattedTime = timeFormatter.formatTime(time: state.timerValue)
         timeLabel.text = formattedTime.formattedString
         arrowView.changeDirection(state.direction)
     }
@@ -94,7 +90,7 @@ extension TimerViewController: PanGestureInfoReceiving {
         verticalPan(sender)
     }
     func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
-        TimerController.instance.setTimerToDirection(.down)
-        TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+        TimerController.instance.update(direction: .down)
+        TimerController.instance.adjust(byTime: TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
     }
 }

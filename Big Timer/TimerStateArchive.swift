@@ -40,7 +40,7 @@ class EncodableTimerState: NSObject, NSCoding {
     required init?(coder decoder: NSCoder) {
         guard
             let timeStamp = decoder.decodeObject(forKey: "timeStamp") as? Date,
-            let timerValue = decoder.decodeObject(forKey: "timerValue") as? CFTimeInterval,
+            let timerValue = decoder.decodeObject(forKey: "timerValue") as? Double,
             let directionKey = decoder.decodeObject(forKey: "direction") as? String,
             let isRunning = decoder.decodeObject(forKey: "isRunning") as? Bool,
             let direction = TimerDirection(rawValue: directionKey) else { return nil }

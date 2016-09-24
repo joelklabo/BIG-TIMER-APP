@@ -11,7 +11,7 @@ import UIKit
 
 struct TimeDeltaCalculator {
     
-    static func timeDeltaFrom(_ velocity: CGFloat, translation: CGFloat) -> CFTimeInterval {
+    static func timeDeltaFrom(_ velocity: CGFloat, translation: CGFloat) -> Double {
         var velocityMultiplier = abs(velocity / 600)
         var modifiedTranslation = translation
         if (translation > 0) {
@@ -31,6 +31,6 @@ struct TimeDeltaCalculator {
         // If both values are less than zero fake a 1 so we can get off the ground
         let product = modifiedTranslation * velocityMultiplier
         
-        return CFTimeInterval(product)
+        return Double(product)
     }
 }

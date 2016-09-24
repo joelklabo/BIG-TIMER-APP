@@ -10,15 +10,15 @@ import UIKit
 
 class CustomTimerViewController: UIViewController {
 
-    @IBOutlet weak var timeLabel: TimeLabel?
+    @IBOutlet weak var timeLabel: TimeLabel!
     
     var timer: CustomTimer?
     let timeFormatter = TimeFormatter(separator: ":")
     
-    var timerValue = TimerValue() {
+    var timerValue = Double() {
         didSet {
             if let timeLabel = timeLabel {
-                let formattedTime = timeFormatter.formatTime(timerValue.time)
+                let formattedTime = timeFormatter.formatTime(time: timerValue)
                 timeLabel.text = formattedTime.formattedString
             }
         }
@@ -37,15 +37,13 @@ class CustomTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeLabel!.text = timeFormatter.formatTime(timerValue.time).formattedString
+        timeLabel.text = timeFormatter.formatTime(time: timerValue).formattedString
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
     }
     
     func save() {
-        guard let timer = timer else {
-            fatalError()
-        }
-        CustomTimerManager().updateTimer(timer, newValue: Int(timerValue.time))
+        guard let timer = timer else { fatalError() }
+        CustomTimerManager().updateTimer(timer, newValue: timerValue)
         let _ = navigationController?.popViewController(animated: true)
     }
 
@@ -57,6 +55,6 @@ extension CustomTimerViewController: PanGestureInfoReceiving {
     }
     func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
-        timerValue.update(timeDelta)
+        timerValue = timeDelta
     }
 }

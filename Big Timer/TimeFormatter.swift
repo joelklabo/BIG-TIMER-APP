@@ -16,15 +16,15 @@ struct TimeFormatter {
     
     let separator: String
     
-    func formatTime(_ time: CFTimeInterval) -> FormattedTime {
-        return buildFormattedTime(buildTimeState(time))
+    func formatTime(time: Double) -> FormattedTime {
+        return buildFormattedTime(buildTimeState(time: time))
     }
     
-    func formatTime(_ time: Int) -> FormattedTime {
-        return formatTime(CFTimeInterval(time))
+    func formatTime(time: Int) -> FormattedTime {
+        return formatTime(time: time)
     }
     
-    fileprivate func buildTimeState(_ time: CFTimeInterval) -> TimeComponents {
+    func buildTimeState(time: Double) -> TimeComponents {
         
         let hours   = Int(floor(time / 3600))
         let minutes = Int(floor((time / 60).truncatingRemainder(dividingBy: 60)))

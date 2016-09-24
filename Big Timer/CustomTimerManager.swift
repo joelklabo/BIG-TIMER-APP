@@ -14,7 +14,7 @@ struct CustomTimerManager {
     fileprivate let timersKey = "CustomTimers"
     fileprivate let plistReader = PlistReader()
     
-    func updateTimer(_ timer: CustomTimer, newValue: Int) {
+    func updateTimer(_ timer: CustomTimer, newValue: Double) {
         var timers = getTimers()
         switch timer {
         case .first:
@@ -36,7 +36,7 @@ struct CustomTimerManager {
         
         var timers: [CustomTimer] = []
         for (index, time) in arrayOfTimes.enumerated() {
-            guard let time = Int(time as! String) else {
+            guard let time = Double(time as! String) else {
                 fatalError()
             }
             timers.append(CustomTimer(index: index, time: time))
@@ -50,7 +50,7 @@ struct CustomTimerManager {
         return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
     }
     
-    fileprivate func archiveFormat(_ timers: [CustomTimer]) -> NSDictionary {
+    func archiveFormat(_ timers: [CustomTimer]) -> NSDictionary {
         let timerValues: [String] = timers.map {
             switch $0 {
             case .first(let time):
@@ -66,7 +66,7 @@ struct CustomTimerManager {
         return dict
     }
     
-    fileprivate func save(_ timers: [CustomTimer]) {
+    func save(_ timers: [CustomTimer]) {
         plistReader.save(archiveFormat(timers))
         let shortcutItems = timers.map {
             CustomTimerManager.shortcutItemForTime($0)
@@ -78,11 +78,11 @@ struct CustomTimerManager {
 
 enum CustomTimer {
     
-    case first(time: Int)
-    case second(time: Int)
-    case third(time: Int)
+    case first(time: Double)
+    case second(time: Double)
+    case third(time: Double)
     
-    init(index: Int, time: Int) {
+    init(index: Int, time: Double) {
         switch index {
         case 0:
             self = .first(time: time)
@@ -110,11 +110,11 @@ enum CustomTimer {
         let formatter = TimeFormatter(separator: ":")
         switch self {
         case .first(let time):
-            return formatter.formatTime(time).formattedString
+            return formatter.formatTime(time: time).formattedString
         case .second(let time):
-            return formatter.formatTime(time).formattedString
+            return formatter.formatTime(time: time).formattedString
         case .third(let time):
-            return formatter.formatTime(time).formattedString
+            return formatter.formatTime(time: time).formattedString
         }
     }
     

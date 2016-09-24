@@ -29,6 +29,7 @@ class Timer {
             } else {
                 timeMachine.isPaused = false
             }
+            delegate?.isRunning(!timeMachine.isPaused)
         }
     }
     
@@ -39,7 +40,7 @@ class Timer {
     }
     
     @objc func tick() {
-        delegate?.tick(timeMachine.duration)
+        delegate?.tick(timePassed: timeMachine.duration)
     }
     
     func isTimerRunning() -> Bool {
@@ -58,7 +59,7 @@ class Timer {
         isTimerRunning() ? stop() : go()
     }
     
-    fileprivate func act(_ action: Actions) {
+    func act(_ action: Actions) {
         switch action {
         case .go:
             timeMachine.isPaused = false
@@ -70,5 +71,6 @@ class Timer {
 }
 
 protocol TimerDelegate {
-    func tick(_ timePassed: CFTimeInterval)
+    func tick(timePassed: Double)
+    func isRunning(_: Bool)
 }

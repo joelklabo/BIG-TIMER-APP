@@ -11,8 +11,17 @@ import UIKit
 
 class InfoButton: UIView {
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        isOpaque = false
+    }
+    
     override func draw(_ rect: CGRect) {
-                
+        
+        if let context = UIGraphicsGetCurrentContext() {
+            context.clear(rect)
+        }
+        
         let inset: CGFloat = 35
         
         // Draw outer circle

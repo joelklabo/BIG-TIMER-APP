@@ -13,7 +13,16 @@ class ClearButton: UIView {
     var lineColor = Theme.lineColor()
     var lineWidth = Theme.lineWidth()
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        isOpaque = false
+    }
+    
     override func draw(_ rect: CGRect) {
+        
+        if let context = UIGraphicsGetCurrentContext() {
+            context.clear(rect)
+        }
         
         var rect = rect
         

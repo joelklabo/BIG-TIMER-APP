@@ -17,7 +17,16 @@ class Arrow: UIView {
     
     fileprivate var arrowDirection: TimerDirection = .up
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        isOpaque = false
+    }
+    
     override func draw(_ rect: CGRect) {
+        
+        if let context = UIGraphicsGetCurrentContext() {
+            context.clear(rect)
+        }
         
         lineColor.setStroke()
 

@@ -37,8 +37,10 @@ class CustomTimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorChangeDidOccur()
         timeLabel.text = timeFormatter.formatTime(time: timerValue).formattedString
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+        NotificationCenter.default.addObserver(self, selector: #selector(CustomTimerViewController.colorChangeDidOccur), name: ColorSettingController().colorChangeNotificationKey, object: nil)
     }
     
     func save() {
@@ -47,6 +49,12 @@ class CustomTimerViewController: UIViewController {
         let _ = navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension CustomTimerViewController: ColorChangeDelegate {
+    func colorChangeDidOccur() {
+        self.view.backgroundColor = ColorSettingController().selectedColor()
+    }
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {

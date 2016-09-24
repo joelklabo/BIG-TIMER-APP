@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UITableViewController {
     
+    let colorSettingController = ColorSettingController()
+    
     fileprivate var customTimers: [CustomTimer] {
         get {
            return CustomTimerManager().getTimers()
@@ -39,11 +41,17 @@ class SettingsViewController: UITableViewController {
         super.viewDidLoad()
         let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(SettingsViewController.doneTapped))
         self.navigationItem.rightBarButtonItem = doneButton
+        tableView.tableHeaderView = Bundle.main.loadNibNamed("ColorSettingView", owner: colorSettingController, options: nil)?.first as! UIView?
+        tableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 100)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        tableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 100)
     }
     
     // MARK: Target / Action

@@ -15,13 +15,16 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
+        colorChangeDidOccur()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.colorChangeDidOccur), name: ColorSettingController().colorChangeNotificationKey, object: nil)
         
         TimerController.instance.delegate = self
         
@@ -83,6 +86,12 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         AudioController.instance.playSound()
     }
 
+}
+
+extension TimerViewController: ColorChangeDelegate {
+    func colorChangeDidOccur() {
+        self.view.backgroundColor = ColorSettingController().selectedColor()
+    }
 }
 
 extension TimerViewController: PanGestureInfoReceiving {

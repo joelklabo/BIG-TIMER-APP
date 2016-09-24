@@ -14,6 +14,8 @@ import AVFoundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    
+    let notificationController = NotificationController.instance
         
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         QuickActionController.handleAction(shortcutItem)

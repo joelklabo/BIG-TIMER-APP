@@ -8,30 +8,36 @@
 
 import Foundation
 import UIKit
+import UserNotifications
 
 class NotificationController {
     
     static let instance = NotificationController()
+    
     fileprivate let notificationCenter = NotificationCenter.default
     fileprivate let enterFore = NSNotification.Name.UIApplicationDidBecomeActive
     fileprivate let enterBack = NSNotification.Name.UIApplicationWillResignActive
     
     init() {
-        registerForTypes()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            print("notifications are enabled: \(granted)")
+        }
         notificationCenter.addObserver(self, selector: #selector(enteringBackground), name: enterBack, object: nil)
         notificationCenter.addObserver(self, selector: #selector(enteringForeground), name: enterFore, object: nil)
     }
     
-    func notifyDone(_ onDate: Date) {
-        let notification = UILocalNotification()
-        notification.alertBody = "Timer Done"
-        notification.fireDate = onDate
-        notification.soundName = AlertSound.getPreference().fileName()
-        UIApplication.shared.scheduledLocalNotifications = [notification]
+    func notifyDone(timeLeft: Double) {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "Timer Finished"
+        notificationContent.body = "Big Timer is Done"
+        notificationContent.sound = UNNotificationSound(named: AlertSound.getPreference().fileName())
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeLeft, repeats: false)
+        let notification = UNNotificationRequest(identifier: "timerDone", content: notificationContent, trigger: notificationTrigger)
+        UNUserNotificationCenter.current().add(notification, withCompletionHandler: nil)
     }
 
     @objc func enteringForeground() {
-        UIApplication.shared.scheduledLocalNotifications = []
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     @objc func enteringBackground() {
@@ -42,14 +48,8 @@ class NotificationController {
         let timerDirection = timerState.direction
         let timerIsRunning = timerState.isRunning
         if ((timerDirection == .down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft))
+            NotificationController.instance.notifyDone(timeLeft: timeLeft)
         }
-    }
-    
-    fileprivate func registerForTypes() {
-        let application = UIApplication.shared
-        let notificationTypes = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-        application.registerUserNotificationSettings(notificationTypes)
     }
     
     deinit {

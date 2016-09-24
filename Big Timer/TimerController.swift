@@ -20,6 +20,8 @@ class TimerController: NSObject {
     
     var delegate: TimerManagerDelegate?
     
+    var launchedFromQuickAction = false
+    
     var currentTimerState: TimerState = TimerState.zeroState() {
         didSet {
             if (currentTimerState.timerValue < 0) {
@@ -65,21 +67,28 @@ class TimerController: NSObject {
         }
     }
     
-    func setTimer(timerValue: Double, direction: TimerDirection) {
+    func setTimerFromQuickAction(timerValue: Double, direction: TimerDirection) {
+        launchedFromQuickAction = true
         currentTimerState = currentTimerState.update(timerValue: timerValue).update(direction: direction)
         Timer.instance.go()
     }
     
     func returningFromBackground() {
-        if let archivedTimerState = TimerStateArchiver.retrieveTimerState(),
-                let updatedTimerState = updateTimerState(state: archivedTimerState, forDate: Date()) {
-            currentTimerState = updatedTimerState
-        } else {
-            currentTimerState = TimerState.zeroState()
+        
+        if !launchedFromQuickAction {
+            if let archivedTimerState = TimerStateArchiver.retrieveTimerState(),
+                let updatedTimerState = updateTimerStateFromBackground(state: archivedTimerState, forDate: Date()) {
+                currentTimerState = updatedTimerState
+            } else {
+                currentTimerState = TimerState.zeroState()
+            }
         }
+        
         if (currentTimerState.isRunning == true) {
             Timer.instance.go()
         }
+        
+        launchedFromQuickAction = false
     }
     
     func enteringBackground() {
@@ -102,7 +111,7 @@ class TimerController: NSObject {
         currentTimerState = TimerState(timeStamp: Date(), timerValue: timerValue, direction: currentTimerState.direction, isRunning: currentTimerState.isRunning)
     }
     
-    func updateTimerState(state: TimerState, forDate currentDate: Date) -> TimerState? {
+    func updateTimerStateFromBackground(state: TimerState, forDate currentDate: Date) -> TimerState? {
         if !state.isRunning { return state }
         let timerValue = state.timerValue
         let timeSinceBackgrounded = currentDate.timeIntervalSince(state.timeStamp)

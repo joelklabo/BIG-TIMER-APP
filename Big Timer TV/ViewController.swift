@@ -46,18 +46,18 @@ class ViewController: UIViewController {
     }
     
     func playPausePressed() {
-        TimerController.instance.toggle()
+        TimerController.instance.toggleTimer()
     }
 
 }
 
 extension ViewController: TimerManagerDelegate {
-    internal func timerUpdate(_ encodedTimerState: EncodableTimerState) {
+    internal func timerUpdate(encodedTimerState: EncodableTimerState) {
         guard let state = encodedTimerState.state else {
             return
         }
         clockView.rotateToTime(state.timerValue)
-        let formattedTime = timeFormatter.formatTime(state.timerValue)
+        let formattedTime = timeFormatter.formatTime(time: state.timerValue)
         timeLabel.text = formattedTime.formattedString
         arrow.changeDirection(state.direction)
     }
@@ -72,7 +72,8 @@ extension ViewController: PanGestureInfoReceiving {
         verticalPan(sender)
     }
     func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
-        TimerController.instance.setTimerToDirection(.down)
-        TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+        TimerController.instance.update(direction: .down)
+        TimerController.instance.adjust(byTime: TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+            
     }
 }

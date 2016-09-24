@@ -41,7 +41,6 @@
 		ED540F4C1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
 		ED540F4E1CE45BAE000A4860 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */; };
 		ED540F4F1CE45E0E000A4860 /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B668C1AD8326300888329 /* TimerController.swift */; };
-		ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		ED540F511CE45E86000A4860 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED540F521CE45E89000A4860 /* QuickActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C55101CDAA6C100119596 /* QuickActionController.swift */; };
 		ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
@@ -535,7 +534,6 @@
 			files = (
 				ED540F631CE45EBA000A4860 /* AppDelegate.swift in Sources */,
 				ED540F621CE45EBA000A4860 /* TimeLabel.swift in Sources */,
-				ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */,
 				ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */,
 				ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */,
 				ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */,
@@ -646,7 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = appletvos;
+				SDKROOT = appletvos10.0;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -669,7 +667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.Big-Timer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = appletvos;
+				SDKROOT = appletvos10.0;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
@@ -752,7 +750,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos10.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -791,7 +789,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos10.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

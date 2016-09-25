@@ -58,6 +58,26 @@ class ColorSettingController: NSObject {
         setDefaultColor(blueColor)
     }
     
+    func setSelection() {
+        let color = selectedColor()
+        switch color {
+        case redColor:
+            setSelectedLabelOnButton(redButton)
+            break
+        case greenColor:
+            setSelectedLabelOnButton(greenButton)
+            break
+        case yellowColor:
+            setSelectedLabelOnButton(yellowButton)
+            break
+        case blueColor:
+            setSelectedLabelOnButton(blueButton)
+            break
+        default:
+            fatalError("unsupported color")
+        }
+    }
+    
     fileprivate func setSelectedLabelOnButton(_ button: UIButton) {
         clearSelectedState()
         button.setTitle("👍", for: .normal)

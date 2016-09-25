@@ -26,8 +26,10 @@ class TimerController: NSObject {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState = TimerState.zeroState()
-                Timer.instance.stop()
-                delegate?.timerDone()
+                if oldValue.isRunning {                    
+                    Timer.instance.stop()
+                    delegate?.timerDone()
+                }
             }
             delegate?.timerUpdate(encodedTimerState: EncodableTimerState(state: currentTimerState))
         }

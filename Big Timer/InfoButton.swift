@@ -11,6 +11,9 @@ import UIKit
 
 class InfoButton: UIView {
     
+    var lineColor = Theme.lineColor()
+    var lineWidth = Theme.lineWidth()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         isOpaque = false
@@ -22,36 +25,40 @@ class InfoButton: UIView {
             context.clear(rect)
         }
         
-        let inset: CGFloat = 35
+        let rect = rect.insetBy(dx: lineWidth, dy: lineWidth)
         
-        // Draw outer circle
-        let insetRect = rect.insetBy(dx: inset, dy: inset)
-        let offsetRect = insetRect.offsetBy(dx: -inset + (Theme.infoButtonLineWidth()/2), dy: inset - (Theme.infoButtonLineWidth()/2))
-        let rect = offsetRect
-        let path = UIBezierPath(ovalIn: rect)
-        path.lineWidth = Theme.infoButtonLineWidth()
-        Theme.infoButtonLineColor().setStroke()
+        let offset: CGFloat = 18.0
+        let dotLength: CGFloat = 2
+        
+        let path = UIBezierPath()
+        
+        // First
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX + dotLength, y: rect.minY))
+        
+        path.move(to: CGPoint(x: rect.minX + offset, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        
+        
+        // Second
+        path.move(to: CGPoint(x: rect.minX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.minX + dotLength, y: rect.midY))
+        
+        path.move(to: CGPoint(x: rect.minX + offset, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        
+        // Third
+        path.move(to: CGPoint(x: rect.minX, y: rect.maxX))
+        path.addLine(to: CGPoint(x: rect.minX + dotLength, y: rect.maxX))
+        
+        path.move(to: CGPoint(x: rect.minX + offset, y: rect.maxX))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        
+        lineColor.setStroke()
+        path.lineWidth = lineWidth
+        path.lineCapStyle = .round
+        path.lineJoinStyle = .round
         path.stroke()
-        
-        // Draw the line of the 'i'
-        let center = CGPoint(x: rect.midX, y: (rect.midY - Theme.infoButtonLineWidth()))
-        let secondHandPath = UIBezierPath()
-        secondHandPath.move(to: CGPoint(x: center.x, y: center.y + Theme.infoButtonLineWidth()))
-        secondHandPath.addLine(to: CGPoint(x: center.x, y: rect.maxY - (Theme.infoButtonLineWidth() * 3)))
-        
-        secondHandPath.lineWidth = Theme.infoButtonLineWidth()
-        secondHandPath.lineCapStyle = .round
-        secondHandPath.stroke()
-        
-        // Draw dot of the 'i'
-        let dotPosition = CGPoint(x: rect.midX, y: (rect.minY + (Theme.infoButtonLineWidth() * 4)))
-        let dotPoint = UIBezierPath()
-        dotPoint.move(to: dotPosition)
-        dotPoint.addLine(to: dotPosition)
-        
-        dotPoint.lineWidth = Theme.infoButtonLineWidth() + 1
-        dotPoint.lineCapStyle = .round
-        dotPoint.stroke()
         
     }
     

@@ -17,7 +17,7 @@ struct Theme {
         return Theme.mainAppColor()
     }
     static func infoButtonLineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
     }
     static func fillColor() -> UIColor {
         let color = UIColor.white

@@ -98,6 +98,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
                                     <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
@@ -114,26 +115,32 @@
                                         <exclude reference="qPa-sb-Xp8"/>
                                     </mask>
                                 </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHI-3J-CMg">
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
                                 <connections>
-                                    <action selector="settingsTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mh8-Rr-g9y"/>
+                                    <outletCollection property="gestureRecognizers" destination="3pz-UL-7eJ" appends="YES" id="cQW-aM-Fd7"/>
                                 </connections>
-                            </button>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3J-kb-cWA" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="b1v-pO-wiz"/>
+                                    <constraint firstAttribute="width" constant="70" id="ce1-Pn-3n0"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7FE-VT-ghm" appends="YES" id="HVw-oP-iWK"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="I3J-kb-cWA" secondAttribute="bottom" constant="20" id="0Ss-l1-PKt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="1Wr-RG-gtg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="51L-jq-QVO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="8ej-V6-KML"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BOe-oP-r0b"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="BpN-gX-hJG"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DZ9-YD-eK0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="I3J-kb-cWA" secondAttribute="leading" id="Dat-AY-4HO"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ftr-VT-u2f"/>
                             <constraint firstItem="qGU-AE-OrB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Ipg-PB-DO0"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VfQ-cK-XTz" secondAttribute="bottom" constant="20" id="JUD-FT-OJ1"/>
@@ -144,7 +151,6 @@
                             <constraint firstAttribute="centerX" secondItem="VfQ-cK-XTz" secondAttribute="centerX" id="SOT-Jh-zui"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Skn-4y-bOo"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="U0a-0b-mve"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YHI-3J-CMg" secondAttribute="bottom" constant="20" id="W8h-wa-e81"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kgb-Ki-gRU" secondAttribute="bottom" constant="20" id="WR2-Lq-2uK"/>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Xr5-fv-vlt"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cZ2-pA-su8"/>
@@ -158,7 +164,6 @@
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="hYN-B4-VGF"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lrZ-BS-ZkI"/>
                             <constraint firstItem="kgb-Ki-gRU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="owu-ac-Xzs"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="YHI-3J-CMg" secondAttribute="leading" id="rW0-PO-LvK"/>
                             <constraint firstAttribute="centerY" secondItem="VfQ-cK-XTz" secondAttribute="centerY" id="rcr-nC-qI2"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uZ6-Hh-hzO"/>
                             <constraint firstItem="VfQ-cK-XTz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="58" id="umI-6R-9AQ"/>
@@ -198,9 +203,6 @@
                                 <exclude reference="fcB-PG-TjH"/>
                             </mask>
                         </variation>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="1QZ-7l-2sJ" appends="YES" id="Gge-4B-Zl2"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="arrowView" destination="kgb-Ki-gRU" id="gTq-2v-RNF"/>
@@ -209,11 +211,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="1QZ-7l-2sJ" userLabel="Tap">
-                    <connections>
-                        <action selector="tap:" destination="BYZ-38-t0r" id="ZFp-wt-iFU"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="871-U1-0Ze" userLabel="Clear">
                     <connections>
                         <action selector="clear:" destination="BYZ-38-t0r" id="nZC-DB-h4V"/>
@@ -222,6 +219,16 @@
                 <tapGestureRecognizer id="nNt-RL-Xgs" userLabel="Arrow Tap">
                     <connections>
                         <action selector="arrowTap:" destination="BYZ-38-t0r" id="8fQ-uf-cyx"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="7FE-VT-ghm" userLabel="Info">
+                    <connections>
+                        <action selector="settingsTap:" destination="BYZ-38-t0r" id="0mJ-uv-LEy"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3pz-UL-7eJ">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="ZgT-Z8-47S"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

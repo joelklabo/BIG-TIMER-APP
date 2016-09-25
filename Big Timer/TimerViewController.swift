@@ -53,11 +53,11 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     func enteringBackground () {
         TimerController.instance.enteringBackground()
     }
-    
+
     @IBAction func tap(_ sender: AnyObject) {
         TimerController.instance.toggleTimer()
     }
-
+    
     @IBAction func clear(_ sender: AnyObject) {
         TimerController.instance.clear()
     }
@@ -71,7 +71,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         settingsNavigationController.modalTransitionStyle = .crossDissolve
         self.present(settingsNavigationController, animated: true, completion: nil)
     }
-    
+
     // Timer Update Delegate
 
     func timerUpdate(encodedTimerState: EncodableTimerState) {

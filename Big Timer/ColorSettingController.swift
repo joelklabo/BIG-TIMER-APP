@@ -28,7 +28,7 @@ class ColorSettingController: NSObject {
     }
 
     fileprivate let redColor    = UIColor(colorLiteralRed: 243/255.0, green: 79/255.0, blue: 38/255.0, alpha: 1)
-    fileprivate let greenColor  = UIColor(colorLiteralRed: 4/255.0, green: 186/255.0, blue: 0/255.0, alpha: 1)
+    fileprivate let greenColor  = UIColor(colorLiteralRed: 24/255.0, green: 166/255.0, blue: 0/255.0, alpha: 1)
     fileprivate let yellowColor = UIColor(colorLiteralRed: 255/255.0, green: 200/255.0, blue: 0, alpha: 1)
     fileprivate let blueColor   = UIColor(colorLiteralRed: 22/255.0, green: 96/255.0, blue: 237/255.0, alpha: 1)
     

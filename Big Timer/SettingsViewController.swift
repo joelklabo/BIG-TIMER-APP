@@ -43,6 +43,7 @@ class SettingsViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = doneButton
         tableView.tableHeaderView = Bundle.main.loadNibNamed("ColorSettingView", owner: colorSettingController, options: nil)?.first as! UIView?
         tableView.tableHeaderView?.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 100)
+        colorSettingController.setColors()
         colorSettingController.setSelection()
     }
     

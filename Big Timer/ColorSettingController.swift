@@ -23,62 +23,51 @@ class ColorSettingController: NSObject {
             let userSelectedColor = NSKeyedUnarchiver.unarchiveObject(with: userSelectedColorData) as? UIColor {
             return userSelectedColor
         } else {
-            return redColor
+            return firstColor
         }
     }
 
-    fileprivate let redColor    = UIColor(colorLiteralRed: 243/255.0, green: 79/255.0, blue: 38/255.0, alpha: 1)
-    fileprivate let greenColor  = UIColor(colorLiteralRed: 24/255.0, green: 166/255.0, blue: 0/255.0, alpha: 1)
-    fileprivate let yellowColor = UIColor(colorLiteralRed: 255/255.0, green: 200/255.0, blue: 0, alpha: 1)
-    fileprivate let blueColor   = UIColor(colorLiteralRed: 22/255.0, green: 96/255.0, blue: 237/255.0, alpha: 1)
+    fileprivate let firstColor    = UIColor(colorLiteralRed: 243/255.0, green: 79/255.0, blue: 38/255.0, alpha: 1)
+    fileprivate let thirdColor = UIColor(colorLiteralRed: 24/255.0, green: 144/255.0, blue: 240/255.0, alpha: 1)
+    fileprivate let fourthColor   = UIColor(colorLiteralRed: 0, green: 66/255.0, blue: 133/255.0, alpha: 1)
     
-    @IBOutlet weak var redButton: UIButton!
-    @IBOutlet weak var greenButton: UIButton!
-    @IBOutlet weak var blueButton: UIButton!
-    @IBOutlet weak var yellowButton: UIButton!
+    @IBOutlet weak var firstButton: UIButton!
+    @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var thirdButton: UIButton!
     
-    @IBAction func redTapped(_ sender: AnyObject) {
-        redButton.isEnabled = true
-        setSelectedLabelOnButton(redButton)
-        setDefaultColor(redColor)
+    @IBAction func firstButtonTapped(_ sender: AnyObject) {
+        firstButton.isEnabled = true
+        setSelectedLabelOnButton(firstButton)
+        setDefaultColor(firstColor)
     }
     
-    @IBAction func greenTapped(_ sender: AnyObject) {
-        setSelectedLabelOnButton(greenButton)
-        setDefaultColor(greenColor)
+    @IBAction func thirdButtonTapped(_ sender: AnyObject) {
+        setSelectedLabelOnButton(thirdButton)
+        setDefaultColor(thirdColor)
     }
     
-    @IBAction func yellowTapped(_ sender: AnyObject) {
-        setSelectedLabelOnButton(yellowButton)
-        setDefaultColor(yellowColor)
-    }
-    
-    @IBAction func blueTapped(_ sender: AnyObject) {
-        setSelectedLabelOnButton(blueButton)
-        setDefaultColor(blueColor)
+    @IBAction func fourthButtonTapped(_ sender: AnyObject) {
+        setSelectedLabelOnButton(fourthButton)
+        setDefaultColor(fourthColor)
     }
     
     func setColors() {
-        redButton.backgroundColor = redColor
-        greenButton.backgroundColor = greenColor
-        blueButton.backgroundColor = blueColor
-        yellowButton.backgroundColor = yellowColor
+        firstButton.backgroundColor = firstColor
+        fourthButton.backgroundColor = fourthColor
+        thirdButton.backgroundColor = thirdColor
     }
     
     func setSelection() {
         let color = selectedColor()
         switch color {
-        case redColor:
-            setSelectedLabelOnButton(redButton)
+        case firstColor:
+            setSelectedLabelOnButton(firstButton)
             break
-        case greenColor:
-            setSelectedLabelOnButton(greenButton)
+        case thirdColor:
+            setSelectedLabelOnButton(thirdButton)
             break
-        case yellowColor:
-            setSelectedLabelOnButton(yellowButton)
-            break
-        case blueColor:
-            setSelectedLabelOnButton(blueButton)
+        case fourthColor:
+            setSelectedLabelOnButton(fourthButton)
             break
         default:
             fatalError("unsupported color")
@@ -91,10 +80,9 @@ class ColorSettingController: NSObject {
     }
     
     fileprivate func clearSelectedState() {
-        redButton.setTitle("", for: .normal)
-        greenButton.setTitle("", for: .normal)
-        blueButton.setTitle("", for: .normal)
-        yellowButton.setTitle("", for: .normal)
+        firstButton.setTitle("", for: .normal)
+        fourthButton.setTitle("", for: .normal)
+        thirdButton.setTitle("", for: .normal)
     }
     
     fileprivate func setDefaultColor(_ color: UIColor) {

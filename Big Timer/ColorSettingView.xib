@@ -8,10 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSettingController" customModule="Big_Timer" customModuleProvider="target">
             <connections>
-                <outlet property="blueButton" destination="qkZ-hF-qLg" id="0Wz-pm-eaY"/>
-                <outlet property="greenButton" destination="cUL-hw-nyp" id="rPk-ND-y4y"/>
-                <outlet property="redButton" destination="8J2-P1-nQH" id="dcs-nV-rci"/>
-                <outlet property="yellowButton" destination="0R8-0e-UcF" id="9v0-3j-aCC"/>
+                <outlet property="firstButton" destination="8J2-P1-nQH" id="kOc-cF-KXM"/>
+                <outlet property="fourthButton" destination="0R8-0e-UcF" id="9Gv-ee-xPu"/>
+                <outlet property="thirdButton" destination="qkZ-hF-qLg" id="qF6-Lx-4P8"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,17 +27,7 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="redTapped:" destination="-1" eventType="touchUpInside" id="l4w-ut-zBD"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUL-hw-nyp">
-                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                            <state key="normal" title=" ">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="greenTapped:" destination="-1" eventType="touchUpInside" id="PTj-BX-gjI"/>
+                                <action selector="firstButtonTapped:" destination="-1" eventType="touchUpInside" id="e5G-UJ-sCB"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkZ-hF-qLg">
@@ -48,7 +37,7 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="blueTapped:" destination="-1" eventType="touchUpInside" id="RpZ-rI-Gfq"/>
+                                <action selector="thirdButtonTapped:" destination="-1" eventType="touchUpInside" id="ocU-4r-oHt"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R8-0e-UcF">
@@ -58,7 +47,7 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="yellowTapped:" destination="-1" eventType="touchUpInside" id="65j-8G-Yrf"/>
+                                <action selector="fourthButtonTapped:" destination="-1" eventType="touchUpInside" id="geu-NV-6Gm"/>
                             </connections>
                         </button>
                     </subviews>

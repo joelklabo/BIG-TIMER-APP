@@ -13,26 +13,14 @@ struct Theme {
     static func lineColor() -> UIColor {
         return UIColor.white
     }
-    static func clockLineColor() -> UIColor {
-        return Theme.mainAppColor()
-    }
-    static func infoButtonLineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
-    }
     static func fillColor() -> UIColor {
         let color = UIColor.white
         return color
     }
     static func lineWidth() -> CGFloat {
-        return CGFloat(10)
+        return CGFloat(8)
     }
     static func tvLineWidth() -> CGFloat {
         return CGFloat(28)
-    }
-    static func infoButtonLineWidth() -> CGFloat {
-        return CGFloat(2)
-    }
-    static func mainAppColor() -> UIColor {
-        return UIColor(red:0.95, green:0.31, blue:0.15, alpha:1.0)
     }
 }

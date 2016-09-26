@@ -94,6 +94,7 @@ class TimerController: NSObject {
     }
     
     func enteringBackground() {
+        NotificationController.instance.setupNotification(timerState: currentTimerState)
         TimerStateArchiver.archiveTimerState(currentTimerState)
         Timer.instance.stop()
     }

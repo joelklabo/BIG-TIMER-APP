@@ -28,7 +28,7 @@ class BigTimerUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testForSnapshot() {
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
@@ -36,19 +36,19 @@ class BigTimerUITests: XCTestCase {
         snapshot("timer-view-one")
         let element = app.otherElements.containing(.staticText, identifier:"0").children(matching: .other).element(boundBy: 2)
         element.tap()
-        
+        snapshot("settings-view")
         let elementsQuery = app.tables.otherElements.containing(.button, identifier:"👍")
         elementsQuery.children(matching: .button).element(boundBy: 1).tap()
-        
         let doneButton = app.navigationBars["Settings"].buttons["Done"]
         doneButton.tap()
         snapshot("timer-view-two")
-
         element.tap()
         elementsQuery.children(matching: .button).element(boundBy: 2).tap()
         doneButton.tap()
         snapshot("timer-view-three")
+        element.tap()
+        elementsQuery.children(matching: .button).element(boundBy: 0).tap()
+        doneButton.tap()
+        
     }
-    
-    
 }

@@ -24,10 +24,10 @@ languages([
 ])
 
 # Arguments to pass to the app on launch. See https://github.com/fastlane/snapshot#launch-arguments
-launch_arguments(["-testingUITimerValue 123"])
+#launch_arguments(["-testingUITimerValue 123"])
 
 # The name of the scheme which contains the UI Tests
-scheme "BigTimerUITests"
+scheme "Big Timer"
 
 # Where should the resulting screenshots be stored?
 output_directory "./screenshots"

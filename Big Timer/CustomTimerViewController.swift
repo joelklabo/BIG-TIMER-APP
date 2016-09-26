@@ -17,6 +17,9 @@ class CustomTimerViewController: UIViewController {
     
     var timerValue = Double() {
         didSet {
+            if timerValue < 0 {
+                timerValue = 0
+            }
             if let timeLabel = timeLabel {
                 let formattedTime = timeFormatter.formatTime(time: timerValue)
                 timeLabel.text = formattedTime.formattedString
@@ -63,6 +66,6 @@ extension CustomTimerViewController: PanGestureInfoReceiving {
     }
     func verticalPanInfo(_ velocity: CGFloat, translation: CGFloat) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
-        timerValue = timeDelta
+        timerValue = timerValue + timeDelta
     }
 }

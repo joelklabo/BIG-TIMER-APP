@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68112CC11D96DCF40031CD8A /* ColorSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68112CC01D96DCF40031CD8A /* ColorSettingController.swift */; };
+		68112CCB1D98BD590031CD8A /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68112CCA1D98BD590031CD8A /* BigTimerUITests.swift */; };
+		68112CD21D98BE750031CD8A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */; };
 		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
 		682EB69A1CF9DD9100E3E87B /* bells.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708F1B0D41B300F3755F /* bells.aiff */; };
@@ -76,8 +78,21 @@
 		EDE970981B0D41B300F3755F /* deranged.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE970931B0D41B300F3755F /* deranged.aiff */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		68112CCD1D98BD590031CD8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EDABD9C01A7A0CD6006CFBA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDABD9C71A7A0CD6006CFBA5;
+			remoteInfo = "Big Timer";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		68112CC01D96DCF40031CD8A /* ColorSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSettingController.swift; sourceTree = "<group>"; };
+		68112CC81D98BD590031CD8A /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68112CCA1D98BD590031CD8A /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
+		68112CCC1D98BD590031CD8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		687442DF1D96CA7A00212C18 /* ColorSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorSettingView.xib; sourceTree = "<group>"; };
 		68F792481CF8C00E00AE7166 /* Big Timer TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +145,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		68112CC51D98BD590031CD8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68F792451CF8C00E00AE7166 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,6 +169,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68112CC91D98BD590031CD8A /* BigTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				68112CCA1D98BD590031CD8A /* BigTimerUITests.swift */,
+				68112CCC1D98BD590031CD8A /* Info.plist */,
+			);
+			path = BigTimerUITests;
+			sourceTree = "<group>";
+		};
 		68F792491CF8C00E00AE7166 /* Big Timer TV */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +274,7 @@
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				ED8C54E11CD864AD00119596 /* BigTimerUITests */,
 				68F792491CF8C00E00AE7166 /* Big Timer TV */,
+				68112CC91D98BD590031CD8A /* BigTimerUITests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,
 				C98E2E87487F410CB3A2C6A6 /* Frameworks */,
 			);
@@ -253,6 +285,7 @@
 			children = (
 				EDABD9C81A7A0CD6006CFBA5 /* Big Timer.app */,
 				68F792481CF8C00E00AE7166 /* Big Timer TV.app */,
+				68112CC81D98BD590031CD8A /* BigTimerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +351,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		68112CC71D98BD590031CD8A /* BigTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68112CCF1D98BD590031CD8A /* Build configuration list for PBXNativeTarget "BigTimerUITests" */;
+			buildPhases = (
+				68112CC41D98BD590031CD8A /* Sources */,
+				68112CC51D98BD590031CD8A /* Frameworks */,
+				68112CC61D98BD590031CD8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68112CCE1D98BD590031CD8A /* PBXTargetDependency */,
+			);
+			name = BigTimerUITests;
+			productName = BigTimerUITests;
+			productReference = 68112CC81D98BD590031CD8A /* BigTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		68F792471CF8C00E00AE7166 /* Big Timer TV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 68F792631CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TV" */;
@@ -358,10 +409,16 @@
 		EDABD9C01A7A0CD6006CFBA5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Joel Klabo";
 				TargetAttributes = {
+					68112CC71D98BD590031CD8A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2ADV3QR29P;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EDABD9C71A7A0CD6006CFBA5;
+					};
 					68F792471CF8C00E00AE7166 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
@@ -389,11 +446,19 @@
 			targets = (
 				EDABD9C71A7A0CD6006CFBA5 /* Big Timer */,
 				68F792471CF8C00E00AE7166 /* Big Timer TV */,
+				68112CC71D98BD590031CD8A /* BigTimerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		68112CC61D98BD590031CD8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68F792461CF8C00E00AE7166 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -435,6 +500,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		68112CC41D98BD590031CD8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68112CCB1D98BD590031CD8A /* BigTimerUITests.swift in Sources */,
+				68112CD21D98BE750031CD8A /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		68F792441CF8C00E00AE7166 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +568,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		68112CCE1D98BD590031CD8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDABD9C71A7A0CD6006CFBA5 /* Big Timer */;
+			targetProxy = 68112CCD1D98BD590031CD8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		68F7924E1CF8C00E00AE7166 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -522,6 +604,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		68112CD01D98BD590031CD8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2ADV3QR29P;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bigapplications.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Big Timer";
+			};
+			name = Debug;
+		};
+		68112CD11D98BD590031CD8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2ADV3QR29P;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bigapplications.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Big Timer";
+			};
+			name = Release;
+		};
 		68F7925F1CF8C00E00AE7166 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -689,6 +809,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		68112CCF1D98BD590031CD8A /* Build configuration list for PBXNativeTarget "BigTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68112CD01D98BD590031CD8A /* Debug */,
+				68112CD11D98BD590031CD8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		68F792631CF8C00E00AE7166 /* Build configuration list for PBXNativeTarget "Big Timer TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

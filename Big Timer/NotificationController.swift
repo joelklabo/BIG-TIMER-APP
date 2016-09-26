@@ -27,7 +27,7 @@ class NotificationController {
     
     func notifyDone(timeLeft: Double) {
         let notificationContent = UNMutableNotificationContent()
-        notificationContent.body = "timer is done"
+        notificationContent.body = "Timer Done"
         notificationContent.sound = UNNotificationSound(named: AlertSound.getPreference().fileName())
         let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: timeLeft, repeats: false)
         let notification = UNNotificationRequest(identifier: "timerDone", content: notificationContent, trigger: notificationTrigger)

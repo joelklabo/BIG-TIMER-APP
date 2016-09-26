@@ -27,12 +27,12 @@ class ColorSettingController: NSObject {
         }
     }
 
-    fileprivate let firstColor    = UIColor(colorLiteralRed: 243/255.0, green: 79/255.0, blue: 38/255.0, alpha: 1)
-    fileprivate let thirdColor = UIColor(colorLiteralRed: 24/255.0, green: 144/255.0, blue: 240/255.0, alpha: 1)
-    fileprivate let fourthColor   = UIColor(colorLiteralRed: 0, green: 66/255.0, blue: 133/255.0, alpha: 1)
+    fileprivate let firstColor  = UIColor(colorLiteralRed: 243/255.0, green: 79/255.0, blue: 38/255.0, alpha: 1)
+    fileprivate let secondColor = UIColor(colorLiteralRed: 56/255.0, green: 54/255.0, blue: 54/255.0, alpha: 1)
+    fileprivate let thirdColor  = UIColor(colorLiteralRed: 22/255.0, green: 102/255.0, blue: 178/255.0, alpha: 1)
     
     @IBOutlet weak var firstButton: UIButton!
-    @IBOutlet weak var fourthButton: UIButton!
+    @IBOutlet weak var secondButton: UIButton!
     @IBOutlet weak var thirdButton: UIButton!
     
     @IBAction func firstButtonTapped(_ sender: AnyObject) {
@@ -46,14 +46,14 @@ class ColorSettingController: NSObject {
         setDefaultColor(thirdColor)
     }
     
-    @IBAction func fourthButtonTapped(_ sender: AnyObject) {
-        setSelectedLabelOnButton(fourthButton)
-        setDefaultColor(fourthColor)
+    @IBAction func secondButtonTapped(_ sender: AnyObject) {
+        setSelectedLabelOnButton(secondButton)
+        setDefaultColor(secondColor)
     }
     
     func setColors() {
         firstButton.backgroundColor = firstColor
-        fourthButton.backgroundColor = fourthColor
+        secondButton.backgroundColor = secondColor
         thirdButton.backgroundColor = thirdColor
     }
     
@@ -66,8 +66,8 @@ class ColorSettingController: NSObject {
         case thirdColor:
             setSelectedLabelOnButton(thirdButton)
             break
-        case fourthColor:
-            setSelectedLabelOnButton(fourthButton)
+        case secondColor:
+            setSelectedLabelOnButton(secondButton)
             break
         default:
             fatalError("unsupported color")
@@ -81,7 +81,7 @@ class ColorSettingController: NSObject {
     
     fileprivate func clearSelectedState() {
         firstButton.setTitle("", for: .normal)
-        fourthButton.setTitle("", for: .normal)
+        secondButton.setTitle("", for: .normal)
         thirdButton.setTitle("", for: .normal)
     }
     

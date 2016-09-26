@@ -9,8 +9,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorSettingController" customModule="Big_Timer" customModuleProvider="target">
             <connections>
                 <outlet property="firstButton" destination="8J2-P1-nQH" id="kOc-cF-KXM"/>
-                <outlet property="fourthButton" destination="0R8-0e-UcF" id="9Gv-ee-xPu"/>
-                <outlet property="thirdButton" destination="qkZ-hF-qLg" id="qF6-Lx-4P8"/>
+                <outlet property="secondButton" destination="qkZ-hF-qLg" id="trr-1z-Ate"/>
+                <outlet property="thirdButton" destination="0R8-0e-UcF" id="mi9-M5-3ay"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -37,17 +37,17 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="thirdButtonTapped:" destination="-1" eventType="touchUpInside" id="ocU-4r-oHt"/>
+                                <action selector="secondButtonTapped:" destination="-1" eventType="touchUpInside" id="Bz6-uh-E2B"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R8-0e-UcF">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R8-0e-UcF" userLabel="Second Button">
                             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <state key="normal" title=" ">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="fourthButtonTapped:" destination="-1" eventType="touchUpInside" id="geu-NV-6Gm"/>
+                                <action selector="thirdButtonTapped:" destination="-1" eventType="touchUpInside" id="QYs-vm-YTY"/>
                             </connections>
                         </button>
                     </subviews>

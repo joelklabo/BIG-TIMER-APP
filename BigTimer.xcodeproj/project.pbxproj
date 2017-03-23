@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED67F46F1E834E410063751D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F46E1E834E410063751D /* AppDelegate.swift */; };
+		ED67F4711E834E410063751D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4701E834E410063751D /* ViewController.swift */; };
+		ED67F4741E834E410063751D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4721E834E410063751D /* Main.storyboard */; };
+		ED67F4761E834E410063751D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4751E834E410063751D /* Assets.xcassets */; };
+		ED67F4791E834E410063751D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4771E834E410063751D /* LaunchScreen.storyboard */; };
+		ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4831E834E420063751D /* BigTimerTests.swift */; };
+		ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F48E1E834E420063751D /* BigTimerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED67F4801E834E420063751D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED67F4631E834E410063751D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED67F46A1E834E410063751D;
+			remoteInfo = BigTimer;
+		};
+		ED67F48B1E834E420063751D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED67F4631E834E410063751D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED67F46A1E834E410063751D;
+			remoteInfo = BigTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED67F46B1E834E410063751D /* BigTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED67F46E1E834E410063751D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED67F4701E834E410063751D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED67F4731E834E410063751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED67F4751E834E410063751D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED67F4781E834E410063751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED67F47A1E834E410063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED67F47F1E834E420063751D /* BigTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED67F4831E834E420063751D /* BigTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerTests.swift; sourceTree = "<group>"; };
+		ED67F4851E834E420063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED67F48A1E834E420063751D /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED67F48E1E834E420063751D /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
+		ED67F4901E834E420063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED67F4681E834E410063751D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F47C1E834E420063751D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F4871E834E420063751D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED67F4621E834E410063751D = {
+			isa = PBXGroup;
+			children = (
+				ED67F46D1E834E410063751D /* BigTimer */,
+				ED67F4821E834E420063751D /* BigTimerTests */,
+				ED67F48D1E834E420063751D /* BigTimerUITests */,
+				ED67F46C1E834E410063751D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED67F46C1E834E410063751D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED67F46B1E834E410063751D /* BigTimer.app */,
+				ED67F47F1E834E420063751D /* BigTimerTests.xctest */,
+				ED67F48A1E834E420063751D /* BigTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED67F46D1E834E410063751D /* BigTimer */ = {
+			isa = PBXGroup;
+			children = (
+				ED67F46E1E834E410063751D /* AppDelegate.swift */,
+				ED67F4701E834E410063751D /* ViewController.swift */,
+				ED67F4721E834E410063751D /* Main.storyboard */,
+				ED67F4751E834E410063751D /* Assets.xcassets */,
+				ED67F4771E834E410063751D /* LaunchScreen.storyboard */,
+				ED67F47A1E834E410063751D /* Info.plist */,
+			);
+			path = BigTimer;
+			sourceTree = "<group>";
+		};
+		ED67F4821E834E420063751D /* BigTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED67F4831E834E420063751D /* BigTimerTests.swift */,
+				ED67F4851E834E420063751D /* Info.plist */,
+			);
+			path = BigTimerTests;
+			sourceTree = "<group>";
+		};
+		ED67F48D1E834E420063751D /* BigTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED67F48E1E834E420063751D /* BigTimerUITests.swift */,
+				ED67F4901E834E420063751D /* Info.plist */,
+			);
+			path = BigTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED67F46A1E834E410063751D /* BigTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED67F4931E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimer" */;
+			buildPhases = (
+				ED67F4671E834E410063751D /* Sources */,
+				ED67F4681E834E410063751D /* Frameworks */,
+				ED67F4691E834E410063751D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BigTimer;
+			productName = BigTimer;
+			productReference = ED67F46B1E834E410063751D /* BigTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED67F47E1E834E420063751D /* BigTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED67F4961E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerTests" */;
+			buildPhases = (
+				ED67F47B1E834E420063751D /* Sources */,
+				ED67F47C1E834E420063751D /* Frameworks */,
+				ED67F47D1E834E420063751D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED67F4811E834E420063751D /* PBXTargetDependency */,
+			);
+			name = BigTimerTests;
+			productName = BigTimerTests;
+			productReference = ED67F47F1E834E420063751D /* BigTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED67F4891E834E420063751D /* BigTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED67F4991E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerUITests" */;
+			buildPhases = (
+				ED67F4861E834E420063751D /* Sources */,
+				ED67F4871E834E420063751D /* Frameworks */,
+				ED67F4881E834E420063751D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED67F48C1E834E420063751D /* PBXTargetDependency */,
+			);
+			name = BigTimerUITests;
+			productName = BigTimerUITests;
+			productReference = ED67F48A1E834E420063751D /* BigTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED67F4631E834E410063751D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Joel Klabo";
+				TargetAttributes = {
+					ED67F46A1E834E410063751D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8X78R6JQ6Y;
+						ProvisioningStyle = Automatic;
+					};
+					ED67F47E1E834E420063751D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8X78R6JQ6Y;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED67F46A1E834E410063751D;
+					};
+					ED67F4891E834E420063751D = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8X78R6JQ6Y;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED67F46A1E834E410063751D;
+					};
+				};
+			};
+			buildConfigurationList = ED67F4661E834E410063751D /* Build configuration list for PBXProject "BigTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED67F4621E834E410063751D;
+			productRefGroup = ED67F46C1E834E410063751D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED67F46A1E834E410063751D /* BigTimer */,
+				ED67F47E1E834E420063751D /* BigTimerTests */,
+				ED67F4891E834E420063751D /* BigTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED67F4691E834E410063751D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED67F4791E834E410063751D /* LaunchScreen.storyboard in Resources */,
+				ED67F4761E834E410063751D /* Assets.xcassets in Resources */,
+				ED67F4741E834E410063751D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F47D1E834E420063751D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F4881E834E420063751D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED67F4671E834E410063751D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED67F4711E834E410063751D /* ViewController.swift in Sources */,
+				ED67F46F1E834E410063751D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F47B1E834E420063751D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED67F4861E834E420063751D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED67F4811E834E420063751D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED67F46A1E834E410063751D /* BigTimer */;
+			targetProxy = ED67F4801E834E420063751D /* PBXContainerItemProxy */;
+		};
+		ED67F48C1E834E420063751D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED67F46A1E834E410063751D /* BigTimer */;
+			targetProxy = ED67F48B1E834E420063751D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED67F4721E834E410063751D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED67F4731E834E410063751D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED67F4771E834E410063751D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED67F4781E834E410063751D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED67F4911E834E420063751D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED67F4921E834E420063751D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED67F4941E834E420063751D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED67F4951E834E420063751D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED67F4971E834E420063751D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BigTimer.app/BigTimer";
+			};
+			name = Debug;
+		};
+		ED67F4981E834E420063751D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BigTimer.app/BigTimer";
+			};
+			name = Release;
+		};
+		ED67F49A1E834E420063751D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BigTimer;
+			};
+			name = Debug;
+		};
+		ED67F49B1E834E420063751D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
+				INFOPLIST_FILE = BigTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BigTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED67F4661E834E410063751D /* Build configuration list for PBXProject "BigTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED67F4911E834E420063751D /* Debug */,
+				ED67F4921E834E420063751D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED67F4931E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED67F4941E834E420063751D /* Debug */,
+				ED67F4951E834E420063751D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED67F4961E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED67F4971E834E420063751D /* Debug */,
+				ED67F4981E834E420063751D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED67F4991E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED67F49A1E834E420063751D /* Debug */,
+				ED67F49B1E834E420063751D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED67F4631E834E410063751D /* Project object */;
+}

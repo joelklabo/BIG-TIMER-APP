@@ -17,10 +17,11 @@ public struct TimerState {
         case down
     }
     
-    var running: Bool
-    var value: Double
-    var timestamp: Double
-    var direction: Direction
+    var value: Double = 0
+    var running: Bool = false
+    var direction: Direction = .up
+    
+    private var timestamp: Double = 0
     
     mutating func update(_ timestamp: Double) {
         let timeElapsed = timestamp - self.timestamp
@@ -31,15 +32,7 @@ public struct TimerState {
             } else {
                 self.value -= timeElapsed
             }
+            print(self.value)
         }
-    }
-}
-
-extension TimerState {
-    init() {
-        self = TimerState.init(running: false,
-                               value: 0,
-                               timestamp: 0,
-                               direction: .up)
     }
 }

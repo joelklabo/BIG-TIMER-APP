@@ -18,7 +18,7 @@ public struct Theme {
         return color
     }
     static func lineWidth() -> CGFloat {
-        return CGFloat(9)
+        return CGFloat(12)
     }
     static func tvLineWidth() -> CGFloat {
         return CGFloat(28)

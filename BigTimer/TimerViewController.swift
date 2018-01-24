@@ -26,7 +26,7 @@ class TimerViewController: UIViewController, TimerSubscribing {
     }
     
     private func updateWith(_ state: TimerState) {
-        label.text = "\(state.value)"
+        label.text = String(format: "%.2f", state.value)
         arrowView.changeDirection(state.direction)
         clockView.rotateToTime(state.value)
     }

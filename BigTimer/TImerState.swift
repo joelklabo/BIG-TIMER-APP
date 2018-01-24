@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct TimerState {
+public struct TimerState {
     
     enum Direction {
         case up
@@ -20,7 +20,7 @@ struct TimerState {
     var running: Bool
     var value: Double
     var timestamp: Double
-    var direction: ArrowView.Direction
+    var direction: Direction
     
     mutating func update(_ timestamp: Double) {
         let timeElapsed = timestamp - self.timestamp

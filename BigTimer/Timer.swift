@@ -21,7 +21,7 @@ final class Timer {
     
     private class TimerResponder: NSObject {
         var delegate: TimerResponderDelegate?
-        func update(_ link: CADisplayLink) {
+        @objc func update(_ link: CADisplayLink) {
             delegate?.update(link)
         }
     }

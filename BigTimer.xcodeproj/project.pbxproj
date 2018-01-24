@@ -13,6 +13,10 @@
 		ED452FC22018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
 		ED452FC32018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
 		ED452FC42018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
+		ED56558E2018599B007D8260 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAABC2018092C0089F49A /* Theme.swift */; };
+		ED56558F2018599C007D8260 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAABC2018092C0089F49A /* Theme.swift */; };
+		ED565590201859A2007D8260 /* TImerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4A51E8412060063751D /* TImerState.swift */; };
+		ED565591201859A3007D8260 /* TImerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4A51E8412060063751D /* TImerState.swift */; };
 		ED5DAAB9201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
 		ED5DAABA201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
 		ED5DAABB201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
@@ -21,8 +25,6 @@
 		ED67F4741E834E410063751D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4721E834E410063751D /* Main.storyboard */; };
 		ED67F4761E834E410063751D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4751E834E410063751D /* Assets.xcassets */; };
 		ED67F4791E834E410063751D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4771E834E410063751D /* LaunchScreen.storyboard */; };
-		ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4831E834E420063751D /* BigTimerTests.swift */; };
-		ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F48E1E834E420063751D /* BigTimerUITests.swift */; };
 		ED67F49E1E834E880063751D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F49D1E834E880063751D /* Timer.swift */; };
 		ED67F4A01E8350590063751D /* TimerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F49F1E8350590063751D /* TimerListener.swift */; };
 		ED67F4A31E83514D0063751D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4A11E83514D0063751D /* TimerViewController.swift */; };
@@ -58,10 +60,8 @@
 		ED67F4781E834E410063751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED67F47A1E834E410063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED67F47F1E834E420063751D /* BigTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED67F4831E834E420063751D /* BigTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerTests.swift; sourceTree = "<group>"; };
 		ED67F4851E834E420063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED67F48A1E834E420063751D /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED67F48E1E834E420063751D /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
 		ED67F4901E834E420063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED67F49D1E834E880063751D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		ED67F49F1E8350590063751D /* TimerListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerListener.swift; sourceTree = "<group>"; };
@@ -143,7 +143,6 @@
 		ED67F4821E834E420063751D /* BigTimerTests */ = {
 			isa = PBXGroup;
 			children = (
-				ED67F4831E834E420063751D /* BigTimerTests.swift */,
 				ED67F4851E834E420063751D /* Info.plist */,
 			);
 			path = BigTimerTests;
@@ -152,7 +151,6 @@
 		ED67F48D1E834E420063751D /* BigTimerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				ED67F48E1E834E420063751D /* BigTimerUITests.swift */,
 				ED67F4901E834E420063751D /* Info.plist */,
 			);
 			path = BigTimerUITests;
@@ -232,23 +230,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Joel Klabo";
 				TargetAttributes = {
 					ED67F46A1E834E410063751D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					ED67F47E1E834E420063751D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ED67F46A1E834E410063751D;
 					};
 					ED67F4891E834E420063751D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = ED67F46A1E834E410063751D;
 					};
@@ -322,9 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED565590201859A2007D8260 /* TImerState.swift in Sources */,
 				ED452FC32018210C00C43712 /* ArrowVIew.swift in Sources */,
+				ED56558E2018599B007D8260 /* Theme.swift in Sources */,
 				ED452FBF2018202900C43712 /* ClearView.swift in Sources */,
-				ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */,
 				ED5DAABA201808DC0089F49A /* ClockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,9 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED565591201859A3007D8260 /* TImerState.swift in Sources */,
 				ED452FC42018210C00C43712 /* ArrowVIew.swift in Sources */,
+				ED56558F2018599C007D8260 /* Theme.swift in Sources */,
 				ED452FC02018202900C43712 /* ClearView.swift in Sources */,
-				ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */,
 				ED5DAABB201808DC0089F49A /* ClockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +387,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -392,7 +397,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -434,7 +443,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -442,7 +453,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -477,7 +492,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -490,7 +506,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -504,7 +521,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BigTimer.app/BigTimer";
 			};
 			name = Debug;
@@ -519,7 +537,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BigTimer.app/BigTimer";
 			};
 			name = Release;
@@ -533,7 +552,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = BigTimer;
 			};
 			name = Debug;
@@ -547,7 +567,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = big.applications.BigTimerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = BigTimer;
 			};
 			name = Release;

@@ -20,7 +20,7 @@ class ArrowView: UIView {
     var lineColor = Theme.lineColor()
     var lineWidth = Theme.lineWidth()
     
-    fileprivate var arrowDirection: Direction = .up
+    fileprivate var arrowDirection: TimerState.Direction = .up
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,7 +52,7 @@ class ArrowView: UIView {
         
     }
     
-    func changeDirection (_ direction: Direction) {
+    func changeDirection (_ direction: TimerState.Direction) {
 
         if (arrowDirection == direction) {
             return
@@ -64,16 +64,16 @@ class ArrowView: UIView {
             self.transform = CGAffineTransform(rotationAngle: 0)
             let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
-            rotateAnimation.fromValue = M_PI
+            rotateAnimation.fromValue = CGFloat.pi
             rotateAnimation.toValue = 0
             self.layer.add(rotateAnimation, forKey: "rotation")
         } else {
-            self.layer.setValue(M_PI, forKey: zRotationKeyPath)
+            self.layer.setValue(CGFloat.pi, forKey: zRotationKeyPath)
             self.transform = CGAffineTransform(rotationAngle: 3.14)
             let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = 0
-            rotateAnimation.toValue = M_PI
+            rotateAnimation.toValue = CGFloat.pi
             self.layer.add(rotateAnimation, forKey: "rotation")
         }
 

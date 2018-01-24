@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Theme {
+public struct Theme {
     static func lineColor() -> UIColor {
         return UIColor.white
     }

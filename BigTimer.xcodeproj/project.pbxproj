@@ -14,6 +14,10 @@
 		ED67F4791E834E410063751D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4771E834E410063751D /* LaunchScreen.storyboard */; };
 		ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4831E834E420063751D /* BigTimerTests.swift */; };
 		ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F48E1E834E420063751D /* BigTimerUITests.swift */; };
+		ED67F49E1E834E880063751D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F49D1E834E880063751D /* Timer.swift */; };
+		ED67F4A01E8350590063751D /* TimerListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F49F1E8350590063751D /* TimerListener.swift */; };
+		ED67F4A31E83514D0063751D /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4A11E83514D0063751D /* TimerViewController.swift */; };
+		ED67F4A61E8412060063751D /* TImerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4A51E8412060063751D /* TImerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		ED67F48A1E834E420063751D /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED67F48E1E834E420063751D /* BigTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTimerUITests.swift; sourceTree = "<group>"; };
 		ED67F4901E834E420063751D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED67F49D1E834E880063751D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		ED67F49F1E8350590063751D /* TimerListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerListener.swift; sourceTree = "<group>"; };
+		ED67F4A11E83514D0063751D /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		ED67F4A51E8412060063751D /* TImerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TImerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				ED67F46D1E834E410063751D /* BigTimer */,
+				ED67F49C1E834E5D0063751D /* Timer */,
 				ED67F4821E834E420063751D /* BigTimerTests */,
 				ED67F48D1E834E420063751D /* BigTimerUITests */,
 				ED67F46C1E834E410063751D /* Products */,
@@ -103,6 +112,7 @@
 				ED67F4751E834E410063751D /* Assets.xcassets */,
 				ED67F4771E834E410063751D /* LaunchScreen.storyboard */,
 				ED67F47A1E834E410063751D /* Info.plist */,
+				ED67F4A11E83514D0063751D /* TimerViewController.swift */,
 			);
 			path = BigTimer;
 			sourceTree = "<group>";
@@ -123,6 +133,17 @@
 				ED67F4901E834E420063751D /* Info.plist */,
 			);
 			path = BigTimerUITests;
+			sourceTree = "<group>";
+		};
+		ED67F49C1E834E5D0063751D /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				ED67F49D1E834E880063751D /* Timer.swift */,
+				ED67F49F1E8350590063751D /* TimerListener.swift */,
+				ED67F4A51E8412060063751D /* TImerState.swift */,
+			);
+			name = Timer;
+			path = BigTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED67F4A31E83514D0063751D /* TimerViewController.swift in Sources */,
+				ED67F4A61E8412060063751D /* TImerState.swift in Sources */,
+				ED67F49E1E834E880063751D /* Timer.swift in Sources */,
+				ED67F4A01E8350590063751D /* TimerListener.swift in Sources */,
 				ED67F4711E834E410063751D /* ViewController.swift in Sources */,
 				ED67F46F1E834E410063751D /* AppDelegate.swift in Sources */,
 			);

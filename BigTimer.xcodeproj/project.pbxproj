@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED452FBE2018202900C43712 /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FBD2018202900C43712 /* ClearView.swift */; };
+		ED452FBF2018202900C43712 /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FBD2018202900C43712 /* ClearView.swift */; };
+		ED452FC02018202900C43712 /* ClearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FBD2018202900C43712 /* ClearView.swift */; };
+		ED452FC22018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
+		ED452FC32018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
+		ED452FC42018210C00C43712 /* ArrowVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED452FC12018210C00C43712 /* ArrowVIew.swift */; };
+		ED5DAAB9201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
+		ED5DAABA201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
+		ED5DAABB201808DC0089F49A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAAB8201808DC0089F49A /* ClockView.swift */; };
+		ED5DAABD2018092C0089F49A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5DAABC2018092C0089F49A /* Theme.swift */; };
 		ED67F46F1E834E410063751D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F46E1E834E410063751D /* AppDelegate.swift */; };
-		ED67F4711E834E410063751D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED67F4701E834E410063751D /* ViewController.swift */; };
 		ED67F4741E834E410063751D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4721E834E410063751D /* Main.storyboard */; };
 		ED67F4761E834E410063751D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4751E834E410063751D /* Assets.xcassets */; };
 		ED67F4791E834E410063751D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED67F4771E834E410063751D /* LaunchScreen.storyboard */; };
@@ -38,9 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED452FBD2018202900C43712 /* ClearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearView.swift; sourceTree = "<group>"; };
+		ED452FC12018210C00C43712 /* ArrowVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowVIew.swift; sourceTree = "<group>"; };
+		ED5DAAB8201808DC0089F49A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		ED5DAABC2018092C0089F49A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		ED67F46B1E834E410063751D /* BigTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED67F46E1E834E410063751D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED67F4701E834E410063751D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED67F4731E834E410063751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED67F4751E834E410063751D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED67F4781E834E410063751D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -82,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED5DAAB7201808630089F49A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED5DAAB8201808DC0089F49A /* ClockView.swift */,
+				ED452FBD2018202900C43712 /* ClearView.swift */,
+				ED452FC12018210C00C43712 /* ArrowVIew.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ED67F4621E834E410063751D = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +128,9 @@
 		ED67F46D1E834E410063751D /* BigTimer */ = {
 			isa = PBXGroup;
 			children = (
+				ED5DAAB7201808630089F49A /* Views */,
 				ED67F46E1E834E410063751D /* AppDelegate.swift */,
-				ED67F4701E834E410063751D /* ViewController.swift */,
+				ED5DAABC2018092C0089F49A /* Theme.swift */,
 				ED67F4721E834E410063751D /* Main.storyboard */,
 				ED67F4751E834E410063751D /* Assets.xcassets */,
 				ED67F4771E834E410063751D /* LaunchScreen.storyboard */,
@@ -284,10 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED67F4A31E83514D0063751D /* TimerViewController.swift in Sources */,
+				ED5DAABD2018092C0089F49A /* Theme.swift in Sources */,
+				ED452FC22018210C00C43712 /* ArrowVIew.swift in Sources */,
 				ED67F4A61E8412060063751D /* TImerState.swift in Sources */,
 				ED67F49E1E834E880063751D /* Timer.swift in Sources */,
 				ED67F4A01E8350590063751D /* TimerListener.swift in Sources */,
-				ED67F4711E834E410063751D /* ViewController.swift in Sources */,
+				ED5DAAB9201808DC0089F49A /* ClockView.swift in Sources */,
+				ED452FBE2018202900C43712 /* ClearView.swift in Sources */,
 				ED67F46F1E834E410063751D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED452FC32018210C00C43712 /* ArrowVIew.swift in Sources */,
+				ED452FBF2018202900C43712 /* ClearView.swift in Sources */,
 				ED67F4841E834E420063751D /* BigTimerTests.swift in Sources */,
+				ED5DAABA201808DC0089F49A /* ClockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED452FC42018210C00C43712 /* ArrowVIew.swift in Sources */,
+				ED452FC02018202900C43712 /* ClearView.swift in Sources */,
 				ED67F48F1E834E420063751D /* BigTimerUITests.swift in Sources */,
+				ED5DAABB201808DC0089F49A /* ClockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +571,7 @@
 				ED67F4951E834E420063751D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED67F4961E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -547,6 +580,7 @@
 				ED67F4981E834E420063751D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ED67F4991E834E420063751D /* Build configuration list for PBXNativeTarget "BigTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -555,6 +589,7 @@
 				ED67F49B1E834E420063751D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

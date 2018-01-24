@@ -20,7 +20,7 @@ struct TimerState {
     var running: Bool
     var value: Double
     var timestamp: Double
-    var direction: Direction
+    var direction: ArrowView.Direction
     
     mutating func update(_ timestamp: Double) {
         let timeElapsed = timestamp - self.timestamp
@@ -31,8 +31,6 @@ struct TimerState {
             } else {
                 self.value -= timeElapsed
             }
-        } else {
-            print("not running")
         }
     }
 }

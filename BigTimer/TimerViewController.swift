@@ -11,6 +11,8 @@ import UIKit
 class TimerViewController: UIViewController, TimerSubscribing {
 
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var arrowView: ArrowView!
+    @IBOutlet weak var clockView: ClockView!
     
     private var state = TimerState() {
         didSet {
@@ -25,27 +27,25 @@ class TimerViewController: UIViewController, TimerSubscribing {
     
     private func updateWith(_ state: TimerState) {
         label.text = "\(state.value)"
+        arrowView.changeDirection(state.direction)
+        clockView.rotateToTime(state.value)
     }
     
     // MARK: Actions
     
-    @IBAction func down(_ sender: Any) {
-        state.direction = .down
+    @IBAction func clockTap(_ sender: Any) {
+        state.running = !state.running
     }
     
-    @IBAction func up(_ sender: Any) {
-        state.direction = .up
+    @IBAction func ArrowTap(_ sender: Any) {
+        if state.direction == .up {
+            state.direction = .down
+        } else {
+            state.direction = .up
+        }
     }
 
-    @IBAction func start(_ sender: Any) {
-        state.running = true
-    }
-    
-    @IBAction func stop(_ sender: Any) {
-        state.running = false
-    }
-    
-    @IBAction func clear(_ sender: Any) {
+    @IBAction func clearTap(_ sender: Any) {
         state.running = false
         state.value = 0
     }
@@ -55,8 +55,5 @@ class TimerViewController: UIViewController, TimerSubscribing {
     func update(_ timestamp: Double) {
         state.update(timestamp)
     }
-    
-
-
 
 }

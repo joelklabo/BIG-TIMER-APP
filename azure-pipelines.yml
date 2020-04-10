@@ -13,5 +13,5 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      gem install fastlane@2.145
+      bundle install
       fastlane test

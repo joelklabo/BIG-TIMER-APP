@@ -54,7 +54,7 @@ extension ViewController: TimerManagerDelegate {
 
     func timerUpdate(timerState: TimerState) {
         clockView.rotateToTime(time: timerState.timerValue)
-        let formattedTime = timeFormatter.formatTime(time: timerState.timerValue)
+        let formattedTime = timeFormatter.formatTime(timerState.timerValue)
         timeLabel.text = formattedTime.formattedString
         arrow.changeDirection(direction: timerState.direction)
     }

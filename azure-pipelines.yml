@@ -14,4 +14,4 @@ steps:
   inputs:
     script: |
       bundle install
-      fastlane test
+      bundle exec fastlane test

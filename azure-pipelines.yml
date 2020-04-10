@@ -12,4 +12,6 @@ pool:
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'fastlane  test'
+    script: |
+      gem install fastlane@2.145
+      fastlane test

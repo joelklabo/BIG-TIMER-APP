@@ -17,14 +17,14 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
   end
 
   desc "Runs all the tests"
   lane :test do
-    scan(scheme: "Big Timer")
+    scan(
+	scheme: "Big Timer",
+	devices: ["iPhone 11 Pro", "iPad Pro (9.7-inch)"]
+    )
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"

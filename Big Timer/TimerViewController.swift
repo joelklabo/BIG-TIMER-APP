@@ -20,34 +20,34 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplicationWillResignActiveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         TimerController.instance.delegate = self
         
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
         
-        if NSUserDefaults.standardUserDefaults().boolForKey("FASTLANE_SNAPSHOT") {
-            let time: NSTimeInterval = 581
+        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+            let time: TimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
             timeLabel.text = formattedTime.formattedString
-            clockView.rotateToTime(time)
+            clockView.rotateToTime(time: time)
         }
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .lightContent
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func returningFromBackground () {
+    @objc func returningFromBackground () {
         TimerController.instance.returningFromBackground()
     }
     
-    func enteringBackground () {
+    @objc func enteringBackground () {
         TimerController.instance.enteringBackground()
     }
 
@@ -65,17 +65,17 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
 
     @IBAction func settingsTap(sender: AnyObject) {
         let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
-        settingsNavigationController.modalTransitionStyle = .CrossDissolve
-        self.presentViewController(settingsNavigationController, animated: true, completion: nil)
+        settingsNavigationController.modalTransitionStyle = .crossDissolve
+        self.present(settingsNavigationController, animated: true, completion: nil)
     }
     
     // Timer Update Delegate
 
     func timerUpdate(timerState: TimerState) {
-        clockView.rotateToTime(timerState.timerValue)
+        clockView.rotateToTime(time: timerState.timerValue)
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
         timeLabel.text = formattedTime.formattedString
-        arrowView.changeDirection(timerState.direction)
+        arrowView.changeDirection(direction: timerState.direction)
     }
     
     func timerDone () {
@@ -85,11 +85,11 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
 }
 
 extension TimerViewController: PanGestureInfoReceiving {
-    func verticalPanPassthrough(sender: AnyObject) {
-        verticalPan(sender)
+    @objc func verticalPanPassthrough(sender: AnyObject) {
+        verticalPan(sender: sender)
     }
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
-        TimerController.instance.setTimerToDirection(.Down)
-        TimerController.instance.modifyTime(TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation))
+        TimerController.instance.setTimerToDirection(direction: .Down)
+        TimerController.instance.modifyTime(time: TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation))
     }
 }

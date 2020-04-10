@@ -25,25 +25,25 @@ class Timer {
     private var action: Actions = .Stop {
         willSet (newAction) {
             if newAction == .Stop {
-                timeMachine.paused = true
+                timeMachine.isPaused = true
             } else {
-                timeMachine.paused = false
+                timeMachine.isPaused = false
             }
         }
     }
     
     init() {
         timeMachine = CADisplayLink(target: self, selector: #selector(Timer.tick))
-        timeMachine.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-        timeMachine.paused = true
+        timeMachine.add(to: RunLoop.current, forMode: RunLoop.Mode.default)
+        timeMachine.isPaused = true
     }
     
     @objc func tick() {
-        delegate?.tick(timeMachine.duration)
+        delegate?.tick(timePassed: timeMachine.duration)
     }
     
     func isTimerRunning() -> Bool {
-        return !timeMachine.paused
+        return !timeMachine.isPaused
     }
     
     func stop() {
@@ -61,9 +61,9 @@ class Timer {
     private func act(action: Actions) {
         switch action {
         case .Go:
-            timeMachine.paused = false
+            timeMachine.isPaused = false
         case .Stop:
-            timeMachine.paused = true
+            timeMachine.isPaused = true
         }
     }
     

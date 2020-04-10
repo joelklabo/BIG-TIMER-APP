@@ -13,9 +13,9 @@ struct QuickActionController {
     
     static func setupCustomActions() {
         let shortcutItems = CustomTimerManager().getTimers().map {
-            CustomTimerManager.shortcutItemForTime($0)
+            CustomTimerManager.shortcutItemForTime(timer: $0)
         }
-        UIApplication.sharedApplication().shortcutItems = shortcutItems
+        UIApplication.shared.shortcutItems = shortcutItems
     }
     
     static func handleAction(shortcutItem: UIApplicationShortcutItem) {
@@ -35,33 +35,32 @@ struct QuickActionController {
     }
     
     static func countUpQuickAction() {
-        TimerController.instance.setTimer(0, direction: .Up)
+        TimerController.instance.setTimer(timeInSeconds: 0, direction: .Up)
     }
     
     static func firstCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
+        for timer in timers {
             if case .First(let time) = timer {
-                TimerController.instance.setTimer(time, direction: .Down)
+                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }
     
     static func secondCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
+        for timer in timers {
             if case .Second(let time) = timer {
-                TimerController.instance.setTimer(time, direction: .Down)
-
+                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }
     
     static func thirdCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
-        for (_, timer) in timers.enumerate() {
+        for timer in timers {
             if case .Third(let time) = timer {
-                TimerController.instance.setTimer(time, direction: .Down)
+                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }

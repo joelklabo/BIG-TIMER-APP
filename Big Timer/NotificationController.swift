@@ -12,9 +12,9 @@ import UIKit
 class NotificationController {
     
     static let instance = NotificationController()
-    private let notificationCenter = NSNotificationCenter.defaultCenter()
-    private let enterFore = UIApplicationWillEnterForegroundNotification
-    private let enterBack = UIApplicationDidEnterBackgroundNotification
+    private let notificationCenter = NotificationCenter.default
+    private let enterFore = UIApplication.willEnterForegroundNotification
+    private let enterBack = UIApplication.didEnterBackgroundNotification
     
     init() {
         registerForTypes()
@@ -25,14 +25,14 @@ class NotificationController {
     func notifyDone(onDate: NSDate) {
         let notification = UILocalNotification()
         notification.alertBody = "Timer Done"
-        notification.fireDate = onDate
+        notification.fireDate = onDate as Date
         notification.soundName = AlertSound.getPreference().fileName()
-        UIApplication.sharedApplication().scheduledLocalNotifications = [notification]
+        UIApplication.shared.scheduledLocalNotifications = [notification]
     }
 
     @objc func enteringForeground() {
         // Clear local notifications when entering foreground
-        UIApplication.sharedApplication().scheduledLocalNotifications = []
+        UIApplication.shared.scheduledLocalNotifications = []
     }
     
     @objc func enteringBackground() {
@@ -41,13 +41,13 @@ class NotificationController {
         let timerDirection = timerState!.direction
         let timerIsRunning = timerState!.isRunning as Bool
         if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(NSDate(timeIntervalSinceNow: timeLeft))
+            NotificationController.instance.notifyDone(onDate: NSDate(timeIntervalSinceNow: timeLeft))
         }
     }
     
     private func registerForTypes() {
-        let application = UIApplication.sharedApplication()
-        let notificationTypes = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        let application = UIApplication.shared
+        let notificationTypes = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         application.registerUserNotificationSettings(notificationTypes)
     }
     

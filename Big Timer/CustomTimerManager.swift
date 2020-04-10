@@ -24,21 +24,19 @@ struct CustomTimerManager {
         case .Third:
             timers[timer.index()] = .Third(time: newValue)
         }
-        save(timers)
+        save(timers: timers)
     }
     
 
     func getTimers() -> [CustomTimer] {
         
-        guard let arrayOfTimes = plistReader.readPlist()[timersKey] as? [AnyObject] else {
+        guard let arrayOfTimes = plistReader.readPlist()[timersKey] as? [(Int, Int)] else {
             fatalError()
         }
         
         var timers: [CustomTimer] = []
-        for (index, time) in arrayOfTimes.enumerate() {
-            guard let time = Int(time as! String) else {
-                fatalError()
-            }
+        
+        for (index, time) in arrayOfTimes {
             timers.append(CustomTimer(index: index, time: time))
         }
         
@@ -46,7 +44,7 @@ struct CustomTimerManager {
     }
     
     static func shortcutItemForTime(timer: CustomTimer) -> UIApplicationShortcutItem {
-        let shorcutIcon = UIApplicationShortcutIcon(type: .Time)
+        let shorcutIcon = UIApplicationShortcutIcon(type: .time)
         return UIApplicationShortcutItem(type: timer.uniqueKey(), localizedTitle: timer.title(), localizedSubtitle: "Counting Down", icon: shorcutIcon, userInfo: nil)
     }
     
@@ -67,11 +65,11 @@ struct CustomTimerManager {
     }
     
     private func save(timers: [CustomTimer]) {
-        plistReader.save(archiveFormat(timers))
+        plistReader.save(dictionary: archiveFormat(timers: timers))
         let shortcutItems = timers.map {
-            CustomTimerManager.shortcutItemForTime($0)
+            CustomTimerManager.shortcutItemForTime(timer: $0)
         }
-        UIApplication.sharedApplication().shortcutItems = shortcutItems
+        UIApplication.shared.shortcutItems = shortcutItems
     }
     
 }

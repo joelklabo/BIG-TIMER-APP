@@ -17,8 +17,8 @@ protocol PanGestureInfoReceiving {
 extension PanGestureInfoReceiving where Self: UIViewController {
     func verticalPan(sender: AnyObject) {
         let gestureRecognizer = sender as! UIPanGestureRecognizer
-        let velocity = -gestureRecognizer.velocityInView(view).y
-        let translation = -gestureRecognizer.translationInView(view).y
-        verticalPanInfo(velocity, translation: translation)
+        let velocity = -gestureRecognizer.velocity(in: view).y
+        let translation = -gestureRecognizer.translation(in: view).y
+        verticalPanInfo(velocity: velocity, translation: translation)
     }
 }

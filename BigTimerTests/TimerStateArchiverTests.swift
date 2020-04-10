@@ -11,17 +11,17 @@ import XCTest
 class TimerStateArchiverTests: XCTestCase {
 
     func testThatTimerStateCanBeSavedAndRetrieved() {
-        let timerState = TimerState.zeroState()
-        TimerStateArchiver.archiveTimerState(timerState)
+        let timerState = TimerState.zero
+        TimerStateArchiver.archive(timerState)
         let retrievedState = TimerStateArchiver.retrieveTimerState()
         XCTAssert(timerState == retrievedState)
     }
     
     func testThatRetrievedTimerCanBeUpdated() {
         let timerState = runningZeroTimerState()
-        TimerStateArchiver.archiveTimerState(timerState)
+        TimerStateArchiver.archive(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let updatedTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+        if let updatedTimerState = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(updatedTimerState.timerValue == 1)
         } else {
             XCTFail()
@@ -29,34 +29,32 @@ class TimerStateArchiverTests: XCTestCase {
     }
     
     func testThatNilIsReturnedWhenTimerHasPassedZero() {
-        let timerState = runningZeroTimerState()
+        var timerState = runningZeroTimerState()
         timerState.timerValue = 1
         timerState.direction = .Down
-        TimerStateArchiver.archiveTimerState(timerState)
+        TimerStateArchiver.archive(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let _ = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 10)) {
+        if let _ = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 10)) {
             XCTFail()
         }
     }
     
     func testThatTimerStateIsntUpdatedWhenNotRunning() {
-        let timerState = TimerState.zeroState()
-        TimerStateArchiver.archiveTimerState(timerState)
+        let timerState = TimerState.zero
+        TimerStateArchiver.archive(timerState)
         let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
-        if let newTimerState = TimerStateArchiver.updateTimerState(retrievedTimerState!, forDate: NSDate(timeIntervalSince1970: 1)) {
+        if let newTimerState = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(timerState.timerValue == newTimerState.timerValue)
             XCTAssert(timerState.isRunning == newTimerState.isRunning)
-            XCTAssert(newTimerState.timeStamp == NSDate(timeIntervalSince1970: 1))
+            XCTAssert(newTimerState.timeStamp == Date(timeIntervalSince1970: 1))
         } else {
             XCTFail("Should not have updated time")
         }
     }
     
     private func runningZeroTimerState() -> TimerState {
-        let timerState = TimerState()
-        timerState.direction = .Up
-        timerState.timerValue = 0
-        timerState.timeStamp = NSDate(timeIntervalSince1970: 0)
+        var timerState = TimerState.zero
+        timerState.timeStamp = Date(timeIntervalSince1970: 0)
         timerState.isRunning = true
         return timerState
     }

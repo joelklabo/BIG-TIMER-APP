@@ -17,22 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let notificationController = NotificationController.instance
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         QuickActionController.setupCustomActions()
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         } catch _ {
         }
         
-        UIApplication.sharedApplication().idleTimerDisabled = true
+        UIApplication.shared.isIdleTimerDisabled = true
         
         return true
     }
     
-    func application(application: UIApplication, performActionForShortcutItem shortcutItem: UIApplicationShortcutItem, completionHandler: Bool -> Void) {
-            QuickActionController.handleAction(shortcutItem)
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        QuickActionController.handleAction(shortcutItem: shortcutItem)
     }
-
 }

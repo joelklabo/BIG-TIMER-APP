@@ -6,39 +6,47 @@
 //  Copyright © 2016 Joel Klabo. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 struct Theme {
-    static func lineColor() -> UIColor {
-        return UIColor.whiteColor()
+    
+    static var lineColor: UIColor {
+        return UIColor.white
     }
-    static func clockLineColor() -> UIColor {
-        return Theme.mainAppColor()
+    
+    static var clockLineColor: UIColor {
+        return Theme.mainAppColor
     }
-    static func infoButtonLineColor() -> UIColor {
-        return UIColor(colorLiteralRed: 255/255, green: 255/255, blue: 255/255, alpha: 0.5)
+    
+    static var infoButtonLineColor: UIColor {
+        return UIColor.white
     }
-    static func fillColor() -> UIColor {
-        let color = UIColor.whiteColor()
-        return color
+    
+    static var fillColor: UIColor {
+        return UIColor.white
     }
-    static func lineWidth() -> CGFloat {
+    
+    static var lineWidth: CGFloat {
         return CGFloat(8)
     }
-    static func tvLineWidth() -> CGFloat {
+    
+    static var tvLineWidth: CGFloat {
         return CGFloat(28)
     }
-    static func infoButtonLineWidth() -> CGFloat {
+    
+    static var infoButtonLineWidth: CGFloat {
         return CGFloat(2)
     }
-    static func clearButtonLineWidth() -> CGFloat {
+    
+    static var clearButtonLineWidth: CGFloat {
         return CGFloat(8)
     }
-    static func arrowrButtonLineWidth() -> CGFloat {
+    
+    static var arrowrButtonLineWidth: CGFloat {
         return CGFloat(8)
     }
-    static func mainAppColor() -> UIColor {
-        return UIColor(colorLiteralRed: 221/255, green: 35/255, blue: 0, alpha: 1)
+    
+    static var mainAppColor: UIColor {
+        return UIColor(red: 221/255, green: 35/255, blue: 0, alpha: 1)
     }
 }

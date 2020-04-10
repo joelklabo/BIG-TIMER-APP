@@ -12,28 +12,28 @@ class Arrow: UIView {
     
     let zRotationKeyPath = "transform.rotation.z"
     
-    var lineColor = Theme.lineColor()
-    var lineWidth = Theme.lineWidth()
+    var lineColor = Theme.lineColor
+    var lineWidth = Theme.lineWidth
     
     private var arrowDirection: TimerDirection = .Up
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         lineColor.setStroke()
 
-        let rect = CGRectInset(rect, lineWidth, lineWidth)
+        let rect = rect.insetBy(dx: lineWidth, dy: lineWidth)
         
         let path = UIBezierPath()
-        path.moveToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMaxY(rect)))
-        path.addLineToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
+        path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
         
-        path.addLineToPoint(CGPoint(x: CGRectGetMaxX(rect), y: CGRectGetMidY(rect)))
-        path.moveToPoint(CGPoint(x: CGRectGetMidX(rect), y: CGRectGetMinY(rect)))
-        path.addLineToPoint(CGPoint(x: CGRectGetMinX(rect), y: CGRectGetMidY(rect)))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
 
         path.lineWidth = lineWidth
-        path.lineCapStyle = .Round
-        path.lineJoinStyle = .Round
+        path.lineCapStyle = .round
+        path.lineJoinStyle = .round
         path.stroke()
         
     }
@@ -47,20 +47,20 @@ class Arrow: UIView {
         }
         
         if (arrowDirection == .Up) {
-            self.transform = CGAffineTransformMakeRotation(0)
+            self.transform = CGAffineTransform(rotationAngle: 0)
             let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
-            rotateAnimation.fromValue = M_PI
+            rotateAnimation.fromValue = Double.pi
             rotateAnimation.toValue = 0
-            self.layer.addAnimation(rotateAnimation, forKey: "rotation")
+            self.layer.add(rotateAnimation, forKey: "rotation")
         } else {
-            self.layer.setValue(M_PI, forKey: zRotationKeyPath)
-            self.transform = CGAffineTransformMakeRotation(3.14)
+            self.layer.setValue(Double.pi, forKey: zRotationKeyPath)
+            self.transform = CGAffineTransform(rotationAngle: 3.14)
             let rotateAnimation = CABasicAnimation(keyPath: zRotationKeyPath)
             rotateAnimation.duration = 0.2
             rotateAnimation.fromValue = 0
-            rotateAnimation.toValue = M_PI
-            self.layer.addAnimation(rotateAnimation, forKey: "rotation")
+            rotateAnimation.toValue = Double.pi
+            self.layer.add(rotateAnimation, forKey: "rotation")
         }
         
     }

@@ -24,10 +24,10 @@ class CustomTimerViewController: UIViewController {
         }
     }
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         title = "Update Timer"
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(CustomTimerViewController.save))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(CustomTimerViewController.save))
         navigationItem.rightBarButtonItem = saveButton
     }
     
@@ -38,25 +38,25 @@ class CustomTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timeLabel!.text = timeFormatter.formatTime(timerValue.time).formattedString
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(_:))))
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
     }
     
-    func save() {
+    @objc func save() {
         guard let timer = timer else {
             fatalError()
         }
-        CustomTimerManager().updateTimer(timer, newValue: Int(timerValue.time))
-        navigationController?.popViewControllerAnimated(true)
+        CustomTimerManager().updateTimer(timer: timer, newValue: Int(timerValue.time))
+        navigationController?.popViewController(animated: true)
     }
 
 }
 
 extension CustomTimerViewController: PanGestureInfoReceiving {
-    func verticalPanPassthrough(sender: AnyObject) {
-        verticalPan(sender)
+    @objc func verticalPanPassthrough(sender: AnyObject) {
+        verticalPan(sender: sender)
     }
     func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
-        let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity, translation: translation)
+        let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation)
         timerValue.update(timeDelta)
     }
 }

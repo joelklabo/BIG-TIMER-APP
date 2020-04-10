@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Timer View Controller-->
@@ -17,12 +15,12 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AE-OrB" customClass="ClockView" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="40" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="64" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qGU-AE-OrB" secondAttribute="height" multiplier="1:1" id="5mM-aE-LCg"/>
                                     <constraint firstAttribute="width" constant="50" id="HWa-42-h61"/>
@@ -39,8 +37,8 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-AH-hau" customClass="ClearButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="500" y="40" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="314" y="64" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="16X-iS-a4y"/>
@@ -63,8 +61,8 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgb-Ki-gRU" customClass="Arrow" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="500" y="500" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="314" y="762" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="0k2-4n-LTk"/>
@@ -103,8 +101,8 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm8-wh-nSK" customClass="InfoButton" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="20" y="485" width="95" height="95"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="747" width="95" height="95"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="42s-rg-R4u"/>
@@ -135,14 +133,14 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-cK-XTz" customClass="TimeLabel" customModule="Big_Timer" customModuleProvider="target">
-                                <rect key="frame" x="30" y="120" width="540" height="360"/>
+                                <rect key="frame" x="20.666666666666657" y="179.33333333333331" width="372.66666666666674" height="537.33333333333348"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="GhQ-Jx-Jvp"/>
                                     <constraint firstAttribute="width" secondItem="VfQ-cK-XTz" secondAttribute="height" multiplier="1:1" priority="900" id="Vnb-dL-VEB"/>
                                     <constraint firstAttribute="width" constant="444" id="qPa-sb-Xp8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                 <variation key="default">
@@ -154,7 +152,7 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8666666666666667" green="0.050980392156862744" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LNN-AH-hau" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0Ae-HC-NOM"/>
@@ -263,22 +261,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="1QZ-7l-2sJ" userLabel="Tap">
                     <connections>
-                        <action selector="tap:" destination="BYZ-38-t0r" id="ZFp-wt-iFU"/>
+                        <action selector="tapWithSender:" destination="BYZ-38-t0r" id="Gfz-Hi-UcD"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="871-U1-0Ze" userLabel="Clear">
                     <connections>
-                        <action selector="clear:" destination="BYZ-38-t0r" id="nZC-DB-h4V"/>
+                        <action selector="clearWithSender:" destination="BYZ-38-t0r" id="6yQ-I1-FhZ"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="nNt-RL-Xgs" userLabel="Arrow Tap">
                     <connections>
-                        <action selector="arrowTap:" destination="BYZ-38-t0r" id="8fQ-uf-cyx"/>
+                        <action selector="arrowTapWithSender:" destination="BYZ-38-t0r" id="YPb-HF-ET2"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="yHy-ww-z8b" userLabel="Settings">
                     <connections>
-                        <action selector="settingsTap:" destination="BYZ-38-t0r" id="0SE-Dr-eWH"/>
+                        <action selector="settingsTapWithSender:" destination="BYZ-38-t0r" id="E7B-G4-qnb"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

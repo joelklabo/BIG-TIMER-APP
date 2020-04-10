@@ -12,15 +12,15 @@ struct PlistReader {
     
     private let fileName = "CustomTimers"
     private let filePath = "CustomTimers.plist"
-    private let fileManager = NSFileManager.defaultManager()
+    private let fileManager = FileManager.default
     
     func readPlist() -> NSDictionary {
         
-        if fileManager.fileExistsAtPath(fileURL().path!) {
-            return NSDictionary(contentsOfURL: fileURL())!
+        if fileManager.fileExists(atPath: fileURL.path) {
+            return NSDictionary(contentsOf: fileURL)!
         }
         
-        guard let plistPath = NSBundle.mainBundle().pathForResource(fileName, ofType: "plist") else {
+        guard let plistPath = Bundle.main.path(forResource: fileName, ofType: "plist") else {
             fatalError()
         }
         
@@ -32,13 +32,13 @@ struct PlistReader {
     }
     
     func save(dictionary: NSDictionary) {
-        if dictionary.writeToURL(fileURL(), atomically: true) {
+        if dictionary.write(to: fileURL, atomically: true) {
         }
     }
     
-    private func fileURL() -> NSURL {
-        let documentsDirectory = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
-        return documentsDirectory.URLByAppendingPathComponent(filePath)
+    private var fileURL: URL {
+        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last!
+        return documentsDirectory.appendingPathComponent(filePath)
     }
 
 }

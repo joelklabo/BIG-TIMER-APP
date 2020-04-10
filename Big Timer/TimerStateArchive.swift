@@ -10,29 +10,38 @@ import Foundation
 
 class TimerStateArchiver {
  
-    class func archiveTimerState (timeArchive: TimerState) {
-        let data = NSKeyedArchiver.archivedDataWithRootObject(timeArchive)
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "timer")
+    class func archive(_ timeArchive: TimerState) {
+        let encoder = JSONEncoder()
+        if let data = try? encoder.encode(timeArchive) {
+            UserDefaults.standard.set(data, forKey: "timer")
+        }
     }
     
     class func retrieveTimerState() -> TimerState? {
-        if let data = NSUserDefaults.standardUserDefaults().objectForKey("timer") as? NSData {
-            let timeArchive = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! TimerState
-            return timeArchive
+        let decoder = JSONDecoder()
+
+        guard let data = UserDefaults.standard.object(forKey: "timer") as? Data,
+            let archive = try? decoder.decode(TimerState.self, from: data) else {
+            return nil
         }
-        return nil
+
+        return archive
     }
     
-    class func updateTimerState(timerState: TimerState, forDate currentDate: NSDate) -> TimerState? {
+    class func update(_ timerState: TimerState, forDate currentDate: Date = Date()) -> TimerState? {
+        
         guard timerState.isRunning == true else {
-            timerState.timeStamp = currentDate
-            return timerState
+            return TimerState(timeStamp: currentDate,
+                              timerValue: timerState.timerValue,
+                              direction: timerState.direction,
+                              isRunning: timerState.isRunning)
         }
+        
         let timerValue = timerState.timerValue
-        let timeSinceBackgrounded = currentDate.timeIntervalSinceDate(timerState.timeStamp)
+        let timeSinceBackgrounded = currentDate.timeIntervalSince(timerState.timeStamp)
         let currentTimeOnTimer = timerState.direction == .Up ? timerValue + timeSinceBackgrounded : timerValue - timeSinceBackgrounded
         if currentTimeOnTimer > 0 {
-            return TimerState.newState(currentTimeOnTimer, direction: timerState.direction, isRunning: timerState.isRunning)
+            return TimerState.newState(timerValue: currentTimeOnTimer, direction: timerState.direction, isRunning: timerState.isRunning)
         } else {
             return nil
         }

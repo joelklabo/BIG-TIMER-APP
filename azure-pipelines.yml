@@ -14,4 +14,5 @@ steps:
   inputs:
     script: |
       bundle install
+      xcrun simctl list
       bundle exec fastlane test

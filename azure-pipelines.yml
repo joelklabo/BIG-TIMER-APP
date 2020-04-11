@@ -11,6 +11,6 @@ pool:
 
 steps:
 - bash: |
-  bundle install
-  bundle exec fastlane test
+    bundle install
+    bundle exec fastlane test
   displayName: "Run Tests"

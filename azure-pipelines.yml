@@ -12,7 +12,7 @@ pool:
 steps:
 - task: Xcode@5
   inputs:
-    xcodeVersion: '11.4' # Options: default, 10, 9, 8, specifyPath
+    xcodeVersion: '11' # Options: default, 10, 9, 8, specifyPath
 
 - task: CmdLine@2
   inputs:

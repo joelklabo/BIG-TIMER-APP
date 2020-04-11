@@ -22,17 +22,20 @@ class NotificationController {
         notificationCenter.addObserver(self, selector: #selector(enteringForeground), name: enterFore, object: nil)
     }
     
-    func notifyDone(onDate: NSDate) {
-        let notification = UILocalNotification()
-        notification.alertBody = "Timer Done"
-        notification.fireDate = onDate as Date
-        notification.soundName = AlertSound.getPreference().fileName()
-        UIApplication.shared.scheduledLocalNotifications = [notification]
+    func notifyDone(_ date: Date) {
+        let content = UNMutableNotificationContent()
+        content.title = "Timer Done"
+        let soundName = UNNotificationSoundName(AlertSound.getPreference().fileName())
+        content.sound = UNNotificationSound(named: soundName)
+        let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        let notificationRequest = UNNotificationRequest(identifier: "timer-done", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: nil)
     }
 
     @objc func enteringForeground() {
         // Clear local notifications when entering foreground
-        UIApplication.shared.scheduledLocalNotifications = []
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
     
     @objc func enteringBackground() {
@@ -41,14 +44,17 @@ class NotificationController {
         let timerDirection = timerState!.direction
         let timerIsRunning = timerState!.isRunning as Bool
         if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(onDate: NSDate(timeIntervalSinceNow: timeLeft))
+            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft))
         }
     }
     
     private func registerForTypes() {
-        let application = UIApplication.shared
-        let notificationTypes = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-        application.registerUserNotificationSettings(notificationTypes)
+        let options = UNAuthorizationOptions(arrayLiteral: [.alert, .sound])
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
+            if let error = error {
+                print("Error registering for Notifications: \(error.localizedDescription)")
+            }
+        }
     }
     
     deinit {

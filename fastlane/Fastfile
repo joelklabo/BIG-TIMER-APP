@@ -23,7 +23,7 @@ platform :ios do
   lane :test do
     scan(
 	scheme: "Big Timer",
-	devices: ["iPhone 11 Pro", "iPad Pro (9.7-inch)"]
+	devices: ["iPhone 11 Pro"]
     )
   end
 

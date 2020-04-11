@@ -10,7 +10,6 @@ pool:
   vmImage: 'macos-latest'
 
 - task: CmdLine@2
-  displayName: "Run tests"
   inputs:
     script: |
       bundle install

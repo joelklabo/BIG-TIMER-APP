@@ -356,7 +356,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		ED8C54D31CD8539C00119596 /* BigTimer Tests */ = {
+		ED8C54D31CD8539C00119596 /* BigTimerTests */ = {
 			isa = PBXGroup;
 			children = (
 				ED8C54D61CD8539C00119596 /* Info.plist */,
@@ -364,17 +364,17 @@
 				ED8C550B1CDA9FF200119596 /* TimerValueTests.swift */,
 				ED8C55131CDAB6BF00119596 /* TimerStateArchiverTests.swift */,
 			);
-			path = "BigTimer Tests";
+			path = BigTimerTests;
 			sourceTree = "<group>";
 		};
-		ED8C54E11CD864AD00119596 /* BigTimer UI Tests */ = {
+		ED8C54E11CD864AD00119596 /* BigTimer UITests */ = {
 			isa = PBXGroup;
 			children = (
 				ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */,
 				ED8C54E21CD864AD00119596 /* BigTimerUITests.swift */,
 				ED8C54E41CD864AD00119596 /* Info.plist */,
 			);
-			path = "BigTimer UI Tests";
+			path = "BigTimer UITests";
 			sourceTree = "<group>";
 		};
 		ED8C550A1CDA9F5200119596 /* Controllers */ = {
@@ -392,8 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
-				ED8C54D31CD8539C00119596 /* BigTimer Tests */,
-				ED8C54E11CD864AD00119596 /* BigTimer UI Tests */,
+				ED8C54D31CD8539C00119596 /* BigTimerTests */,
+				ED8C54E11CD864AD00119596 /* BigTimer UITests */,
 				68F792491CF8C00E00AE7166 /* Big Timer TV */,
 				68F7925B1CF8C00E00AE7166 /* Big Timer TV Tests */,
 				EDABD9C91A7A0CD6006CFBA5 /* Products */,

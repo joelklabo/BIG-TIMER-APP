@@ -30,7 +30,7 @@ enum AlertSound: String {
         AlertSound.Bells
     ]
     
-    static func getPreference () -> AlertSound {
+    static var selectedPreference: AlertSound {
         
         let userDefaults = UserDefaults.standard
         if let alertPreference = userDefaults.object(forKey: AlertSound.userDefaultsKey()) as? String {

@@ -47,6 +47,7 @@ struct Theme {
     }
     
     static var mainAppColor: UIColor {
+        // #dd3700
         return UIColor(red: 221/255, green: 35/255, blue: 0, alpha: 1)
     }
 }

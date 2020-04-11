@@ -583,6 +583,7 @@
 					EDABD9C71A7A0CD6006CFBA5 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 8X78R6JQ6Y;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1136,14 +1137,16 @@
 			baseConfigurationReference = 9B69F8F2C4F178D8037E96D0 /* Pods-Big Timer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
 				INFOPLIST_FILE = "Big Timer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.joelklabo.Big-Timer";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1153,14 +1156,16 @@
 			baseConfigurationReference = D11DC4A628C226CA56AD514B /* Pods-Big Timer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 8X78R6JQ6Y;
 				INFOPLIST_FILE = "Big Timer/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.joelklabo.Big-Timer";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

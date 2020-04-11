@@ -11,7 +11,7 @@ pool:
 
 - task: Xcode@5
   inputs:
-    xcodeVersion: 11.4
+    xcodeVersion: '11.4'
 
 steps:
 - task: CmdLine@2

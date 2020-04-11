@@ -21,10 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         QuickActionController.setupCustomActions()
         
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
-        } catch _ {
-        }
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         
         UIApplication.shared.isIdleTimerDisabled = true
         

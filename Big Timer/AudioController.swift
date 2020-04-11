@@ -16,7 +16,7 @@ class AudioController {
     private var player: AVAudioPlayer = AVAudioPlayer()
     
     init () {        
-        preparePlayerWith(alertSound: AlertSound.getPreference())
+        preparePlayerWith(alertSound: AlertSound.selectedPreference)
     }
     
     func playSound () {

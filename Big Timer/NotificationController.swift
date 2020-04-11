@@ -25,7 +25,7 @@ class NotificationController {
     func notifyDone(_ date: Date) {
         let content = UNMutableNotificationContent()
         content.title = "Timer Done"
-        let soundName = UNNotificationSoundName(AlertSound.getPreference().fileName())
+        let soundName = UNNotificationSoundName(AlertSound.selectedPreference.fileName)
         content.sound = UNNotificationSound(named: soundName)
         let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)

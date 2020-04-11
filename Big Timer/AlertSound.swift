@@ -33,7 +33,7 @@ enum AlertSound: String {
     static var selectedPreference: AlertSound {
         
         let userDefaults = UserDefaults.standard
-        if let alertPreference = userDefaults.object(forKey: AlertSound.userDefaultsKey()) as? String {
+        if let alertPreference = userDefaults.object(forKey: AlertSound.userDefaultsKey) as? String {
             return AlertSound(rawValue: alertPreference)!
         } else {
             return AlertSound.Zarvox
@@ -43,15 +43,15 @@ enum AlertSound: String {
     
     static func setPreference (alertSound: AlertSound) {
         let userDefaults = UserDefaults.standard
-        userDefaults.setValue(alertSound.rawValue, forKey: AlertSound.userDefaultsKey())
+        userDefaults.setValue(alertSound.rawValue, forKey: AlertSound.userDefaultsKey)
         
     }
     
-    func fileName() -> String {
-        return "\(AlertSound.getPreference().rawValue).aiff"
+    var fileName: String {
+        return "\(AlertSound.selectedPreference.rawValue).aiff"
     }
     
-    private static func userDefaultsKey () -> String {
+    private static var userDefaultsKey: String {
         return "alertSound"
     }
 }

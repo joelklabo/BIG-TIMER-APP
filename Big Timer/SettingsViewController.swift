@@ -93,7 +93,7 @@ class SettingsViewController: UITableViewController {
             let alertSound = AlertSound.options[indexPath.row]
             cell.textLabel?.text = alertSound.rawValue.capitalized
             
-            if (alertSound == AlertSound.getPreference()) {
+            if (alertSound == AlertSound.selectedPreference) {
                 cell.accessoryType = .checkmark
             } else {
                 cell.accessoryType = .none
@@ -112,7 +112,7 @@ class SettingsViewController: UITableViewController {
             let alertSound = AlertSound.options[indexPath.row]
             AudioController.instance.updateSound(sound: alertSound)
             AudioController.instance.playSound()
-            if (alertSound != AlertSound.getPreference()) {
+            if (alertSound != AlertSound.selectedPreference) {
                 AlertSound.setPreference(alertSound: alertSound)
                 tableView.reloadData()
             }

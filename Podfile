@@ -5,8 +5,3 @@ target 'Big Timer' do
   use_frameworks!
   pod 'AppCenter'
 end
-
-target 'Big Timer TV' do
-  use_frameworks!
-  pod 'AppCenter'
-end

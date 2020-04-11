@@ -8,6 +8,9 @@
 
 import UIKit
 import AVFoundation
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @UIApplicationMain
 
@@ -24,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         
         UIApplication.shared.isIdleTimerDisabled = true
+        
+        MSAppCenter.start("dbc86395-287d-46fc-a2b4-18a668592f06", withServices:[
+          MSAnalytics.self,
+          MSCrashes.self
+        ])
         
         return true
     }

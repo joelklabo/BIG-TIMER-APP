@@ -49,7 +49,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         currentTimerState = TimerState.zero
     }
     
-    func modifyTime (time: CFTimeInterval) {
+    func modifyTime (time: Double) {
         let newTime = currentTimerState.timerValue + time
         currentTimerState = TimerState.newState(timerValue: newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
     }
@@ -101,8 +101,8 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         Timer.instance.stop()
     }
     
-    private func currentTimerValue(timerValue: CFTimeInterval, timeDelta: CFTimeInterval, direction: TimerDirection) -> CFTimeInterval {
-        var newTimerValue: CFTimeInterval = 0
+    private func currentTimerValue(timerValue: Double, timeDelta: Double, direction: TimerDirection) -> Double {
+        var newTimerValue: Double = 0
         if (direction == .Up) {
             newTimerValue = timerValue + timeDelta
         } else {
@@ -119,7 +119,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         delegate?.timerDone()
     }
         
-    func tick(timePassed timeDelta: CFTimeInterval) {
+    func tick(timePassed timeDelta: Double) {
         foregrounding = false
         let timerValue = currentTimerValue(timerValue: currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
         currentTimerState = TimerState.newState(timerValue: timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())

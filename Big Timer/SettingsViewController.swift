@@ -126,15 +126,15 @@ class SettingsViewController: UITableViewController {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
-    private func getCustomTimerTime(timers:Array<CustomTimer>, index: Int) -> CFTimeInterval {
+    private func getCustomTimerTime(timers:Array<CustomTimer>, index: Int) -> Double {
         let timer: CustomTimer = timers[index]
         switch timer {
         case .First(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         case .Second(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         case .Third(let time):
-            return CFTimeInterval(time)
+            return Double(time)
         }
     }
     

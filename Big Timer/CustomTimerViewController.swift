@@ -55,7 +55,7 @@ extension CustomTimerViewController: PanGestureInfoReceiving {
     @objc func verticalPanPassthrough(sender: AnyObject) {
         verticalPan(sender: sender)
     }
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+    func verticalPanInfo(velocity: Double, translation: Double) {
         let timeDelta = TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation)
         timerValue.update(timeDelta)
     }

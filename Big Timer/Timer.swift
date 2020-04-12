@@ -70,5 +70,5 @@ class Timer {
 }
 
 protocol TimerDelegate {
-    func tick(timePassed: CFTimeInterval)
+    func tick(timePassed: Double)
 }

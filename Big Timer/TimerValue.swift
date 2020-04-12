@@ -10,9 +10,9 @@ import Foundation
 
 struct TimerValue {
     
-    var time: CFTimeInterval = 0
+    var time: Double = 0
     
-    mutating func update(_ timeDelta: CFTimeInterval) {
+    mutating func update(_ timeDelta: Double) {
         if timeDelta > 0 {
             time = time + timeDelta
         } else {

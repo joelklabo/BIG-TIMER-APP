@@ -88,7 +88,7 @@ extension TimerViewController: PanGestureInfoReceiving {
     @objc func verticalPanPassthrough(sender: AnyObject) {
         verticalPan(sender: sender)
     }
-    func verticalPanInfo(velocity: CGFloat, translation: CGFloat) {
+    func verticalPanInfo(velocity: Double, translation: Double) {
         TimerController.instance.setTimerToDirection(direction: .Down)
         TimerController.instance.modifyTime(time: TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation))
     }

@@ -27,7 +27,7 @@ struct Theme {
     }
     
     static var lineWidth: CGFloat {
-        return CGFloat(8)
+        return CGFloat(10)
     }
     
     static var tvLineWidth: CGFloat {
@@ -39,11 +39,11 @@ struct Theme {
     }
     
     static var clearButtonLineWidth: CGFloat {
-        return CGFloat(8)
+        return CGFloat(10)
     }
     
     static var arrowrButtonLineWidth: CGFloat {
-        return CGFloat(8)
+        return CGFloat(10)
     }
     
     static var mainAppColor: UIColor {

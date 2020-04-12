@@ -41,6 +41,9 @@ class ViewController: UIViewController {
     }
     
     @objc func menuButtonPressed() {
+        guard TimerController.instance.isAtZero == false else {
+            exit(EXIT_SUCCESS)
+        }
         TimerController.instance.clear()
     }
     

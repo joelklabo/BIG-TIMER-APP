@@ -35,6 +35,12 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         }
     }
     
+    var isAtZero: Bool {
+        let isRunning = currentTimerState.isRunning == false
+        let isAtZero = currentTimerState.timerValue == 0.0
+        return isRunning && isAtZero
+    }
+    
     override init () {
         super.init()
         Timer.instance.delegate = self

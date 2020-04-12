@@ -15,12 +15,13 @@ class BigTimerUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        setupSnapshot(app: app)
+        setupSnapshot(app)
+        app.launchArguments = ["isTesting"]
         app.launch()
     }
 
     func testScreenshot() {
-        snapshot(name: "timerView")
+        snapshot("timerView")
     }
     
 }

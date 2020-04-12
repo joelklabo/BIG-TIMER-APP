@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
+		5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
+		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
+		5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
@@ -156,6 +160,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5DECB82B2443BA450057CFB0 /* TestingFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlag.swift; sourceTree = "<group>"; };
 		6191642264E9269C75D6E4B9 /* Pods_Big_Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F792481CF8C00E00AE7166 /* Big Timer TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +264,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DECB82A2443BA240057CFB0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5DECB82B2443BA450057CFB0 /* TestingFlag.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		68F792491CF8C00E00AE7166 /* Big Timer TV */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +420,7 @@
 		EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */ = {
 			isa = PBXGroup;
 			children = (
+				5DECB82A2443BA240057CFB0 /* Helpers */,
 				ED8C550A1CDA9F5200119596 /* Controllers */,
 				EDE3BF951CCF1C7200B4A4C0 /* Resources */,
 				EDE3BF921CCF173300B4A4C0 /* Utilities */,
@@ -727,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */,
 				68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +750,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */,
 				ED8C55051CD9A87E00119596 /* AudioController.swift in Sources */,
 				ED8C55141CDAB6BF00119596 /* TimerStateArchiverTests.swift in Sources */,
 				ED8C54F21CD9A82800119596 /* TimerStateArchive.swift in Sources */,
@@ -783,6 +799,7 @@
 				ED540F4E1CE45BAE000A4860 /* TimerViewController.swift in Sources */,
 				ED540F521CE45E89000A4860 /* QuickActionController.swift in Sources */,
 				ED540F5B1CE45EA5000A4860 /* TimerValue.swift in Sources */,
+				5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */,
 				ED540F511CE45E86000A4860 /* AudioController.swift in Sources */,
 				ED540F5D1CE45EAD000A4860 /* CustomTimerViewController.swift in Sources */,
 				ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */,
@@ -810,6 +827,7 @@
 				ED59131D1A97CD790006B20F /* ClockView.swift in Sources */,
 				EDE8109C1B1D7AAE00F68BFB /* InfoButton.swift in Sources */,
 				ED7C93D71AFCB347009C9AF7 /* TimerState.swift in Sources */,
+				5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				EDDA88DB1CD58DAA003ABC96 /* Theme.swift in Sources */,
 				ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */,

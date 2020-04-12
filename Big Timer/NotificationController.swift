@@ -49,6 +49,12 @@ class NotificationController {
     }
     
     private func registerForTypes() {
+        
+        // Don't pop up permission dialog in UI tests
+        guard UIApplication.shared.isTesting == false else {
+            return
+        }
+        
         let options = UNAuthorizationOptions(arrayLiteral: [.alert, .sound])
         UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
             if let error = error {

@@ -27,7 +27,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
         
-        if UserDefaults.standard.bool(forKey: "FASTLANE_SNAPSHOT") {
+        if UIApplication.shared.isTesting {
             let time: TimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
             timeLabel.text = formattedTime.formattedString

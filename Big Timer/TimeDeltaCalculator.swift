@@ -35,7 +35,7 @@ struct TimeDeltaCalculator {
             velocityScale = absoluteVelocity / maxVelocity
         } else {
             // lower range
-            velocityScale = (absoluteVelocity / 5) / maxVelocity
+            velocityScale = (absoluteVelocity / 7) / maxVelocity
         }
         
         let timeDelta = maxTimeToAdd * velocityScale

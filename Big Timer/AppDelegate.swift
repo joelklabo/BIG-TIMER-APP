@@ -8,9 +8,12 @@
 
 import UIKit
 import AVFoundation
-import AppCenter
-import AppCenterAnalytics
-import AppCenterCrashes
+
+//#if os(iOS)
+//import AppCenter
+//import AppCenterAnalytics
+//import AppCenterCrashes
+//#endif
 
 @UIApplicationMain
 
@@ -30,10 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.isIdleTimerDisabled = true
         
-        MSAppCenter.start("dbc86395-287d-46fc-a2b4-18a668592f06", withServices:[
-          MSAnalytics.self,
-          MSCrashes.self
-        ])
+//        #if os(iOS)
+//        MSAppCenter.start("dbc86395-287d-46fc-a2b4-18a668592f06", withServices:[
+//            MSAnalytics.self,
+//            MSCrashes.self
+//        ])
+//        #endif
         
         return true
     }

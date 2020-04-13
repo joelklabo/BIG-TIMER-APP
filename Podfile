@@ -3,5 +3,4 @@ platform :ios, '13.4'
 
 target 'Big Timer' do
   use_frameworks!
-  pod 'AppCenter'
 end

@@ -22,6 +22,9 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         
         super.viewDidLoad()
         
+        let sceneCount = UIApplication.shared.sceneCount
+        view.backgroundColor = Theme.mainAppColor(sceneNumber: sceneCount)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIScene.didActivateNotification, object: nil)
         

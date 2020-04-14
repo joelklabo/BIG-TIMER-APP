@@ -12,6 +12,7 @@
 		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB8322444A43B0057CFB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */; };
+		5DECB8342445F6A10057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
@@ -160,6 +161,7 @@
 /* Begin PBXFileReference section */
 		5DECB82B2443BA450057CFB0 /* TestingFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlag.swift; sourceTree = "<group>"; };
 		5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5DECB8332445F6A10057CFB0 /* SceneCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCounter.swift; sourceTree = "<group>"; };
 		6191642264E9269C75D6E4B9 /* Pods_Big_Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F792481CF8C00E00AE7166 /* Big Timer TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				5DECB82B2443BA450057CFB0 /* TestingFlag.swift */,
+				5DECB8332445F6A10057CFB0 /* SceneCounter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDA88D91CD5476D003ABC96 /* TimerValue.swift in Sources */,
+				5DECB8342445F6A10057CFB0 /* SceneCounter.swift in Sources */,
 				ED9B668D1AD8326300888329 /* TimerController.swift in Sources */,
 				EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */,
 				ED7C93D51AFCB339009C9AF7 /* Arrow.swift in Sources */,

@@ -14,10 +14,6 @@ struct Theme {
         return UIColor.white
     }
     
-    static var clockLineColor: UIColor {
-        return Theme.mainAppColor
-    }
-    
     static var infoButtonLineColor: UIColor {
         return UIColor.white
     }
@@ -46,8 +42,25 @@ struct Theme {
         return CGFloat(10)
     }
     
-    static var mainAppColor: UIColor {
+    static var bigTimerRed: UIColor {
         // #dd3700
         return UIColor(red: 221/255, green: 35/255, blue: 0, alpha: 1)
+    }
+    
+    static var bigTimerBlue: UIColor {
+        // #dd3700
+        return UIColor(red: 0/255, green: 0/255, blue: 255, alpha: 1)
+    }
+    
+    static func mainAppColor(sceneNumber: Int) -> UIColor {
+        switch sceneNumber {
+        case 1:
+            return bigTimerRed
+        case 2:
+            return bigTimerBlue
+        default:
+            return UIColor(red: 221/255, green: 35/255, blue: 0, alpha: 1)
+        }
+
     }
 }

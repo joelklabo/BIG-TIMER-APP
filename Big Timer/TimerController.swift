@@ -28,7 +28,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     private var currentTimerState: TimerState = TimerState.zero {
         didSet {
-            if (currentTimerState.timerValue < 0) {
+            if (currentTimerState.timerValue <= 0) {
                 currentTimerState = TimerState.zero
                 timer.stop()
                 if (!foregrounding) {
@@ -85,10 +85,9 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         
         foregrounding = true
         
-        if let archivedTimerState = TimerStateArchiver.retrieve(key: uniqueIdentifier) {
-            if let updatedTimerState = TimerStateArchiver.update(archivedTimerState) {
+        if let archivedTimerState = TimerStateArchiver.retrieve(key: uniqueIdentifier),
+            let updatedTimerState = TimerStateArchiver.update(archivedTimerState) {
                 currentTimerState = updatedTimerState
-            }
         } else {
             currentTimerState = TimerState.zero
         }        

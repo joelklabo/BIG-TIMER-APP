@@ -8,10 +8,6 @@
 
 import UIKit
 
-private let notificationController = NotificationController()
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
-    
 }

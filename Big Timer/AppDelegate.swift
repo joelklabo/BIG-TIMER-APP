@@ -16,9 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-                
-        QuickActionController.setupCustomActions()
-        
+                        
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
         
         UIApplication.shared.isIdleTimerDisabled = true
@@ -28,9 +26,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-    
-    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        QuickActionController.handleAction(shortcutItem: shortcutItem)
     }
 }

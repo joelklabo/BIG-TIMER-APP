@@ -17,18 +17,11 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var arrowView: Arrow!
     
     let timerController = TimerController()
-        
+            
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-//        UIKIT_EXTERN NSNotificationName const UISceneWillConnectNotification API_AVAILABLE(ios(13.0));
-//        UIKIT_EXTERN NSNotificationName const UISceneDidDisconnectNotification API_AVAILABLE(ios(13.0));
-//        UIKIT_EXTERN NSNotificationName const UISceneDidActivateNotification API_AVAILABLE(ios(13.0));
-//        UIKIT_EXTERN NSNotificationName const UISceneWillDeactivateNotification API_AVAILABLE(ios(13.0));
-//        UIKIT_EXTERN NSNotificationName const UISceneWillEnterForegroundNotification API_AVAILABLE(ios(13.0));
-//        UIKIT_EXTERN NSNotificationName const UISceneDidEnterBackgroundNotification API_AVAILABLE(ios(13.0));
-
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIScene.didActivateNotification, object: nil)
         

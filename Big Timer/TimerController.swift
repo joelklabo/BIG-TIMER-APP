@@ -16,17 +16,21 @@ protocol TimerManagerDelegate {
 
 class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
+    private let uniqueIdentifier = UUID().uuidString
+    
+    private let notificationController = NotificationController()
+    
+    private let timer = Timer()
+
     private var foregrounding = false
-    
-    static let instance = TimerController()
-    
+        
     var delegate: TimerManagerDelegate?
     
     private var currentTimerState: TimerState = TimerState.zero {
         didSet {
             if (currentTimerState.timerValue < 0) {
                 currentTimerState = TimerState.zero
-                Timer.instance.stop()
+                timer.stop()
                 if (!foregrounding) {
                     delegate?.timerDone()
                 }
@@ -43,53 +47,54 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     override init () {
         super.init()
-        Timer.instance.delegate = self
+        timer.delegate = self
     }
     
     func toggle () {
-        Timer.instance.toggle()
+        timer.toggle()
     }
     
     func clear () {
-        Timer.instance.stop()
+        timer.stop()
         currentTimerState = TimerState.zero
     }
     
     func modifyTime (time: Double) {
         let newTime = currentTimerState.timerValue + time
-        currentTimerState = TimerState.newState(timerValue: newTime, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
+        currentTimerState = TimerState.newState(timerValue: newTime, direction: currentTimerState.direction, isRunning: timer.isTimerRunning())
     }
     
     func changeTimerDirection () {
         if (currentTimerState.direction == .Up) {
-            currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: .Down, isRunning: Timer.instance.isTimerRunning())
+            currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: .Down, isRunning: timer.isTimerRunning())
         } else {
-            currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: .Up, isRunning: Timer.instance.isTimerRunning())
+            currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: .Up, isRunning: timer.isTimerRunning())
         }
     }
     
     func setTimer(timeInSeconds: Int, direction: TimerDirection) {
         currentTimerState = TimerState.newState(timerValue: timeInSeconds, direction: direction, isRunning: true)
-        Timer.instance.go()
+        timer.go()
     }
     
     func setTimerToDirection(direction: TimerDirection) {
-        currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: direction, isRunning: Timer.instance.isTimerRunning())
+        currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: direction, isRunning: timer.isTimerRunning())
     }
     
     func returningFromBackground () {
         
         foregrounding = true
         
-        if let archivedTimerState = TimerStateArchiver.retrieveTimerState(),
-            let updatedTimerState = TimerStateArchiver.update(archivedTimerState) {
-            currentTimerState = updatedTimerState
+        if let archivedTimerState = TimerStateArchiver.retrieve(key: uniqueIdentifier) {
+            if let updatedTimerState = TimerStateArchiver.update(archivedTimerState) {
+                currentTimerState = updatedTimerState
+            }
         } else {
             currentTimerState = TimerState.zero
-        }
+        }        
         
         if (currentTimerState.isRunning == true) {
-            Timer.instance.go()
+            timer.go()
         }
         
     }
@@ -97,14 +102,14 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func enteringBackground () {
         
         // This should be handled when we stop the timer
-        if Timer.instance.isTimerRunning() {
+        if timer.isTimerRunning() {
             currentTimerState.isRunning = true
         } else {
             currentTimerState.isRunning = false
         }
         
-        TimerStateArchiver.archive(currentTimerState)
-        Timer.instance.stop()
+        TimerStateArchiver.archive(currentTimerState, key: uniqueIdentifier)
+        notificationController.queue(timerState: currentTimerState)
     }
     
     private func currentTimerValue(timerValue: Double, timeDelta: Double, direction: TimerDirection) -> Double {
@@ -128,7 +133,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func tick(timePassed timeDelta: Double) {
         foregrounding = false
         let timerValue = currentTimerValue(timerValue: currentTimerState.timerValue, timeDelta: timeDelta, direction: currentTimerState.direction)
-        currentTimerState = TimerState.newState(timerValue: timerValue, direction: currentTimerState.direction, isRunning: Timer.instance.isTimerRunning())
+        currentTimerState = TimerState.newState(timerValue: timerValue, direction: currentTimerState.direction, isRunning: timer.isTimerRunning())
     }
     
 }

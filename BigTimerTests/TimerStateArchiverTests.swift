@@ -9,18 +9,20 @@
 import XCTest
 
 class TimerStateArchiverTests: XCTestCase {
+    
+    let key = "key"
 
     func testThatTimerStateCanBeSavedAndRetrieved() {
         let timerState = TimerState.zero
-        TimerStateArchiver.archive(timerState)
-        let retrievedState = TimerStateArchiver.retrieveTimerState()
+        TimerStateArchiver.archive(timerState, key: key)
+        let retrievedState = TimerStateArchiver.retrieve(key: key)
         XCTAssert(timerState == retrievedState)
     }
     
     func testThatRetrievedTimerCanBeUpdated() {
         let timerState = runningZeroTimerState()
-        TimerStateArchiver.archive(timerState)
-        let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
+        TimerStateArchiver.archive(timerState, key: key)
+        let retrievedTimerState = TimerStateArchiver.retrieve(key: key)
         if let updatedTimerState = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(updatedTimerState.timerValue == 1)
         } else {
@@ -32,8 +34,8 @@ class TimerStateArchiverTests: XCTestCase {
         var timerState = runningZeroTimerState()
         timerState.timerValue = 1
         timerState.direction = .Down
-        TimerStateArchiver.archive(timerState)
-        let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
+        TimerStateArchiver.archive(timerState, key: key)
+        let retrievedTimerState = TimerStateArchiver.retrieve(key: key)
         if let _ = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 10)) {
             XCTFail()
         }
@@ -41,8 +43,8 @@ class TimerStateArchiverTests: XCTestCase {
     
     func testThatTimerStateIsntUpdatedWhenNotRunning() {
         let timerState = TimerState.zero
-        TimerStateArchiver.archive(timerState)
-        let retrievedTimerState = TimerStateArchiver.retrieveTimerState()
+        TimerStateArchiver.archive(timerState, key: key)
+        let retrievedTimerState = TimerStateArchiver.retrieve(key: key)
         if let newTimerState = TimerStateArchiver.update(retrievedTimerState!, forDate: Date(timeIntervalSince1970: 1)) {
             XCTAssert(timerState.timerValue == newTimerState.timerValue)
             XCTAssert(timerState.isRunning == newTimerState.isRunning)

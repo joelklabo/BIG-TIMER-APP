@@ -31,7 +31,7 @@ class ClockView: UIView {
         secondHandPath.addLine(to: CGPoint(x: rect.midX, y: (rect.maxY / 4)))
         secondHandPath.lineWidth = lineWidth
         secondHandPath.lineCapStyle = .round
-        secondHandPath.stroke()
+        secondHandPath.stroke(with: .clear, alpha: 0)
     }
     
     func rotateToTime (time: TimeInterval) {

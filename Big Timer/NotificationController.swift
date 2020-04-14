@@ -11,6 +11,8 @@ import UIKit
 
 class NotificationController {
     
+    let uniqueIdentifier = UUID().uuidString
+    
     init() {
         registerForTypes()
     }
@@ -22,7 +24,9 @@ class NotificationController {
         content.sound = UNNotificationSound(named: soundName)
         let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let notificationRequest = UNNotificationRequest(identifier: uniqueIdentifier, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: [uniqueIdentifier])
         UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: nil)
     }
 

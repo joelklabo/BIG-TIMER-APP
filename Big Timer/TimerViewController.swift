@@ -15,15 +15,24 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var timeLabel: TimeLabel!
     @IBOutlet weak var arrowView: Arrow!
+    
+    let timerController = TimerController()
         
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIApplication.willResignActiveNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
-        TimerController.instance.delegate = self
+//        UIKIT_EXTERN NSNotificationName const UISceneWillConnectNotification API_AVAILABLE(ios(13.0));
+//        UIKIT_EXTERN NSNotificationName const UISceneDidDisconnectNotification API_AVAILABLE(ios(13.0));
+//        UIKIT_EXTERN NSNotificationName const UISceneDidActivateNotification API_AVAILABLE(ios(13.0));
+//        UIKIT_EXTERN NSNotificationName const UISceneWillDeactivateNotification API_AVAILABLE(ios(13.0));
+//        UIKIT_EXTERN NSNotificationName const UISceneWillEnterForegroundNotification API_AVAILABLE(ios(13.0));
+//        UIKIT_EXTERN NSNotificationName const UISceneDidEnterBackgroundNotification API_AVAILABLE(ios(13.0));
+
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIScene.didActivateNotification, object: nil)
+        
+        timerController.delegate = self
         
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
         
@@ -44,23 +53,23 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     }
     
     @objc func returningFromBackground () {
-        TimerController.instance.returningFromBackground()
+        timerController.returningFromBackground()
     }
     
     @objc func enteringBackground () {
-        TimerController.instance.enteringBackground()
+        timerController.enteringBackground()
     }
 
     @IBAction func tap(sender: AnyObject) {
-        TimerController.instance.toggle()
+        timerController.toggle()
     }
 
     @IBAction func clear(sender: AnyObject) {
-        TimerController.instance.clear()
+        timerController.clear()
     }
 
     @IBAction func arrowTap(sender: AnyObject) {
-        TimerController.instance.changeTimerDirection()
+        timerController.changeTimerDirection()
     }
 
     @IBAction func settingsTap(sender: AnyObject) {
@@ -89,7 +98,7 @@ extension TimerViewController: PanGestureInfoReceiving {
         verticalPan(sender: sender)
     }
     func verticalPanInfo(velocity: Double, translation: Double) {
-        TimerController.instance.setTimerToDirection(direction: .Down)
-        TimerController.instance.modifyTime(time: TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation))
+        timerController.setTimerToDirection(direction: .Down)
+        timerController.modifyTime(time: TimeDeltaCalculator.timeDeltaFrom(velocity: velocity, translation: translation))
     }
 }

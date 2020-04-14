@@ -11,14 +11,21 @@ import UIKit
 
 struct QuickActionController {
     
-    static func setupCustomActions() {
+    let timerController: TimerController
+    
+    init(timerController: TimerController) {
+        self.timerController = timerController
+        self.setupCustomActions()
+    }
+    
+    func setupCustomActions() {
         let shortcutItems = CustomTimerManager().getTimers().map {
             CustomTimerManager.shortcutItemForTime(timer: $0)
         }
         UIApplication.shared.shortcutItems = shortcutItems
     }
     
-    static func handleAction(shortcutItem: UIApplicationShortcutItem) {
+    func handleAction(shortcutItem: UIApplicationShortcutItem) {
         let customShorcutkey = shortcutItem.type
         switch customShorcutkey {
         case "0":
@@ -34,33 +41,33 @@ struct QuickActionController {
         }
     }
     
-    static func countUpQuickAction() {
-        TimerController.instance.setTimer(timeInSeconds: 0, direction: .Up)
+    func countUpQuickAction() {
+        timerController.setTimer(timeInSeconds: 0, direction: .Up)
     }
     
-    static func firstCustomTimer() {
+    func firstCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for timer in timers {
             if case .First(let time) = timer {
-                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
+                timerController.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }
     
-    static func secondCustomTimer() {
+    func secondCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for timer in timers {
             if case .Second(let time) = timer {
-                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
+                timerController.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }
     
-    static func thirdCustomTimer() {
+    func thirdCustomTimer() {
         let timers: [CustomTimer] = CustomTimerManager().getTimers()
         for timer in timers {
             if case .Third(let time) = timer {
-                TimerController.instance.setTimer(timeInSeconds: time, direction: .Down)
+                timerController.setTimer(timeInSeconds: time, direction: .Down)
             }
         }
     }

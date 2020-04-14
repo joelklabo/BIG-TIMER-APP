@@ -10,17 +10,17 @@ import Foundation
 
 class TimerStateArchiver {
  
-    class func archive(_ timeArchive: TimerState) {
+    class func archive(_ timeArchive: TimerState, key: String) {
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(timeArchive) {
-            UserDefaults.standard.set(data, forKey: "timer")
+            UserDefaults.standard.set(data, forKey: key)
         }
     }
     
-    class func retrieveTimerState() -> TimerState? {
+    class func retrieve(key: String) -> TimerState? {
         let decoder = JSONDecoder()
 
-        guard let data = UserDefaults.standard.object(forKey: "timer") as? Data,
+        guard let data = UserDefaults.standard.object(forKey: key) as? Data,
             let archive = try? decoder.decode(TimerState.self, from: data) else {
             return nil
         }

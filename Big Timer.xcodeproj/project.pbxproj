@@ -11,6 +11,7 @@
 		5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
+		5DECB8322444A43B0057CFB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */; };
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
@@ -161,6 +162,7 @@
 
 /* Begin PBXFileReference section */
 		5DECB82B2443BA450057CFB0 /* TestingFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlag.swift; sourceTree = "<group>"; };
+		5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6191642264E9269C75D6E4B9 /* Pods_Big_Timer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Big_Timer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F792481CF8C00E00AE7166 /* Big Timer TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Big Timer TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F7924A1CF8C00E00AE7166 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				ED52FC411B02EB8900A9910D /* Sounds */,
 				ED23095E1AF291CB0028D062 /* Views */,
 				EDABD9CD1A7A0CD6006CFBA5 /* AppDelegate.swift */,
+				5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */,
 				ED5CD8961A9913D80086886B /* Timer.swift */,
 				ED5CD8981A9CE7CE0086886B /* TimeFormatter.swift */,
 				EDABD9D11A7A0CD6006CFBA5 /* Main.storyboard */,
@@ -830,6 +833,7 @@
 				5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */,
 				ED5CD8971A9913D80086886B /* Timer.swift in Sources */,
 				EDDA88DB1CD58DAA003ABC96 /* Theme.swift in Sources */,
+				5DECB8322444A43B0057CFB0 /* SceneDelegate.swift in Sources */,
 				ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */,
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,

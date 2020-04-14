@@ -17,9 +17,7 @@ class Timer {
     }
     
     var delegate: TimerDelegate?
-    
-    static let instance = Timer()
-    
+        
     lazy private var timeMachine = CADisplayLink()
 
     private var action: Actions = .Stop {

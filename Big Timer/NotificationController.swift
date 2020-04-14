@@ -11,15 +11,8 @@ import UIKit
 
 class NotificationController {
     
-    static let instance = NotificationController()
-    private let notificationCenter = NotificationCenter.default
-    private let enterFore = UIApplication.willEnterForegroundNotification
-    private let enterBack = UIApplication.didEnterBackgroundNotification
-    
     init() {
         registerForTypes()
-        notificationCenter.addObserver(self, selector: #selector(enteringBackground), name: enterBack, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(enteringForeground), name: enterFore, object: nil)
     }
     
     func notifyDone(_ date: Date) {
@@ -29,22 +22,16 @@ class NotificationController {
         content.sound = UNNotificationSound(named: soundName)
         let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let notificationRequest = UNNotificationRequest(identifier: "timer-done", content: content, trigger: trigger)
+        let notificationRequest = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(notificationRequest, withCompletionHandler: nil)
     }
 
-    @objc func enteringForeground() {
-        // Clear local notifications when entering foreground
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-    }
-    
-    @objc func enteringBackground() {
-        let timerState = TimerStateArchiver.retrieveTimerState()
-        let timeLeft = timerState!.timerValue
-        let timerDirection = timerState!.direction
-        let timerIsRunning = timerState!.isRunning as Bool
-        if ((timerDirection == TimerDirection.Down) && (timeLeft > 0) && timerIsRunning) {
-            NotificationController.instance.notifyDone(Date(timeIntervalSinceNow: timeLeft))
+    func queue(timerState: TimerState) {
+        let timeLeft = timerState.timerValue
+        let timerDirection = timerState.direction
+        let timerIsRunning = timerState.isRunning
+        if ((timerDirection == .Down) && (timeLeft > 0) && timerIsRunning) {
+            notifyDone(Date(timeIntervalSinceNow: timeLeft))
         }
     }
     
@@ -61,9 +48,5 @@ class NotificationController {
                 print("Error registering for Notifications: \(error.localizedDescription)")
             }
         }
-    }
-    
-    deinit {
-        notificationCenter.removeObserver(self)
     }
 }

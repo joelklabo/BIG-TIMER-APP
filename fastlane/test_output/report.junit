@@ -1,28 +1,2 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuites tests='15' failures='0'>
-  <testsuite name='BigTimerUITests.BigTimerUITests' tests='1' failures='0'>
-    <testcase classname='BigTimerUITests.BigTimerUITests' name='testScreenshot' time='4.625'/>
-  </testsuite>
-  <testsuite name='BigTimerTests.BigTimerTests' tests='2' failures='0'>
-    <testcase classname='BigTimerTests.BigTimerTests' name='testExample' time='0.000'/>
-    <testcase classname='BigTimerTests.BigTimerTests' name='testPerformanceExample' time='0.349'/>
-  </testsuite>
-  <testsuite name='BigTimerTests.TimeFormatterTests' tests='4' failures='0'>
-    <testcase classname='BigTimerTests.TimeFormatterTests' name='testThatOneHourHasThreeTimeSections' time='0.002'/>
-    <testcase classname='BigTimerTests.TimeFormatterTests' name='testThatOneMinuteHasTwoTimeSections' time='0.000'/>
-    <testcase classname='BigTimerTests.TimeFormatterTests' name='testThatTimeFormatterUsesTheRightSeparator' time='0.000'/>
-    <testcase classname='BigTimerTests.TimeFormatterTests' name='testThatTimeIsFormattedCorrectly' time='0.000'/>
-  </testsuite>
-  <testsuite name='BigTimerTests.TimerStateArchiverTests' tests='4' failures='0'>
-    <testcase classname='BigTimerTests.TimerStateArchiverTests' name='testThatNilIsReturnedWhenTimerHasPassedZero' time='0.002'/>
-    <testcase classname='BigTimerTests.TimerStateArchiverTests' name='testThatRetrievedTimerCanBeUpdated' time='0.001'/>
-    <testcase classname='BigTimerTests.TimerStateArchiverTests' name='testThatTimerStateCanBeSavedAndRetrieved' time='0.004'/>
-    <testcase classname='BigTimerTests.TimerStateArchiverTests' name='testThatTimerStateIsntUpdatedWhenNotRunning' time='0.001'/>
-  </testsuite>
-  <testsuite name='BigTimerTests.TimerValueTests' tests='4' failures='0'>
-    <testcase classname='BigTimerTests.TimerValueTests' name='testThatTimerValueCantGoBelowZero' time='0.000'/>
-    <testcase classname='BigTimerTests.TimerValueTests' name='testThatTimerValueStartsAtZero' time='0.000'/>
-    <testcase classname='BigTimerTests.TimerValueTests' name='testThatYouCanAddTimeToTimerValue' time='0.000'/>
-    <testcase classname='BigTimerTests.TimerValueTests' name='testThatYouCanSubtractTime' time='0.000'/>
-  </testsuite>
-</testsuites>
+<testsuites tests='0' failures='0'/>

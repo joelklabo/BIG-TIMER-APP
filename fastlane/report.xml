@@ -5,52 +5,32 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.0081">
+      <testcase classname="fastlane.lanes" name="0: Verifying fastlane version" time="0.008473">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000675">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000688">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: xcversion" time="0.157053">
+      <testcase classname="fastlane.lanes" name="2: xcversion" time="0.201036">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: xcode-select -p" time="0.004857">
+      <testcase classname="fastlane.lanes" name="3: xcode-select -p" time="0.00519">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: instruments -s devices" time="7.526842">
+      <testcase classname="fastlane.lanes" name="4: instruments -s devices" time="6.600433">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: increment_version_number" time="0.535501">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="6: match" time="2.450055">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="7: snapshot" time="50.762363">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="8: gym" time="9.792392">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="9: deliver" time="351.265246">
+      <testcase classname="fastlane.lanes" name="5: run_tests" time="16.533539">
         
       </testcase>
     

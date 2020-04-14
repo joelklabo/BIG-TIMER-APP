@@ -16,7 +16,7 @@ platform :ios do
     run_tests(
       workspace: "Big Timer.xcworkspace",
       scheme: "Big Timer",
-      devices: ["iPhone 11 Pro"]
+      devices: ["iPhone 11 Pro", "iPad Pro (9.7-inch) (13.4)", "Mac (1412)"]
     )
   end
 

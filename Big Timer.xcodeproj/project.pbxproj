@@ -13,6 +13,10 @@
 		5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB8322444A43B0057CFB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */; };
 		5DECB8342445F6A10057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
+		5DECB83A244603690057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
+		5DECB83B244603690057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
+		5DECB83C2446036B0057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
+		5DECB83D2446036B0057CFB0 /* SceneCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB8332445F6A10057CFB0 /* SceneCounter.swift */; };
 		680D8C491CF2652A0025557F /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED59131C1A97CD790006B20F /* ClockView.swift */; };
 		682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
 		682EB6991CF9DD9100E3E87B /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
@@ -731,6 +735,7 @@
 				68F792751CF8CADA00AE7166 /* AudioController.swift in Sources */,
 				68F792661CF8C11300AE7166 /* Arrow.swift in Sources */,
 				68F7924D1CF8C00E00AE7166 /* ViewController.swift in Sources */,
+				5DECB83D2446036B0057CFB0 /* SceneCounter.swift in Sources */,
 				68F792721CF8C33300AE7166 /* ClockView.swift in Sources */,
 				68F792761CF8CB4B00AE7166 /* Timer.swift in Sources */,
 				68F7926B1CF8C1A300AE7166 /* TimerStateArchive.swift in Sources */,
@@ -743,6 +748,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DECB82F2443BB200057CFB0 /* TestingFlag.swift in Sources */,
+				5DECB83C2446036B0057CFB0 /* SceneCounter.swift in Sources */,
 				68F7925D1CF8C00E00AE7166 /* Big_Timer_TVTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,6 +784,7 @@
 				ED8C54FC1CD9A85400119596 /* SettingsViewController.swift in Sources */,
 				ED8C54F31CD9A82B00119596 /* PlistReader.swift in Sources */,
 				ED8C54F61CD9A83300119596 /* Theme.swift in Sources */,
+				5DECB83A244603690057CFB0 /* SceneCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -786,6 +793,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED540F621CE45EBA000A4860 /* TimeLabel.swift in Sources */,
+				5DECB83B244603690057CFB0 /* SceneCounter.swift in Sources */,
 				ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */,
 				ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */,
 				ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */,

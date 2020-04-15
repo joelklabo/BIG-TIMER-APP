@@ -49,17 +49,24 @@ struct Theme {
     
     static var bigTimerBlue: UIColor {
         // #dd3700
-        return UIColor(red: 0/255, green: 0/255, blue: 255, alpha: 1)
+        return UIColor(red: 0/255, green: 35/255, blue: 1, alpha: 1)
+    }
+    
+    static var bigTimerYellow: UIColor {
+        // #dd3700
+        return UIColor.systemYellow
     }
     
     static func mainAppColor(sceneNumber: Int) -> UIColor {
-        switch sceneNumber {
+        switch sceneNumber % 3 {
+        case 0:
+            return bigTimerYellow
         case 1:
             return bigTimerRed
         case 2:
             return bigTimerBlue
         default:
-            return UIColor(red: 221/255, green: 35/255, blue: 0, alpha: 1)
+            return bigTimerRed
         }
 
     }

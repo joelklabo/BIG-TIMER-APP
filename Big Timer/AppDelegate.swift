@@ -15,13 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    private func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-                        
+    func applicationDidFinishLaunching(_ application: UIApplication) {
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient)
-        
         UIApplication.shared.isIdleTimerDisabled = true
-        
-        return true
     }
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

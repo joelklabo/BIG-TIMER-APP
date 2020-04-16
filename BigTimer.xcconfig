@@ -1,0 +1,12 @@
+//
+//  BigTimer.xcconfig
+//  Big Timer
+//
+//  Created by Joel Klabo on 4/15/20.
+//  Copyright © 2020 Joel Klabo. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BIG_TIMER_VERSION = 5.1.0

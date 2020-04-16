@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D32627B2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
+		5D32627C2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
+		5D32627D2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
+		5D32627E2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
+		5D32627F2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
 		5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
@@ -163,6 +168,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D32627A2447E295006FFA65 /* BigTimer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BigTimer.xcconfig; sourceTree = "<group>"; };
 		5DECB82B2443BA450057CFB0 /* TestingFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlag.swift; sourceTree = "<group>"; };
 		5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5DECB8332445F6A10057CFB0 /* SceneCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCounter.swift; sourceTree = "<group>"; };
@@ -399,6 +405,7 @@
 		EDABD9BF1A7A0CD6006CFBA5 = {
 			isa = PBXGroup;
 			children = (
+				5D32627A2447E295006FFA65 /* BigTimer.xcconfig */,
 				EDABD9CA1A7A0CD6006CFBA5 /* Big Timer */,
 				ED8C54D31CD8539C00119596 /* BigTimerTests */,
 				ED8C54E11CD864AD00119596 /* BigTimerUITests */,
@@ -637,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EB69D1CF9DD9100E3E87B /* cellos.aiff in Resources */,
+				5D32627E2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 				682EB6A01CF9DD9100E3E87B /* zarvox.aiff in Resources */,
 				682EB69B1CF9DD9100E3E87B /* boing.aiff in Resources */,
 				682EB69F1CF9DD9100E3E87B /* hysterical.aiff in Resources */,
@@ -653,6 +661,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D32627F2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +669,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D32627C2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +677,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D32627D2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +688,7 @@
 				EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */,
 				EDE970971B0D41B300F3755F /* cellos.aiff in Resources */,
 				ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */,
+				5D32627B2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 				ED82F86A1CD077A100D08D56 /* CustomTimerViewController.xib in Resources */,
 				ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */,
 				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
@@ -1062,6 +1074,7 @@
 		};
 		EDABD9E51A7A0CD6006CFBA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1118,6 +1131,7 @@
 		};
 		EDABD9E61A7A0CD6006CFBA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;

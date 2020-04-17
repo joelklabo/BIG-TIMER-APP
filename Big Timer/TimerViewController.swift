@@ -12,11 +12,16 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
 
     let timeFormatter = TimeFormatter(separator: ":")
     
-    @IBOutlet weak var clockView: ClockView!
-    @IBOutlet weak var timeLabel: TimeLabel!
-    @IBOutlet weak var arrowView: Arrow!
+//    @IBOutlet weak var clockView: ClockView!
+//    @IBOutlet weak var timeLabel: TimeLabel!
+//    @IBOutlet weak var arrowView: Arrow!
     
+    let timerView = TimerView()
     let timerController = TimerController()
+    
+    override func loadView() {
+        view = timerView
+    }
             
     override func viewDidLoad() {
         
@@ -28,8 +33,8 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         if UIApplication.shared.isTesting {
             let time: TimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
-            timeLabel.text = formattedTime.formattedString
-            clockView.rotateToTime(time: time)
+            timerView.timeLabel.text = formattedTime.formattedString
+            timerView.clockView.rotateToTime(time: time)
         } else {
             NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringForeground), name: UIScene.didActivateNotification, object: nil)
@@ -85,10 +90,10 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     // Timer Update Delegate
 
     func timerUpdate(timerState: TimerState) {
-        clockView.rotateToTime(time: timerState.timerValue)
+        timerView.clockView.rotateToTime(time: timerState.timerValue)
         let formattedTime = timeFormatter.formatTime(timerState.timerValue)
-        timeLabel.text = formattedTime.formattedString
-        arrowView.changeDirection(direction: timerState.direction)
+        timerView.timeLabel.text = formattedTime.formattedString
+        timerView.arrowView.changeDirection(direction: timerState.direction)
     }
     
     func timerDone () {

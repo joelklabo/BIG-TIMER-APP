@@ -12,6 +12,7 @@
 		5D32627D2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
 		5D32627E2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
 		5D32627F2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
+		5DD0A104244A5BCF00AE0B4D /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD0A103244A5BCF00AE0B4D /* TimerView.swift */; };
 		5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
@@ -169,6 +170,7 @@
 
 /* Begin PBXFileReference section */
 		5D32627A2447E295006FFA65 /* BigTimer.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BigTimer.xcconfig; sourceTree = "<group>"; };
+		5DD0A103244A5BCF00AE0B4D /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		5DECB82B2443BA450057CFB0 /* TestingFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingFlag.swift; sourceTree = "<group>"; };
 		5DECB8312444A43B0057CFB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5DECB8332445F6A10057CFB0 /* SceneCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCounter.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				ED59131C1A97CD790006B20F /* ClockView.swift */,
 				ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */,
 				ED540F751CE92742000A4860 /* SettingsButton.swift */,
+				5DD0A103244A5BCF00AE0B4D /* TimerView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 				EDDA88DB1CD58DAA003ABC96 /* Theme.swift in Sources */,
 				5DECB8322444A43B0057CFB0 /* SceneDelegate.swift in Sources */,
 				ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */,
+				5DD0A104244A5BCF00AE0B4D /* TimerView.swift in Sources */,
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
 				ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */,

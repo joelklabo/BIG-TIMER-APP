@@ -33,6 +33,11 @@ This will also make sure the profile is up to date
 fastlane ios appstore
 ```
 Deploy a new version to the App Store
+### ios update_screenshots
+```
+fastlane ios update_screenshots
+```
+Update screenshots
 
 ----
 

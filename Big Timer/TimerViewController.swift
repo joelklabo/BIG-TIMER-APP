@@ -25,21 +25,21 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         let sceneCount = UIApplication.shared.sceneCount
         view.backgroundColor = Theme.mainAppColor(sceneNumber: sceneCount)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.returningFromBackground), name: UIScene.didActivateNotification, object: nil)
-        
-        timerController.delegate = self
-        
-        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
-        
         if UIApplication.shared.isTesting {
             let time: TimeInterval = 581
             let formattedTime = timeFormatter.formatTime(time)
             timeLabel.text = formattedTime.formattedString
             clockView.rotateToTime(time: time)
+        } else {
+            NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringBackground), name: UIScene.willDeactivateNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(TimerViewController.enteringForeground), name: UIScene.didActivateNotification, object: nil)
         }
+        
+        timerController.delegate = self
+        
+        view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(verticalPanPassthrough(sender:))))
     }
-    
+
     func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .lightContent
     }
@@ -48,11 +48,11 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    @objc func returningFromBackground () {
+    @objc func enteringForeground () {
         #if targetEnvironment(macCatalyst)
         return
         #else
-        timerController.returningFromBackground()
+        timerController.enteringForeground()
         #endif
     }
     

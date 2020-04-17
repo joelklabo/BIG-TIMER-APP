@@ -1,7 +1,7 @@
 fastlane_version "2.145.0"
 default_platform :ios
 
-XCODE_VERSION = "11.4"
+XCODE_VERSION = "11.4.1"
 
 platform :ios do
 
@@ -33,11 +33,17 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :appstore do
-    increment_version_number(bump_type: "patch")
     match(type: "appstore")
-    snapshot
     gym(scheme: "Big Timer")
     deliver(force: true)
+    increment_build_number
+    commit_version_bump
+  end
+
+  desc "Update screenshots"
+  lane :update_screenshots do
+    reset_simulator_contents
+    snapshot
   end
 
   # You can define as many lanes as you want

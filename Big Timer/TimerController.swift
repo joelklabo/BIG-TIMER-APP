@@ -81,7 +81,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         currentTimerState = TimerState.newState(timerValue: currentTimerState.timerValue, direction: direction, isRunning: timer.isTimerRunning())
     }
     
-    func returningFromBackground () {
+    func enteringForeground () {
         
         foregrounding = true
         

@@ -21,3 +21,4 @@ Pods
 *.ipa
 *.zip
 fastlane/report.xml
+fastlane/report.xml

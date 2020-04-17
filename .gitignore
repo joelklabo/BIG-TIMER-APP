@@ -20,3 +20,4 @@ DerivedData
 Pods
 *.ipa
 *.zip
+fastlane/report.xml

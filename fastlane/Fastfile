@@ -1,7 +1,7 @@
 fastlane_version "2.145.0"
 default_platform :ios
 
-XCODE_VERSION = "11.4.1"
+XCODE_VERSION = "13.3.1"
 
 platform :ios do
 

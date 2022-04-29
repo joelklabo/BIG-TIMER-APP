@@ -22,3 +22,5 @@ Pods
 *.zip
 fastlane/report.xml
 fastlane/report.xml
+vendor/
+.bundle/

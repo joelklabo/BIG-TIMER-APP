@@ -40,7 +40,7 @@ class NotificationController {
     }
     
     func clearNotifications() {
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [uniqueIdentifier])
     }
     
     private func registerForTypes() {

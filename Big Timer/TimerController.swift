@@ -57,6 +57,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     func clear () {
         timer.stop()
         currentTimerState = TimerState.zero
+        notificationController.clearNotifications()
     }
     
     func modifyTime (time: Double) {

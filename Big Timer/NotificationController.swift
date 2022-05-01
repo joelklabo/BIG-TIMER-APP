@@ -39,6 +39,10 @@ class NotificationController {
         }
     }
     
+    func clearNotifications() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [uniqueIdentifier])
+    }
+    
     private func registerForTypes() {
         
         // Don't pop up permission dialog in UI tests

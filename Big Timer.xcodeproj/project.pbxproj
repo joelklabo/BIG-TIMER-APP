@@ -43,7 +43,6 @@
 		68F792681CF8C11B00AE7166 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
 		68F7926A1CF8C12500AE7166 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
 		68F7926B1CF8C1A300AE7166 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
-		68F7926C1CF8C1A300AE7166 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
 		68F7926E1CF8C1A300AE7166 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
 		68F7926F1CF8C1AF00AE7166 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D61AFCB347009C9AF7 /* TimerState.swift */; };
 		68F792701CF8C1AF00AE7166 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
@@ -62,8 +61,6 @@
 		ED540F501CE45E80000A4860 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		ED540F511CE45E86000A4860 /* AudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52FC3F1B02EA4700A9910D /* AudioController.swift */; };
 		ED540F531CE45E8B000A4860 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
-		ED540F541CE45E8F000A4860 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
-		ED540F551CE45E92000A4860 /* CustomTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */; };
 		ED540F561CE45E95000A4860 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
 		ED540F571CE45E98000A4860 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
 		ED540F581CE45E9B000A4860 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
@@ -71,7 +68,6 @@
 		ED540F5A1CE45EA0000A4860 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
 		ED540F5B1CE45EA5000A4860 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
 		ED540F5C1CE45EA9000A4860 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */; };
-		ED540F5D1CE45EAD000A4860 /* CustomTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */; };
 		ED540F5E1CE45EB1000A4860 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		ED540F5F1CE45EB5000A4860 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
 		ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
@@ -94,14 +90,10 @@
 		ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */; };
 		ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
 		ED82F8661CD072DC00D08D56 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
-		ED82F8691CD077A100D08D56 /* CustomTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */; };
-		ED82F86A1CD077A100D08D56 /* CustomTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */; };
 		ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54E21CD864AD00119596 /* BigTimerUITests.swift */; };
 		ED8C54EB1CD8698000119596 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8C54EA1CD8698000119596 /* SnapshotHelper.swift */; };
 		ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		ED8C54F21CD9A82800119596 /* TimerStateArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */; };
-		ED8C54F31CD9A82B00119596 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
-		ED8C54F41CD9A82E00119596 /* CustomTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */; };
 		ED8C54F51CD9A83000119596 /* TimeDeltaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */; };
 		ED8C54F61CD9A83300119596 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
 		ED8C54F71CD9A83E00119596 /* PanGestureInfoProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */; };
@@ -109,7 +101,6 @@
 		ED8C54F91CD9A84600119596 /* AlertSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DF1B05EAA000318343 /* AlertSound.swift */; };
 		ED8C54FA1CD9A84C00119596 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
 		ED8C54FC1CD9A85400119596 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */; };
-		ED8C54FD1CD9A85700119596 /* CustomTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */; };
 		ED8C54FE1CD9A86900119596 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C93D41AFCB339009C9AF7 /* Arrow.swift */; };
 		ED8C54FF1CD9A86C00119596 /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
 		ED8C55001CD9A86E00119596 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5CD89C1A9E3AE60086886B /* ClearButton.swift */; };
@@ -130,9 +121,7 @@
 		EDC830691ADED1B40001D36F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC830681ADED1B40001D36F /* NotificationController.swift */; };
 		EDDA88D91CD5476D003ABC96 /* TimerValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88D81CD5476D003ABC96 /* TimerValue.swift */; };
 		EDDA88DB1CD58DAA003ABC96 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDA88DA1CD58DAA003ABC96 /* Theme.swift */; };
-		EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */; };
 		EDE3BF971CCF1C9300B4A4C0 /* CustomTimers.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */; };
-		EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */; };
 		EDE8109C1B1D7AAE00F68BFB /* InfoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */; };
 		EDE9708E1B0D403700F3755F /* trinoids.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708D1B0D403700F3755F /* trinoids.aiff */; };
 		EDE970941B0D41B300F3755F /* bells.aiff in Resources */ = {isa = PBXBuildFile; fileRef = EDE9708F1B0D41B300F3755F /* bells.aiff */; };
@@ -198,8 +187,6 @@
 		ED82F85F1CD0687A00D08D56 /* TimeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLabel.swift; sourceTree = "<group>"; };
 		ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDeltaCalculator.swift; sourceTree = "<group>"; };
 		ED82F8651CD072DC00D08D56 /* PanGestureInfoProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanGestureInfoProviding.swift; sourceTree = "<group>"; };
-		ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerViewController.swift; sourceTree = "<group>"; };
-		ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTimerViewController.xib; sourceTree = "<group>"; };
 		ED8C54D21CD8539C00119596 /* BigTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8C54D61CD8539C00119596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8C54E01CD864AC00119596 /* BigTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BigTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,9 +206,7 @@
 		EDC830681ADED1B40001D36F /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		EDDA88D81CD5476D003ABC96 /* TimerValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerValue.swift; sourceTree = "<group>"; };
 		EDDA88DA1CD58DAA003ABC96 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistReader.swift; sourceTree = "<group>"; };
 		EDE3BF961CCF1C9300B4A4C0 /* CustomTimers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CustomTimers.plist; sourceTree = "<group>"; };
-		EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTimerManager.swift; sourceTree = "<group>"; };
 		EDE8109B1B1D7AAE00F68BFB /* InfoButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoButton.swift; sourceTree = "<group>"; };
 		EDE9708D1B0D403700F3755F /* trinoids.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = trinoids.aiff; sourceTree = "<group>"; };
 		EDE9708F1B0D41B300F3755F /* bells.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = bells.aiff; sourceTree = "<group>"; };
@@ -333,8 +318,6 @@
 			children = (
 				ED540F4B1CE45BAE000A4860 /* TimerViewController.swift */,
 				ED7C11DA1B055E7D00318343 /* SettingsViewController.swift */,
-				ED82F8671CD077A100D08D56 /* CustomTimerViewController.swift */,
-				ED82F8681CD077A100D08D56 /* CustomTimerViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -451,8 +434,6 @@
 			isa = PBXGroup;
 			children = (
 				ED7EA2C11AC27126008C5237 /* TimerStateArchive.swift */,
-				EDE3BF931CCF17B300B4A4C0 /* PlistReader.swift */,
-				EDE3BF981CCF1E6C00B4A4C0 /* CustomTimerManager.swift */,
 				ED82F8631CD06B3A00D08D56 /* TimeDeltaCalculator.swift */,
 				EDDA88DA1CD58DAA003ABC96 /* Theme.swift */,
 			);
@@ -664,7 +645,6 @@
 				EDE970971B0D41B300F3755F /* cellos.aiff in Resources */,
 				ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */,
 				5D32627B2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
-				ED82F86A1CD077A100D08D56 /* CustomTimerViewController.xib in Resources */,
 				ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */,
 				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
 				EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */,
@@ -694,7 +674,6 @@
 				68F792681CF8C11B00AE7166 /* ClearButton.swift in Sources */,
 				68F792701CF8C1AF00AE7166 /* AlertSound.swift in Sources */,
 				682EB6981CF9DCCD00E3E87B /* PanGestureInfoProviding.swift in Sources */,
-				68F7926C1CF8C1A300AE7166 /* PlistReader.swift in Sources */,
 				68F792651CF8C07F00AE7166 /* Theme.swift in Sources */,
 				68F792751CF8CADA00AE7166 /* AudioController.swift in Sources */,
 				68F792661CF8C11300AE7166 /* Arrow.swift in Sources */,
@@ -726,7 +705,6 @@
 				ED8C55141CDAB6BF00119596 /* TimerStateArchiverTests.swift in Sources */,
 				ED8C54F21CD9A82800119596 /* TimerStateArchive.swift in Sources */,
 				ED8C55061CD9A88100119596 /* TimeFormatter.swift in Sources */,
-				ED8C54FD1CD9A85700119596 /* CustomTimerViewController.swift in Sources */,
 				ED8C55021CD9A87700119596 /* TimeLabel.swift in Sources */,
 				ED8C550C1CDA9FF200119596 /* TimerValueTests.swift in Sources */,
 				ED540F771CE92742000A4860 /* SettingsButton.swift in Sources */,
@@ -736,7 +714,6 @@
 				ED8C55091CDA9C9F00119596 /* TimeFormatterTests.swift in Sources */,
 				ED8C54FF1CD9A86C00119596 /* InfoButton.swift in Sources */,
 				ED8C54F11CD99BE600119596 /* NotificationController.swift in Sources */,
-				ED8C54F41CD9A82E00119596 /* CustomTimerManager.swift in Sources */,
 				ED8C55041CD9A87C00119596 /* Timer.swift in Sources */,
 				ED8C55011CD9A87400119596 /* ClockView.swift in Sources */,
 				ED8C54F81CD9A84200119596 /* TimerState.swift in Sources */,
@@ -746,7 +723,6 @@
 				ED8C54FA1CD9A84C00119596 /* TimerValue.swift in Sources */,
 				ED540F4D1CE45BAE000A4860 /* TimerViewController.swift in Sources */,
 				ED8C54FC1CD9A85400119596 /* SettingsViewController.swift in Sources */,
-				ED8C54F31CD9A82B00119596 /* PlistReader.swift in Sources */,
 				ED8C54F61CD9A83300119596 /* Theme.swift in Sources */,
 				5DECB83A244603690057CFB0 /* SceneCounter.swift in Sources */,
 			);
@@ -764,15 +740,12 @@
 				ED8C54E31CD864AD00119596 /* BigTimerUITests.swift in Sources */,
 				ED540F651CE45EBF000A4860 /* TimeFormatter.swift in Sources */,
 				ED540F781CE92742000A4860 /* SettingsButton.swift in Sources */,
-				ED540F551CE45E92000A4860 /* CustomTimerManager.swift in Sources */,
 				ED540F4F1CE45E0E000A4860 /* TimerController.swift in Sources */,
 				ED540F591CE45E9E000A4860 /* TimerState.swift in Sources */,
-				ED540F541CE45E8F000A4860 /* PlistReader.swift in Sources */,
 				ED540F4E1CE45BAE000A4860 /* TimerViewController.swift in Sources */,
 				ED540F5B1CE45EA5000A4860 /* TimerValue.swift in Sources */,
 				5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */,
 				ED540F511CE45E86000A4860 /* AudioController.swift in Sources */,
-				ED540F5D1CE45EAD000A4860 /* CustomTimerViewController.swift in Sources */,
 				ED540F601CE45EBA000A4860 /* ClearButton.swift in Sources */,
 				ED540F571CE45E98000A4860 /* Theme.swift in Sources */,
 				ED540F5C1CE45EA9000A4860 /* SettingsViewController.swift in Sources */,
@@ -807,13 +780,10 @@
 				ED7EA2C21AC27126008C5237 /* TimerStateArchive.swift in Sources */,
 				ED5CD8991A9CE7CE0086886B /* TimeFormatter.swift in Sources */,
 				ED7C11E01B05EAA000318343 /* AlertSound.swift in Sources */,
-				ED82F8691CD077A100D08D56 /* CustomTimerViewController.swift in Sources */,
-				EDE3BF941CCF17B300B4A4C0 /* PlistReader.swift in Sources */,
 				ED82F8601CD0687A00D08D56 /* TimeLabel.swift in Sources */,
 				ED540F761CE92742000A4860 /* SettingsButton.swift in Sources */,
 				EDABD9CE1A7A0CD6006CFBA5 /* AppDelegate.swift in Sources */,
 				ED82F8641CD06B3A00D08D56 /* TimeDeltaCalculator.swift in Sources */,
-				EDE3BF991CCF1E6C00B4A4C0 /* CustomTimerManager.swift in Sources */,
 				ED7C11DB1B055E7D00318343 /* SettingsViewController.swift in Sources */,
 				ED52FC401B02EA4700A9910D /* AudioController.swift in Sources */,
 				ED5CD89D1A9E3AE60086886B /* ClearButton.swift in Sources */,

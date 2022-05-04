@@ -1111,7 +1111,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Big Timer/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				MARKETING_VERSION = 5.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1120,6 +1121,7 @@
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1136,7 +1138,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Big Timer/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks $(CONFIGURATION_BUILD_DIR)";
 				MARKETING_VERSION = 5.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.joelklabo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1145,6 +1148,7 @@
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

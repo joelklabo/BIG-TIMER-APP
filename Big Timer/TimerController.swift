@@ -29,11 +29,11 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     private var currentTimerState: TimerState = TimerState.zero {
         didSet {
             if (currentTimerState.timerValue <= 0) {
-                currentTimerState = TimerState.zero
                 timer.stop()
-                if (!foregrounding) {
+                if (!foregrounding && currentTimerState.isRunning) {
                     delegate?.timerDone()
                 }
+                currentTimerState = TimerState.zero
             }
             delegate?.timerUpdate(timerState: self.currentTimerState)
         }
@@ -104,12 +104,12 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
         // This should be handled when we stop the timer
         if timer.isTimerRunning() {
             currentTimerState.isRunning = true
+            notificationController.queue(timerState: currentTimerState)
         } else {
             currentTimerState.isRunning = false
         }
         
         TimerStateArchiver.archive(currentTimerState, key: uniqueIdentifier)
-        notificationController.queue(timerState: currentTimerState)
     }
     
     private func currentTimerValue(timerValue: Double, timeDelta: Double, direction: TimerDirection) -> Double {

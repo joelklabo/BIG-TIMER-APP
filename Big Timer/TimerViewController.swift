@@ -57,11 +57,7 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     }
     
     @objc func enteringBackground () {
-        #if targetEnvironment(macCatalyst)
-        return
-        #else
-            timerController.enteringBackground()
-        #endif
+        timerController.enteringBackground()
     }
 
     @IBAction func tap(sender: AnyObject) {

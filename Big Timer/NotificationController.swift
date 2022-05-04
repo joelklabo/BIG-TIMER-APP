@@ -20,8 +20,13 @@ class NotificationController {
     func notifyDone(_ date: Date) {
         let content = UNMutableNotificationContent()
         content.title = "Timer Done"
-        let soundName = UNNotificationSoundName(AlertSound.selectedPreference.fileName)
-        content.sound = UNNotificationSound(named: soundName)
+
+        // Don't play notification sound on macos because app can play it
+        if UIDevice.current.userInterfaceIdiom != .mac {
+            let soundName = UNNotificationSoundName(AlertSound.selectedPreference.fileName)
+            content.sound = UNNotificationSound(named: soundName)
+        }
+        
         let dateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let notificationRequest = UNNotificationRequest(identifier: uniqueIdentifier, content: content, trigger: trigger)

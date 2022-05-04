@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D32627B2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
-		5D32627C2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
-		5D32627D2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
-		5D32627E2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
-		5D32627F2447E295006FFA65 /* BigTimer.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5D32627A2447E295006FFA65 /* BigTimer.xcconfig */; };
 		5DECB82C2443BA450057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82D2443BB1C0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
 		5DECB82E2443BB1F0057CFB0 /* TestingFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DECB82B2443BA450057CFB0 /* TestingFlag.swift */; };
@@ -545,7 +540,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Joel Klabo";
 				TargetAttributes = {
 					68F792471CF8C00E00AE7166 = {
@@ -600,7 +595,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EB69D1CF9DD9100E3E87B /* cellos.aiff in Resources */,
-				5D32627E2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 				682EB6A01CF9DD9100E3E87B /* zarvox.aiff in Resources */,
 				682EB69B1CF9DD9100E3E87B /* boing.aiff in Resources */,
 				682EB69F1CF9DD9100E3E87B /* hysterical.aiff in Resources */,
@@ -617,7 +611,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D32627F2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +618,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D32627C2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,7 +625,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D32627D2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +635,6 @@
 				EDABD9D31A7A0CD6006CFBA5 /* Main.storyboard in Resources */,
 				EDE970971B0D41B300F3755F /* cellos.aiff in Resources */,
 				ED52FC431B02EC6100A9910D /* zarvox.aiff in Resources */,
-				5D32627B2447E295006FFA65 /* BigTimer.xcconfig in Resources */,
 				ED7C11E31B05EFEE00318343 /* hysterical.aiff in Resources */,
 				EDE970961B0D41B300F3755F /* bubbles.aiff in Resources */,
 				EDABD9D81A7A0CD6006CFBA5 /* LaunchScreen.xib in Resources */,
@@ -1016,6 +1006,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1040,7 +1031,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1073,6 +1064,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1090,7 +1082,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

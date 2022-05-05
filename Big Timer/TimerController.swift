@@ -62,7 +62,7 @@ class TimerController: NSObject, TimerManagerDelegate, TimerDelegate {
     
     func modifyTime (time: Double) {
         let newTime = currentTimerState.timerValue + time
-        currentTimerState = TimerState.newState(timerValue: newTime, direction: currentTimerState.direction, isRunning: timer.isTimerRunning())
+        currentTimerState = TimerState.newState(timerValue: newTime, direction: .Down, isRunning: timer.isTimerRunning())
     }
     
     func changeTimerDirection () {

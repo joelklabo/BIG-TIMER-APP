@@ -17,6 +17,53 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
     @IBOutlet weak var arrowView: Arrow!
     
     let timerController = TimerController()
+    
+    let toggleKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: " ", modifierFlags: [], action: #selector(toggle))
+        command.discoverabilityTitle = "Start / Stop"
+        return command
+    }()
+    
+    let cancelKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: UIKeyCommand.inputEscape, modifierFlags: [], action: #selector(cancel))
+        command.discoverabilityTitle = "Cancel"
+        return command
+    }()
+    
+    let addSecondKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: UIKeyCommand.inputUpArrow, modifierFlags: [.command], action: #selector(addSecond))
+        command.discoverabilityTitle = "Add Second"
+        return command
+    }()
+    
+    let addMinuteKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: UIKeyCommand.inputUpArrow, modifierFlags: [.command, .shift], action: #selector(addMinute))
+        command.discoverabilityTitle = "Add Minute"
+        return command
+    }()
+    
+    let removeSecondKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: UIKeyCommand.inputDownArrow, modifierFlags: [.command], action: #selector(removeSecond))
+        command.discoverabilityTitle = "Subtract Second"
+        return command
+    }()
+    
+    let removeMinuteKeyCommand: UIKeyCommand = {
+        let command = UIKeyCommand(input: UIKeyCommand.inputDownArrow, modifierFlags: [.command, .shift], action: #selector(removeMinute))
+        command.discoverabilityTitle = "Subtract Minute"
+        return command
+    }()
+    
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            toggleKeyCommand,
+            cancelKeyCommand,
+            addSecondKeyCommand,
+            addMinuteKeyCommand,
+            removeSecondKeyCommand,
+            removeMinuteKeyCommand
+        ]
+    }
             
     override func viewDidLoad() {
         
@@ -76,6 +123,32 @@ class TimerViewController: UIViewController, TimerManagerDelegate {
         let settingsNavigationController = UINavigationController(rootViewController: SettingsViewController())
         settingsNavigationController.modalTransitionStyle = .crossDissolve
         self.present(settingsNavigationController, animated: true, completion: nil)
+    }
+    
+    // Key Commands
+    
+    @objc func toggle() {
+        timerController.toggle()
+    }
+    
+    @objc func cancel() {
+        timerController.clear()
+    }
+    
+    @objc func addSecond() {
+        timerController.modifyTime(time: 1)
+    }
+    
+    @objc func addMinute() {
+        timerController.modifyTime(time: 60)
+    }
+    
+    @objc func removeSecond() {
+        timerController.modifyTime(time: -1)
+    }
+    
+    @objc func removeMinute() {
+        timerController.modifyTime(time: -60)
     }
     
     // Timer Update Delegate
